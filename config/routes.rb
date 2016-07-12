@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get '/', to: 'homes#index'
 
-  resources: tags
+  resources :tags
+  resources :building_blocks
 
 end

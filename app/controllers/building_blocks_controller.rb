@@ -1,0 +1,2 @@
+class BuildingBlocksController < ApplicationController
+end
