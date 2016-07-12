@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   
   get '/', to: 'homes#index'
 
-  resorces: tags
+  resources: tags
 
 end
