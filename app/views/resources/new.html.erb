@@ -1,6 +1,6 @@
 <h1>Add New Resource</h1>
 
-<%= form_for :resource do |f| %>
+<%= form_for(@resource) do |f| %>
   <p>
     <%= f.label :world_region %><br>
     <%= f.text_field :world_region %>
@@ -23,7 +23,7 @@
 
   <p>
     <%= f.label :date %><br>
-    <%= f.text_field :date %>
+    <%= f.date_field :date %>
   </p>
 
   <p>
@@ -32,10 +32,15 @@
   </p>
 
   <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </p>
-  
+
   <p>
     <%= f.submit %>
   </p>
