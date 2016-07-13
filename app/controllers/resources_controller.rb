@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
   def index
-    @resource = Resource.all
+    @resources = Resource.all
   end
 
   def new
