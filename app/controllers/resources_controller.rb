@@ -22,10 +22,22 @@ class ResourcesController < ApplicationController
     @resource = Resource.find_by(id: params[:id])
   end
 
-  private
-
-  def resources_params
-    params.require(:resource).permit(:world_region, :title, :author,
-    :news_source, :date, :summary, :url, :notes)
+  def update
+    @resource = Resource.find_by(id: params[:id])
+    if Resource.update(world_region: @resource.world_region, title: @resource.title,
+      author: @resource.author, news_source: @resource.news_source, date: @resource.date, summary: @resource.summary
+      url: @resource.url, notes: @resource.notes}
+    end )
+    redirect_to @resource
+  else
+    render :edit, notice: "Error"
   end
+end
+
+private
+
+def resources_params
+  params.require(:resource).permit(:world_region, :title, :author,
+  :news_source, :date, :summary, :url, :notes)
+end
 end
