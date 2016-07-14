@@ -18,6 +18,10 @@ class ResourcesController < ApplicationController
     redirect_to @resource
   end
 
+  def edit
+    @resource = Resource.find_by(id: params[:id])
+  end
+
   private
 
   def resources_params
