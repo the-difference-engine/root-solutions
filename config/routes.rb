@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'homes#index'
 
+
+  resources :resources
+  resources :tags
+  resources :building_blocks
+  
   get '/admins/new', to: 'admins#new'
   post '/admins', to: 'admins#create'
 end
+

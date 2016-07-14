@@ -1,0 +1,2 @@
+class BuildingBlock < ApplicationRecord
+end
