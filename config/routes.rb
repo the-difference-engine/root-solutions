@@ -5,3 +5,4 @@ Rails.application.routes.draw do
 
   get '/admins/new', to: 'admins#new'
   post '/admins', to: 'admins#create'
+end
