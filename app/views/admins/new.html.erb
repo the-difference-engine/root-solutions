@@ -1,0 +1,17 @@
+<h1>Designate an administrator</h1>
+
+<%= form_tag '/admins', method: :post do %>
+
+  <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+
+  <div>
+    <%= label_tag :password %>
+    <%= text_field_tag :password %>
+  </div>
+
+  <%= submit_tag "Submit" %>
+
+<% end %>
