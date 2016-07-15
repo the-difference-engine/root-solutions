@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-animate
+//= require angular-touch
+//= require ui-bootstrap-tpls-1.3.3
 //= require app
 //= require_tree .
