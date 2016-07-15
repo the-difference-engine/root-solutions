@@ -21,5 +21,12 @@ module RootSolutions
       request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+
+    # Add the fonts path
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    
   end
 end
