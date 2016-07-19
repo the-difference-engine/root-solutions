@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719172147) do
+ActiveRecord::Schema.define(version: 20160719173640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20160719172147) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "resources_subtags", force: :cascade do |t|
+    t.integer  "resource_id"
+    t.integer  "subtag_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["resource_id"], name: "index_resources_subtags_on_resource_id", using: :btree
+    t.index ["subtag_id"], name: "index_resources_subtags_on_subtag_id", using: :btree
   end
 
   create_table "resources_tags", force: :cascade do |t|

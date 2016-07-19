@@ -1,0 +1,2 @@
+class ResourcesSubtag < ApplicationRecord
+end
