@@ -1,0 +1,2 @@
+class Subtag < ApplicationRecord
+end
