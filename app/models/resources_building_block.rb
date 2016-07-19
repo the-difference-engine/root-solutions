@@ -1,0 +1,2 @@
+class ResourcesBuildingBlock < ApplicationRecord
+end
