@@ -5,7 +5,7 @@ feature "User posts a resource" do
   scenario "should successfully post with all valid criteria" do
     visit "/resources"
     click_link "New Resource"
-
+    sleep(2)
     fill_in "World region", with: "USA"
     fill_in "Title", with: "Happy News"
     fill_in "Author", with: "Anna"

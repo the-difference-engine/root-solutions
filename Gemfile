@@ -42,6 +42,10 @@ end
 
 group :test do
   gem "capybara", "2.7.1"
+  gem "database_cleaner"
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'poltergeist'
+  gem 'teaspoon-jasmine'
   gem 'launchy', '~> 2.4'
 end
 

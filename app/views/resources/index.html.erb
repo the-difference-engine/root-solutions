@@ -1,4 +1,4 @@
-<div ng-app="adminpanel-app" ng-controller="resourcesCtrl">
+<div ng-app="adminpanel-app" ng-controller="resourcesCtrl" ng-init="resources_setup()">
 <h1>All Resources</h1>
 
 <table>
@@ -13,20 +13,18 @@
     <th>Notes</th>
     <td colspan="2"></td>
   </tr>
-  <% @resources.each do | resource | %>
-  <tr>
-    <td><%= resource.world_region %></td>
-    <td><a href="/resources/<%= resource.id %>"><%= resource.title %></a></td>
-    <td><%= resource.author %></td>
-    <td><%= resource.news_source %></td>
-    <td><%= resource.date %></td>
-    <td><%= resource.summary %></td>
-    <td><%= resource.url %></td>
-    <td><%= resource.notes %></td>
-    <td><a href="/resources/<%= resource.id %>/edit">Edit</a></td>
+  <tr ng-repeat="resource in resources">
+    <td>{{ resource.world_region }}</td>
+    <td><a href="/resources/{{ resource.id }}">{{ resource.title }}</a></td>
+    <td>{{ resource.author }}</td>
+    <td>{{ resource.news_source }}</td>
+    <td>{{ resource.date }}</td>
+    <td>{{ resource.summary }}</td>
+    <td>{{ resource.url }}</td>
+    <td>{{ resource.notes }}</td>
+    <td><a href="/resources/{{ resource.id }}/edit">Edit</a></td>
     <td>Delete</td>
   </tr>
-  <% end %>
 </table>
 
 <br />
