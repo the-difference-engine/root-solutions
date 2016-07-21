@@ -18,9 +18,9 @@ class ResourcesController < ApplicationController
     redirect_to @resource
   end
   def destroy
-    @resource = Resource.find_by(id: params[:id])
-    @resource.destroy
-    redirect_to "/resources"
+    # @resource = Resource.find_by(id: params[:id])
+    # @resource.destroy
+    # redirect_to "/resources"
   end
 
   private
