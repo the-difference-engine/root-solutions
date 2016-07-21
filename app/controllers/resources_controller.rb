@@ -23,7 +23,21 @@ class ResourcesController < ApplicationController
     # redirect_to "/resources"
   end
 
-  private
+  def edit
+    @resource = Resource.find_by(id: params[:id])
+  end
+
+  def update
+    @resource = Resource.find_by(id: params[:id])
+    @resource.update_attributes(resources_params)
+    if @resource.valid?
+      redirect_to resource_path(@resource)
+    else
+      render :edit, :status => :unprocessable_entity
+    end
+  end
+
+private
 
   def resources_params
     params.require(:resource).permit(:world_region, :title, :author,
