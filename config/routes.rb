@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'homes#index'
 
-  get '/resources/export', to: 'resources#export_resources', as: :export_resources_path
+  get '/resources/export', to: 'resources#export_resources', as: :export_resources
   resources :resources
   resources :tags
   resources :building_blocks
