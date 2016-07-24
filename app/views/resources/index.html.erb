@@ -1,6 +1,5 @@
 <div ng-app="adminpanel-app" ng-controller="resourcesCtrl">
 <h1>All Resources</h1>
-
 <table>
   <tr>
     <th>World region</th>
@@ -32,5 +31,8 @@
 <br />
 
 <%= link_to "New Resource", new_resource_path %>
+
+<br />
+<%= link_to "Export Resources", :controller => "resources", :action => "export_resources" %>
 
 </div>

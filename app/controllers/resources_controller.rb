@@ -1,3 +1,4 @@
+require 'csv'
 class ResourcesController < ApplicationController
 
   def index
@@ -30,6 +31,19 @@ class ResourcesController < ApplicationController
     else
       render :edit, :status => :unprocessable_entity
     end
+  end
+
+  def export_resources
+    @resources = Resource.all
+    csv_string = CSV.generate do |csv|
+      csv << ["id", "world_region", "title", "author", "news_source", "date", "summary", "url", "notes"]
+      @resources.each do |resource|
+        csv << [resource.id, resource.world_region, resource.title, resource.author, resource.news_source, resource.date, resource.summary, resource.url, resource.notes]
+      end
+    end
+    send_data csv_string,
+    :type => 'text/csv; charset=iso-8859-1; header=present',
+    :disposition => "attachment; filename=users.csv"
   end
 
 private
