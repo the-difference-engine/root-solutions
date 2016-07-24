@@ -23,7 +23,8 @@
     <td><%= resource.url %></td>
     <td><%= resource.notes %></td>
     <td><a href="/resources/<%= resource.id %>/edit">Edit</a></td>
-    <td>Delete</td>
+    <td><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></td>
+
   </tr>
   <% end %>
 </table>

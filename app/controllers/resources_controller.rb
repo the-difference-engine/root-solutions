@@ -18,6 +18,11 @@ class ResourcesController < ApplicationController
     @resource.save
     redirect_to @resource
   end
+  def destroy
+    @resource = Resource.find_by(id: params[:id])
+    @resource.destroy
+    redirect_to "/resources"
+  end
 
   def edit
     @resource = Resource.find_by(id: params[:id])
