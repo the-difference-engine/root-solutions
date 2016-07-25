@@ -1,13 +1,17 @@
-#create sample admin user
+require 'factory_girl_rails'
 
+#create sample admin user
+if User.where(email: 'admin@admin.com').count < 1
 admin = User.new
 admin.email = 'admin@admin.com'
 admin.password = 'password'
 admin.password_confirmation = 'password'
 admin.save!
+end
 
-
-
+30.times do |i|
+  FactoryGirl.create(:resource)
+end
 
 
 

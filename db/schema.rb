@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713183722) do
+ActiveRecord::Schema.define(version: 20160719174224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attachments", force: :cascade do |t|
+    t.string   "file_name"
+    t.string   "type"
+    t.string   "url"
+    t.integer  "resource_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "file"
+  end
+
   create_table "building_blocks", force: :cascade do |t|
-    t.string   "building_block"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "resources", force: :cascade do |t|
@@ -34,10 +45,44 @@ ActiveRecord::Schema.define(version: 20160713183722) do
     t.datetime "updated_at"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "tag"
+  create_table "resources_building_blocks", force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "resource_id"
+    t.integer  "building_block_id"
+    t.index ["building_block_id"], name: "index_resources_building_blocks_on_building_block_id", using: :btree
+    t.index ["resource_id"], name: "index_resources_building_blocks_on_resource_id", using: :btree
+  end
+
+  create_table "resources_subtags", force: :cascade do |t|
+    t.integer  "resource_id"
+    t.integer  "subtag_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["resource_id"], name: "index_resources_subtags_on_resource_id", using: :btree
+    t.index ["subtag_id"], name: "index_resources_subtags_on_subtag_id", using: :btree
+  end
+
+  create_table "resources_tags", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "resource_id"
+    t.integer  "tag_id"
+    t.index ["resource_id"], name: "index_resources_tags_on_resource_id", using: :btree
+    t.index ["tag_id"], name: "index_resources_tags_on_tag_id", using: :btree
+  end
+
+  create_table "subtags", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "environmental_tag"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160713183722) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.boolean  "admin"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

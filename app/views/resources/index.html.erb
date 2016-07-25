@@ -1,3 +1,4 @@
+<div ng-app="adminpanel-app" ng-controller="resourcesCtrl">
 <h1>All Resources</h1>
 
 <table>
@@ -23,7 +24,8 @@
     <td><%= resource.url %></td>
     <td><%= resource.notes %></td>
     <td><a href="/resources/<%= resource.id %>/edit">Edit</a></td>
-    <td>Delete</td>
+    <td><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></td>
+
   </tr>
   <% end %>
 </table>
@@ -31,3 +33,5 @@
 <br />
 
 <%= link_to "New Resource", new_resource_path %>
+
+</div>

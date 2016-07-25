@@ -39,6 +39,10 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    angular-rails-templates (1.0.0)
+      railties (>= 4.2, < 6)
+      sprockets (~> 3.0)
+      tilt
     arel (7.0.0)
     autoprefixer-rails (6.3.6.2)
       execjs
@@ -223,7 +227,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   bootstrap-sass
+=======
+  angular-rails-templates
+>>>>>>> b05d3820a78aae062c3d207442a5cbae2f796136
   byebug
   capybara (= 2.7.1)
   carrierwave
