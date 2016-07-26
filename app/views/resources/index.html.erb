@@ -1,7 +1,7 @@
 <div ng-app="adminpanel-app" ng-controller="resourcesCtrl" ng-init="resources_setup()">
 <h1>All Resources</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>World region</th>
     <th>Title</th>
@@ -23,7 +23,7 @@
     <td>{{ resource.url }}</td>
     <td>{{ resource.notes }}</td>
     <td><a href="/resources/{{ resource.id }}/edit">Edit</a></td>
-    <td>Delete</td>
+    <td><a href="/resources/{{ resource.id }}" data-method="delete">Delete</a></td>
   </tr>
 </table>
 
