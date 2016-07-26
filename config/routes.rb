@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   resources :resources
   resources :tags
   resources :building_blocks
-  
+
   get '/admins/new', to: 'admins#new'
   post '/admins', to: 'admins#create'
-end
 
+  namespace :api do
+    namespace :v1 do
+      resources :resources
+    end
+  end
+end

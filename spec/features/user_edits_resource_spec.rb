@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
-feature "User edits a resource" do
+feature "User edits a resource", js: true  do
   scenario "should successfully updates with all valid criteria" do
     FactoryGirl.create(:resource)
     visit "/resources"
