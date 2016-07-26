@@ -38,6 +38,7 @@ class ResourcesController < ApplicationController
     end
   end
 
+
   def export_resources
     @resources = Resource.all
     csv_string = CSV.generate do |csv|
@@ -49,6 +50,13 @@ class ResourcesController < ApplicationController
     send_data csv_string,
     :type => 'text/csv; charset=iso-8859-1; header=present',
     :disposition => "attachment; filename=users.csv"
+  end
+  
+  def destroy
+    @resource = Resource.find_by(id: params[:id])
+    @resource.destroy
+    redirect_to resources_path
+
   end
 
 private
