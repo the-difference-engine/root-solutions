@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe ResourcesController, type: :controller do
   describe "resources GET #index action" do
@@ -14,5 +15,12 @@ RSpec.describe ResourcesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
+  describe "user deletes a resource" do
+    it "should successfully delete resource" do
+      resource = FactoryGirl.create(:resource)
+      expect{
+        delete :destroy, id: resource
+        }.to change(Resource, :count).by(-1)
+    end
+  end
 end

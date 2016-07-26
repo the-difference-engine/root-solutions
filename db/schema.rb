@@ -15,6 +15,17 @@ ActiveRecord::Schema.define(version: 20160719174224) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attachments", force: :cascade do |t|
+    t.string   "file_name"
+    t.string   "type"
+    t.string   "url"
+    t.integer  "resource_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "file"
+  end
+
   create_table "building_blocks", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
