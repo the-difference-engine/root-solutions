@@ -1,0 +1,2 @@
+class WorldRegion < ApplicationRecord
+end
