@@ -18,6 +18,8 @@ gem 'carrierwave'
 
 gem 'rmagick'
 
+gem 'fog'
+
 gem 'bootstrap-sass'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -44,6 +46,8 @@ group :development, :test do
   gem "rspec-rails", "3.5.0"
   gem "factory_girl_rails", "~> 4.0"
   gem 'pry'
+  gem 'dotenv-rails'
+  gem 'fakefs', require: "fakefs/safe"
 end
 
 group :test do

@@ -1,0 +1,20 @@
+<%= form_for(@attachment, :html => {:multipart => true}) do |f| %>
+  <p>
+    <%= f.label :resource_id %><br>
+    <%= f.text_field :resource_id %>
+  </p>
+
+  <p>
+    <%= f.label :url %><br>
+    <%= f.file_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :attachment_type_id %><br>
+    <%= f.text_field :attachment_type_id %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
