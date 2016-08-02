@@ -1,6 +1,5 @@
 class Tag < ApplicationRecord
-  has_many :resources, through: :resources_tags
-  has_many :resources_tags
-
   has_many :subtags
+
+  belongs_to :category
 end

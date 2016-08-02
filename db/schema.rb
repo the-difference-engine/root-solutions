@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728034953) do
+ActiveRecord::Schema.define(version: 20160802034358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,14 +43,16 @@ ActiveRecord::Schema.define(version: 20160728034953) do
     t.string   "title"
     t.string   "author"
     t.date     "date"
-    t.text     "summary"
+    t.text     "abstract"
     t.string   "url"
-    t.text     "notes"
+    t.text     "admin_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "world_region_id"
     t.integer  "news_source_id"
     t.integer  "resource_type_id"
+    t.boolean  "is_published",     default: false
+    t.boolean  "is_problem"
   end
 
   create_table "resources_building_blocks", force: :cascade do |t|
