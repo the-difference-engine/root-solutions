@@ -9,5 +9,10 @@ FactoryGirl.define do
     summary { Faker::Hacker.say_something_smart }
     url { Faker::Internet.url }
     notes { Faker::Superhero.name }
+
+    after(:build) do |resource|
+        resource.attachments << FactoryGirl.build(:attachment, resource: resource)
+    end
+
   end
 end

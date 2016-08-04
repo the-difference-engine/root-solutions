@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :attachment do
-    resource_id 1
-    url "MyString"
-    attachment_type_id 1
+      resource :resource
+      url File.open(File.join(Rails.root, '/spec/fixtures/files/image.png'))
   end
 end
