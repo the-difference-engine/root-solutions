@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :tag do
+  factory :environmental_tag do
     tag "MyString"
   end
 end

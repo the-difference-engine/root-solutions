@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802034358) do
+ActiveRecord::Schema.define(version: 20160804042658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "building_block_substeps", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "building_block_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "building_blocks", force: :cascade do |t|
     t.string   "name"
@@ -21,10 +28,23 @@ ActiveRecord::Schema.define(version: 20160802034358) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
+  create_table "cognitive_bia", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "environmental_subtags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "tag_id"
+  end
+
+  create_table "environmental_tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "news_sources", force: :cascade do |t|
@@ -51,40 +71,27 @@ ActiveRecord::Schema.define(version: 20160802034358) do
     t.integer  "world_region_id"
     t.integer  "news_source_id"
     t.integer  "resource_type_id"
-    t.boolean  "is_published",     default: false
+    t.boolean  "is_published",      default: false
     t.boolean  "is_problem"
+    t.integer  "cognitive_bias_id"
+    t.text     "content"
+    t.text     "academic_citation"
   end
 
-  create_table "resources_building_blocks", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+  create_table "resources_building_block_substeps", force: :cascade do |t|
+    t.integer  "building_block_substep_id"
     t.integer  "resource_id"
-    t.integer  "building_block_id"
-    t.index ["building_block_id"], name: "index_resources_building_blocks_on_building_block_id", using: :btree
-    t.index ["resource_id"], name: "index_resources_building_blocks_on_resource_id", using: :btree
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "resources_subtags", force: :cascade do |t|
+  create_table "resources_environmental_subtags", force: :cascade do |t|
     t.integer  "resource_id"
     t.integer  "subtag_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["resource_id"], name: "index_resources_subtags_on_resource_id", using: :btree
-    t.index ["subtag_id"], name: "index_resources_subtags_on_subtag_id", using: :btree
-  end
-
-  create_table "subtags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "tag_id"
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "category_id"
+    t.index ["resource_id"], name: "index_resources_environmental_subtags_on_resource_id", using: :btree
+    t.index ["subtag_id"], name: "index_resources_environmental_subtags_on_subtag_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
