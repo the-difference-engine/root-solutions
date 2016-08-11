@@ -12,6 +12,13 @@ FactoryGirl.define do
     academic_citation { Faker::Hacker.say_something_smart }
     abstract { Faker::Hacker.say_something_smart }
     url { Faker::Internet.url }
+
     admin_notes { Faker::Superhero.name }
+
+    after(:build) do |resource|
+        resource.attachments << FactoryGirl.build(:attachment, resource: resource)
+    end
+
+
   end
 end

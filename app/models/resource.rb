@@ -16,6 +16,6 @@ class Resource < ApplicationRecord
 
   belongs_to :cognitive_bias
 
-
+  has_many :attachments
 
 end

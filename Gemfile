@@ -13,6 +13,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+
+gem 'carrierwave'
+
+gem 'rmagick'
+
+gem 'fog'
+
+gem 'bootstrap-sass'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -22,6 +30,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -38,6 +48,9 @@ group :development, :test do
   gem "rspec-rails", "3.5.0"
   gem "factory_girl_rails", "~> 4.0"
   gem 'pry'
+  gem 'dotenv-rails'
+  gem 'shoulda-matchers', '~> 3.1'
+
 end
 
 group :test do
@@ -47,6 +60,7 @@ group :test do
   gem 'poltergeist'
   gem 'teaspoon-jasmine'
   gem 'launchy', '~> 2.4'
+
 end
 
 group :development do

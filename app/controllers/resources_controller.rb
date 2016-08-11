@@ -60,7 +60,6 @@ class ResourcesController < ApplicationController
   end
 
 private
-
   def resources_params
     params.require(:resource).permit(:world_region, :title, :author,
     :news_source, :date, :summary, :url, :notes)

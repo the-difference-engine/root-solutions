@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :resources
   resources :tags
   resources :building_blocks
+  resources :attachments
 
   get '/admins/new', to: 'admins#new'
   post '/admins', to: 'admins#create'
