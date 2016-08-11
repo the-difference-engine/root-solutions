@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :subtag do
+  factory :resource_type do
     name "MyString"
   end
 end
