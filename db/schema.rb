@@ -11,14 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160804042658) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "building_block_substeps", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "building_block_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
 
   create_table "attachment_types", force: :cascade do |t|
     t.string   "attachment_type"
@@ -32,6 +27,13 @@ ActiveRecord::Schema.define(version: 20160804042658) do
     t.string   "url"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "building_block_substeps", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "building_block_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "building_blocks", force: :cascade do |t|
