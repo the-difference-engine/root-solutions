@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160804042658) do
-=======
-ActiveRecord::Schema.define(version: 20160728020011) do
->>>>>>> 689a0c43451e507e10d3d5dd611cc4756cb340eb
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "building_block_substeps", force: :cascade do |t|
     t.string   "name"
     t.integer  "building_block_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-=======
+
   create_table "attachment_types", force: :cascade do |t|
     t.string   "attachment_type"
     t.datetime "created_at",      null: false
@@ -38,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160728020011) do
     t.string   "url"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
->>>>>>> 689a0c43451e507e10d3d5dd611cc4756cb340eb
   end
 
   create_table "building_blocks", force: :cascade do |t|
