@@ -1,10 +1,21 @@
 class Resource < ApplicationRecord
-  has_many :building_blocks, through: :resources_building_blocks
-  has_many :resources_building_blocks
+  
+  has_many :building_block_substeps, through: :resources_building_block_substeps
+  has_many :resources_building_block_substeps
 
-  has_many :tags, through: :resources_tags
-  has_many :resources_tags
+  has_many :environmental_subtags, through: :resources_environmental_subgtags
+  has_many :resources_environmental_subtags
 
-  has_many :subtags, through: :resources_subgtags
-  has_many :resources_subtags
+  has_many :resources_environmental_subtags
+
+  belongs_to :news_source
+  
+  belongs_to :resource_type
+  
+  belongs_to :world_region
+
+  belongs_to :cognitive_bias
+
+  has_many :attachments
+
 end

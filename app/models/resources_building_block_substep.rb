@@ -1,0 +1,2 @@
+class ResourcesBuildingBlockSubstep < ApplicationRecord
+end

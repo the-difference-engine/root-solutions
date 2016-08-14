@@ -52,6 +52,14 @@ RSpec.configure do |config|
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
+
+  
+  config.after(:suite) do
+    FileUtils.rm_rf(Dir["#{Rails.root}/public/uploads/attachment/url"])
+  end
+
+
+
 =begin
   # This allows you to limit a spec run to individual examples or groups
   # you care about by tagging them with `:focus` metadata. When nothing

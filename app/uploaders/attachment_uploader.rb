@@ -1,19 +1,33 @@
-# encoding: utf-8
+require 'carrierwave'
+require 'rmagick'# encoding: utf-8
 
 class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
    include CarrierWave::RMagick
-   include CarrierWave::MiniMagick
+   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  if Rails.env.test?
+    CarrierWave.configure do |config|
+      config.storage = :file
+      config.enable_processing = false
+    end
+  else
+    CarrierWave.configure do |config|
+      config.storage = :fog
+    end
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def extension_white_list
+    %w(pdf doc docx mp4 avi jpg jpeg png gif mov)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
