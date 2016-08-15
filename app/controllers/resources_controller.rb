@@ -38,6 +38,9 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def import_resources
+    
+  end
 
   def export_resources
     @resources = Resource.all
