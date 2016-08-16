@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :building_block_substeps
+  resources :environmental_tags
+  resources :environmental_subtags
+  resources :world_regions
+  resources :resource_types
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'homes#index'

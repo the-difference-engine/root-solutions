@@ -1,0 +1,27 @@
+<%= form_for(building_block_substep) do |f| %>
+  <% if building_block_substep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(building_block_substep.errors.count, "error") %> prohibited this building_block_substep from being saved:</h2>
+
+      <ul>
+      <% building_block_substep.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :building_block_id %>
+    <%= f.text_field :building_block_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
