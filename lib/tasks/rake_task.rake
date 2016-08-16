@@ -1,5 +1,5 @@
 require 'csv'
-
+# For the popular article tab
 csv = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_popular_article.csv', :headers => true) do |row|
   columns = row.split(",")
   if columns[0] == "Yes"
@@ -70,7 +70,7 @@ end
 
 
 
-
+# For the academic article tab
 csv = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_academic_article.csv', :headers => true) do |row|
   columns = row.split(",")
   if columns[0] == "Yes"
@@ -136,7 +136,7 @@ csv = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_academic_article.csv
 end
 
 
-# publisher, source, length
+# For the video audio tab. BE SURE TO DELETE THE FIRST COLUMN (IT'S A WEIRD THING WITH OLD HEADERS)
 csv = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_video_audio.csv', :headers => true) do |row|
   columns = row.split(",")
   if columns[0] == "Problem"
