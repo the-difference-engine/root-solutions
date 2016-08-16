@@ -1,5 +1,4 @@
 require 'csv'
-namespace :custom_rake_task do
   task :import_csv do
     # For the popular article tab
     csv = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_popular_article.csv', :headers => true) do |row|
@@ -194,5 +193,4 @@ namespace :custom_rake_task do
 
       ResourcesEnvironmentalSubtag.create(resource_id: new_resource.id, subtag_id: EnvironmentalSubtag.where(name: environmental_subtag, tag_id: EnvironmentalTag.where(name: environmental_tag).id).id)
     end
-  end
 end
