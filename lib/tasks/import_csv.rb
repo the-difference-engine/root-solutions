@@ -1,30 +1,30 @@
 require 'csv'
   task :import_csv do
     # For the popular article tab
-    csv = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_popular_article.csv', :headers => true) do |row|
-      columns = row.split(",")
-      if columns[0] == "Yes"
+    csv = CSV.foreach('/Users/Andrew_Wei/Downloads/master_grabber_popular_article.csv', :headers => true) do |row|
+
+      if row[0] == "Yes"
         is_published = true
       else
         is_published = false
       end
-      if columns[1] == "Problem"
+      if row[1] == "Problem"
         is_problem = true
       else
         is_problem = false
       end
-      building_block = columns[2]
-      building_block_substep = columns[3]
-      environmental_tag = columns[4]
-      environmental_subtag = columns[5]
-      world_region = columns[6]
-      title = columns[7]
-      author = columns[8]
-      news_source = columns[9]
-      date = columns[10]
-      summary = columns[11]
-      url = columns[12]
-      admin_notes = columns[13]
+      building_block = row[2]
+      building_block_substep = row[3]
+      environmental_tag = row[4]
+      environmental_subtag = row[5]
+      world_region = row[6]
+      title = row[7]
+      author = row[8]
+      news_source = row[9]
+      date = row[10]
+      summary = row[11]
+      url = row[12]
+      admin_notes = row[13]
       resource_type = "Popular Article"
 
     # Skipped atm: cognitive bia
@@ -72,30 +72,30 @@ require 'csv'
 
 
     # For the academic article tab
-    csv2 = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_academic_article.csv', :headers => true) do |row|
-      columns = row.split(",")
-      if columns[0] == "Yes"
+    csv2 = CSV.foreach('/Users/Andrew_Wei/Downloads/master_grabber_academic_article.csv', :headers => true) do |row|
+
+      if row[0] == "Yes"
         is_published = true
       else
         is_published = false
       end
-      if columns[1] == "Problem"
+      if row[1] == "Problem"
         is_problem = true
       else
         is_problem = false
       end
-      building_block = columns[2]
-      building_block_substep = columns[3]
-      environmental_tag = columns[4]
-      environmental_subtag = columns[5]
-      world_region = columns[6]
-      title = columns[7]
-      author = columns[8]
-      publisher = columns[9]
-      date = columns[10]
-      abstract = columns[11]
-      url = columns[12]
-      admin_notes = columns[13]
+      building_block = row[2]
+      building_block_substep = row[3]
+      environmental_tag = row[4]
+      environmental_subtag = row[5]
+      world_region = row[6]
+      title = row[7]
+      author = row[8]
+      publisher = row[9]
+      date = row[10]
+      abstract = row[11]
+      url = row[12]
+      admin_notes = row[13]
       resource_type = "Academic Article"
 
     # Skipped atm: cognitive bia
@@ -138,23 +138,23 @@ require 'csv'
 
 
     # For the video audio tab. BE SURE TO DELETE THE FIRST COLUMN (IT'S A WEIRD THING WITH OLD HEADERS)
-    csv3 = CSV.parse('/Users/Andrew_Wei/Downloads/master_grabber_video_audio.csv', :headers => true) do |row|
-      columns = row.split(",")
-      if columns[0] == "Problem"
+    csv3 = CSV.foreach('/Users/Andrew_Wei/Downloads/master_grabber_video_audio.csv', :headers => true) do |row|
+
+      if row[0] == "Problem"
         is_problem = true
       else
         is_problem = false
       end
-      building_block = columns[1]
-      environmental_tag = columns[2]
-      title = columns[3]
-      author = columns[4]
-      publisher = columns[5]
-      date = columns[6]
-      source = columns[7]
-      length = columns[8]
-      admin_notes = columns[9]
-      url = columns[10]
+      building_block = row[1]
+      environmental_tag = row[2]
+      title = row[3]
+      author = row[4]
+      publisher = row[5]
+      date = row[6]
+      source = row[7]
+      length = row[8]
+      admin_notes = row[9]
+      url = row[10]
       resource_type = "Video / Audio"
       building_block_substep = " "
       environmental_subtag = " "
