@@ -158,6 +158,7 @@ require 'csv'
       resource_type = "Video / Audio"
       building_block_substep = " "
       environmental_subtag = " "
+      is_published = true
 
 
     # Skipped atm: cognitive bia
@@ -183,7 +184,7 @@ require 'csv'
         new_resource_type.save
       end
 
-      new_resource = Resource.new(title: title, author: author, date: date, url: url, admin_notes: admin_notes, world_region_id: WorldRegion.where(name: world_region).id, publisher: publisher, resource_type_id: new_resource_type.id, source: source, length: length, is_problem: is_problem)
+      new_resource = Resource.new(is_published: is_published, title: title, author: author, date: date, url: url, admin_notes: admin_notes, world_region_id: WorldRegion.where(name: world_region).id, publisher: publisher, resource_type_id: new_resource_type.id, source: source, length: length, is_problem: is_problem)
       # "cognitive_bias_id"
       # "content"
       # "academic_citation"
