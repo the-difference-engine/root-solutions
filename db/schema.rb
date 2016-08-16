@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804042658) do
+ActiveRecord::Schema.define(version: 20160816023133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,9 @@ ActiveRecord::Schema.define(version: 20160804042658) do
     t.integer  "cognitive_bias_id"
     t.text     "content"
     t.text     "academic_citation"
+    t.string   "publisher"
+    t.string   "source"
+    t.string   "length"
   end
 
   create_table "resources_building_block_substeps", force: :cascade do |t|
