@@ -41,9 +41,9 @@ class ResourcesController < ApplicationController
   def export_resources
     @resources = Resource.all
     csv_string = CSV.generate do |csv|
-      csv << ["id", "world_region", "title", "author", "news_source", "date", "summary", "url", "notes"]
+      csv << ["id", "is_published", "is_problem", "world_region_id", "title", "author", "publisher", "abstract", "news_source_id", "date", "summary", "url", "source", "length", "notes", "resource type id", "cognitive bias id", "content", "academic citation"]
       @resources.each do |resource|
-        csv << [resource.id, resource.world_region, resource.title, resource.author, resource.news_source, resource.date, resource.summary, resource.url, resource.notes]
+        csv << [resource.id, resource.is_published, resource.is_problem, resource.world_region_id, resource.title, resource.author, resource.publisher, resource.abstract, resource.news_source_id, resource.date, resource.summary, resource.url, resource.source, resource.length, resource.admin_notes, resource.resource_type_id, resource.cognitive_bias_id, resource.content, resource.academic_citation]
       end
     end
     send_data csv_string,
