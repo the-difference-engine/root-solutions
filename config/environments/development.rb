@@ -27,7 +27,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -52,16 +52,18 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.com',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['GMAIL_ADDRESS'],
-    :password       => ENV['GMAIL_PASSWORD'],
-    :domain         => ENV['SMTP_DOMAIN'],
-    :enable_starttls_auto => true
-    }
+  config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { host: ENV['SMTP_DOMAIN'] }
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "example.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV['GMAIL_ADDRESS'],
+    password: ENV['GMAIL_PASSWORD']
+  }
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
 end

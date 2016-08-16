@@ -5,7 +5,9 @@ class AdminsController < ApplicationController
 
   def create
     new_user = User.new(email: params[:email], password: params[:password])
-    new_user.save
+    if new_user.save
+      UserMailer.welcome_email(new_user).deliver_later
+    end
     redirect_to "/"
   end
 end
