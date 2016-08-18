@@ -42,12 +42,6 @@ ActiveRecord::Schema.define(version: 20160816034255) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cognitive_bia", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "environmental_subtags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",           null: false
@@ -90,9 +84,6 @@ ActiveRecord::Schema.define(version: 20160816034255) do
     t.integer  "cognitive_bias_id"
     t.text     "content"
     t.text     "academic_citation"
-    t.string   "publisher"
-    t.string   "source"
-    t.string   "length"
   end
 
   create_table "resources_building_block_substeps", force: :cascade do |t|
