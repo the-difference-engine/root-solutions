@@ -90,6 +90,9 @@ ActiveRecord::Schema.define(version: 20160818132440) do
     t.integer  "cognitive_bium_id"
     t.text     "content"
     t.text     "academic_citation"
+    t.string   "publisher"
+    t.string   "source"
+    t.string   "length"
   end
 
   create_table "resources_building_block_substeps", force: :cascade do |t|
