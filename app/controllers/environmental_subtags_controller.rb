@@ -69,6 +69,6 @@ class EnvironmentalSubtagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def environmental_subtag_params
-      params.require(:environmental_subtag).permit(:name)
+      params.require(:environmental_subtag).permit(:name, :environmental_tag_id)
     end
 end
