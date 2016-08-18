@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cognitive_bia
   resources :building_blocks
   resources :building_block_substeps
   resources :environmental_tags
