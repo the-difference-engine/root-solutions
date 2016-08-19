@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Environmental Subtags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @environmental_subtags.each do |environmental_subtag| %>
+      <tr>
+        <td><%= environmental_subtag.name %></td>
+        <td><%= link_to 'Show', environmental_subtag %></td>
+        <td><%= link_to 'Edit', edit_environmental_subtag_path(environmental_subtag) %></td>
+        <td><%= link_to 'Destroy', environmental_subtag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Environmental Subtag', new_environmental_subtag_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @building_block_substep.name %>
+</p>
+
+<p>
+  <strong>Building Block:</strong>
+  <%= @building_block_substep.building_block.name %>
+</p>
+
+<%= link_to 'Edit', edit_building_block_substep_path(@building_block_substep) %> |
+<%= link_to 'Back', building_block_substeps_path %>

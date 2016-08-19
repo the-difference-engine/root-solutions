@@ -1,0 +1,22 @@
+<%= form_for(world_region) do |f| %>
+  <% if world_region.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(world_region.errors.count, "error") %> prohibited this world_region from being saved:</h2>
+
+      <ul>
+      <% world_region.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

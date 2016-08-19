@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="h3">Building Block Substeps</h1>
+
+<table class="table-hover table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Building block</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @building_block_substeps.each do |building_block_substep| %>
+      <tr>
+        <td><%= link_to "#{building_block_substep.name}", building_block_substep %></td>
+        <td><%= building_block_substep.building_block.name %></td>
+        <td><%= link_to 'Edit', edit_building_block_substep_path(building_block_substep) %></td>
+        <td><%= link_to 'Delete', building_block_substep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New', new_building_block_substep_path, class:"btn-primary btn" %>

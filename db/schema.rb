@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816023133) do
+ActiveRecord::Schema.define(version: 20160818132440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20160816023133) do
 
   create_table "environmental_subtags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "tag_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "environmental_tag_id"
   end
 
   create_table "environmental_tags", force: :cascade do |t|
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20160816023133) do
     t.integer  "resource_type_id"
     t.boolean  "is_published",      default: false
     t.boolean  "is_problem"
-    t.integer  "cognitive_bias_id"
+    t.integer  "cognitive_bium_id"
     t.text     "content"
     t.text     "academic_citation"
     t.string   "publisher"

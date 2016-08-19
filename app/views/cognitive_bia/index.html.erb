@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cognitive Bia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cognitive_bia.each do |cognitive_bium| %>
+      <tr>
+        <td><%= cognitive_bium.name %></td>
+        <td><%= link_to 'Show', cognitive_bium %></td>
+        <td><%= link_to 'Edit', edit_cognitive_bium_path(cognitive_bium) %></td>
+        <td><%= link_to 'Destroy', cognitive_bium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cognitive Bium', new_cognitive_bium_path %>

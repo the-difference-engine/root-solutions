@@ -1,0 +1,30 @@
+<%= form_for(environmental_subtag) do |f| %>
+  <% if environmental_subtag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(environmental_subtag.errors.count, "error") %> prohibited this environmental_subtag from being saved:</h2>
+
+      <ul>
+      <% environmental_subtag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="dropdown"> 
+    <%= f.label :environmental_tag_id %> 
+    <%= f.collection_select :environmental_tag_id, EnvironmentalTag.all, :id, :name, :prompt => "choose" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+  
+
+

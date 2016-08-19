@@ -1,0 +1,27 @@
+<%= form_for(building_block_substep, :html => { :role => 'form'}) do |f| %>
+  <% if building_block_substep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(building_block_substep.errors.count, "error") %> prohibited this building_block_substep from being saved:</h2>
+
+      <ul>
+      <% building_block_substep.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :building_block_id, "Building Block" %>
+    <%= f.collection_select :building_block_id, BuildingBlock.all, :id, :name, {prompt: 'Select an option'}, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn-primary btn"  %>
+  </div>
+<% end %>
