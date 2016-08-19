@@ -1,4 +1,4 @@
-<%= form_for(environmental_tag) do |f| %>
+<%= form_for(environmental_tag, :html => { :role => 'form'}) do |f| %>
   <% if environmental_tag.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(environmental_tag.errors.count, "error") %> prohibited this environmental_tag from being saved:</h2>
@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn-primary btn"  %>
   </div>
 <% end %>
