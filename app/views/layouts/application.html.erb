@@ -11,8 +11,15 @@
   <body>
 
   <%= render "layouts/navbar" %>
-  <div class="container">
-    <%= yield %>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-3">
+      <%= render "layouts/sidebar" %>
+    </div>
+    <div class="col-md-9">
+      <%= yield %>
+    </div>
+    </div>
   </div>
   </body>
 </html>
