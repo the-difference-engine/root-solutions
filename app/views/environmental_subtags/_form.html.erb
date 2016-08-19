@@ -14,15 +14,17 @@
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%# f.collection_select :environmental_tag_id, EnvironmentalTag.all, :id, :name %>
   </div>
 
-  <div class="field">
-    <%= f.label :environmental_tag_id %>
-    <%= f.text_field :environmental_tag_id %>
+  <div class="dropdown"> 
+    <%= f.label :environmental_tag_id %> 
+    <%= f.collection_select :environmental_tag_id, EnvironmentalTag.all, :id, :name, :prompt => "choose" %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+  
+
+
