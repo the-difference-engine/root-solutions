@@ -9,13 +9,8 @@
   </head>
 
   <body>
-  <% if current_user %>
-    <%= link_to "Sign out", "/users/sign_out", method: :delete %>
-    <%= link_to "Add admin", "/admins/new" %>
-  <% else %>
-    <%= link_to "Sign up", "/users/sign_up" %>
-    <%= link_to "Sign in", "/users/sign_in" %>
-  <% end %>
+
+  <%= render "layouts/navbar" %>
   <div class="container">
     <%= yield %>
   </div>
