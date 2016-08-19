@@ -7,13 +7,12 @@ Rails.application.routes.draw do
   resources :world_regions
   resources :resource_types
   devise_for :users
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'homes#index'
 
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
   resources :resources
-  resources :tags
   resources :attachments
 
   get '/admins/new', to: 'admins#new'
