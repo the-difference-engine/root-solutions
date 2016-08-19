@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= f.label :building_block_id, "Building Block" %>
-    <%= f.collection_select :building_block_id, BuildingBlock.all, :id, :name, {prompt: 'Select an option'}, class: "form-control" %>
+    <%= f.collection_select :building_block_id, BuildingBlock.all, :id, :name, {prompt: 'Choose'}, class: "form-control" %>
   </div>
 
   <div class="actions">

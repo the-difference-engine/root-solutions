@@ -1,4 +1,4 @@
-<%= form_for(environmental_subtag) do |f| %>
+<%= form_for(environmental_subtag, :html => { :role => 'form'}) do |f| %>
   <% if environmental_subtag.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(environmental_subtag.errors.count, "error") %> prohibited this environmental_subtag from being saved:</h2>
@@ -11,20 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="dropdown"> 
-    <%= f.label :environmental_tag_id %> 
-    <%= f.collection_select :environmental_tag_id, EnvironmentalTag.all, :id, :name, :prompt => "choose" %>
+  <div class="form-group">
+    <%= f.label :environmental_tag_id, 'Environmental Tag' %>
+    <%= f.collection_select :environmental_tag_id, EnvironmentalTag.all, :id, :name, {prompt: 'Choose'}, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn-primary btn"  %>
   </div>
 <% end %>
-  
-
-
