@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :environmental_subtags
   resources :world_regions
   resources :resource_types
-  devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'homes#index'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/admins/new', to: 'admins#new'
   post '/admins', to: 'admins#create'
+  
 
   namespace :api do
     namespace :v1 do
