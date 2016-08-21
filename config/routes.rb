@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
-  resources :cognitive_bia
-  resources :building_blocks
-  resources :building_block_substeps
+  resources :cognitive_bia do
+    collection do
+      post :import
+    end
+  end
+  resources :building_blocks do
+    collection do
+      post :import
+    end
+  end
+  resources :building_block_substeps do
+    collection do
+      post :import
+    end
+  end
   resources :environmental_tags do
     collection do
       post :import
@@ -12,8 +24,16 @@ Rails.application.routes.draw do
       post :import
     end
   end
-  resources :world_regions
-  resources :resource_types
+  resources :world_regions do
+    collection do
+      post :import
+    end
+  end
+  resources :resource_types do
+    collection do
+      post :import
+    end
+  end
   devise_for :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
