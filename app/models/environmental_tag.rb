@@ -1,7 +1,7 @@
 require 'csv'
 
 class EnvironmentalTag < ApplicationRecord
-  has_many :environmental_subtags
+  has_many :environmental_subtags, dependent: :destroy
 
   def self.to_csv(options = {})
     desired_columns = ["id", "name"]
