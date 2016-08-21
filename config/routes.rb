@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :cognitive_bia
   resources :building_blocks
   resources :building_block_substeps
-  resources :environmental_tags
+  resources :environmental_tags do
+    collection do
+      post :import
+    end
+  end
   resources :environmental_subtags
   resources :world_regions
   resources :resource_types
