@@ -7,7 +7,11 @@ Rails.application.routes.draw do
       post :import
     end
   end
-  resources :environmental_subtags
+  resources :environmental_subtags do
+    collection do
+      post :import
+    end
+  end
   resources :world_regions
   resources :resource_types
   devise_for :users
