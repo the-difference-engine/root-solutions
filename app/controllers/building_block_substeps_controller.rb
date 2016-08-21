@@ -56,7 +56,7 @@ class BuildingBlockSubstepsController < ApplicationController
   def destroy
     @building_block_substep.destroy
     respond_to do |format|
-      format.html { redirect_to building_block_substeps_url, notice: 'Building block substep was successfully destroyed.' }
+      format.html { redirect_to building_block_substeps_path, notice: 'Building block substep was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

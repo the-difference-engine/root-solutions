@@ -56,7 +56,7 @@ class WorldRegionsController < ApplicationController
   def destroy
     @world_region.destroy
     respond_to do |format|
-      format.html { redirect_to world_regions_url, notice: 'World region was successfully destroyed.' }
+      format.html { redirect_to world_regions_path, notice: 'World region was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

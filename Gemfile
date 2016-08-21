@@ -20,9 +20,7 @@ gem 'rmagick'
 
 gem 'fog'
 
-gem 'bootstrap-sass'
 
-gem 'bootstrap'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

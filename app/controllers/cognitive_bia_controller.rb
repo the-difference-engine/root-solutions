@@ -56,7 +56,7 @@ class CognitiveBiaController < ApplicationController
   def destroy
     @cognitive_bium.destroy
     respond_to do |format|
-      format.html { redirect_to cognitive_bia_url, notice: 'Cognitive bium was successfully destroyed.' }
+      format.html { redirect_to cognitive_bia_path, notice: 'Cognitive bium was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

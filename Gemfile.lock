@@ -45,15 +45,7 @@ GEM
       sprockets (~> 3.0)
       tilt
     arel (7.0.0)
-    autoprefixer-rails (6.3.6.2)
-      execjs
     bcrypt (3.1.11)
-    bootstrap (4.0.0.alpha3.1)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -388,8 +380,6 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
-  bootstrap
-  bootstrap-sass
   byebug
   capybara (= 2.7.1)
   carrierwave

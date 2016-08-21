@@ -56,7 +56,7 @@ class EnvironmentalTagsController < ApplicationController
   def destroy
     @environmental_tag.destroy
     respond_to do |format|
-      format.html { redirect_to environmental_tags_url, notice: 'Environmental tag was successfully destroyed.' }
+      format.html { redirect_to environmental_tags_path, notice: 'Environmental tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
