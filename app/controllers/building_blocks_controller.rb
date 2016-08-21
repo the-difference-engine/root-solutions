@@ -61,6 +61,11 @@ class BuildingBlocksController < ApplicationController
     end
   end
 
+  def import
+    BuildingBlock.import(params[:file])
+    redirect_to building_blocks_path, notice: 'Building Blocks imported.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_building_block
