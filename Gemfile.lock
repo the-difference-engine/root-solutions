@@ -274,10 +274,12 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
-    pry (0.10.3)
+    pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.4.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -411,7 +413,7 @@ DEPENDENCIES
   pg (~> 0.18)
   phantomjs
   poltergeist
-  pry
+  pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0)
   rmagick

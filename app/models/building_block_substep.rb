@@ -6,7 +6,7 @@ class BuildingBlockSubstep < ApplicationRecord
   has_many :resources, through: :resources_building_block_substeps
 
   def self.to_csv(options = {})
-    desired_columns = ["id", "name", "building_block_id"]
+    desired_columns = ["name", "building_block_id"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |building_block_substep|
@@ -20,7 +20,7 @@ class BuildingBlockSubstep < ApplicationRecord
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      building_block_substep = find_by(id: row["id"]) || new
+      building_block_substep = find_by(name: row["name"]) || new
       building_block_substep.attributes = row.to_hash
       building_block_substep.save!
     end

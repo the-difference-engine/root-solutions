@@ -50,7 +50,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem "rspec-rails", "3.5.0"
   gem "factory_girl_rails", "~> 4.0"
-  gem 'pry'
+  gem 'pry-rails'
   gem 'dotenv-rails'
   gem 'shoulda-matchers', '~> 3.1'
 
