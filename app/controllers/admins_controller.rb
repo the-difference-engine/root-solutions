@@ -10,4 +10,7 @@ class AdminsController < ApplicationController
     end
     redirect_to "/"
   end
+  def dashboard
+    
+  end
 end

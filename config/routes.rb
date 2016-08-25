@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'homes#index'
 
+  get '/dashboard', to: 'admins#dashboard'
+#SAQ to do: create route for admin/dashbaord to admins/dashboard.html.erb
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
   resources :resources
   resources :attachments
