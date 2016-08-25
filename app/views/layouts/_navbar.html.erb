@@ -11,6 +11,9 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+      <% if !current_user %>
+      <li><%= link_to "login", "/login" %></li>
+      <% end %>
               <% if current_user %>
                 <li><%= link_to "Sign out", "/logout", method: :delete %></li>
                 <li><%= link_to "Add admin", "/admins/new" %></li>
