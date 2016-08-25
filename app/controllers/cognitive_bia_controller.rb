@@ -1,4 +1,5 @@
 class CognitiveBiaController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cognitive_bium, only: [:show, :edit, :update, :destroy]
 
   # GET /cognitive_bia

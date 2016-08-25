@@ -1,4 +1,5 @@
 class BuildingBlocksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_building_block, only: [:show, :edit, :update, :destroy]
 
   # GET /building_block

@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  before_action :authenticate_user!
   def new
 
   end
@@ -11,6 +12,9 @@ class AdminsController < ApplicationController
     redirect_to "/"
   end
   def dashboard
+    if !current_user
+      redirect_to "/login"
+    end
     
   end
 end
