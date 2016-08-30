@@ -25,3 +25,14 @@
 <br>
 
 <%= link_to 'Add New', new_environmental_tag_path, class:"btn-primary btn" %>
+
+<h2 class="h3">Import Environmental Tags</h2>
+<%= form_tag import_environmental_tags_path, multipart: true do %>
+  <div class="btn btn-primary btn-file">
+    Choose File
+    <%= file_field_tag :file %>
+  </div>
+  <input type="text" id="chosen-file" class="form-control" readonly>
+  <br><br>
+  <%= submit_tag "Import", class:"btn-primary btn" %>
+<% end %>

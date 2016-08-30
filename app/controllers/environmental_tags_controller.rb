@@ -62,6 +62,11 @@ class EnvironmentalTagsController < ApplicationController
     end
   end
 
+  def import
+    EnvironmentalTag.import(params[:file])
+    redirect_to environmental_tags_path, notice: 'Environmental Tags imported.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_environmental_tag

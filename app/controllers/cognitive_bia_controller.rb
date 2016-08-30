@@ -62,6 +62,11 @@ class CognitiveBiaController < ApplicationController
     end
   end
 
+  def import
+    CognitiveBium.import(params[:file])
+    redirect_to cognitive_bia_path, notice: 'Cognitive Bia imported.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cognitive_bium
