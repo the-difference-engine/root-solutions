@@ -1,4 +1,5 @@
 class BuildingBlockSubstepsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_building_block_substep, only: [:show, :edit, :update, :destroy]
 
   # GET /building_block_substeps
