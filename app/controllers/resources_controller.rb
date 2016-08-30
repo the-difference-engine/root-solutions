@@ -18,11 +18,6 @@ class ResourcesController < ApplicationController
     @resource.save
     redirect_to @resource
   end
-  def destroy
-    @resource = Resource.find_by(id: params[:id])
-    @resource.destroy
-    redirect_to "/resources"
-  end
 
   def edit
     @resource = Resource.find_by(id: params[:id])
@@ -51,7 +46,7 @@ class ResourcesController < ApplicationController
     :type => 'text/csv; charset=iso-8859-1; header=present',
     :disposition => "attachment; filename=users.csv"
   end
-  
+
   def destroy
     @resource = Resource.find_by(id: params[:id])
     @resource.destroy
@@ -61,7 +56,8 @@ class ResourcesController < ApplicationController
 
 private
   def resources_params
-    params.require(:resource).permit(:world_region, :title, :author,
-    :news_source, :date, :summary, :url, :notes)
+    params.require(:resource).permit(:title, :author, :date, :abstract, :url,
+    :admin_notes, :world_region_id, :news_source_id, :resource_type_id, :is_published,
+    :is_problem, :cognitive_bium_id, :content, :academic_citation, :publisher, :source, :length)
   end
 end

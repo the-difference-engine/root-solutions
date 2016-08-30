@@ -1,11 +1,11 @@
 <h1><%= @resource.title %></h1>
-<p>World region: <%= @resource.world_region %></p>
+<p>World region: <%= @resource.world_region.name %></p>
 <p>Title: <%= @resource.title %></p>
 <p>Author: <%= @resource.author %></p>
-<p>News Source: <%= @resource.news_source %></p>
+<p>News Source: <%= @resource.news_source.name %></p>
 <p>Date: <%= @resource.date %></p>
-<p>Summary: <%= @resource.summary %></p>
+<p>Content: <%= @resource.content %></p>
 <p>Url: <%= @resource.url %></p>
-<p>Notes: <%= @resource.notes %></p>
+<p>Notes: <%= @resource.admin_notes %></p>
 
 <%= link_to "All resources", resources_path %>
