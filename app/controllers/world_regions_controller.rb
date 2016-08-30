@@ -1,4 +1,5 @@
 class WorldRegionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_world_region, only: [:show, :edit, :update, :destroy]
 
   # GET /world_regions

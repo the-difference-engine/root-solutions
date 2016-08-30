@@ -2,15 +2,17 @@
     <div class="col-md-12">
       <h2 class="h4">Go to:</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="<%= resources_path %>">Resources</a></li>
-        <li><a href="<%= resource_types_path %>">Resource Types</a></li>
-        <li><a href="<%= world_regions_path %>">World Regions</a></li>
-        <li><a href="<%= cognitive_bia_path %>">Cognitive Bias</a></li>
-        <li><a href="<%= building_blocks_path %>">Building Blocks</a></li>
-        <li><a href="<%= building_block_substeps_path %>">Building Block Substeps</a></li>
-        <li><a href="<%= environmental_tags_path %>">Environmental Tags</a></li>
-        <li><a href="<%= environmental_subtags_path %>">Environmental Subtags</a></li>
-        <li><a href="#">Users</a></li>
+        <li class='<% if controller.controller_name == "resources" %> active <% end %>'><a href="<%= resources_path %>">Resources</a></li>
+        <li class='<% if controller.controller_name == "resource_types" %> active <% end %>'><a href="<%= resource_types_path %>">Resource Types</a></li>
+        <li class='<% if controller.controller_name == "world_regions" %> active <% end %>'><a href="<%= world_regions_path %>">World Regions</a></li>
+        <li class='<% if controller.controller_name == "cognitive_bia" %> active <% end %>'><a href="<%= cognitive_bia_path %>">Cognitive Bias</a></li>
+        <li class='<% if controller.controller_name == "building_blocks" %> active <% end %>'><a href="<%= building_blocks_path %>">Building Blocks</a></li>
+        <li class='<% if controller.controller_name == "building_block_substeps" %> active <% end %>'><a href="<%= building_block_substeps_path %>">Building Block Substeps</a></li>
+        <li class='<% if controller.controller_name == "environmental_tags" %> active <% end %>'><a href="<%= environmental_tags_path %>">Environmental Tags</a></li>
+        <li class='<% if controller.controller_name == "environmental_subtags" %> active <% end %>'><a href="<%= environmental_subtags_path %>">Environmental Subtags</a></li>
+        <li class='<% if controller.controller_name == "admins" %> active <% end %>'><a href="#">Users</a></li>
       </ul>
     </div>
 </div>
+
+

@@ -1,4 +1,5 @@
 class EnvironmentalTagsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_environmental_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /environmental_tags
