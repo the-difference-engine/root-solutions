@@ -1,7 +1,14 @@
 class AdminsController < ApplicationController
   before_action :authenticate_user!
-  def new
+  def index
+    @users = User.all
+  end
 
+  def new
+    @user = User.new
+  end
+  def show
+    @user = User.find_by(id: params[:id])
   end
 
   def create
@@ -11,6 +18,19 @@ class AdminsController < ApplicationController
     end
     redirect_to "/"
   end
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update_attributes(email: params[:email], password: params[:password])
+  end
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy
+    redirect_to "/users"
+  end
+
   def dashboard
     if !current_user
       redirect_to "/login"

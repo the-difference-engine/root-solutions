@@ -39,13 +39,17 @@ Rails.application.routes.draw do
   get '/', to: 'homes#index'
 
   get '/dashboard', to: 'admins#dashboard'
-#SAQ to do: create route for admin/dashbaord to admins/dashboard.html.erb
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
   resources :resources
   resources :attachments
 
+  get '/admins', to: 'admins#index'
   get '/admins/new', to: 'admins#new'
+  get '/admins/:id', to: 'admins#show'
   post '/admins', to: 'admins#create'
+  get '/admins/:id/edit', to: 'admins#edit'
+  patch '/admins/:id', to: 'admins#update'
+  delete '/admins/:id', to: 'admins#destroy'
 
 
   namespace :api do
