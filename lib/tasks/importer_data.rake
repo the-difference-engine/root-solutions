@@ -29,7 +29,7 @@ namespace :importer_data do
       resource.resource_type_id = ResourceType.find_by(name:'Academic Article').id
       CognitiveBium.create!(name:'N/A') if CognitiveBium.find_by(name:'N/A').nil?
       resource.cognitive_bium_id = CognitiveBium.find_by(name:'N/A').id
-      resource.save!
+      resource.save
     end
   end
 
