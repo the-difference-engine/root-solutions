@@ -1,36 +1,41 @@
-<div ng-app="adminpanel-app" ng-controller="resourcesCtrl" ng-init="resources_setup()">
-<h1 class="h3">All Resources</h1>
+
+ 
+<p id="notice"><%= notice %></p>
+
+<h1 class="h3">Resources</h1>
+
 <table class="table-hover table">
-  <tr>
-    <th>World region</th>
-    <th>Title</th>
-    <th>Author</th>
-    <th>News source</th>
-    <th>Date</th>
-    <th>Summary</th>
-    <th>Url</th>
-    <th>Notes</th>
-    <td colspan="2"></td>
-  </tr>
-  <tr ng-repeat="resource in resources">
-    <td>{{ resource.world_region }}</td>
-    <td><a href="/resources/{{ resource.id }}">{{ resource.title }}</a></td>
-    <td>{{ resource.author }}</td>
-    <td>{{ resource.news_source }}</td>
-    <td>{{ resource.date }}</td>
-    <td>{{ resource.summary }}</td>
-    <td>{{ resource.url }}</td>
-    <td>{{ resource.notes }}</td>
-    <td><a href="/resources/{{ resource.id }}/edit">Edit</a></td>
-    <td><a href="/resources/{{ resource.id }}" data-method="delete">Delete</a></td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>World Region ID</th>
+      <th>Author</th>
+      <th>News Source ID</th>
+      <th>Date</th>
+      <th>Content</th>
+      <th>URL</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= link_to "#{resource.title}", resource %></td>
+        <td><%= resource.world_region_id %></td>
+        <td><%= resource.author %></td>
+        <td><%= resource.news_source_id %></td>
+        <td><%= resource.date %></td>
+        <td><%= resource.content %></td>
+        <td><%= resource.url %></td>
+        <td><%= resource.admin_notes %></td>
+        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<br>
 
-<%= link_to "New Resource", new_resource_path %>
-
-<br />
-<%= link_to "Export Resources", export_resources_path %>
-
-</div>
+<%= link_to 'Add New', new_resource_path, class:"btn-primary btn" %>

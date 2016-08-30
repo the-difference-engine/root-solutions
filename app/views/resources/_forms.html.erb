@@ -1,46 +1,90 @@
 <%= form_for(@resource) do |f| %>
-  <p>
-    <%= f.label :world_region %><br>
-    <%= f.text_field :world_region %>
-  </p>
+<div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <div class="form-group">
+    <%= f.label :author %>
+    <%= f.text_field :author, class:"form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </p>
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date, class:"form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :news_source %><br>
-    <%= f.text_field :news_source %>
-  </p>
+  <div class="form-group">
+    <%= f.label :abstract %>
+    <%= f.text_area :abstract, class:"form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :date %><br>
-    <%= f.date_field :date %>
-  </p>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class:"form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :summary %><br>
-    <%= f.text_area :summary %>
-  </p>
+  <div class="form-group">
+    <%= f.label :admin_notes %>
+    <%= f.text_area :admin_notes, class:"form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </p>
+  <div class="form-group">
+    <%= f.label :world_region_id, "World Regions" %>
+    <%= f.collection_select :world_region_id, WorldRegion.all, :id, :name, {prompt: 'Choose'}, class: "form-control" %>
+  </div>
 
-  <p>
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </p>
-  
+  <div class="form-group">
+    <%= f.label :news_source_id, "News Source" %>
+    <%= f.collection_select :news_source_id, NewsSource.all, :id, :name, {prompt: 'Choose'}, class: "form-control" %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group">
+    <%= f.label :resource_type_id, "Resource Type" %>
+    <%= f.collection_select :resource_type_id, ResourceType.all, :id, :name, {prompt: 'Choose'}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box :is_published %>
+    <%= f.label :is_published, "Is published?" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box :is_problem %>
+    <%= f.label :is_problem, "Is problem?" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cognitive_bium_id, "Cognitive Bia" %>
+    <%= f.collection_select :cognitive_bium_id, CognitiveBium.all, :id, :name, {prompt: 'Choose'}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :admin_notes, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :academic_citation %>
+    <%= f.text_field :academic_citation, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :source %>
+    <%= f.text_field :source, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :length %>
+    <%= f.text_field :length, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn-primary btn"  %>
+  </div>
 <% end %>
