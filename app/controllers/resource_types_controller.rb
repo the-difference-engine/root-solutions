@@ -61,6 +61,11 @@ class ResourceTypesController < ApplicationController
     end
   end
 
+  def import
+    ResourceType.import(params[:file])
+    redirect_to resource_types_path, notice: 'Resource Types imported.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_resource_type
