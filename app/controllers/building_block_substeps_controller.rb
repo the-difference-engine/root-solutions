@@ -61,6 +61,11 @@ class BuildingBlockSubstepsController < ApplicationController
     end
   end
 
+  def import
+    BuildingBlockSubstep.import(params[:file])
+    redirect_to building_block_substeps_path, notice: 'Building Block Substeps imported.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_building_block_substep

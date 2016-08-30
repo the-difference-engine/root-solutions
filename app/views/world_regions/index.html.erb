@@ -24,3 +24,14 @@
 <br>
 
 <%= link_to 'Add New', new_world_region_path, class:"btn-primary btn" %>
+
+<h2 class="h3">Import World Regions</h2>
+<%= form_tag import_world_regions_path, multipart: true do %>
+  <div class="btn btn-primary btn-file">
+    Choose File
+    <%= file_field_tag :file %>
+  </div>
+  <input type="text" id="chosen-file" class="form-control" readonly>
+  <br><br>
+  <%= submit_tag "Import", class:"btn-primary btn" %>
+<% end %>
