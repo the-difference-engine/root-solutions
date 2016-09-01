@@ -1,0 +1,15 @@
+<h1>Edit user</h1>
+<%= form_tag  "/admins/#{@user.id}", method: :patch do%>
+<div>
+  <%= label_tag :user_email %>
+  <%= text_field_tag :user_email, "#{@user.email}" %>
+</div>
+<div>
+  <%= label_tag :user_password %>
+  <%= password_field_tag :user_password, "#{@user.password}" %>
+</div>
+
+<%= submit_tag "Update user" %>
+<% end %>
+
+<%= link_to "Delete", "/admins/#{@user.id}", method: :delete %>

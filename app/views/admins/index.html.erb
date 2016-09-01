@@ -1,0 +1,12 @@
+<% @users.first %>
+<% if @users %>
+<ul>
+  <% @users.each do |user|%>
+  <li><%= user.email %> <a href="/admins/<%= user.id %>/edit">Edit</a></li>
+
+  <% end  %>
+  
+</ul>
+ <% else  %>
+  <p>no users found</p>
+<% end  %>
