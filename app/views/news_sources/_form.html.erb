@@ -1,0 +1,22 @@
+<%= form_for(news_source) do |f| %>
+  <% if news_source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(news_source.errors.count, "error") %> prohibited this news_source from being saved:</h2>
+
+      <ul>
+      <% news_source.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn-primary btn"%>
+  </div>
+<% end %>
