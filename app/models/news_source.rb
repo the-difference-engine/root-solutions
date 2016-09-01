@@ -1,3 +1,3 @@
-class NewsSource < ApplicationRecord
+  class NewsSource < ApplicationRecord
   has_many :resources
 end

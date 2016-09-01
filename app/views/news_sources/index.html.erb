@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="h3">News Sources</h1>
+
+<table class="table-hover table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @news_sources.each do |news_source| %>
+      <tr>
+        <td><%= link_to "#{news_source.name}", news_source %></td>
+        <td><%= link_to 'Edit', edit_news_source_path(news_source) %></td>
+        <td><%= link_to 'Delete', news_source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Add New', new_news_source_path, class:"btn-primary btn" %>
+
+
