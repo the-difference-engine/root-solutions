@@ -1,5 +1,5 @@
 class Resource < ApplicationRecord
-
+  searchkick
   has_many :building_block_substeps, through: :resources_building_block_substeps
   has_many :resources_building_block_substeps
 

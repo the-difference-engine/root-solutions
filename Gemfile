@@ -42,6 +42,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker', '~> 1.6'
 gem 'angular-rails-templates'
 gem 'roo'
+gem 'searchkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
