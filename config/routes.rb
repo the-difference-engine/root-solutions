@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 #SAQ to do: create route for admin/dashbaord to admins/dashboard.html.erb
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
   resources :resources
+  get '/search_results', to: 'resources#search'
+  
   resources :attachments
 
   get '/admins/new', to: 'admins#new'
