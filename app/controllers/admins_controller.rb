@@ -23,14 +23,14 @@ class AdminsController < ApplicationController
   end
   def update
     @user = User.find_by(id: params[:id])
-    @user.update_attributes(email: params[:email], password: params[:password])
+    @user.update_attributes(email: params[:user_email], password: params[:user_password])
+    redirect_to "/admins/#{@user.id}"
   end
   def destroy
     @user = User.find_by(id: params[:id])
     @user.destroy
-    redirect_to "/users"
+    redirect_to "/admins"
   end
-
   def dashboard
     if !current_user
       redirect_to "/login"
