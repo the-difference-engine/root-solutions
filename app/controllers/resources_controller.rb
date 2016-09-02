@@ -1,11 +1,6 @@
 require 'csv'
 class ResourcesController < ApplicationController
 
-  def search
-    search = params[:q]
-    @resources = Resource.search "#{search}"
-  end
-
   def index
     @resources = Resource.all
   end

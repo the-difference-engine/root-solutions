@@ -10,7 +10,7 @@
       <a class="navbar-brand" href="#">Root Solutions</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     <%= form_tag '/search_results', class: "navbar-form navbar-left", role: "search",method: :get do %>
+      <%= form_tag '/search', class: "navbar-form navbar-left", role: "search",method: :get do %>
         <div class='form-group'>
           <%= text_field_tag :q, nil, class: "form-control"  %>
         </div>
