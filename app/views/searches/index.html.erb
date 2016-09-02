@@ -1,0 +1,77 @@
+<h1 class="h3"><%= @resources.size %> Results for <%= params[:q] %></h1>
+
+<%= form_tag '/search', class: "navbar-form navbar-left", role: "search",method: :get do %>
+  <div class='form-group'>
+    <%= label_tag :q, "Search by keyword" %><br>
+    <%= text_field_tag :q, "#{params[:q]}", class: "form-control"  %>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
+  </div>
+  <h2 class="h4">Explore by field</h2>
+  <div class='form-group'>
+    <%= label_tag :environmental_tags, "Environmental Tags" %><br>
+    <%= select_tag :environmental_tags, options_from_collection_for_select(@environmental_tags, 'id', 'name'), multiple: true, class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :environmental_subtags, "Environmental Subtags" %><br>
+    <%= select_tag :environmental_subtags, options_from_collection_for_select(@environmental_subtags, 'id', 'name'), multiple: true, class: "form-control" %>
+  </div>
+  <br>
+  <div class='form-group'>
+    <%= label_tag :building_block, "Behavior Building Block" %><br>
+    <%= select_tag :building_block, options_from_collection_for_select(@building_blocks, 'id', 'name'), multiple: true, class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :building_block_substeps, "Building Block Substeps" %><br>
+    <%= select_tag :building_block_substeps, options_from_collection_for_select(@building_block_substeps, 'id', 'name'), multiple: true, class: "form-control" %>
+  </div>
+  <br>
+  <div class='form-group'>
+    <%= label_tag :news_source, "News Source" %><br>
+    <%= select_tag :news_source, options_from_collection_for_select(@news_sources, 'id', 'name'), class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :world_region, "Region" %><br>
+    <%= select_tag :world_region, options_from_collection_for_select(@world_regions, 'id', 'name'), class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :resource_type, "Resource Type" %><br>
+    <%= select_tag :resource_type, options_from_collection_for_select(@resource_types, 'id', 'name'), class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :cognitive_bium, "Cognitive Bium" %><br>
+    <%= select_tag :cognitive_bium, options_from_collection_for_select(@cognitive_bia, 'id', 'name'), class: "form-control" %>
+  </div>
+<% end %>
+
+
+<% if @resources.any? %>
+<table class="table-hover table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>World Region</th>
+      <th>Author</th>
+      <th>News Source</th>
+      <th>Date</th>
+      <th>Content</th>
+      <th>URL</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= link_to "#{resource.title}", resource %></td>
+        <td><%= resource.world_region.name %></td>
+        <td><%= resource.author %></td>
+        <td><%= resource.news_source.name %></td>
+        <td><%= resource.date %></td>
+        <td><%= resource.content %></td>
+        <td><%= resource.url %></td>
+        <td><%= resource.admin_notes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
