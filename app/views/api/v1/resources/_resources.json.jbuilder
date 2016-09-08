@@ -11,7 +11,7 @@ json.is_published resource.is_published
 json.is_problem resource.is_problem
 json.world_region WorldRegion.find_by(id: resource.world_region_id).name
 json.news_source NewsSource.find_by(id: resource.news_source_id).name
-json.resource_type ResourceType.find_by(id: resource.resource_type_id).namegit 
+json.resource_type ResourceType.find_by(id: resource.resource_type_id).name
 json.cognitive_bium CognitiveBium.find_by(id: resource.cognitive_bium_id).name
 json.academic_citation resource.academic_citation
 json.source resource.source
