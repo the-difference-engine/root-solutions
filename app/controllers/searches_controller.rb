@@ -11,6 +11,10 @@ class SearchesController < ApplicationController
     @environmental_tags = EnvironmentalTag.all
     @building_block_substeps = BuildingBlockSubstep.all
     @environmental_subtags = EnvironmentalSubtag.all
+    respond_to do |format|
+     format.html
+     format.json { render json: @resources }
+    end
   end
 
 end

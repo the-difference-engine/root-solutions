@@ -1,3 +1,20 @@
+<div ng-app="adminpanel-app" ng-controller="searchCtrl" ng-init="search_setup()">
+<form ng-submit="search()">
+Search:
+  <input type="text" ng-model="search_term" name="text" />
+  <input type="submit" id="submit" value="Search" />
+</form>
+<h4>Search results:</h4>
+<div id="search-results">
+<ul>
+  <div ng-repeat = "resource in search_results">
+    <strong><a href="/resources/{{resource.id}}">{{resource.title}} </a></strong>
+    <p>{{resource.author}} | {{resource.date}} </p> 
+    <p>{{resource.abstract}}</p>  
+  </div>
+</ul>
+  
+</div>
 <h1 class="h3"><%= @resources.size %> Results for <%= params[:q] %></h1>
 
 <%= form_tag '/search', class: "navbar-form navbar-left", role: "search",method: :get do %>
@@ -75,3 +92,5 @@
   </tbody>
 </table>
 <% end %>
+
+</div>
