@@ -9,7 +9,11 @@
         $scope.resources = response.data;
       });
     }
-
+    $scope.search = function(){
+      $http.get("/search.json?q=" + $scope.search_term).then(function(response){
+        $scope.search_results = response.data;
+      });
+    }
     window.$scope = $scope;
   });
 })();
