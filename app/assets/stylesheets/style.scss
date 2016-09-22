@@ -1,0 +1,23 @@
+/*SIDEBAR*/
+@import "font-awesome";
+
+.nav-pills > li > a {
+    border-radius: 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.nav > li > a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color:#770000;
+}
+
+#sidebar .nav > li > a:hover:after {
+    content: " \f0e7";
+    font-family: FontAwesome;
+}
+
+.nav-stacked > li + li {
+    margin-top: 0;
+    margin-left: 0;
+}
