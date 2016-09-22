@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818132440) do
+ActiveRecord::Schema.define(version: 20160922031559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,12 +82,10 @@ ActiveRecord::Schema.define(version: 20160818132440) do
     t.text     "admin_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "world_region_id"
     t.integer  "news_source_id"
     t.integer  "resource_type_id"
     t.boolean  "is_published",      default: false
     t.boolean  "is_problem"
-    t.integer  "cognitive_bium_id"
     t.text     "content"
     t.text     "academic_citation"
     t.string   "publisher"
