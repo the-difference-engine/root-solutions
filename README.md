@@ -23,6 +23,19 @@ Things you may want to cover:
 
 * ...
 
+Setup:
+
+brew install imagemagick
+gem install rmagick
+rake db:create
+rake db:migrate
+brew update
+brew cask install java
+brew install elasticsearch
+
+to run, type 'elasticsearch' into bash
+then start rails server
+
 Search:
 
 Users can search simply by keyword or using a filter system.
