@@ -22,3 +22,4 @@
 6. Academic Articles have a title and a summary. 
 
 **note: since publishing rights are required for academic articles, you will be provided with where to access the article. Popular articles have links with information regarding author, publishing date, and publication.**
+
