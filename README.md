@@ -1,18 +1,18 @@
-Deployment instructions
+##Deployment instructions
 
-Environment Setup Steps:
+###Setup:
 
-1. brew install imagemagick 
-2. gem install rmagick 
-3. rake db:create 
-4. rake db:migrate 
-5. brew update 
-6. brew cask install java 
-7. brew install elasticsearch
-  
+1. `brew install imagemagick` 
+2. `gem install rmagick` 
+3. `rake db:create`
+4. `rake db:migrate`
+5. `brew update` 
+6. `brew cask install java` 
+7. `brew install elasticsearch`
+
 **note: to run search function, type 'elasticsearch' into bash then start rails server**
 
-Search Capabilities:
+###Search Capabilities:
 
 1. Users can search by keyword or using a filter system.
 2. Users can do a filtered search by the following tag dropdowns: Environmental Issues, Behavioral Building Block, Cognitive Bias, World Region, and Resource Type.
