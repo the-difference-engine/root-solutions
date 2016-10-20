@@ -47,6 +47,11 @@ class ResourcesController < ApplicationController
     :disposition => "attachment; filename=users.csv"
   end
 
+  def import_resources
+    Resource.import(params[:file])
+    redirect_to "/resources"
+  end
+
   def destroy
     @resource = Resource.find_by(id: params[:id])
     @resource.destroy
