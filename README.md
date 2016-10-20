@@ -24,6 +24,7 @@
 **note: since publishing rights are required for academic articles, you will be provided with where to access the article. Popular articles have links with information regarding author, publishing date, and publication.**
 
 
+
 ###GUI New Resource Readme:
 
 1. Once logged in to website, select the resources tab
