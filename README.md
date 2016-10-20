@@ -22,3 +22,10 @@
 6. Academic Articles have a title and a summary. 
 
 **note: since publishing rights are required for academic articles, you will be provided with where to access the article. Popular articles have links with information regarding author, publishing date, and publication.**
+
+
+###GUI New Resource Readme:
+
+1. Once logged in to website, select the resources tab
+2. Scroll to the bottom of the resources page and select the 'Add New' button.
+3. Fill in all the requested information and select 'Create'.
