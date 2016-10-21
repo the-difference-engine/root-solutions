@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/about_us', 'pages#about_us'
+  get '/work_with_us', 'pages#work_with_us' 
+
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :cognitive_bia do
