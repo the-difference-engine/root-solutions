@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/about_us', 'pages#about_us'
+  root to: 'pages#about_us'
   get '/work_with_us', 'pages#work_with_us' 
 
   resources :news_sources
