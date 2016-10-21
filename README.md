@@ -19,10 +19,9 @@
 3. Search results will be returned in one of four formats, depending on the resource type: Definition, Case Studies, Academic Articles, Popular Articles.
 4. Definitions are returned in paragraph form.
 5. Case Studies are in paragraph form, followed by citation and a link to the resource, as well as metadata tied to the resource. 
-6. Academic Articles have a title and a summary. 
+6. Academic Articles have a title and a summary.
 
 **note: since publishing rights are required for academic articles, you will be provided with where to access the article. Popular articles have links with information regarding author, publishing date, and publication.**
-
 
 
 ###GUI New Resource Readme:
