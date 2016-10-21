@@ -1,3 +1,118 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Header
+# Footer
+# Layouts
+# Elements
+# Forms
+# Navigation
+  ## Links
+  ## Menus
+# Alignments
+# Content
+# HOMEPAGE
+# ABOUT US
+# WORK WITH US
+# LEARN
+# BLOG
+# DONATE
+----------------------------------------------------------------
+
+*/
+
+/* # Typography */
+blockquote {
+  font-style: italic;
+  font-size: 1.8em;
+  color: #ccc;
+  border: 0;
+}
+
+p {
+  font-size: 1.4em;
+  text-align: left;
+}
+.sub-section-title {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+/* # Header */
+/* # Footer */
+/* # Layouts */
+
+/* # Elements */
+/* # Forms */
+/* # Navigation */
+.navbar .container-fluid {
+  background-color: rgba(0, 0, 0, 0.7);
+  
+} 
+.container-fluid {
+ 
+} 
+/*
+/*active state for main navbar*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
+  background: none;
+}
+/*   ## Links */
+/*   ## Menus */
+/* # Alignments */
+.centered {
+  text-align: center; 
+}
+/* # Content */
+/* # HOMEPAGE */
+/* # ABOUT US */
+#about-intro {
+  background-image: url("images/about-us-bg.jpg");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  height: 618px;
+}
+
+#about-intro blockquote  {
+  font-weight: bold;
+  font-size: 2.2em;
+  color: #fff;
+  font-style: normal;
+  margin: 2em 0 3em 0;
+}
+
+button.newsletter {
+  padding: .5em 1em;
+  background: #78c143;
+  color: #fff;
+  border-radius: .5em;
+  border: none;
+  font-size: 1.8em;
+
+}
+
+button.newsletter:hover {
+  background: #421a09;
+}
+
+#what-we-do {
+  background-image: url("images/Healthy-Kelp-1200.jpg");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  height: 502px;
+}
+/* # WORK WITH US */
+/* # LEARN */
+/* # BLOG */
+/* # DONATE */
+/* # HOMEPAGE */
+
+
+
+
