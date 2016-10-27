@@ -50,7 +50,7 @@ class ResourcesController < ApplicationController
   def import_resources
     spreadsheet = Roo::Spreadsheet.open(params[:file])
     popular_articles = spreadsheet.sheet(1)
-    header = [:is_published, :is_problem]
+    header = [:is_published, :is_problem, :building_block_cognitive_bium, :environmental_subtag, :environmental_tag, :environmental_subtag, :world_region, :title, :author, :news_source, :date, :abstract, :url, :admin_notes]
     Resource.import(params[:file])
     redirect_to "/resources"
   end
