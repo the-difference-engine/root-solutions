@@ -27,6 +27,7 @@ class Resource < ApplicationRecord
       row = Hash[[header, spreadsheet.row(i)].transpose]
       resource = find_by(title: row["title"]) || new
       resource.attributes = row.to_hash
+
     end
   end
 

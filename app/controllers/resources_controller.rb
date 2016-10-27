@@ -48,6 +48,9 @@ class ResourcesController < ApplicationController
   end
 
   def import_resources
+    spreadsheet = Roo::Spreadsheet.open(params[:file])
+    popular_articles = spreadsheet.sheet(1)
+    header = [:is_published, :is_problem]
     Resource.import(params[:file])
     redirect_to "/resources"
   end
@@ -56,7 +59,6 @@ class ResourcesController < ApplicationController
     @resource = Resource.find_by(id: params[:id])
     @resource.destroy
     redirect_to resources_path
-
   end
 
 private
