@@ -51,7 +51,43 @@ class ResourcesController < ApplicationController
     spreadsheet = Roo::Spreadsheet.open(params[:file])
     popular_articles = spreadsheet.sheet(1)
     header = [:is_published, :is_problem, :building_block_cognitive_bium, :environmental_subtag, :environmental_tag, :environmental_subtag, :world_region, :title, :author, :news_source, :date, :abstract, :url, :admin_notes]
-    Resource.import(params[:file])
+    resource_type = ResourceType.create(name: 'Popular Article')
+    building_or_cogs = popular_articles.column(3)
+    building_or_cogs.slice!(0)
+    building_blocks = []
+    cognitive_bia = []
+    building_or_cogs.each do |boc|
+      if boc.include?("Cognitive Bias")
+        boc.slice!("Cognitive Bias - ")
+        if boc.include?(",")
+          boc.split(',').each do |cog|
+            cognitive_bia << cog.strip
+          end
+        else
+          cognitive_bia << cog
+        end
+      else
+        if boc.include?(',')
+          boc.split(',').each do |cog|
+            building_blocks << boc.strip
+          end
+        else
+          building_blocks << boc
+        end
+      end
+    end
+    building_blocks.each do |building_block|
+      BuildingBlock.create(name: building_block)
+    end
+    cognitive_bia.each do |cognitive_bium|
+      CognitiveBium.create(name: cognitive_bium)
+    end
+    popular_articles.column(5).each do |environmental_tag|
+      EnvironmentalTag.create(name: environmental_tag)
+    end
+    popular_articles.column(4).each do |environmental_subtag|
+      
+    end
     redirect_to "/resources"
   end
 
