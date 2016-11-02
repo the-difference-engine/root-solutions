@@ -86,7 +86,7 @@ class ResourcesController < ApplicationController
       EnvironmentalTag.create(name: environmental_tag)
     end
     popular_articles.column(4).each do |environmental_subtag|
-      
+      i
     end
     redirect_to "/resources"
   end
