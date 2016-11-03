@@ -67,13 +67,15 @@ p {
 /* # HOMEPAGE */
 /* # ABOUT US */
 #about-intro {
-  background-image: url("about-us-bg.jpg");
+  background-image: url("rain_forest.jpg");
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
   height: 618px;
+  -webkit-clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+  clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
 }
 
 #about-intro blockquote  {
@@ -105,9 +107,11 @@ button.newsletter:hover {
   background-size: cover;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  height: 502px;
+  width: 100%;
+  height: auto;
 }
 /* # WORK WITH US */
+
 /* # LEARN */
 /* # BLOG */
 /* # DONATE */
