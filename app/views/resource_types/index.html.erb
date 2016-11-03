@@ -16,16 +16,13 @@
         <td><%= link_to "#{resource_type.name}", resource_type %></td>
         <td><%= link_to 'Edit', edit_resource_type_path(resource_type) %></td>
         <td><%= link_to 'Destroy', resource_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% if resource_type.name == "Popular articles" %> 
-          <td><%= link_to 'Import', resource_type, method: :post, data: { confirm: 'Are you sure?' } %></td>
-          <%= form_tag "/resources/import", multipart: true do %>
-            <td>
-              <%= file_field_tag :file %>
-              <%= submit_tag "Import" %>
-            </td>
-          <% end %>
-        <% end %>
       </tr>
+    <% end %>
+    <%= form_tag "/resources/import", multipart: true do %>
+      <td>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import" %>
+      </td>
     <% end %>
   </tbody>
 </table>

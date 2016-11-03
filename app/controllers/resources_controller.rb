@@ -50,28 +50,30 @@ class ResourcesController < ApplicationController
   def import_resources
     spreadsheet = Roo::Spreadsheet.open(params[:file])
     popular_articles = spreadsheet.sheet(1)
-    resource_type = ResourceType.create(name: 'Popular Article')
+    resource_type = ResourceType.find_or_create_by(name: 'Popular Article')
     building_or_cogs = popular_articles.column(3)
     building_or_cogs.slice!(0)
     building_blocks = []
     cognitive_bia = []
     building_or_cogs.each do |boc|
-      if boc.include?("Cognitive Bias")
-        boc.slice!("Cognitive Bias - ")
-        if boc.include?(",")
-          boc.split(',').each do |cog|
-            cognitive_bia << cog.strip
+      if boc
+        if boc.include?("Cognitive Bias")
+          boc.slice!("Cognitive Bias - ")
+          if boc.include?(",")
+            boc.split(',').each do |cog|
+              cognitive_bia << cog.strip
+            end
+          else
+            cognitive_bia << boc
           end
         else
-          cognitive_bia << cog
-        end
-      else
-        if boc.include?(',')
-          boc.split(',').each do |cog|
-            building_blocks << cog.strip
+          if boc.include?(',')
+            boc.split(',').each do |cog|
+              building_blocks << cog.strip
+            end
+          else
+            building_blocks << boc
           end
-        else
-          building_blocks << boc
         end
       end
     end
@@ -84,8 +86,18 @@ class ResourcesController < ApplicationController
       CognitiveBium.find_or_create_by(name: cognitive_bium)
     end
     popular_articles.column(5).each do |environmental_tag|
-      e_tag = EnvironmentalTag.find_or_create_by(name: environmental_tag)
-      EnvironmentalSubtag.find_or_create_by(name: '', environmental_tag_id: e_tag.id)
+      if environmental_tag
+        if environmental_tag.include?(',')
+          arr = environmental_tag.split(', ')
+          arr.each do |environmental_tag2|
+            e_tag = EnvironmentalTag.find_or_create_by(name: environmental_tag2)
+            EnvironmentalSubtag.find_or_create_by(name: '', environmental_tag_id: e_tag.id)
+          end
+        else
+          e_tag = EnvironmentalTag.find_or_create_by(name: environmental_tag)
+          EnvironmentalSubtag.find_or_create_by(name: '', environmental_tag_id: e_tag.id)
+        end
+      end
     end
     popular_articles.column(10).each do |news_source|
       NewsSource.find_or_create_by(name: news_source)
@@ -111,65 +123,71 @@ class ResourcesController < ApplicationController
       if popular_articles.cell((i + 2), 2) == 'Problem'
         resource.assign_attributes(is_problem: true)
       else
-        resource.assign_attributes(is_solution: true)
+        resource.assign_attributes(is_problem: false)
       end
       resource.save
-      if popular_articles.cell((i + 2), 3).include?(',')
-        arr = popular_articles.cell((i + 2), 3).split(', ')
-        arr.each do |boc|
-          if boc.include?('Cognitive Bias')
-            boc.slice!('Cognitive Bias - ')
-            ResourcesCognitiveBium.create(
-              cognitive_bium_id: CognitiveBium.find_by(name: boc).id,
-              resource_id: resource.id
-              )
-          else
-            ResourcesBuildingBlockSubstep.create(
-              building_block_substep_id: BuildingBlockSubstep.find_by(building_block_id: BuildingBlock.find_by(name: boc).id).id,
+      if popular_articles.cell((i + 2), 3)
+        if popular_articles.cell((i + 2), 3).include?(',')
+          arr = popular_articles.cell((i + 2), 3).split(', ')
+          arr.each do |boc|
+            if boc.include?('Cognitive Bias')
+              boc.slice!('Cognitive Bias - ')
+              ResourcesCognitiveBium.create(
+                cognitive_bium_id: CognitiveBium.find_by(name: boc).id,
+                resource_id: resource.id
+                )
+            else
+              ResourcesBuildingBlockSubstep.create(
+                building_block_substep_id: BuildingBlockSubstep.find_by(building_block_id: BuildingBlock.find_by(name: boc).id).id,
+                resource_id: resource.id
+                )
+            end
+          end
+        elsif popular_articles.cell((i + 2), 3).include?('Cognitive Bias')
+          cog = popular_articles.cell((i + 2), 3)
+          cog.slice!('Cognitive Bias - ')
+          ResourcesCognitiveBium.create(
+            cognitive_bium_id: CognitiveBium.find_by(name: cog).id,
+            resource_id: resource.id
+            )
+        else
+          ResourcesBuildingBlockSubstep.create(
+            building_block_substep_id: BuildingBlockSubstep.find_by(building_block_id: BuildingBlock.find_by(name: popular_articles.cell((i + 2), 3)).id).id,
+            resource_id: resource.id
+            )
+        end
+      end
+      if popular_articles.cell((i + 2), 5)
+        if popular_articles.cell((i + 2), 5).include?(',')
+          arr = popular_articles.cell((i + 2), 5).split(', ')
+          arr.each do |environmental_tag|
+            ResourcesEnvironmentalSubtag.create(
+              subtag_id: EnvironmentalSubtag.find_by(environmental_tag_id: EnvironmentalTag.find_by(name: environmental_tag).id).id,
               resource_id: resource.id
               )
           end
-        end
-      elsif popular_articles.cell((i + 2), 3).include?('Cognitive Bias')
-        popular_articles.cell((i + 2), 3).slice!('Cognitive Bias - ')
-        ResourcesCognitiveBium.create(
-          cognitive_bium_id: CognitiveBium.find_by(name: popular_articles.cell((i + 2), 3)).id,
-          resource_id: resource.id
-          )
-      else
-        ResourcesBuildingBlockSubstep.create(
-          building_block_substep_id: BuildingBlockSubstep.find_by(building_block_id: BuildingBlock.find_by(name: boc).id).id,
-          resourece_id: resource.id
-          )
-      end
-      if popular_articles.cell((i + 2), 5).include?(',')
-        arr = popular_articles.cell((i + 2), 5).split(', ')
-        arr.each do |environmental_tag|
+        else
           ResourcesEnvironmentalSubtag.create(
-            subtag_id: EnvironmentalSubtag.find_by(environmental_tag_id: EnvironmentalTag.find_by(name: environmental_tag).id).id,
-            resource_id: resource.id
+            subtag_id: EnvironmentalSubtag.find_by(environmental_tag_id: EnvironmentalTag.find_by(name: popular_articles.cell((i + 2), 5)).id).id
             )
         end
-      else
-        ResourcesEnvironmentalSubtag.create(
-          subtag_id: EnvironmentalSubtag.find_by(environmental_tag_id: EnvironmentalTag.find_by(name: popular_articles.cell((i + 2), 5)).id).id
-          )
       end
-      if popular_articles.cell((i + 2), 7).include?(',')
-        arr = popular_articles.cell((i + 2), 7).split(', ')
-        arr.each do |world_region|
+      if popular_articles.cell((i + 2), 7)
+        if popular_articles.cell((i + 2), 7).include?(',')
+          arr = popular_articles.cell((i + 2), 7).split(', ')
+          arr.each do |world_region|
+            ResourcesWorldRegion.create(
+              world_region_id: WorldRegion.find_by(name: world_region).id,
+              resource_id: resource.id
+              )
+          end
+        else
           ResourcesWorldRegion.create(
-            world_region_id: WorldRegion.find_by(name: world_region).id,
+            world_region_id: WorldRegion.find_by(name: popular_articles.cell((i + 2), 7)).id,
             resource_id: resource.id
             )
         end
-      else
-        ResourcesWorldRegion.create(
-          world_region_id: WorldRegion.find_by(name: popular_articles.cell((i + 2), 7)).id,
-          resource_id: resource.id
-          )
       end
-
     end
     redirect_to "/resources"
   end
