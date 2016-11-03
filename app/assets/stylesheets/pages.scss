@@ -99,7 +99,7 @@ button.newsletter:hover {
 }
 
 #what-we-do {
-  background-image: url("images/Healthy-Kelp-1200.jpg");
+  background-image: url("Healthy-Kelp-1200.jpg");
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
@@ -108,6 +108,45 @@ button.newsletter:hover {
   height: 502px;
 }
 /* # WORK WITH US */
+
+#work-with-us-intro {
+  background-image: url("rice_terrace_bali.jpg");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  height: 700px;
+  -webkit-clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+  clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+}
+
+#work-with-us-second {
+  background-image: url("recycling_salience_copy.jpg");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  height: 700px;
+}
+
+.margin-second-work-with-us-img {
+  margin-top: 150px;
+}
+
+#work-with-us-third {
+  background-image: url("sheep_herding_copy.jpeg");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  height: 700px;
+}
+
+
+
 /* # LEARN */
 /* # BLOG */
 /* # DONATE */

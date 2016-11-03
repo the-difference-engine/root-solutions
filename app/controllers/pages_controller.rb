@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-	layout :pages
+	layout "pages"
 
   def about_us
 
