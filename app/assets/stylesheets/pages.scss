@@ -50,7 +50,7 @@ p {
   
 } 
 .container-fluid {
- 
+
 } 
 /*
 /*active state for main navbar*/
@@ -61,19 +61,22 @@ p {
 /*   ## Menus */
 /* # Alignments */
 .centered {
+  margin-top: 20px;
   text-align: center; 
 }
 /* # Content */
 /* # HOMEPAGE */
 /* # ABOUT US */
 #about-intro {
-  background-image: url("images/about-us-bg.jpg");
+  background-image: url("rain_forest.jpg");
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
   height: 618px;
+  -webkit-clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+  clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
 }
 
 #about-intro blockquote  {
@@ -83,6 +86,19 @@ p {
   font-style: normal;
   margin: 2em 0 3em 0;
 }
+
+.p1 {
+  color: #78c143;
+  margin-right: 300px;
+  margin-left: 300px;
+}
+
+.p2 {
+  margin-right: 300px;
+  margin-left: 300px;
+  margin-bottom: 50px;
+}
+
 
 button.newsletter {
   padding: .5em 1em;
@@ -95,19 +111,52 @@ button.newsletter {
 }
 
 button.newsletter:hover {
-  background: #421a09;
+  background: #78aa43;
 }
 
 #what-we-do {
-  background-image: url("images/Healthy-Kelp-1200.jpg");
+  background-image: url("Healthy-Kelp-1200.jpg");
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  height: 502px;
+  height: 618px;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 }
+
+.sub-section-title {
+  margin-top: 70px;
+  margin-right: 300px;
+  margin-left: 300px;
+}
+
+button.learn-more {
+  padding: .5em 1em;
+  background: #78c143;
+  color: #fff;
+  border-radius: .5em;
+  border: none;
+  font-size: 1em;
+}
+
+button.learn-more:hover {
+  background: #78aa43;
+}
+
+#who-we-are {
+  background-image: url("roof_top_garden.jpg");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  height: 618px;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+}
+
 /* # WORK WITH US */
+
 /* # LEARN */
 /* # BLOG */
 /* # DONATE */
