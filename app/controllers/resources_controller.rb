@@ -144,7 +144,7 @@ class ResourcesController < ApplicationController
             end
           end
         elsif popular_articles.cell((i + 2), 3).include?('Cognitive Bias')
-          cog = popular_articles.cell((i + 2), 3)
+          cog = popular_articles.cell((i + 2), 3).dup
           cog.slice!('Cognitive Bias - ')
           ResourcesCognitiveBium.create(
             cognitive_bium_id: CognitiveBium.find_by(name: cog).id,
