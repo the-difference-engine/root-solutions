@@ -1,6 +1,7 @@
 User.create!([
     {email: "admin@admin.com", password:"password"}
 ])
+# 
 # BuildingBlock.create!([
 #   {name: "dfgfddf"},
 #   {name: "crud um"}
