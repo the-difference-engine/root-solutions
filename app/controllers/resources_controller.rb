@@ -109,12 +109,14 @@ class ResourcesController < ApplicationController
       resource = Resource.new(
         title: popular_articles.cell((i + 2), 8),
         author: popular_articles.cell((i + 2), 9),
-        news_source_id: NewsSource.find_by(name: popular_articles.cell((i + 2), 10)).id,
         date: popular_articles.cell((i + 2), 11),
         abstract: popular_articles.cell((i + 2), 12),
         url: popular_articles.cell((i + 2), 13),
         admin_notes: popular_articles.cell((i + 2), 14)
       )
+      if NewsSource.find_by(name: popular_articles.cell((i + 2), 10))
+        resource.assign_attributes(news_source_id: NewsSource.find_by(name: popular_articles.cell((i + 2), 10)).id)
+      end
       if popular_articles.cell((i + 2), 1) == 'Published'
         resource.assign_attributes(is_published: true)
       else
