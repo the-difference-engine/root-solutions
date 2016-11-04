@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'admins#dashboard'
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
+  post '/resources/import', to: 'resources#import_resources'
   resources :resources
   get '/search', to: 'searches#index'
 

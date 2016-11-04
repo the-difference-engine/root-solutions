@@ -1,0 +1,2 @@
+class ResourcesWorldRegion < ApplicationRecord
+end
