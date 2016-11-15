@@ -194,11 +194,132 @@ button.learn-more:hover {
   height: 700px;
 }
 
+
+
 /* # LEARN */
 /* # BLOG */
 /* # DONATE */
 /* # HOMEPAGE */
 
+#parallax-1, #parallax-2, #parallax-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#parallax-1 {
+  background-image: url( <%= image_path 'rain_forest.jpg' %>);
+  height: 900px;
+}
+
+.heading-title h2{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+.white-space {
+  font-size: 1.0em;
+  /*height: 600px;*/
+  background: #ffffff;
+  padding: 100px 100px 100px 100px;  
+}
+
+.chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -120px 0px 0px 0px;
+  padding: 200px 100px 100px 100px;  
+  
+}
 
 
+#parallax-2 {
+  background-image: url( <%= image_path 'Healthy-Kelp-1200.jpg' %> );
+  height: 500px;
+  text-align: center;
+  color: white;
+}
+
+#parallax-3 {
+  background-image: url( <%= image_path 'rice_terrace_bali.jpg' %> );
+  min-height: 500px;
+  text-align: center;
+  color: white;
+}
+
+.who-we-are-LO {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+
+.who-we-are-LO p {
+  text-align: center;
+  color: white;
+}
+
+.white-space-2 {
+  position: relative;
+  text-align: center;
+  min-height: 200px;
+}
+
+.Liams-navbar {
+  background-color: white ;  
+}
+
+.email-box-container {
+  width: 400px;
+  height: 100px;
+  border: 5px solid green;
+  padding: 25px;
+  margin: 25px;
+  position: absolute;
+  right: 20px;
+}
+
+.social-media-box {
+  width: 400px;
+  height: 100px;
+  border: 5px solid green;
+  padding: 25px;  
+  margin: 25px;
+  position: absolute;
+  left: 20px;
+}
+
+.contact-information {
+  margin-left: 500px;  
+}
+
+#main-footer{
+  height: 200px;
+  background-color: #2B2B2B;
+  color: white;
+  padding: 50px 20px 20px 50px;
+}
+
+#main-footer i{
+  float: right;
+  margin: 10px;
+  font-size: 3.0em;
+}
+
+.black-text {
+  color: black;
+}
 
