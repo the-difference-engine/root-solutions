@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#about_us', as: :about_us
   get '/work_with_us', to: 'pages#work_with_us', as: :work_with_us
 
+  get 'learn/behavior_design', to: 'learn#behavior_design'
+
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :cognitive_bia do
