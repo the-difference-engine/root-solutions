@@ -45,18 +45,7 @@ p {
 /* # Elements */
 /* # Forms */
 /* # Navigation */
-.navbar .container-fluid {
-  background-color: rgba(0, 0, 0, 0.7);
-  
-} 
-.container-fluid {
 
-} 
-/*
-/*active state for main navbar*/
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
-  background: none;
-}
 /*   ## Links */
 /*   ## Menus */
 /* # Alignments */
@@ -282,10 +271,7 @@ button.learn-more:hover {
   min-height: 200px;
 }
 
-.Liams-navbar {
-  background-color: transparent;
-  font: white;  
-}
+
 
 .email-box-container {
   width: 400px;
@@ -337,6 +323,7 @@ button.learn-more:hover {
   opacity: 0.7;
 }
 
+<<<<<<< HEAD
 #sub-logo img {
   height: 150px;
   width: 150px;
@@ -386,13 +373,68 @@ button.learn-more:hover {
 /*
 .navbar-brand a {
 font: white;
+
+/* navbar */
+
+/* .brand */
+.navbar-custom {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 97px;
+  font-size: 1.7em;
+  opacity: 0.7;
+  color: white;
+  background: #2b2b2b;
+  font-family: 'Noto Sans', sans-serif; 
+>>>>>>> fca4499849f22df8a7cfa02f29149a479adaf11f
 }
 
-.navbar-light .navbar-brand:hover,
-.navbar-light .navbar-brand:focus {
-  color: pink;
+
+/* this overrides bootstrap class */
+.navbar-brand { 
+  font-size: 1.0em;
 }
-.navbar-light .navbar-text {
-  color: orange;*/
-/*}
-*/
+
+
+.navbar-custom .navbar-inner {
+  background: #fff;
+  filter: none !important;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 2px 15px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  height: 50px;
+}
+.navbar-custom .navbar-inner .nav {
+  float: right;
+}
+.navbar-custom .navbar-inner .nav li a {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #777;
+  font-size: 13px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+
+
+.navbar-custom .navbar-inner .nav li a:hover {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #bf3604;
+}   
+
+
+.navbar-custom .navbar-inner .nav li.active a {
+  color: #bf3604;
+}
+
+
+
+
+
