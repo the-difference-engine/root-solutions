@@ -25,26 +25,26 @@
 
 /* # Color Shortcut */
 
-$green1: #7ED8A5 ;
-$green2: #4ABD7C ;
+$green1: #9af0bf ;
+$green2: #53cc88 ;
 $green3: #29AA61 ;    // Main Primary color */
 $green4: #0D9146 ;
 $green5: #016E30 ;
 
-$blue1: #839DD1 ;
-$blue2: #5171B2 ;
+$blue1: #a1bbee ;
+$blue2: #5c7fc4 ;
 $blue3: #32579F ;    // Main Secondary color (1) */
 $blue4: #193E87 ;
 $blue5: #0B2A67 ;
 
-$yellow1: #FFDA95 ;
-$yellow2: #FFCA64 ;
+$yellow1: #ffdfa3 ;
+$yellow2: #ffcb68 ;
 $yellow3: #EEB03A ;    // Main Secondary color (2) */
 $yellow4: #CB8B13 ;
 $yellow5: #9A6601 ;
 
-$red1: #FFAB95 ;
-$red2: #FF8564 ;
+$red1: #ffb6a3 ;
+$red2: #ff8868 ;
 $red3: #EE5F3A ;    // Main Complement color */
 $red4: #CB3913 ;
 $red5: #9A2101 ;
@@ -374,7 +374,7 @@ button.learn-more:hover {
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -115px 0px 0px 0px;
   padding: 60px 0px 60px 100px; 
-  background-color: $green1;
+  background-color: $yellow1;
 }
 
 .content {
@@ -387,9 +387,18 @@ button.learn-more:hover {
 .tab-style {
   font: arial;
   font-size: 23px;
-  background-color: green;
+  background-color: $green3;
   color: white;
   width: 150px !important;
+}
+.tab-style:hover {
+  background-color: $green1 !important;
+  color: $green5;
+}
+
+.active a, .active .tab-style:hover {
+  background-color: $green5 !important;
+  color: white !important; 
 }
 
 .nav-tab {
@@ -465,12 +474,18 @@ font: white;
 }
 
 .text-color {
-  color: $red5;
+  color: $green5;
 }
 
 .backgroundcolor {
-  background-color: $green1;
+  background-color: $yellow1;
 }
 
+.h-color h2, .h-color h3 {
+  color: $green5;
+}
+
+.h-color p {
+}
 
 
