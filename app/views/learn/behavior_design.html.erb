@@ -1,0 +1,117 @@
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
+
+<div id="behavior_design-parallax"> 
+  <div class="heading-title">
+    <h2 class="title">
+      ROOT SOLUTIONS
+    </h2>
+    <div id="sub-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div>
+<div id="behvior_design-chevron" class="backgroundcolor">
+</div>
+  <div class='container-fluid backgroundcolor'>
+    <div id="header-row" class="row">
+      <div class='col-md-3'></div>
+      <div class='col-md-7'>
+        <h1 class="text-color behavior-design-title">"Behavioral" Building Blocks</h1>
+        <h3>Root Solutions has developed an easily understood, practical behavior design process. The heart of this process is our essential “Behavioral Building Blocks” each made up of time tested behavioral interventions.</h3>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="col-md-1"></div>
+      <div class='col-md-2'>
+        <ul id="sidebar-nav" class="nav nav-tabs nav-stacked">
+          <li role="presentation" class="active"><a data-toggle="tab" href="#Benefits" class='tab-style'>Benefits</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Easy" class='tab-style'>Easy</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Hopeful" class='tab-style'>Hopeful</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Associate" class='tab-style'>Associate</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Vivid" class='tab-style'>Vivid</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Identity" class='tab-style'>Identity</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Ordinary" class='tab-style'>Ordinary</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#Relatable" class='tab-style'>Relatable</a></li>
+        </ul>
+      </div>
+      <div class='col-md-7'>
+        <div class='content'>
+          <div class="tab-content">
+            <div id="Benefits" class="tab-pane fade in active h-color">
+              <h2 class="text-color">Use BENEFITS</h2>
+              <p>
+                Key point: Environmentalists have long understood the value of rewarding positive environmental behaviors or penalizing detrimental behaviors. By attaching benefits and/or disincentives to specific behavioral outcomes, we can catalyze action or help to reinvigorate pre-established goals.
+              </p>
+              <h3>Utilize outcome-based incentives</h3>
+              <p>
+                When users are more equipped to design their own path to achieve a goal, consider designing an outcome-based incentive. For example, reward a percent decrease in overall energy use, rather than specifying that the goal must be achieved through a reduction in light use.
+              </p>
+              <h3>Build off of existing goals and behaviors</h3>
+              <p>
+                Tie rewards to goals the audience already possesses. For example, the “Cash for Clunkers” program reached many drivers who were considering purchasing a more fuel efficient car in the coming years, but needed a push in the form of a rebate to do so sooner.
+              </p>
+              <h3>Use penalties wisely</h3>
+              <p>
+                Harness the audience’s natural aversion to loss through disincentives, but be careful – we will go a long way to avoid loss, so watch out for potential short cuts to circumvent penalties. For example, when imposing a tax on household waste, be sure to account for the unintended behavior of dumping excess trash elsewhere.
+              </p>
+              <h3>Reward specific behaviors</h3>
+              <p>
+                When abstract goals are hard to follow through on, it is usually best to reward or penalize a clear-cut behavior that advance our goals. For example, plastic bag taxes at the checkout line reinforce a specific sustainable behavior and encourage consumers to reduce their impact by bringing a reusable bag from home.
+              </p>
+              <h3>Make benefits and costs immediate</h3>
+              <p>
+                As practitioners, we want to jumpstart environmental behaviors as efficiently as possible. When developing incentives, play upon the audiences’ tendency to prioritize immediate rewards or costs over those that are faraway by including a stimulus up front.
+              </p>
+              <h3>Tailor the incentive</h3>
+              <p>
+                Remember: there is no one “catch all” incentive that works for every occasion. To produce the best incentive, get creative, and make sure to align benefits with the what the audience finds attractive.
+              </p>
+              <h3>Limit the availability of benefits</h3>
+              <p>
+                Scarcity of resources plays a big role in motivating behavior. When designing rewards, consider offering a limited-amount or a limited-time reward.
+              </p>
+              <h3>Optimize resources</h3>
+              <p>
+                We know that large prizes can entice our audiences.  If we have a finite number of resources to offer, we can reduce the number and increase the value of each reward. For high participation and impact, use a lottery system!
+              </p>
+            </div>
+            <div id="Easy" class="tab-pane fade">
+              <h2>Make it EASY</h2>
+            </div>
+            <div id="Hopeful" class="tab-pane fade">
+              <h2>Emphasize HOPEFULNESS</h2>
+            </div>
+            <div id="Associate" class="tab-pane fade">
+              <h2>Frame for the appropriate ASSOCIATIONS</h2>
+            </div>
+            <div id="Vivid" class="tab-pane fade">
+              <h2>Design it to be VIVID</h2>
+            </div>
+            <div id="Identity" class="tab-pane fade">
+              <h2>Encourage consistent IDENTITY</h2>
+            </div>
+            <div id="Ordinary" class="tab-pane fade">
+              <h2>Demonstrate what is ORDINARY</h2>
+            </div>
+            <div id="Relatable" class="tab-pane fade">
+              <h2>Craft it to be RELATABLE</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

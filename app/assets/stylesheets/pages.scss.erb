@@ -1,6 +1,7 @@
 /* 
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Color Shortcut
 # Typography
 # Header
 # Footer
@@ -21,6 +22,35 @@
 ----------------------------------------------------------------
 
 */
+
+/* # Color Shortcut */
+
+/* 1 refers to lightest shade, 5 refers to darkest shade */
+
+$green1: #9af0bf ;
+$green2: #53cc88 ;
+$green3: #29AA61 ;
+$green4: #0D9146 ;
+$green5: #016E30 ;
+
+$blue1: #a1bbee ;
+$blue2: #5c7fc4 ;
+$blue3: #32579F ;
+$blue4: #193E87 ;
+$blue5: #0B2A67 ;
+
+$yellow1: #ffdfa3 ;
+$yellow2: #ffcb68 ;
+$yellow3: #EEB03A ;
+$yellow4: #CB8B13 ;
+$yellow5: #9A6601 ;
+
+$red1: #ffb6a3 ;
+$red2: #ff8868 ;
+$red3: #EE5F3A ;
+$red4: #CB3913 ;
+$red5: #9A2101 ;
+
 
 /* # Typography */
 blockquote {
@@ -233,7 +263,6 @@ button.learn-more:hover {
   -webkit-clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -310px 0px 0px 0px;
   padding: 200px 100px 100px 100px;  
-  
 }
 
 
@@ -324,10 +353,68 @@ button.learn-more:hover {
   opacity: 0.7;
 }
 
+#sub-logo img {
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.7;
+}
 
+#behavior_design-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'Pelican.jpg' %>); /* add image of choice */
+  height: 400px;
+}
 
+#behvior_design-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: $yellow1;
+}
 
+.content {
+  border-style: solid;
+  border-width: 0px;
+  /*padding: 20px 25px 20px 35px;*/
+  z-index: 1;
+}
 
+.tab-style {
+  font: arial;
+  font-size: 23px;
+  background-color: $green3;
+  color: white;
+  width: 150px !important;
+}
+.tab-style:hover {
+  background-color: $green1 !important;
+  color: $green5;
+}
+
+.active a, .active .tab-style:hover {
+  background-color: $green5 !important;
+  color: white !important; 
+}
+
+.nav-tab {
+  border-bottom: none;
+}
+
+.affix {
+  top: 170px;
+}
+
+/* Navbar black and white */
+/*
+.navbar-brand a {
+font: white;
 
 /* navbar */
 
@@ -388,7 +475,30 @@ button.learn-more:hover {
   color: #bf3604;
 }
 
+.text-color {
+  color: $green5;
+}
 
+.backgroundcolor {
+  background-color: $yellow1;
+}
 
+.h-color h2, .h-color h3 {
+  color: $green5;
+}
 
+.h-color p {
+}
 
+.h-color h2 {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.behavior-design-title {
+  text-align: left;
+}
+
+.title {
+  padding-top: 50px;
+}
