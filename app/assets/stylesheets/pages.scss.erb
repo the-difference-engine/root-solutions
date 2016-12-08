@@ -19,6 +19,7 @@
 # LEARN
 # BLOG
 # DONATE
+# PARTNERS
 ----------------------------------------------------------------
 
 */
@@ -532,12 +533,37 @@ font: white;
   text-align: left;
 }
 
-.advisor-hover:hover {
-  text-decoration: underline;
+.advisor-hover {
   color: $green4;
   cursor:pointer;
 }
 
-#banny {
-  
+.advisor-hover.collapsed {
+  color: black;
+  text-decoration: none;
+}
+
+.advisor-hover.collapsed:hover {
+  text-decoration: underline;
+  color: $green4;
+  cursor:pointer;
+}
+.advisor-wrap {
+  margin: 0 auto;
+  background-color: $blue1;
+  border: 2px solid $blue5;
+  border-radius: 10px;
+  margin: 5px;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  h2 {
+    text-align: center;
+  }
+}
+.row h1 {
+  text-align: center;
 }
