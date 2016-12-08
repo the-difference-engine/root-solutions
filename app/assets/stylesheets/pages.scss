@@ -62,12 +62,14 @@ p {
 /* # Alignments */
 .centered {
   text-align: center; 
+
 }
 /* # Content */
 /* # HOMEPAGE */
 /* # ABOUT US */
+
 #about-intro {
-  background-image: url("images/about-us-bg.jpg");
+  background-image: url(<"images/about-us-bg.jpg");
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
@@ -143,6 +145,14 @@ button.newsletter:hover {
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
   height: 700px;
+}
+
+#about-section{
+   .content{
+  padding: 100px;
+   
+  
+  }
 }
 
 
