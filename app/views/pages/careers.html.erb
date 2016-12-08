@@ -1,0 +1,54 @@
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
+
+<div id="behavior_design-parallax"> 
+  <div class="heading-title">
+    <h2 class="title">
+      CAREERS
+    </h2>
+    <div id="sub-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div>
+<div id="behvior_design-chevron" class="backgroundcolor">
+</div>
+<div class='container-fluid backgroundcolor'>
+  <div id="header-row" class="row">
+    <div class='col-md-2'></div>
+    <div class='col-md-8'>
+      <h1 class="text-color behavior-design-title">Current openings</h1>
+      <h3>Root Solutions is currently looking for volunteers for the spring and summer of 2017. If you are in school or have recently graduated, or are looking to volunteer for other reasons, we need you!</h3>
+    </div>
+  </div>
+  <p>
+  <br>
+  <div id="header-row" class="row">
+    <div class='col-md-2'></div>
+    <div class="col-md-4"><h4>Book Research Volunteer</h4></div>
+    <div class="col-md-4"><h4>Communications Volunteer</h4></div>
+  </div>
+  <div id="header-row" class="row">
+    <div class='col-md-2'></div>
+    <div class="col-md-4"><h4>Development Volunteer</h4></div>
+    <div class="col-md-4"><h4>Graphic Design Volunteer</h4></div>
+  </div>
+  <div id="header-row" class="row">
+    <div class='col-md-2'></div>
+    <div class="col-md-4"><h4>Projects Assistant Volunteer</h4></div>
+  </div>
+  </p>
+</div>
+
