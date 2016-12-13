@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027035252) do
+ActiveRecord::Schema.define(version: 20161208050151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 20161027035252) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "citations", force: :cascade do |t|
+    t.integer  "resource_id"
+    t.text     "citation_1"
+    t.text     "citation_2"
+    t.string   "title"
+    t.string   "author"
+    t.integer  "news_source_id"
+    t.date     "date"
+    t.string   "url"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "cognitive_bia", force: :cascade do |t|
@@ -79,18 +92,17 @@ ActiveRecord::Schema.define(version: 20161027035252) do
     t.date     "date"
     t.text     "abstract"
     t.string   "url"
-    t.text     "admin_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "news_source_id"
     t.integer  "resource_type_id"
-    t.boolean  "is_published",      default: false
+    t.boolean  "is_published",     default: false
     t.boolean  "is_problem"
-    t.text     "content"
-    t.text     "academic_citation"
+    t.text     "description"
     t.string   "publisher"
     t.string   "source"
     t.string   "length"
+    t.boolean  "is_solution"
   end
 
   create_table "resources_building_block_substeps", force: :cascade do |t|
