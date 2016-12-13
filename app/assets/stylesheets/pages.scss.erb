@@ -19,6 +19,7 @@
 # LEARN
 # BLOG
 # DONATE
+# PARTNERS
 ----------------------------------------------------------------
 
 */
@@ -246,6 +247,17 @@ button.learn-more:hover {
 
 }
 
+.heading-title h3{
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  opacity: 0.7;
+  font-weight: bold;
+  margin-top: 0em;
+
+}
+
 .other-titles {
   padding-top: 2.2em;
 
@@ -371,6 +383,16 @@ button.learn-more:hover {
   height: 400px;
 }
 
+#partners-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'Pelican.jpg' %>); /* add image of choice */
+  height: 350px;
+}
+
 #behvior_design-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
@@ -479,6 +501,10 @@ font: white;
   color: $green5;
 }
 
+.advisor-text-color {
+  color: 000000;
+}
+
 .backgroundcolor {
   background-color: $yellow1;
 }
@@ -501,4 +527,47 @@ font: white;
 
 .title {
   padding-top: 50px;
+}
+
+.partners-design-title {
+  text-align: left;
+}
+
+.advisor-hover {
+  color: $green4;
+  cursor:pointer;
+}
+
+.advisor-hover.collapsed {
+  color: black;
+  text-decoration: none;
+}
+
+.advisor-hover.collapsed:hover {
+  text-decoration: underline;
+  color: $green4;
+  cursor:pointer;
+}
+.advisor-wrap {
+  margin: 0 auto;
+  background-color: white;
+  border: 2px solid $blue5;
+  border-radius: 10px;
+  margin: 5px;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  h2 {
+    text-align: center;
+  }
+}
+.row h1 {
+  text-align: center;
+}
+
+.partner-wrap {
+  text-align: justify;
 }
