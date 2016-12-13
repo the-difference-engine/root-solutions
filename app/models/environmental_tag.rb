@@ -3,6 +3,9 @@ require 'csv'
 class EnvironmentalTag < ApplicationRecord
   has_many :environmental_subtags, dependent: :destroy
 
+  has_many :resources_environmental_tags
+  has_many :resources, through: :resources_environmental_tags
+
   def self.to_csv(options = {})
     desired_columns = ["name"]
     CSV.generate(options) do |csv|
