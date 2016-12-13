@@ -9,4 +9,9 @@ class PagesController < ApplicationController
   def work_with_us
 
   end
+
+  def learn 
+
+  end
+
 end
