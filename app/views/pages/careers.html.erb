@@ -1,0 +1,69 @@
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
+
+<div id="behavior_design-parallax"> 
+  <div class="heading-title">
+    <h2 class="title">
+      CAREERS
+    </h2>
+    <div id="sub-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div>
+<div id="behvior_design-chevron" class="backgroundcolor">
+</div>
+<div class='container-fluid backgroundcolor'>
+<!-- <div class='container-fluid'> -->
+  <div id="header-row" class="row">
+    <div class='col-md-1'></div>
+    <div class='col-md-9'>
+      <h1 class="text-color behavior-design-title">Current openings</h1>
+      <h3>Root Solutions is currently looking for volunteers for the spring and summer of 2017. If you are in school or have recently graduated, or are looking to volunteer for other reasons, we need you!</h3>
+    </div>
+  </div>
+  <p>
+  <br>
+  <div id="header-row" class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <%= image_tag("/assets/careers2.jpg") %>
+      <%= link_to "Book Research Volunteer","http://media.wix.com/ugd/5440fd_55fcfbeb5bdd4ac8a72df882a47dfd63.pdf", class: "links", target: "_blank" %>
+    </div>
+    <div>
+      <%= image_tag("/assets/careers1.jpg") %>
+      <%= link_to "Communications Volunteer","http://media.wix.com/ugd/5440fd_e472b525f42c4de286641a43320dbce6.pdf",class: "links", target: "_blank" %>
+    </div>
+  </div>
+  <div id="header-row" class="row">
+    <div class='col-md-1'></div>
+    <div class="col-md-5">
+      <%= image_tag("/assets/careers3.jpg") %>
+      <%= link_to "Development Volunteer","http://media.wix.com/ugd/5440fd_fc36298f86cd4a7db3e257831c0bd028.pdf",class: "links", target: "_blank" %>
+    </div>
+    <div>
+      <%= image_tag("/assets/careers4.jpg") %>
+      <%= link_to "Graphic Design Volunteer","http://media.wix.com/ugd/5440fd_83dfaf9faf734bf39e0463651967c6c8.pdf",class: "links", target: "_blank" %>
+    </div>
+  </div>
+  <div id="header-row" class="row">
+    <div class='col-md-1'></div>
+    <div class="col-md-5">
+      <%= image_tag("/assets/careers5.jpg") %> 
+      <%= link_to "Projects Assistant Volunteer", "http://media.wix.com/ugd/5440fd_613c95fb84ea464696e60d93443b0763.pdf",class: "links", target: "_blank" %>
+    </div>
+  </div>
+  </p>
+</div>
