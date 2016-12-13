@@ -20,22 +20,22 @@ class ExcelImport
 
   def key_columns_setup
     columns = [
-      e_tag_ids = @keys.column(1),              #0. e_tag_ids
-      e_tags = @keys.column(2),                 #1. e_tags
-      es_tag_ids = @keys.column(3),             #2. es_tag_ids
-      es_tags = @keys.column(4),                #3. es_tags
-      es_etag_ids = @keys.column(5),            #4. es_etag_ids
-      b_block_ids = @keys.column(6),            #5. b_block_ids
-      b_blocks = @keys.column(7),               #6. b_blocks
-      principle_ids = @keys.column(8),          #7. principle_ids
-      principles = @keys.column(9),             #8. principles
-      principle_b_block_ids = @keys.column(10), #9. principle_b_block_ids
-      world_region_ids = @keys.column(11),      #10. world_region_ids
-      world_regions = @keys.column(12),         #11. world_regions
-      cog_bias_ids =  @keys.column(13),         #12. cog_bias_ids
-      cog_bia = @keys.column(14),               #13. cog_bia
-      resource_type_ids = @keys.column(15),     #14. resource_type_ids
-      resource_types = @keys.column(16)         #15. resource_types
+      @keys.column(1),  #0. e_tag_ids
+      @keys.column(2),  #1. e_tags
+      @keys.column(3),  #2. es_tag_ids
+      @keys.column(4),  #3. es_tags
+      @keys.column(5),  #4. es_etag_ids
+      @keys.column(6),  #5. b_block_ids
+      @keys.column(7),  #6. b_blocks
+      @keys.column(8),  #7. principle_ids
+      @keys.column(9),  #8. principles
+      @keys.column(10), #9. principle_b_block_ids
+      @keys.column(11), #10. world_region_ids
+      @keys.column(12), #11. world_regions
+      @keys.column(13), #12. cog_bias_ids
+      @keys.column(14), #13. cog_bia
+      @keys.column(15), #14. resource_type_ids
+      @keys.column(16)  #15. resource_types
     ]
     columns.each do |column|
       column.slice!(0)
@@ -89,5 +89,42 @@ class ExcelImport
 
   def data_import
 
+  end
+
+  def data_setup
+    columns = [
+      @spread.column(1),  #resource_id
+      @spread.column(2),  #is_published
+      @spread.column(3),  #resource_type
+      @spread.column(4),  #resource_type_id
+      @spread.column(5),  #is_problem
+      @spread.column(6),  #is_solution
+      @spread.column(7),  #cognitive_bias
+      @spread.column(8),  #cognitive_bias_id
+      @spread.column(9),  #building_block
+      @spread.column(10), #building_block_id
+      @spread.column(11), #principle
+      @spread.column(12), #principle_id
+      @spread.column(13), #environmental_tag
+      @spread.column(14), #environmental_tag_id
+      @spread.column(15), #environmental_subtag
+      @spread.column(16), #environmental_subtag_id
+      @spread.column(17), #world_region
+      @spread.column(18), #world_region_id
+      @spread.column(19), #title
+      @spread.column(20), #author
+      @spread.column(21), #news_source
+      @spread.column(22), #date
+      @spread.column(23), #abstract
+      @spread.column(24), #url
+      @spread.column(25), #case_study
+      @spread.column(26), #academic_citation_1
+      @spread.column(27), #academic_citation_2
+      @spread.column(28), #popular_article_title
+      @spread.column(29), #popular_article_author
+      @spread.column(30), #popular_article_news_source
+      @spread.column(31), #popular_article_date
+      @spread.column(32)  #popular_article_url
+    ]
   end
 end
