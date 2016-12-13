@@ -20,6 +20,8 @@ class Resource < ApplicationRecord
 
   has_many :attachments
 
+  has_one :citation
+
   def self.import_resource(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(1)
