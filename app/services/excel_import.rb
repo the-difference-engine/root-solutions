@@ -89,8 +89,46 @@ class ExcelImport
 
   def data_import
     columns = data_setup
-    columns[0].each_with_index do |resource_id|
+    columns[0].each_with_index do |resource_id, index|
       if resource_id != nil
+        resource = Resource.find_or_create_by(
+          id: resource_id.to_i,
+          is_published: columns[1][index],
+          resource_type_id: columns[3][index].to_i,
+          is_problem: columns[4][index],
+          is_solution: columns[5][index],
+
+        )
+
+        if columns[7][index].include?(',')
+          ids = columns[7][index].split(', ')
+          ids.each do |id|
+            resources_cog_bium = ResourcesCognitiveBium.find_or_create_by(
+              resource_id: resource.id,
+              cognitive_bium_id: id.to_i
+            )
+          end
+        else
+          resources_cog_bium = ResourcesCognitiveBium.find_or_create_by(
+            resource_id: resource.id,
+            cognitive_bium_id: columns[7][index].to_i
+          )
+        end
+
+        if columns[9][index].include?(',')
+          ids = columns[9][index].split(', ')
+          ids.each do |id|
+            resources_bb_substep = ResourcesBuildingBlockSubstep.find_or_create_by(
+              resource_id: resource.id,
+              building_block_substep_id: id.to_i
+            )
+          end
+        else
+          resources_bb_substep = ResourcesBuildingBlockSubstep.find_or_create_by(
+            resource_id: resource.id,
+            building_block_substep_id: columns[9][index].to_i
+          )
+        end
         
       else
         break
@@ -100,38 +138,38 @@ class ExcelImport
 
   def data_setup
     columns = [
-      @spread.column(1),  #resource_id
-      @spread.column(2),  #is_published
-      @spread.column(3),  #resource_type
-      @spread.column(4),  #resource_type_id
-      @spread.column(5),  #is_problem
-      @spread.column(6),  #is_solution
-      @spread.column(7),  #cognitive_bias
-      @spread.column(8),  #cognitive_bias_id
-      @spread.column(9),  #building_block
-      @spread.column(10), #building_block_id
-      @spread.column(11), #principle
-      @spread.column(12), #principle_id
-      @spread.column(13), #environmental_tag
-      @spread.column(14), #environmental_tag_id
-      @spread.column(15), #environmental_subtag
-      @spread.column(16), #environmental_subtag_id
-      @spread.column(17), #world_region
-      @spread.column(18), #world_region_id
-      @spread.column(19), #title
-      @spread.column(20), #author
-      @spread.column(21), #news_source
-      @spread.column(22), #date
-      @spread.column(23), #abstract
-      @spread.column(24), #url
-      @spread.column(25), #case_study
-      @spread.column(26), #academic_citation_1
-      @spread.column(27), #academic_citation_2
-      @spread.column(28), #popular_article_title
-      @spread.column(29), #popular_article_author
-      @spread.column(30), #popular_article_news_source
-      @spread.column(31), #popular_article_date
-      @spread.column(32)  #popular_article_url
+      @spread.column(1),  #0. resource_id
+      @spread.column(2),  #1. is_published
+      @spread.column(3),  #2. resource_type
+      @spread.column(4),  #3. resource_type_id
+      @spread.column(5),  #4. is_problem
+      @spread.column(6),  #5. is_solution
+      @spread.column(7),  #6. cognitive_bias
+      @spread.column(8),  #7. cognitive_bias_id
+      @spread.column(9),  #8. building_block
+      @spread.column(10), #9. building_block_id
+      @spread.column(11), #10. principle
+      @spread.column(12), #11. principle_id
+      @spread.column(13), #12. environmental_tag
+      @spread.column(14), #13. environmental_tag_id
+      @spread.column(15), #14. environmental_subtag
+      @spread.column(16), #15. environmental_subtag_id
+      @spread.column(17), #16. world_region
+      @spread.column(18), #17. world_region_id
+      @spread.column(19), #18. title
+      @spread.column(20), #19. author
+      @spread.column(21), #20. news_source
+      @spread.column(22), #21. date
+      @spread.column(23), #22. abstract
+      @spread.column(24), #23. url
+      @spread.column(25), #24. case_study
+      @spread.column(26), #25. academic_citation_1
+      @spread.column(27), #26. academic_citation_2
+      @spread.column(28), #27. popular_article_title
+      @spread.column(29), #28. popular_article_author
+      @spread.column(30), #29. popular_article_news_source
+      @spread.column(31), #30. popular_article_date
+      @spread.column(32)  #31. popular_article_url
     ]
     columns.each do |column|
       column.slice!(0)
