@@ -3,8 +3,8 @@ require 'roo'
 class ExcelImport
   def initialize(file)
     @spreadsheets = Roo::Spreadsheet.open(file)
-    @spread = @spreadsheets.sheet(1)
-    @keys = @spreadsheets.sheet(2)
+    @spread = @spreadsheets.sheet(0)
+    @keys = @spreadsheets.sheet(1)
   end
 
   def key_import
@@ -22,42 +22,42 @@ class ExcelImport
       world_region_ids = @keys.column(11),
       world_regions = @keys.column(12),
       cog_bias_ids =  @keys.column(13),
-      cog_bium = @keys.column(14),
+      cog_bia = @keys.column(14),
       resource_type_ids = @keys.column(15),
       resource_types = @keys.column(16)
     ]
-
     columns.each do |column|
       column.slice!(0)
       column.slice!(0)
+      column.delete(nil)
     end
 
     e_tag_ids.each_with_index do |e_tag_id, i|
-      environmental_tag = EnvironmentTag.find_or_create_by(id: e_tag_id, name: e_tags[i])
+      environmental_tag = EnvironmentalTag.find_or_create_by(id: e_tag_id.to_i, name: e_tags[i])
     end
 
     es_tag_ids.each_with_index do |es_tag_id, i|
-      environmental_sub_tag = EnvironmentSubtag.find_or_create_by(id: es_tag_id, name: es_tags[i], environmental_tag_id: es_etag_ids[i])
+      environmental_sub_tag = EnvironmentalSubtag.find_or_create_by(id: es_tag_id.to_i, name: es_tags[i], environmental_tag_id: es_etag_ids[i])
     end
 
     b_block_ids.each_with_index do |b_block_id, i|
-      building_block = BuildingBlock.find_or_create_by(id: b_block_id, name: b_blocks[i])
+      building_block = BuildingBlock.find_or_create_by(id: b_block_id.to_i, name: b_blocks[i])
     end
 
     principle_ids.each_with_index do |principle_id, i|
-      principle = BuildingBlockSubstep.find_or_create_by(id: principle_id, name: principles[i], building_block_id: principle_b_block_ids[i])
+      principle = BuildingBlockSubstep.find_or_create_by(id: principle_id.to_i, name: principles[i], building_block_id: principle_b_block_ids[i])
     end
 
-    world_regions_ids.each_with_index do |world_region_id, i|
-      world_region = WorldRegion.find_or_create_by(id: world_region_id, name: world_regions[i])
+    world_region_ids.each_with_index do |world_region_id, i|
+      world_region = WorldRegion.find_or_create_by(id: world_region_id.to_i, name: world_regions[i])
     end
 
     cog_bias_ids.each_with_index do |cog_bias_id, i|
-      cognitive_bias = CognitiveBias.find_or_create_by(id: cog_bias_id, name: cog_bium[i])
+      cognitive_bium = CognitiveBium.find_or_create_by(id: cog_bias_id.to_i, name: cog_bia[i])
     end
 
     resource_type_ids.each_with_index do |resource_type_id, i|
-      resource_type = ResourceType.find_or_create_by(id: resource_type_id, name: resource_types[i])
+      resource_type = ResourceType.find_or_create_by(id: resource_type_id.to_i, name: resource_types[i])
     end
   end
 
