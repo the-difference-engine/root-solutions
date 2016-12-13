@@ -91,11 +91,8 @@ class ExcelImport
     columns = data_setup
     columns[0].each_with_index do |resource_id, index|
       if resource_id != nil
-        news_source = NewsSource.find_or_create_by(
-          name: columns[20][index]
-        )
-
-        resource = Resource.find_or_create_by(
+        news_source = create_news_source(columns[20][index])
+        resource_input = {
           id: resource_id.to_i,
           is_published: columns[1][index],
           resource_type_id: columns[3][index].to_i,
@@ -107,166 +104,219 @@ class ExcelImport
           abstract: columns[22][index],
           url: columns[23][index],
           description: columns[24][index]
-        )
-
-        if columns[7][index] != nil
-          if columns[7][index].include?(',')
-            ids = columns[7][index].split(', ')
-            ids.each do |id|
-              resources_cog_bium = ResourcesCognitiveBium.find_or_create_by(
-                resource_id: resource.id,
-                cognitive_bium_id: id.to_i
-              )
-            end
-          else
-            resources_cog_bium = ResourcesCognitiveBium.find_or_create_by(
-              resource_id: resource.id,
-              cognitive_bium_id: columns[7][index].to_i
-            )
-          end
-        end
-
-        if columns[9][index] != nil
-          if columns[9][index].include?(',')
-            ids = columns[9][index].split(', ')
-            ids.each do |id|
-              resource_bb = ResourceBuildingBlock.find_or_create_by(
-                resource_id: resource.id,
-                building_block_id: id.to_i
-              )
-            end
-          else
-            resource_bb = ResourceBuildingBlock.find_or_create_by(
-              resource_id: resource.id,
-              building_block_id: columns[9][index].to_i
-            )
-          end
-        end
-
-        if columns[11][index] != nil
-          if columns[11][index].include?(',')
-            ids = columns[11][index].split(', ')
-            ids.each do |id|
-              resources_bb_substep = ResourcesBuildingBlockSubstep.find_or_create_by(
-                resource_id: resource.id,
-                building_block_substep_id: id.to_i
-              )
-            end
-          else
-            resources_bb_substep = ResourcesBuildingBlockSubstep.find_or_create_by(
-              resource_id: resource.id,
-              building_block_substep_id: columns[11][index].to_i
-            )
-          end
-        end
-
-        if columns[13][index] != nil
-          if columns[13][index].include?(',')
-            ids = columns[13][index].split(',')
-            ids.each do |id|
-              resources_etag = ResourcesEnvironmentalTag.find_or_create_by(
-                resource_id: resource.id,
-                environmental_tag_id: id.to_i
-              )
-            end
-          else
-            resources_etag = ResourcesEnvironmentalTag.find_or_create_by(
-              resource_id: resource.id,
-              environmental_tag_id: columns[13][index].to_i
-            )
-          end
-        end
-
-        if columns[15][index] != nil
-          if columns[15][index].include?(',')
-            ids = columns[15][index].split(',')
-            ids.each do |id|
-              resources_esubtag = ResourcesEnvionmentalSubtag.find_or_create_by(
-                resource_id: resource.id,
-                subtag_id: id.to_i
-              )
-            end
-          else
-            resources_esubtag = ResourcesEnvionmentalSubtag.find_or_create_by(
-              resource_id: resource.id,
-              subtag_id: columns[15][index].to_i
-            )
-          end
-        end
-
-        if columns[17][index] != nil
-          if columns[17][index].include?(',')
-            ids = columns[17][index].split(', ')
-            ids.each do |id|
-              resources_world_region = ResourcesWorldRegion.find_or_create_by(
-                resource_id: resource.id,
-                world_region_id: id.to_i
-              )
-            end
-          else
-            resources_world_region = ResourcesWorldRegion.find_or_create_by(
-              resource_id: resource.id,
-              world_region_id: columns[17][index].to_i
-            )
-          end
-        end
-
-        if columns[21][index].is_a? Date
-          resource.assign_attributes(date: columns[21][index])
-          resource.save
-        elsif columns[21][index] != nil
-          resource.assign_attributes(date: Date.new(columns[21][index]))
-          resource.save
-        end
-
-        if columns[25][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          citation.assign_attributes(citation_1: columns[25][index])
-          citation.save
-        end
-
-        if columns[26][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          citation.assign_attributes(citation_2: columns[26][index])
-          citation.save
-        end
-
-        if columns[27][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          citation.assign_attributes(title: columns[27][index])
-          citation.save
-        end
-
-        if columns[28][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          citation.assign_attributes(author: columns[28][index])
-        end
-
-        if columns[29][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          news_source = NewsSource.find_or_create_by(name: columns[29][index])
-          citation.assign_attributes(news_source_id: news_source.id)
-          citation.save
-        end
-
-        if columns[30][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          if columns[30][index].is_a? Date
-            citation.assign_attributes(date: columns[30][index])
-          else
-            citation.assign_attributes(date: Date.new(columns[30][index]))
-          end
-          citation.save
-        end
-
-        if columns[31][index] != nil
-          citation = find_or_create_by(resource_id: resource.id)
-          citation.assign_attributes(url: columns[31][index])
-          citation.save
-        end
+        }
+        resource = create_resource(resource_input)
+        create_r_cognitive_bias(columns[7][index], resource.id)
+        create_r_building_block(columns[9][index], resource.id)
+        create_r_substep(columns[11][index], resource.id)
+        create_r_environmental_tag(columns[13][index], resource.id)
+        create_r_subtag(columns[15][index], resource.id)
+        create_r_world_region(columns[17][index], resource.id)
+        add_resource_date(columns[21][index], resource)
       else
         break
       end
+    end
+  end
+
+  def create_news_source(news_source_name)
+    news_source = NewsSource.find_or_create_by(
+      name: news_source_name
+    )
+    return news_source
+  end
+
+  def create_resource(input_hash)
+    resource = Resource.find_or_create_by(
+      id: input_hash[:id],
+      is_published: input_hash[:is_published],
+      resource_type_id: input_hash[:resource_type_id],
+      is_problem: input_hash[:is_problem],
+      is_solution: input_hash[:is_solution],
+      title: input_hash[:title],
+      author: input_hash[:author],
+      news_source_id: input_hash[:news_source_id],
+      abstract: input_hash[:abstract],
+      url: input_hash[:url],
+      description: input_hash[:description]
+    )
+    return resource
+  end
+
+  def create_r_cognitive_bias(cognitive_bias_id, resource_id)
+    if cognitive_bias_id != nil
+      if cognitive_bias_id.include?(',')
+        ids = cognitive_bias_id.split(', ')
+        ids.each do |id|
+          resources_cog_bium = ResourcesCognitiveBium.find_or_create_by(
+            resource_id: resource_id,
+            cognitive_bium_id: id.to_i
+          )
+        end
+      else
+        resources_cog_bium = ResourcesCognitiveBium.find_or_create_by(
+          resource_id: resource.id,
+          cognitive_bium_id: cognitive_bias_id.to_i
+        )
+      end
+    end
+  end
+
+  def create_r_building_block(building_block_id, resource_id)
+    if building_block_id != nil
+      if building_block_id.include?(',')
+        ids = building_block_id.split(', ')
+        ids.each do |id|
+          resource_bb = ResourceBuildingBlock.find_or_create_by(
+            resource_id: resource_id,
+            building_block_id: id.to_i
+          )
+        end
+      else
+        resource_bb = ResourceBuildingBlock.find_or_create_by(
+          resource_id: resource_id,
+          building_block_id: building_block_id.to_i
+        )
+      end
+    end
+  end
+
+  def create_r_substep(substep_id, resource_id)
+    if substep_id != nil
+      if substep_id.include?(',')
+        ids = substep_id.split(', ')
+        ids.each do |id|
+          resources_bb_substep = ResourcesBuildingBlockSubstep.find_or_create_by(
+            resource_id: resource_id,
+            building_block_substep_id: id.to_i
+          )
+        end
+      else
+        resources_bb_substep = ResourcesBuildingBlockSubstep.find_or_create_by(
+          resource_id: resource_id,
+          building_block_substep_id: substep_id.to_i
+        )
+      end
+    end
+  end
+
+  def create_r_environmental_tag(environmental_tag_id, resource_id)
+    if environmental_tag_id != nil
+      if environmental_tag_id.include?(',')
+        ids = environmental_tag_id.split(',')
+        ids.each do |id|
+          resources_etag = ResourcesEnvironmentalTag.find_or_create_by(
+            resource_id: resource_id,
+            environmental_tag_id: id.to_i
+          )
+        end
+      else
+        resources_etag = ResourcesEnvironmentalTag.find_or_create_by(
+          resource_id: resource_id,
+          environmental_tag_id: environmental_tag_id.to_i
+        )
+      end
+    end
+  end
+
+  def create_r_subtag(subtag_id, resource_id)
+    if subtag_id != nil
+      if subtag_id.include?(',')
+        ids = subtag_id.split(',')
+        ids.each do |id|
+          resources_esubtag = ResourcesEnvionmentalSubtag.find_or_create_by(
+            resource_id: resource_id,
+            subtag_id: id.to_i
+          )
+        end
+      else
+        resources_esubtag = ResourcesEnvionmentalSubtag.find_or_create_by(
+          resource_id: resource_id,
+          subtag_id: subtag_id.to_i
+        )
+      end
+    end
+  end
+
+  def create_r_world_region(world_region_id, resource_id)
+    if world_region_id != nil
+      if world_region_id.include?(',')
+        ids = world_region_id.split(', ')
+        ids.each do |id|
+          resources_world_region = ResourcesWorldRegion.find_or_create_by(
+            resource_id: resource_id,
+            world_region_id: id.to_i
+          )
+        end
+      else
+        resources_world_region = ResourcesWorldRegion.find_or_create_by(
+          resource_id: resource_id,
+          world_region_id: world_region_id.to_i
+        )
+      end
+    end
+  end
+
+  def add_resource_date(input_date, input_resource)
+    resource = input_resource
+    if input_date.is_a? Date
+      resource.assign_attributes(date: input_date)
+      resource.save
+    elsif input_date != nil
+      resource.assign_attributes(date: Date.new(input_date))
+      resource.save
+    end
+  end
+  citation_info = {
+    citation_1_info: columns[25][index],
+    citation_2_info: columns[26][index],
+    pop_title: column[27][index],
+  }
+  def create_citation(citation_hash)
+    if columns[25][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      citation.assign_attributes(citation_1: columns[25][index])
+      citation.save
+    end
+
+    if columns[26][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      citation.assign_attributes(citation_2: columns[26][index])
+      citation.save
+    end
+
+    if columns[27][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      citation.assign_attributes(title: columns[27][index])
+      citation.save
+    end
+
+    if columns[28][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      citation.assign_attributes(author: columns[28][index])
+    end
+
+    if columns[29][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      news_source = NewsSource.find_or_create_by(name: columns[29][index])
+      citation.assign_attributes(news_source_id: news_source.id)
+      citation.save
+    end
+
+    if columns[30][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      if columns[30][index].is_a? Date
+        citation.assign_attributes(date: columns[30][index])
+      else
+        citation.assign_attributes(date: Date.new(columns[30][index]))
+      end
+      citation.save
+    end
+
+    if columns[31][index] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      citation.assign_attributes(url: columns[31][index])
+      citation.save
     end
   end
 
