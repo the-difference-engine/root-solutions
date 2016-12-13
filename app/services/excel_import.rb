@@ -88,7 +88,14 @@ class ExcelImport
   end
 
   def data_import
-
+    columns = data_setup
+    columns[0].each_with_index do |resource_id|
+      if resource_id != nil
+        
+      else
+        break
+      end
+    end
   end
 
   def data_setup
@@ -126,5 +133,8 @@ class ExcelImport
       @spread.column(31), #popular_article_date
       @spread.column(32)  #popular_article_url
     ]
+    columns.each do |column|
+      column.slice!(0)
+    end
   end
 end
