@@ -112,7 +112,17 @@ class ExcelImport
         create_r_environmental_tag(columns[13][index], resource.id)
         create_r_subtag(columns[15][index], resource.id)
         create_r_world_region(columns[17][index], resource.id)
-        add_resource_date(columns[21][index], resource)
+        add_object_date(columns[21][index], resource)
+        citation_input = {
+          citation_1: columns[25][index],
+          citation_2: columns[26][index],
+          title: columns[27][index],
+          author: columns[28][index],
+          url: columns[31][index],
+          news_source: columns[29][index],
+          date: columns[30][index]
+        }
+        create_citation(citation_input, resource.id)
       else
         break
       end
@@ -257,65 +267,84 @@ class ExcelImport
     end
   end
 
-  def add_resource_date(input_date, input_resource)
-    resource = input_resource
+  def add_object_date(input_date, input_resource)
+    object = input_resource
     if input_date.is_a? Date
-      resource.assign_attributes(date: input_date)
-      resource.save
+      object.assign_attributes(date: input_date)
     elsif input_date != nil
-      resource.assign_attributes(date: Date.new(input_date))
-      resource.save
+      object.assign_attributes(date: Date.new(input_date))
+    end
+    object.save
+  end
+
+  def create_citation(citation_hash, resource_id)
+    citation_hash.each_with_index do |key, value, i|
+      if i == 5
+        create_citation_news_source(resource_id, value)
+      elsif i == 6
+        create_citation_date(resource_id, value)
+      else
+        create_citation_generic(resource_id, key, value)
+      end
     end
   end
-  citation_info = {
-    citation_1_info: columns[25][index],
-    citation_2_info: columns[26][index],
-    pop_title: column[27][index],
-  }
-  def create_citation(citation_hash)
-    if columns[25][index] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      citation.assign_attributes(citation_1: columns[25][index])
+
+  def create_citation_generic(resource_id, attribute, data)
+    if data != nil
+      citation = Citation.find_or_create_by(resource_id: resource_id)
+      citation.assign_attributes(attribute => data)
       citation.save
     end
+  end
 
-    if columns[26][index] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      citation.assign_attributes(citation_2: columns[26][index])
-      citation.save
-    end
-
-    if columns[27][index] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      citation.assign_attributes(title: columns[27][index])
-      citation.save
-    end
-
-    if columns[28][index] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      citation.assign_attributes(author: columns[28][index])
-    end
-
-    if columns[29][index] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      news_source = NewsSource.find_or_create_by(name: columns[29][index])
+  def create_citation_news_source(resource_id, data)
+    if resource_id != nil
+      citation = find_or_create_by(resource_id: resource_id)
+      news_source = create_news_source(resource_id)
       citation.assign_attributes(news_source_id: news_source.id)
       citation.save
     end
+  end
 
-    if columns[30][index] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      if columns[30][index].is_a? Date
-        citation.assign_attributes(date: columns[30][index])
-      else
-        citation.assign_attributes(date: Date.new(columns[30][index]))
-      end
+  def create_citation_date(resource_id, data)
+    if data != nil
+      citation = find_or_create_by(resource_id: resource_id)
+      add_object_date(data, citation)
+    end
+  end
+  
+
+  def create_citation_1(citation_1_input)
+    if citation_hash[:citation_1] != nil
+      citation = Citation.find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(citation_1: citation_hash[:citation_1])
+      citation.save
+    end
+  end
+
+    if citation_hash[:citation_2] != nil
+      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(citation_2: citation_hash[:citation_2])
       citation.save
     end
 
-    if columns[31][index] != nil
+    if citation_hash[:pop_title] != nil
+      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(title: citation_hash[:pop_title])
+      citation.save
+    end
+
+    if citation_hash[:pop_author] != nil
       citation = find_or_create_by(resource_id: resource.id)
-      citation.assign_attributes(url: columns[31][index])
+      citation.assign_attributes(author: citation_hash[:pop_author])
+      citation.save
+    end
+
+
+
+    if citation_hash[:pop_url] != nil
+      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(url: citation_hash[:pop_url])
       citation.save
     end
   end
