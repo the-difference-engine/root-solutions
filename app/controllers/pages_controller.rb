@@ -10,4 +10,8 @@ class PagesController < ApplicationController
 
   def careers
   end
+
+  def partners
+    
+  end
 end
