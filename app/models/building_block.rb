@@ -3,6 +3,9 @@ require 'csv'
 class BuildingBlock < ApplicationRecord
   has_many :building_block_substeps, dependent: :destroy
 
+  has_many :resource_building_blocks
+  has_many :resources, through: :resource_building_blocks
+
   def self.to_csv(options = {})
     desired_columns = ["name"]
     CSV.generate(options) do |csv|

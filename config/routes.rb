@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/work_with_us', to: 'pages#work_with_us', as: :work_with_us
 
   get 'learn/behavior_design', to: 'learn#behavior_design'
+  get '/careers', to: 'pages#careers', as: :careers
+  get '/partners', to: 'pages#partners'
 
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
