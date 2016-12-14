@@ -49,7 +49,7 @@ class ResourcesController < ApplicationController
 
   def import_resources
     excel_import = ExcelImport.new(params[:file])
-    excel_import.key_import
+    excel_import.main
     redirect_to "/resources"
   end
 

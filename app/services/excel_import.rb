@@ -7,14 +7,22 @@ class ExcelImport
     @keys = @spreadsheets.sheet(1)
   end
 
+  def spread
+    @spread
+  end
+
+  def spreadsheets
+    @spreadsheets
+  end
+
   def main
     key_import
     data_import
   end
 
-  private
+  # private
 
-  attr_reader :spreadsheets, :spread, :keys
+  # attr_reader :spreadsheets, :spread, :keys
 
   #key data import
 
@@ -179,9 +187,11 @@ class ExcelImport
       @spread.column(31), #30. popular_article_date
       @spread.column(32)  #31. popular_article_url
     ]
+    binding.pry
     columns.each do |column|
       column.slice!(0)
     end
+    return columns
   end
 
   #main data methods
