@@ -7,6 +7,8 @@ class ExcelImport
     @keys = @spreadsheets.sheet(1)
   end
 
+  #key data import
+
   def key_import
     columns = key_columns_setup
     create_etags(columns[0], columns[1])
@@ -44,6 +46,8 @@ class ExcelImport
     end
     return columns
   end
+
+  #key data methods
 
   def create_etags(ids, etags)
     ids.each_with_index do |id, i|
@@ -87,7 +91,9 @@ class ExcelImport
     end
   end
 
-  def data_import]
+  # main data import
+
+  def data_import
     columns = data_setup
     columns[0].each_with_index do |resource_id, index|
       if resource_id != nil
@@ -128,6 +134,48 @@ class ExcelImport
       end
     end
   end
+
+  def data_setup
+    columns = [
+      @spread.column(1),  #0. resource_id
+      @spread.column(2),  #1. is_published
+      @spread.column(3),  #2. resource_type
+      @spread.column(4),  #3. resource_type_id
+      @spread.column(5),  #4. is_problem
+      @spread.column(6),  #5. is_solution
+      @spread.column(7),  #6. cognitive_bias
+      @spread.column(8),  #7. cognitive_bias_id
+      @spread.column(9),  #8. building_block
+      @spread.column(10), #9. building_block_id
+      @spread.column(11), #10. principle
+      @spread.column(12), #11. principle_id
+      @spread.column(13), #12. environmental_tag
+      @spread.column(14), #13. environmental_tag_id
+      @spread.column(15), #14. environmental_subtag
+      @spread.column(16), #15. environmental_subtag_id
+      @spread.column(17), #16. world_region
+      @spread.column(18), #17. world_region_id
+      @spread.column(19), #18. title
+      @spread.column(20), #19. author
+      @spread.column(21), #20. news_source
+      @spread.column(22), #21. date
+      @spread.column(23), #22. abstract
+      @spread.column(24), #23. url
+      @spread.column(25), #24. case_study
+      @spread.column(26), #25. academic_citation_1
+      @spread.column(27), #26. academic_citation_2
+      @spread.column(28), #27. popular_article_title
+      @spread.column(29), #28. popular_article_author
+      @spread.column(30), #29. popular_article_news_source
+      @spread.column(31), #30. popular_article_date
+      @spread.column(32)  #31. popular_article_url
+    ]
+    columns.each do |column|
+      column.slice!(0)
+    end
+  end
+
+  #main data methods
 
   def create_news_source(news_source_name)
     news_source = NewsSource.find_or_create_by(
@@ -277,6 +325,8 @@ class ExcelImport
     object.save
   end
 
+  # citation methods
+
   def create_citation(citation_hash, resource_id)
     citation_hash.each_with_index do |key, value, i|
       if i == 5
@@ -312,46 +362,8 @@ class ExcelImport
       add_object_date(data, citation)
     end
   end
-  
-  def data_setup
-    columns = [
-      @spread.column(1),  #0. resource_id
-      @spread.column(2),  #1. is_published
-      @spread.column(3),  #2. resource_type
-      @spread.column(4),  #3. resource_type_id
-      @spread.column(5),  #4. is_problem
-      @spread.column(6),  #5. is_solution
-      @spread.column(7),  #6. cognitive_bias
-      @spread.column(8),  #7. cognitive_bias_id
-      @spread.column(9),  #8. building_block
-      @spread.column(10), #9. building_block_id
-      @spread.column(11), #10. principle
-      @spread.column(12), #11. principle_id
-      @spread.column(13), #12. environmental_tag
-      @spread.column(14), #13. environmental_tag_id
-      @spread.column(15), #14. environmental_subtag
-      @spread.column(16), #15. environmental_subtag_id
-      @spread.column(17), #16. world_region
-      @spread.column(18), #17. world_region_id
-      @spread.column(19), #18. title
-      @spread.column(20), #19. author
-      @spread.column(21), #20. news_source
-      @spread.column(22), #21. date
-      @spread.column(23), #22. abstract
-      @spread.column(24), #23. url
-      @spread.column(25), #24. case_study
-      @spread.column(26), #25. academic_citation_1
-      @spread.column(27), #26. academic_citation_2
-      @spread.column(28), #27. popular_article_title
-      @spread.column(29), #28. popular_article_author
-      @spread.column(30), #29. popular_article_news_source
-      @spread.column(31), #30. popular_article_date
-      @spread.column(32)  #31. popular_article_url
-    ]
-    columns.each do |column|
-      column.slice!(0)
-    end
-  end
+
+  #extraneous
 
   def old_citation_creation
     if citation_hash[:citation_1] != nil
@@ -384,5 +396,4 @@ class ExcelImport
       citation.save
     end
   end
-
 end
