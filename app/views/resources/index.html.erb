@@ -26,9 +26,12 @@
         <td><%= resource.author %></td>
         <td><%= resource.news_source_id %></td>
         <td><%= resource.date %></td>
-        <td><%= resource.content %></td>
+        <% if resource.abstract %>
+          <td><%= resource.abstract %></td>
+        <% else %>
+          <td><%= resource.description %></td>
+        <% end %>
         <td><%= resource.url %></td>
-        <td><%= resource.admin_notes %></td>
         <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
         <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
