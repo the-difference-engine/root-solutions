@@ -7,6 +7,15 @@ class ExcelImport
     @keys = @spreadsheets.sheet(1)
   end
 
+  def main
+    key_import
+    data_import
+  end
+
+  private
+
+  attr_reader :spreadsheets, :spread, :keys
+
   #key data import
 
   def key_import
