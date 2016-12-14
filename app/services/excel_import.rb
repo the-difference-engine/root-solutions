@@ -313,42 +313,6 @@ class ExcelImport
     end
   end
   
-
-  def create_citation_1(citation_1_input)
-    if citation_hash[:citation_1] != nil
-      citation = Citation.find_or_create_by(resource_id: citation_hash[:resource_id])
-      citation.assign_attributes(citation_1: citation_hash[:citation_1])
-      citation.save
-    end
-  end
-
-    if citation_hash[:citation_2] != nil
-      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
-      citation.assign_attributes(citation_2: citation_hash[:citation_2])
-      citation.save
-    end
-
-    if citation_hash[:pop_title] != nil
-      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
-      citation.assign_attributes(title: citation_hash[:pop_title])
-      citation.save
-    end
-
-    if citation_hash[:pop_author] != nil
-      citation = find_or_create_by(resource_id: resource.id)
-      citation.assign_attributes(author: citation_hash[:pop_author])
-      citation.save
-    end
-
-
-
-    if citation_hash[:pop_url] != nil
-      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
-      citation.assign_attributes(url: citation_hash[:pop_url])
-      citation.save
-    end
-  end
-
   def data_setup
     columns = [
       @spread.column(1),  #0. resource_id
@@ -388,4 +352,37 @@ class ExcelImport
       column.slice!(0)
     end
   end
+
+  def old_citation_creation
+    if citation_hash[:citation_1] != nil
+      citation = Citation.find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(citation_1: citation_hash[:citation_1])
+      citation.save
+    end
+
+    if citation_hash[:citation_2] != nil
+      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(citation_2: citation_hash[:citation_2])
+      citation.save
+    end
+
+    if citation_hash[:pop_title] != nil
+      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(title: citation_hash[:pop_title])
+      citation.save
+    end
+
+    if citation_hash[:pop_author] != nil
+      citation = find_or_create_by(resource_id: resource.id)
+      citation.assign_attributes(author: citation_hash[:pop_author])
+      citation.save
+    end
+
+    if citation_hash[:pop_url] != nil
+      citation = find_or_create_by(resource_id: citation_hash[:resource_id])
+      citation.assign_attributes(url: citation_hash[:pop_url])
+      citation.save
+    end
+  end
+
 end
