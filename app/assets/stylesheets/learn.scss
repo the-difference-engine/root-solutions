@@ -1,5 +1,5 @@
 a {
-    color: black;
+    color: green;
     text-decoration: underline;
 }
 a:hover {
@@ -12,9 +12,14 @@ a:active {
 
 .btn-primary {
   background-color: #4CAF50;
-  border: none;
+  padding-bottom:10px; 
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  border-radius: 10px;
   font-size: 20px;
   color: white;
+
 }
 .btn-primary:hover {
 background-color:#FFDFA3;  }
