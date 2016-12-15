@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def partners
     
   end
+  def learn 
+
+  end
+
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#about_us', as: :about_us
   get '/work_with_us', to: 'pages#work_with_us', as: :work_with_us
-
+  get '/learn', to: 'pages#learn', as: :learn
   get 'learn/behavior_design', to: 'learn#behavior_design'
   get '/learn/why_behavior', to: 'learn#why_behavior'
   get '/careers', to: 'pages#careers', as: :careers
