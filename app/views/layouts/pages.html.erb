@@ -101,8 +101,8 @@
     $(".dropdown").on("mouseout", function() {
       $(this).removeClass("open");
     });
-    $(".dropdown-toggle").on("click", function() {
-      if (window.location == this.attr("href")) {
+    $(".dropdown-toggle, .navbar-brand").on("click", function() {
+      if (window.location.pathname == $(this).attr("href")) {
         return false;
       } else {
         window.location = $(this).attr("href");
