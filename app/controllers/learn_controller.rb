@@ -6,4 +6,8 @@ class LearnController < ApplicationController
 
   end
 
+  def why_behavior
+    
+  end
+
 end
