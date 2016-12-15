@@ -222,7 +222,7 @@ button.learn-more:hover {
 /* # DONATE */
 /* # HOMEPAGE */
 
-#parallax-1, #parallax-2, #parallax-3 {
+#parallax-1, #parallax-2, #parallax-3, #main-footer {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -292,6 +292,41 @@ button.learn-more:hover {
   color: white;
 }
 
+#main-footer {
+  background-image: url( <%= image_path 'rain_forest.jpg' %> );
+}
+
+#sub-footer{
+  height: 200px;
+  opacity: 0.7;
+  background-color: #2B2B2B;
+  color: white;
+  padding: 50px 0px;
+}
+
+.footer-form-title {
+  margin-bottom: 4px;
+  margin-top: 0;
+  color: #fff;
+  font-size: 21px;
+
+}
+
+.footer-left-col{
+  text-align: center;
+}
+
+.title-container{
+  width: 60%;
+  text-align: left;
+  display: inline-block;
+}
+
+.footer-button-content-container{
+  display: inline-block;
+  width: 60%;
+  text-align: right;
+}
 .who-we-are-LO {
   position: absolute;
   left: 0;
@@ -339,15 +374,8 @@ button.learn-more:hover {
   margin-left: 500px;  
 }
 
-#main-footer{
-  height: 200px;
-  background-color: #2B2B2B;
-  color: white;
-  padding: 50px 20px 20px 50px;
-}
 
-#main-footer i{
-  float: right;
+#main-footer i {
   margin: 10px;
   font-size: 3.0em;
 }
@@ -356,6 +384,20 @@ button.learn-more:hover {
   color: black;
 }
 
+.footer-form-submit {
+  color: black;
+}
+
+.footer-email-bar {
+  margin-bottom: 10px;
+  width: 60%;
+}
+
+.company-info {
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
 
 #main-logo img {
   height: 250px;
@@ -434,11 +476,13 @@ button.learn-more:hover {
 }
 
 /* Navbar black and white */
-/*
-.navbar-brand a {
-font: white;
 
-/* navbar */
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+  opacity: 0.7;
+}
+
+/* navbar 
 
 /* .brand */
 .navbar-custom {
@@ -496,7 +540,9 @@ font: white;
 .navbar-custom .navbar-inner .nav li.active a {
   color: #bf3604;
 }
-
+.social-media-images-container {
+  text-align: center;
+}
 .text-color {
   color: $green5;
 }
