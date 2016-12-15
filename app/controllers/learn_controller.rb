@@ -6,4 +6,7 @@ class LearnController < ApplicationController
 
   end
 
+  def our_process
+
+  end
 end
