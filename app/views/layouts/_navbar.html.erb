@@ -17,14 +17,14 @@
         <%= submit_tag 'Search', class: 'btn btn-primary' %>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
-      <% if !current_user %>
-      <li><%= link_to "login", "/login" %></li>
-      <% end %>
-              <% if current_user %>
-                <li><%= link_to "Sign out", "/logout", method: :delete %></li>
-                <li><%= link_to "Add admin", "/admins/new" %></li>
-              <% end %>
-            </ul>
+        <% if !current_user %>
+          <li><%= link_to "login", "/login" %></li>
+        <% end %>
+        <% if current_user %>
+          <li><%= link_to "Sign out", "/logout", method: :delete %></li>
+          <li><%= link_to "Add admin", "/admins/new" %></li>
+        <% end %>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
