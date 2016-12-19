@@ -18,4 +18,8 @@ class PagesController < ApplicationController
 
   end
 
+  def mission
+    
+  end
+
 end
