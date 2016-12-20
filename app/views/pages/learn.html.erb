@@ -1,62 +1,36 @@
-<script>
-  $(function(){
-    $('#sidebar-nav').affix({
-      offset: {
-        top: function() {
-          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
-        }
-      }
-    })
-    $('#sidebar-nav a').click(function(){
-      $('#sidebar-nav').affix('checkPosition');
-    })
-  });
-</script>
-
-<div id="behavior_design-parallax"> 
+<div id="parallax-1"> 
+  
   <div class="heading-title">
-    <h2 class="title">
+    <h2>
       LEARN
     </h2>
-    <div id="sub-logo">
+    <div id="main-logo">
       <%= image_tag("root-logo.png") %>
     </div>
   </div>
 </div>
-<div id="behvior_design-chevron" class="backgroundcolor"></div>
-<div class='container-fluid backgroundcolor'>
-<!-- <div class='container-fluid'> -->
-  <div id="header-row" class="row">
-    <div class='col-md-2'></div>
-    <div class='col-md-8'>
-    <p>
-      <h1 class="text-color behavior-design-title">Learn</h1>
-    </p>
-    </div>
-  </div>
-  <div class ="row">
-  <div class='col-md-2'></div>
-  <div class='col-md-8'>
+
+<div class= "white-space chevron">
     <p>
       We have developed a suite of tools to help you learn about and implement behavior design strategy in your own initiatives.
     </p>
-  </div>
-  </div>
-  <div align="center">
-    <%= link_to "Why behavior matters", "/learn/why_behavior", :class => "btn-primary"%> 
-  </div>
-  <div id="header-row" class="row">
-    <div class='col-md-2'></div>
-    <div class='col-md-8'>
+    <div align="center">
     <p>
-      <h2>Our Behavioral Design Framework</h2>
-    </p>
-    <p>
-      We have taken a unique approach to harnessing behavioral science for environmental initiatives. Rather than relying on the practices and understandings from just one of the available approaches, we have synthesized the available behavioral research into a unified, practical, step-by-step process. We use this framework in our <%= link_to "consulting", "/work_with_us"%> practice,  as well as when <%= link_to "training", "/work_with_us"%> environmental leaders how to harness behavioral science on their own.
+      <%= link_to "Why behavior matters", "/learn/why_behavior", :class => "btn-primary"%> 
     </p>
     </div>
   </div>
-  <div align="center">
+
+
+<div id="parallax-2" class="heading-title">
+    <h2 class="other-titles">Our Behavioral Design Framework</h2>
+</div>
+<div class="white-space"> 
+  
+  <p>
+      We have taken a unique approach to harnessing behavioral science for environmental initiatives. Rather than relying on the practices and understandings from just one of the available approaches, we have synthesized the available behavioral research into a unified, practical, step-by-step process. We use this framework in our <%= link_to "consulting", "/work_with_us"%> practice,  as well as when <%= link_to "training", "/work_with_us"%> environmental leaders how to harness behavioral science on their own.
+    </p>
+    <div align="center">
   <h4>Learn  more about the four phases of our framework</h4>
     <div>
       <%= link_to "Initiation <> Ideation <> Design <> Piloting", "/learn/our_process", :class => "btn-primary"%>
@@ -69,14 +43,14 @@
       <%= link_to "10 Behavioral Building Blocks", "/learn/behavior_design", :class => "btn-primary"%>
     </div>
   </div>
-  <div id="header-row" class="row">
-    <div class='col-md-2'></div>
-    <div class='col-md-8'>
-    <p><h2>Database of Resources</h2></p>
-    <p>
-      Our searchable database is an excellent way to find articles, videos and case studies relevant to your own work. You can see examples of behavioral science initiatives organized by both environmental topic, such as energy reduction, green transportation and waste reduction, as well as by behavioral design principle, such as framing, using social norms and providing feedback.​
-    </p>
-    </div>
-  </div>
 </div>
 
+<div id="parallax-3" class="heading-title">
+  <h2 class="other-titles">Database of Resources</h2>
+</div>
+
+<div  class="white-space">
+  <p>
+    Our searchable database is an excellent way to find articles, videos and case studies relevant to your own work. You can see examples of behavioral science initiatives organized by both environmental topic, such as energy reduction, green transportation and waste reduction, as well as by behavioral design principle, such as framing, using social norms and providing feedback.​
+  </p>
+</div>
