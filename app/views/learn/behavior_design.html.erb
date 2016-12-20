@@ -1,18 +1,3 @@
-<script>
-  $(function(){
-    $('#sidebar-nav').affix({
-      offset: {
-        top: function() {
-          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
-        }
-      }
-    })
-    $('#sidebar-nav a').click(function(){
-      $('#sidebar-nav').affix('checkPosition');
-    })
-  });
-</script>
-
 <div id="behavior_design-parallax"> 
   <div class="heading-title">
     <h2 class="title">
@@ -23,13 +8,13 @@
     </div>
   </div>
 </div>
-<div id="behvior_design-chevron" class="backgroundcolor">
+<div id="behavior_design-chevron">
 </div>
-  <div class='container-fluid backgroundcolor'>
+  <div class='container-fluid'>
     <div id="header-row" class="row">
       <div class='col-md-3'></div>
       <div class='col-md-7'>
-        <h1 class="text-color behavior-design-title">"Behavioral" Building Blocks</h1>
+        <h1 class="client-text-color behavior-design-title">"Behavioral" Building Blocks</h1>
         <h2>Root Solutions has developed an easily understood, practical behavior design process. The heart of this process is our essential “Behavioral Building Blocks” each made up of time tested behavioral interventions.</h3>
       </div>
     </div>
@@ -52,8 +37,8 @@
       <div class='col-md-7'>
         <div class='content'>
           <div class="tab-content">
-            <div id="Benefits" class="tab-pane fade in active h-color">
-              <h2 class="text-color">Use BENEFITS</h2>
+            <div id="Benefits" class="tab-pane fade in active client-color">
+              <h2 class="client-text-color">Use BENEFITS</h2>
               <p>
                 <strong>Key point:</strong> Environmentalists have long understood the value of rewarding positive environmental behaviors or penalizing detrimental behaviors. By attaching benefits and/or disincentives to specific behavioral outcomes, we can catalyze action or help to reinvigorate pre-established goals.
               </p>
@@ -86,12 +71,12 @@
                 Scarcity of resources plays a big role in motivating behavior. When designing rewards, consider offering a limited-amount or a limited-time reward.
               </p>
               <h3>Optimize resources</h3>
-              <p>
+              <p id="bottom">
                 We know that large prizes can entice our audiences.  If we have a finite number of resources to offer, we can reduce the number and increase the value of each reward. For high participation and impact, use a lottery system!
               </p>
             </div>
-            <div id="Easy" class="tab-pane fade h-color">
-              <h2 class="text-color">Make it EASY</h2>
+            <div id="Easy" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Make it EASY</h2>
               <p>
                 <strong>Key point:</strong> Any kind of barrier to action, whether mental or physical, discourages us from a behavior. Making it easy involves removing barriers to desired actions and erecting barriers to deleterious actions, while employing defaults to promote favorable actions. These strategies together are quite powerful, as they make environmentally friendly behavior virtually effortless.
               </p>
@@ -124,8 +109,8 @@
                 As practitioners, we can use the tendency to avoid taking actions that appear to require too much effort to our advantage by making environmentally inefficient behavior harder to perform. Consider this: if an office is hoping to cut its paper consumption, they might create an effective barrier by moving the office printer to a less convenient location.
               </p>
             </div>
-            <div id="Hopeful" class="tab-pane fade h-color">
-              <h2 class="text-color">Emphasize HOPEFULNESS</h2>
+            <div id="Hopeful" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Emphasize HOPEFULNESS</h2>
               <p>
                 <strong>Key point:</strong> Hopelessness leads to avoidance and inaction. In order to feel motivated, we need to be confident that we have the ability to positively affect our planet and that our efforts actually make a difference.
               </p>
@@ -158,8 +143,8 @@
                  Positivity works! The scale of existing environmental damage can often lead us to feel overwhelmed and powerless. Instead of focusing solely on reducing negative impacts, show individuals how they can increase positive impacts on the environment.
               </p>
             </div>
-            <div id="Associate" class="tab-pane fade h-color">
-              <h2 class="text-color">Frame for the appropriate ASSOCIATIONS</h2>
+            <div id="Associate" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Frame for the appropriate ASSOCIATIONS</h2>
               <p>
                 <strong>Key point:</strong> We process each piece of new information we receive through our pre-existing values, beliefs, and experiences. Framing messages to better fit our mental models can influence message uptake, agreement, and willingness to act.
               </p>
@@ -184,8 +169,8 @@
                 Our attention to environmental occurrences diminishes as uncertainty increases. In order to effectively communicate the importance of our environmental issues, we should steer clear of language highlighting any doubt regarding environmental outcomes.
               </p>
             </div>
-            <div id="Vivid" class="tab-pane fade h-color">
-              <h2 class="text-color">Design it to be VIVID</h2>
+            <div id="Vivid" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Design it to be VIVID</h2>
               <p>
                 This is a sneak peek at Vivid.  To read the entire chapter, click <a href="">here</a>. <!-- link pending, discuss with Nya -->
               </p>
@@ -221,8 +206,8 @@
                 Time the message to correspond with relevant occurrences, as environmental messages may be more salient in our minds at these times. For example, consider highlighting the message following an extreme environmental event or an unplanned disturbance such as a rise in gas prices. Conversely, wait until events that are incongruent with your environmental aim have passed to begin a campaign – the audience might have trouble conserving water to mitigate a drought in the middle of a storm.g
               </p>
             </div>
-            <div id="Identity" class="tab-pane fade h-color">
-              <h2 class="text-color">Encourage consistent IDENTITY</h2>
+            <div id="Identity" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Encourage consistent IDENTITY</h2>
               <p>
                 <strong>Key point:</strong> We care about our identity and how others perceive us. Therefore, we are intrinsically motivated to match our beliefs to our behaviors, and will exert effort to do so.
               </p>
@@ -251,8 +236,8 @@
                 When we experience cognitive dissonance, we either alter our beliefs to match our actions or alter our actions to match our beliefs. When soliciting commitments, remind the audience of their previously held values before prompting them to act on our environmental effort and be sure to present the appropriate action immediately after inducing cognitive dissonance.
               </p>
             </div>
-            <div id="Ordinary" class="tab-pane fade h-color">
-              <h2 class="text-color">Demonstrate what is ORDINARY</h2>
+            <div id="Ordinary" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Demonstrate what is ORDINARY</h2>
               <p>
                 <strong>Key point:</strong> As busy individuals making thousands of choices a day, we save time by modeling our choices off of the values, expectations, and practices of our community, neighbors, and friends. What is normal, or ordinary, is a powerful driver of human behavior.
               </p>
@@ -281,8 +266,8 @@
                 Social norms are time sensitive—consider eliciting the social norm right when the targeted behavior is projected to occur. This way, our attention will be centered around the norm, and our focus will lead us to act in harmony with it.
               </p>
             </div>
-            <div id="Relatable" class="tab-pane fade h-color">
-              <h2 class="text-color">Craft it to be RELATABLE</h2>
+            <div id="Relatable" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Craft it to be RELATABLE</h2>
               <p>
                 <strong>Key point:</strong> We care about things more when they relate to our own lives—this tendency affects our capacity to conceptualize large numbers or plan for the future.  By aligning our message with what our audience cares about, we can reduce the gap between the individual and the environmental problem, and better engage our audiences to act.
               </p>
@@ -315,8 +300,8 @@
                 Personal narratives and story-telling are common ways to elicit an emotional response or encourage our audience members to walk in the shoes of an individual affected by our cause.
               </p>
             </div>
-            <div id="Awareness" class="tab-pane fade h-color">
-              <h2 class="text-color">Foster AWARENESS</h2>
+            <div id="Awareness" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Foster AWARENESS</h2>
               <p>
                 <strong>Key point:</strong> We often move through the day on auto-pilot, and sometimes our environmental principles are compromised by thoughtless actions. Mindful awareness offers us the power to make consciousdecisions in line with our environmental goals. By learning to practice awareness and impart our wisdom onto our audiences, we can foster and sustain behavior change.
               </p>
@@ -349,8 +334,8 @@
                 People struggle to care about something they have not experienced. It is therefore important to expose our target audience to nature. By asking our audience to extend their awareness to the natural spaces surrounding them, we can draw the importance of our environmental issue back to its core.
               </p>
             </div>
-            <div id="Lasting" class="tab-pane fade h-color">
-              <h2 class="text-color">Construct it to be LASTING</h2>
+            <div id="Lasting" class="tab-pane fade client-color">
+              <h2 class="client-text-color">Construct it to be LASTING</h2>
               <p>
                 <strong>Key point:</strong> Although many one-time behavioral interventions can reap lasting benefits to the environment, environmental advocates can also support long-term behavioral change by helping our audiences build habits surrounding environmentally friendly actions.
               </p>
@@ -381,3 +366,23 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          console.log("Top Offset Location:" + ($('#header-row').offset().top + $('#header-row').outerHeight(true) - 170).toString())
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        },
+        bottom: function() {
+          console.log("Bottom offset location:" + ($('#bottom').offset().top + $('#bottom').outerHeight(true)).toString())
+          return (this.bottom = $('#main-footer').offset().top + $('#main-footer').outerHeight(true));
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
