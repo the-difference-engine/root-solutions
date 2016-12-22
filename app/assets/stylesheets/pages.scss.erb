@@ -634,7 +634,7 @@ button.learn-more:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url( <%= image_path 'initiation.jpg' %>); /* add image of choice */
+  background-image: url( <%= image_path 'beach_sunset.jpg' %>); /* add image of choice */
   height: 400px;
 }
 
@@ -653,4 +653,38 @@ button.learn-more:hover {
 .client-green-text {
   color: $green3;
   //change to $green when all_behavior is merged
+}
+
+.our-process-parallax-1, .our-process-parallax-2, .our-process-parallax-3, .our-process-parallax-4 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+.our-process-parallax-1 h2, .our-process-parallax-2 h2, .our-process-parallax-3 h2, .our-process-parallax-4 h2 {
+  padding-top: 100px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+  opacity: 0.7;
+  font-weight: bold;
+  margin-top: 1.2em;  
+}
+
+.our-process-parallax-1 {
+  background-image: url( <%= image_path 'process1.png' %>);
+}
+
+.our-process-parallax-2 {
+  background-image: url( <%= image_path 'process2.png' %>);
+}
+.our-process-parallax-3 {
+  background-image: url( <%= image_path 'process3.png' %>);
+}
+.our-process-parallax-4 {
+  background-image: url( <%= image_path 'process4.png' %>);
 }
