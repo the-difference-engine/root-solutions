@@ -46,14 +46,153 @@
 
   We have developed a systematic approach for integrating behavioral insights into both new and ongoing projects. Learn more about the Root Solutions Environmental Behavior Design Framework.
 </p>
+<%= link_to "View our past projects", "http://www.therootsolutions.org/copy-of-work-with-us" %>
 </div>
 
 <div id="parallax-3" class="heading-title">
-  <h2 class="other-titles">Database of Resources</h2>
+  <h2 class="other-titles">Training</h2>
 </div>
 
 <div  class="white-space">
   <p>
-    Our searchable database is an excellent way to find articles, videos and case studies relevant to your own work. You can see examples of behavioral science initiatives organized by both environmental topic, such as energy reduction, green transportation and waste reduction, as well as by behavioral design principle, such as framing, using social norms and providing feedback.​
+    By providing practical instruction on the use of behavioral design, we equip change-makers to create a brighter, healthier, and more sustainable world. Our trainings are based on our unique behavior design framework, using a mix of case studies, informative storytelling, hands-on activities, and concrete design material.
   </p>
+  <div class="work-with-us-quote">
+    “I feel like anyone working in environmental program design and implementation should receive this training, especially if they have a goal of changing people's’ behavior. The training was interesting, engaging, and relevant; we came out of it with specific steps we can take to improve our programming to make it more relevant and effective.” –Julia Hatton, Director of Youth Programs, Rising Sun Energy Center
+  </div>
+  <p>
+    Training Format
+    <ul>Short topical training</ul>
+    <ul>1 & 2 day workshops</ul>
+    <ul>Specialized trainings tailored to meet the needs of your organization</ul>
+  </p>
+  <p>
+    Common to all trainings
+    <ul>Through our training, you will learn how to immediately integrate behavior design into your effort, driving success and creating lasting impact for your organization and, most importantly, for the environmental movement.</ul>
+    <ul>Techniques to identify the barriers to action faced by your target group.</ul>
+    <ul>Examples of recently conducted experiments and real world applications that provide insight on specific best practices.</ul>
+    <ul>Initiative redesign strategies: an in-depth look at how organizations are failing to captivate or motivate their audiences, and how you can jump ahead of the curve.</ul>
+  </p>
+  <p>
+    Topics may include
+    <li>Designing the best choice architecture in a specific setting</li>
+    <li>Designing pledges for lasting impact</li>
+    <li>Exploring how cognitive dissonance can help to strengthen commitments</li>
+    <li>Guidance framing your outreach efforts that are compatible with cognitive biases</li>
+    <li>Connecting through comparison: how to best create normative messages</li>
+    <li>Highlighting progress for enhanced motivation</li>
+    <li>Making it matter: working to localize abstract messages</li>
+    <li>Value-matching as a tactic to connect with your audience</li>
+  </p>
+</div>
+<div class="work-with-us-form">
+  <h3>Contact us to discuss client work or trainings</h3>
+
+  ```<div class="row">
+  <div class="col-md-6">
+    <%= form_tag '/profile', method: :post do %>
+    <form class="form-horizontal">
+      <div class="row">
+        <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10 inputs-group"> 
+            <label class="radio-inline">
+              <%=label_tag :FULL_TIME%>
+              <%=radio_button_tag :type_of_job,"FULL",class:"form-control" %>
+            </label>
+            <label class="radio-inline">
+              <%=label_tag :PART_TIME%>
+              <%=radio_button_tag :type_of_job,"PART",class:"form-control" %>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%=label_tag :age %>
+            <%=text_field_tag :age,"", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">    
+            <%=label_tag :gender %>
+            <%=text_field_tag :gender,"", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%=label_tag :description %>
+            <%=text_area_tag :description, "", class:"text-area"  %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%=label_tag :preferred_age_group %>
+            <%=text_field_tag :preferred_age_group,"", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%=label_tag :education %>
+            <%=text_field_tag :education,"", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row"">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%=label_tag :languages %>
+            <%=text_field_tag :languages,"", class:"form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%=label_tag :availability %>
+            <%=text_field_tag :availability,"", class:"form-control"  %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <label class="checkbox-inline">
+              <%= label_tag :cpr %>
+              <%= check_box_tag :cpr, value = "TRUE",checked = false, class:"form-control" %>
+            </label>
+            <label class="checkbox-inline">
+              <%= label_tag :first_aid %>
+              <%= check_box_tag :first_aid, value = "TRUE",checked = false, class:"form-control" %>
+            </label>
+            <label class="checkbox-inline">
+              <%= label_tag :trustline %>
+              <%= check_box_tag :trustline, value = "TRUE",checked = false, class:"form-control" %>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <%= label_tag :Comfortable_with_pets %>
+            <%= select_tag "comfortable_with_pets", "<option  value='TRUE' selected='selected'>Yes</option><option value='FALSE'>No</option>".html_safe %>
+          </div>
+        </div>
+      </div>
+      <div class="button" align="center">
+        <%= button_tag "<span> Create the profile</span>".html_safe, class: "btn primary-btn"%>
+      </div>
+      <% end %>
+    </form>
+  </div>
+</div>
 </div>
