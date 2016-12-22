@@ -85,111 +85,46 @@
     <li>Value-matching as a tactic to connect with your audience</li>
   </p>
 </div>
-<div class="work-with-us-form">
+<div class="white-space">
   <h3>Contact us to discuss client work or trainings</h3>
-
-  ```<div class="row">
+  <div class="row">
   <div class="col-md-6">
-    <%= form_tag '/profile', method: :post do %>
+    <%= form_tag '/', method: :post do %>
     <form class="form-horizontal">
       <div class="row">
         <div class="form-group">
-        <div class="col-sm-offset-1 col-sm-10 inputs-group"> 
-            <label class="radio-inline">
-              <%=label_tag :FULL_TIME%>
-              <%=radio_button_tag :type_of_job,"FULL",class:"form-control" %>
-            </label>
-            <label class="radio-inline">
-              <%=label_tag :PART_TIME%>
-              <%=radio_button_tag :type_of_job,"PART",class:"form-control" %>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :age %>
-            <%=text_field_tag :age,"", class:"form-control" %>
+            <%=label_tag :name %>
+            <%=text_field_tag :name,"", class:"form-control" %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10 inputs-group">    
-            <%=label_tag :gender %>
-            <%=text_field_tag :gender,"", class:"form-control" %>
+            <%=label_tag :email %>
+            <%=text_field_tag :email,"", class:"form-control" %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :description %>
-            <%=text_area_tag :description, "", class:"text-area"  %>
+            <%=label_tag :subject %>
+            <%=text_field_tag :subject, "", class:"form-control"  %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :preferred_age_group %>
-            <%=text_field_tag :preferred_age_group,"", class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :education %>
-            <%=text_field_tag :education,"", class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row"">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :languages %>
-            <%=text_field_tag :languages,"", class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :availability %>
-            <%=text_field_tag :availability,"", class:"form-control"  %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <label class="checkbox-inline">
-              <%= label_tag :cpr %>
-              <%= check_box_tag :cpr, value = "TRUE",checked = false, class:"form-control" %>
-            </label>
-            <label class="checkbox-inline">
-              <%= label_tag :first_aid %>
-              <%= check_box_tag :first_aid, value = "TRUE",checked = false, class:"form-control" %>
-            </label>
-            <label class="checkbox-inline">
-              <%= label_tag :trustline %>
-              <%= check_box_tag :trustline, value = "TRUE",checked = false, class:"form-control" %>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%= label_tag :Comfortable_with_pets %>
-            <%= select_tag "comfortable_with_pets", "<option  value='TRUE' selected='selected'>Yes</option><option value='FALSE'>No</option>".html_safe %>
+            <%=label_tag :message %>
+            <%=text_area_tag :message,"", class:"form-control" %>
           </div>
         </div>
       </div>
       <div class="button" align="center">
-        <%= button_tag "<span> Create the profile</span>".html_safe, class: "btn primary-btn"%>
+        <%= button_tag "<span> Send </span>".html_safe, class: "btn primary-btn"%>
       </div>
       <% end %>
     </form>
