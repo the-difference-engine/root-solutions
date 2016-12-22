@@ -1,36 +1,21 @@
-<script>
-  $(function(){
-    $('#sidebar-nav').affix({
-      offset: {
-        top: function() {
-          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
-        }
-      }
-    })
-    $('#sidebar-nav a').click(function(){
-      $('#sidebar-nav').affix('checkPosition');
-    })
-  });
-</script>
-
-<div id="behavior_design-parallax"> 
+<div id="our-process-parallax"> 
   <div class="heading-title">
     <h2 class="title">
-      ROOT SOLUTIONS
+      Our Process
     </h2>
     <div id="sub-logo">
       <%= image_tag("root-logo.png") %>
     </div>
   </div>
 </div>
-<div id="behvior_design-chevron" class="backgroundcolor">
+<div id="our-process-chevron" class="our-process-background-color">
 </div>
-<div class='container-fluid backgroundcolor'>
+<div class='container-fluid our-process-background-color'>
   <div class="container-fluid">
    <div class="row">
      <div class="col-md-2"></div>
      <div class="col-md-8">
-      <h1 class="text-color process-design-title">Developing a behavior based campaign</h1>
+      <h1 class="client-green-text process-design-title">Developing a behavior based campaign</h1>
       <h3 style="font-size: 20px/1.4em">
        We work directly with non-profits, governmental agencies and companies to identify behavior-based solutions, then assist in the design and implementation of cost-effective and scalable strategies.
 
@@ -44,7 +29,7 @@
  <div class="row">
    <div class="col-md-2"></div>
     <div class="col-md-4" >
-     <%= image_tag 'process1.png', class: 'our_process' %>
+      <%= image_tag 'process1.png', class: 'our_process' %>
     </div>
     <div class="col-md-4">
       <h3 class="text-color process-design-title">Initiation Phase</h3> 

@@ -436,7 +436,7 @@ button.learn-more:hover {
   height: 350px;
 }
 
-#behvior_design-chevron {
+#behavior_design-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -115px 0px 0px 0px;
@@ -626,4 +626,31 @@ button.learn-more:hover {
 }
 .why-behavior-header-three {
   color: $green5;
+}
+
+#our-process-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'initiation.jpg' %>); /* add image of choice */
+  height: 400px;
+}
+
+#our-process-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+.our-process-background-color {
+  background-color: white;
+}
+
+.client-green-text {
+  color: $green3;
+  //change to $green when all_behavior is merged
 }
