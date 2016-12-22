@@ -372,12 +372,16 @@
     $('#sidebar-nav').affix({
       offset: {
         top: function() {
-          console.log("Top Offset Location:" + ($('#header-row').offset().top + $('#header-row').outerHeight(true) - 170).toString())
-          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+          console.log("Top Offset Location:" + ($('#header-row').offset().top + $('#header-row').outerHeight(true) - 170).toString());
+          return ($('#header-row').offset().top + $('#header-row').outerHeight(true) - 170);
         },
+        // offset for bottom is too high, perhaps offset is tracking the value from the bottom of hte screen?
+        //after bottom offset takes place, sidebar acts strange. when top offset action takes place, sidebar shifts right a few pixels as well
         bottom: function() {
-          console.log("Bottom offset location:" + ($('#bottom').offset().top + $('#bottom').outerHeight(true)).toString())
-          return (this.bottom = $('#main-footer').offset().top + $('#main-footer').outerHeight(true));
+          console.log("Bottom Offset Location:" + ($('#header-row').offset().top + $('#header-row').outerHeight(true) - 170).toString());
+          return (this.bottom = ($('#header-row').offset().top + $('#header-row').outerHeight(true) - 170));
+          // console.log("Bottom offset location:" + ($('#main-footer').offset().top + $('#main-footer').outerHeight(true)).toString());
+          // return (this.bottom = ($('#main-footer').offset().top + $('#main-footer').outerHeight(true)) / 10);
         }
       }
     })
