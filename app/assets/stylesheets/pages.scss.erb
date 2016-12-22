@@ -296,7 +296,8 @@ button.learn-more:hover {
   margin-bottom: 4px;
   margin-top: 0;
   color: #fff;
-  font-size: 21px;
+  font-size: 18px;
+  width: 60%;
 
 }
 
@@ -305,14 +306,14 @@ button.learn-more:hover {
 }
 
 .title-container{
-  width: 60%;
+  width: 100%;
   text-align: left;
   display: inline-block;
 }
 
 .footer-button-content-container{
   display: inline-block;
-  width: 60%;
+  width: 100%;
   text-align: right;
 }
 .who-we-are-LO {
@@ -336,7 +337,10 @@ button.learn-more:hover {
   min-height: 200px;
 }
 
-
+.footer-button-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .email-box-container {
   width: 400px;
@@ -352,14 +356,14 @@ button.learn-more:hover {
   width: 400px;
   height: 100px;
   border: 5px solid green;
-  padding: 25px;  
+  padding: 25px;
   margin: 25px;
   position: absolute;
   left: 20px;
 }
 
 .contact-information {
-  margin-left: 500px;  
+  margin-left: 500px;
 }
 
 
@@ -373,18 +377,33 @@ button.learn-more:hover {
 }
 
 .footer-form-submit {
-  color: black;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid black;
+  opacity: 1;
+  outline: none;
 }
 
 .footer-email-bar {
   margin-bottom: 10px;
-  width: 60%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  margin-bottom: 2px;
 }
 
 .company-info {
   text-align: center;
   margin: 0;
   font-size: 14px;
+}
+
+.subscribe-response {
+  font-size: 14px;
+  text-align: left;
+  flex: 1;
 }
 
 #main-logo img {

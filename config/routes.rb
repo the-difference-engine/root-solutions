@@ -67,4 +67,6 @@ Rails.application.routes.draw do
       resources :resources
     end
   end
+
+  post '/email_subscriptions', to: 'email_subscriptions#create'
 end
