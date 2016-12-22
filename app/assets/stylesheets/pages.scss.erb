@@ -19,6 +19,8 @@
 # LEARN
 # BLOG
 # DONATE
+# PARTNERS
+# WHY BEHAVIOR
 ----------------------------------------------------------------
 
 */
@@ -135,7 +137,7 @@ button.newsletter:hover {
 }
 
 #what-we-do {
-  background-image: url(<%= image_path 'Healthy-Kelp-1200.jpg'%>);
+  background-image: url(<%= image_path 'healthy_kelp.jpg'%>);
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
@@ -246,6 +248,17 @@ button.learn-more:hover {
 
 }
 
+.heading-title h3{
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  opacity: 0.7;
+  font-weight: bold;
+  margin-top: 0em;
+
+}
+
 .other-titles {
   padding-top: 2.2em;
 
@@ -267,7 +280,7 @@ button.learn-more:hover {
 
 
 #parallax-2 {
-  background-image: url( <%= image_path 'Healthy-Kelp-1200.jpg' %> );
+  background-image: url( <%= image_path 'healthy_kelp.jpg' %> );
   height: 500px;
   text-align: center;
   color: white;
@@ -428,8 +441,18 @@ button.learn-more:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url( <%= image_path 'Pelican.jpg' %>); /* add image of choice */
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
   height: 400px;
+}
+
+#partners-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  height: 350px;
 }
 
 #behvior_design-chevron {
@@ -544,6 +567,10 @@ button.learn-more:hover {
   color: $green5;
 }
 
+.advisor-text-color {
+  color: 000000;
+}
+
 .backgroundcolor {
   background-color: $yellow1;
 }
@@ -566,4 +593,56 @@ button.learn-more:hover {
 
 .title {
   padding-top: 50px;
+}
+
+.partners-design-title {
+  text-align: left;
+}
+
+.advisor-hover {
+  color: $green4;
+  cursor:pointer;
+}
+
+.advisor-hover.collapsed {
+  color: black;
+  text-decoration: none;
+}
+
+.advisor-hover.collapsed:hover {
+  text-decoration: underline;
+  color: $green4;
+  cursor:pointer;
+}
+.advisor-wrap {
+  margin: 0 auto;
+  background-color: white;
+  border: 2px solid $blue5;
+  border-radius: 10px;
+  margin: 5px;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  h2 {
+    text-align: center;
+  }
+}
+.row h1 {
+  text-align: center;
+}
+
+.partner-wrap {
+  text-align: justify;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-brand:focus {
+  color: #777;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.why-behavior-header-three {
+  color: $green5;
 }

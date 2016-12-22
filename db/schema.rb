@@ -61,12 +61,6 @@ ActiveRecord::Schema.define(version: 20161222024247) do
     t.datetime "updated_at"
   end
 
-  create_table "email_subscriptions", force: :cascade do |t|
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "environmental_subtags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",           null: false
@@ -84,6 +78,13 @@ ActiveRecord::Schema.define(version: 20161222024247) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "resource_building_blocks", force: :cascade do |t|
+    t.integer  "resource_id"
+    t.integer  "building_block_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "resource_types", force: :cascade do |t|
@@ -132,6 +133,13 @@ ActiveRecord::Schema.define(version: 20161222024247) do
     t.datetime "updated_at",  null: false
     t.index ["resource_id"], name: "index_resources_environmental_subtags_on_resource_id", using: :btree
     t.index ["subtag_id"], name: "index_resources_environmental_subtags_on_subtag_id", using: :btree
+  end
+
+  create_table "resources_environmental_tags", force: :cascade do |t|
+    t.integer  "resource_id"
+    t.integer  "environmental_tag_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "resources_world_regions", force: :cascade do |t|
