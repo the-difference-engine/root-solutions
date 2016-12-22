@@ -317,7 +317,8 @@ button.learn-more:hover {
   margin-bottom: 4px;
   margin-top: 0;
   color: #fff;
-  font-size: 21px;
+  font-size: 18px;
+  width: 60%;
 
 }
 
@@ -326,14 +327,14 @@ button.learn-more:hover {
 }
 
 .title-container{
-  width: 60%;
+  width: 100%;
   text-align: left;
   display: inline-block;
 }
 
 .footer-button-content-container{
   display: inline-block;
-  width: 60%;
+  width: 100%;
   text-align: right;
 }
 .who-we-are-LO {
@@ -357,7 +358,10 @@ button.learn-more:hover {
   min-height: 200px;
 }
 
-
+.footer-button-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .email-box-container {
   width: 400px;
@@ -373,14 +377,14 @@ button.learn-more:hover {
   width: 400px;
   height: 100px;
   border: 5px solid green;
-  padding: 25px;  
+  padding: 25px;
   margin: 25px;
   position: absolute;
   left: 20px;
 }
 
 .contact-information {
-  margin-left: 500px;  
+  margin-left: 500px;
 }
 
 
@@ -394,18 +398,33 @@ button.learn-more:hover {
 }
 
 .footer-form-submit {
-  color: black;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid black;
+  opacity: 1;
+  outline: none;
 }
 
 .footer-email-bar {
   margin-bottom: 10px;
-  width: 60%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  margin-bottom: 2px;
 }
 
 .company-info {
   text-align: center;
   margin: 0;
   font-size: 14px;
+}
+
+.subscribe-response {
+  font-size: 14px;
+  text-align: left;
+  flex: 1;
 }
 
 #main-logo img {
@@ -441,10 +460,33 @@ button.learn-more:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
-  height: 350px;
+  height: 600px;
+}
+
+#advisors-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  height: 300px;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  .other-titles {
+    padding-top: 110px;
+  }
 }
 
 #behavior_design-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+
+}
+
+#partners-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -115px 0px 0px 0px;
@@ -565,7 +607,7 @@ button.learn-more:hover {
 }
 
 .backgroundcolor {
-  background-color: $yellow1;
+  background-color: white;
 }
 
 .h-color h2, .h-color h3 {
@@ -616,21 +658,19 @@ button.learn-more:hover {
   cursor:pointer;
 }
 .advisor-wrap {
-  margin: 0 auto;
-  background-color: white;
-  border: 2px solid $blue5;
-  border-radius: 10px;
-  margin: 5px;
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-bottom: 15px;
+  // margin: 0 auto;
+  background-color: $yellow1;
+  border: 1px solid $blue5;
+  // margin: 5px;
+  // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   h2 {
     text-align: center;
+    font-size: 16px;
   }
 }
+
 .row h1 {
   text-align: center;
 }
@@ -648,6 +688,61 @@ button.learn-more:hover {
   color: $green5;
 }
 
+<<<<<<< HEAD
 .affix-bottom {
   position: absolute;
+=======
+#partners-title {
+  text-align: center;
+}
+
+.foundations-wrap {
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+  }
+  h4 {
+    text-align: center;
+  }
+}
+
+.academic-institution-wrap {
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 40%;
+  }
+}
+
+.project-by-wrap {
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 40%;
+  }
+}
+
+.advisor-description {
+  font-size: 18px;
+}
+
+.large-advisor {
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+.active-advisor {
+  border: 1px solid $yellow3;
+}
+.advisor-image img {
+  width:100%;
+>>>>>>> 360e27fab76503015e367c21489e1c394aa2cfe9
 }
