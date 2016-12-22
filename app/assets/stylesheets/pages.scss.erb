@@ -53,6 +53,14 @@ $red3: #EE5F3A ;
 $red4: #CB3913 ;
 $red5: #9A2101 ;
 
+/* Client colors */
+
+$blue: #0E4561   ;
+$teal: #0f5350   ;
+$green: #68A71F  ;
+$yellow: #FFFF33 ;
+$orange: #FFBB29 ;
+$red: #7B241C    ;
 
 /* # Typography */
 blockquote {
@@ -441,7 +449,7 @@ button.learn-more:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  background-image: url( <%= image_path 'baobab.jpg' %>); /* add image of choice */
   height: 400px;
 }
 
@@ -469,12 +477,13 @@ button.learn-more:hover {
   }
 }
 
-#behvior_design-chevron {
+#behavior_design-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -115px 0px 0px 0px;
   padding: 60px 0px 60px 100px; 
   background-color: white;
+
 }
 
 #partners-chevron {
@@ -495,17 +504,17 @@ button.learn-more:hover {
 .tab-style {
   font: arial;
   font-size: 23px;
-  background-color: $green3;
+  background-color: $green;
   color: white;
   width: 150px !important;
 }
 .tab-style:hover {
-  background-color: $green1 !important;
-  color: $green5;
+  background-color: $teal !important;
+  color: white;
 }
 
 .active a, .active .tab-style:hover {
-  background-color: $green5 !important;
+  background-color: $blue !important;
   color: white !important; 
 }
 
@@ -589,6 +598,10 @@ button.learn-more:hover {
   color: $green5;
 }
 
+.client-text-color {
+  color: $green !important;
+}
+
 .advisor-text-color {
   color: 000000;
 }
@@ -609,6 +622,14 @@ button.learn-more:hover {
   margin-bottom: 25px;
 }
 
+.client-color h2, .client-color h3 {
+  color: $green
+}
+
+.client-color h2{
+  text-align: left;
+  margin-bottom: 25px;
+}
 .behavior-design-title {
   text-align: left;
 }
@@ -665,6 +686,10 @@ button.learn-more:hover {
 }
 .why-behavior-header-three {
   color: $green5;
+}
+
+.affix-bottom {
+  position: absolute;
 }
 
 #partners-title {
