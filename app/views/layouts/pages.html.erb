@@ -21,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Root Solutions</a>
+          <a class="navbar-brand" href="/">Root Solutions</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,32 +29,84 @@
           <ul class="nav navbar-nav">
             
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+              <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Team</a></li>
-                <li><a href="#">Partners</a></li>
+                <li><a href="/partners">Partners</a></li>
                 <li><a href="#">Mission</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="/careers">Careers</a></li>
 
               </ul>
             </li>
               
-            <li><a href="#">Work With Us</a></li>
+            <li><a href="/work_with_us">Work With Us</a></li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learn<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Why Behavior</a></li>
-                  <li><a href="#">Our Process</a></li>
-                  <li><a href="#">Behavior Design</a></li>
-                </ul>
+              <a href="/learn" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learn<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/learn/why_behavior">Why Behavior</a></li>
+                <li><a href="/learn/our_process">Our Process</a></li>
+                <li><a href="/learn/behavior_design">Behavior Design</a></li>
+              </ul>
             </li>
             <li><a href="#">Donate</a></li>
           </ul>
-        
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
     <%= yield %>
+
+    <footer id="main-footer">
+      <div id="sub-footer">
+        <div>
+          <div class="col-md-2"></div>
+
+          <div class="footer-content-container">
+            <div class="col-md-4 footer-left-col">
+              <div class="title-container">
+                <h1 class="footer-form-title">Sign up for our newsletter</h1>
+              </div>
+
+              <input type="email" class="black-text footer-email-bar" placeholder="Email" name="email">
+
+              <div class="footer-button-container">
+                <p class="js-subscribe-response subscribe-response"></p>
+                <button class="footer-form-submit">Subscribe</button>
+              </div>
+            </div>
+
+            <div class="col-md-4 footer-right-col">
+              <p class="company-info">405 14th St, Oakland, CA 94612</p>
+              <p class="company-info">info@therootsolutions.org | 415.360.6309</p>
+
+              <div class="social-media-images-container">
+                <i class="fa fa-rss" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+      </div>
+    </footer>
+
   </body>
 </html>
+
+<script type="text/javascript">
+  $(function() {
+    $(".dropdown").on("mouseover", function() {
+      $(this).addClass("open");
+    });
+    $(".dropdown").on("mouseout", function() {
+      $(this).removeClass("open");
+    });
+    $(".dropdown-toggle, .navbar-brand").on("click", function() {
+      if (window.location.pathname == $(this).attr("href")) {
+        return false;
+      } else {
+        window.location = $(this).attr("href");
+      }
+    });
+  }); 
+</script>

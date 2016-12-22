@@ -20,6 +20,7 @@
 # BLOG
 # DONATE
 # PARTNERS
+# WHY BEHAVIOR
 ----------------------------------------------------------------
 
 */
@@ -136,7 +137,7 @@ button.newsletter:hover {
 }
 
 #what-we-do {
-  background-image: url(<%= image_path 'Healthy-Kelp-1200.jpg'%>);
+  background-image: url(<%= image_path 'healthy_kelp.jpg'%>);
   background-repeat: no-repeat;
   background-color: #fff;
   background-size: cover;
@@ -222,7 +223,7 @@ button.learn-more:hover {
 /* # DONATE */
 /* # HOMEPAGE */
 
-#parallax-1, #parallax-2, #parallax-3 {
+#parallax-1, #parallax-2, #parallax-3, #main-footer {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -279,7 +280,7 @@ button.learn-more:hover {
 
 
 #parallax-2 {
-  background-image: url( <%= image_path 'Healthy-Kelp-1200.jpg' %> );
+  background-image: url( <%= image_path 'healthy_kelp.jpg' %> );
   height: 500px;
   text-align: center;
   color: white;
@@ -292,6 +293,42 @@ button.learn-more:hover {
   color: white;
 }
 
+#main-footer {
+  background-image: url( <%= image_path 'rain_forest.jpg' %> );
+}
+
+#sub-footer{
+  height: 200px;
+  opacity: 0.7;
+  background-color: #2B2B2B;
+  color: white;
+  padding: 50px 0px;
+}
+
+.footer-form-title {
+  margin-bottom: 4px;
+  margin-top: 0;
+  color: #fff;
+  font-size: 18px;
+  width: 60%;
+
+}
+
+.footer-left-col{
+  text-align: center;
+}
+
+.title-container{
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+}
+
+.footer-button-content-container{
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
 .who-we-are-LO {
   position: absolute;
   left: 0;
@@ -313,7 +350,10 @@ button.learn-more:hover {
   min-height: 200px;
 }
 
-
+.footer-button-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .email-box-container {
   width: 400px;
@@ -329,25 +369,18 @@ button.learn-more:hover {
   width: 400px;
   height: 100px;
   border: 5px solid green;
-  padding: 25px;  
+  padding: 25px;
   margin: 25px;
   position: absolute;
   left: 20px;
 }
 
 .contact-information {
-  margin-left: 500px;  
+  margin-left: 500px;
 }
 
-#main-footer{
-  height: 200px;
-  background-color: #2B2B2B;
-  color: white;
-  padding: 50px 20px 20px 50px;
-}
 
-#main-footer i{
-  float: right;
+#main-footer i {
   margin: 10px;
   font-size: 3.0em;
 }
@@ -356,6 +389,35 @@ button.learn-more:hover {
   color: black;
 }
 
+.footer-form-submit {
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid black;
+  opacity: 1;
+  outline: none;
+}
+
+.footer-email-bar {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  margin-bottom: 2px;
+}
+
+.company-info {
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
+
+.subscribe-response {
+  font-size: 14px;
+  text-align: left;
+  flex: 1;
+}
 
 #main-logo img {
   height: 250px;
@@ -379,7 +441,7 @@ button.learn-more:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url( <%= image_path 'Pelican.jpg' %>); /* add image of choice */
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
   height: 400px;
 }
 
@@ -389,7 +451,7 @@ button.learn-more:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url( <%= image_path 'Pelican.jpg' %>); /* add image of choice */
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
   height: 350px;
 }
 
@@ -434,11 +496,13 @@ button.learn-more:hover {
 }
 
 /* Navbar black and white */
-/*
-.navbar-brand a {
-font: white;
 
-/* navbar */
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+  opacity: 0.7;
+}
+
+/* navbar 
 
 /* .brand */
 .navbar-custom {
@@ -496,7 +560,9 @@ font: white;
 .navbar-custom .navbar-inner .nav li.active a {
   color: #bf3604;
 }
-
+.social-media-images-container {
+  text-align: center;
+}
 .text-color {
   color: $green5;
 }
@@ -570,4 +636,13 @@ font: white;
 
 .partner-wrap {
   text-align: justify;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-brand:focus {
+  color: #777;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.why-behavior-header-three {
+  color: $green5;
 }

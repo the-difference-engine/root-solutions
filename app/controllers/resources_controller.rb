@@ -48,6 +48,12 @@ class ResourcesController < ApplicationController
   end
 
   def import_resources
+    excel_import = ExcelImport.new(params[:file])
+    excel_import.main
+    redirect_to "/resources"
+  end
+
+  def import_resources_old
     spreadsheet = Roo::Spreadsheet.open(params[:file])
     popular_articles = spreadsheet.sheet(1)
     resource_type = ResourceType.find_or_create_by(name: 'Popular Article')
