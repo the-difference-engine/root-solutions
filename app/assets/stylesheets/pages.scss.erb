@@ -53,6 +53,14 @@ $red3: #EE5F3A ;
 $red4: #CB3913 ;
 $red5: #9A2101 ;
 
+/* Client colors */
+
+$blue: #0E4561   ;
+$teal: #0f5350   ;
+$green: #68A71F  ;
+$yellow: #FFFF33 ;
+$orange: #FFBB29 ;
+$red: #7B241C    ;
 
 /* # Typography */
 blockquote {
@@ -309,7 +317,8 @@ button.learn-more:hover {
   margin-bottom: 4px;
   margin-top: 0;
   color: #fff;
-  font-size: 21px;
+  font-size: 18px;
+  width: 60%;
 
 }
 
@@ -318,14 +327,14 @@ button.learn-more:hover {
 }
 
 .title-container{
-  width: 60%;
+  width: 100%;
   text-align: left;
   display: inline-block;
 }
 
 .footer-button-content-container{
   display: inline-block;
-  width: 60%;
+  width: 100%;
   text-align: right;
 }
 .who-we-are-LO {
@@ -349,7 +358,10 @@ button.learn-more:hover {
   min-height: 200px;
 }
 
-
+.footer-button-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .email-box-container {
   width: 400px;
@@ -365,14 +377,14 @@ button.learn-more:hover {
   width: 400px;
   height: 100px;
   border: 5px solid green;
-  padding: 25px;  
+  padding: 25px;
   margin: 25px;
   position: absolute;
   left: 20px;
 }
 
 .contact-information {
-  margin-left: 500px;  
+  margin-left: 500px;
 }
 
 
@@ -386,18 +398,33 @@ button.learn-more:hover {
 }
 
 .footer-form-submit {
-  color: black;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid black;
+  opacity: 1;
+  outline: none;
 }
 
 .footer-email-bar {
   margin-bottom: 10px;
-  width: 60%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  margin-bottom: 2px;
 }
 
 .company-info {
   text-align: center;
   margin: 0;
   font-size: 14px;
+}
+
+.subscribe-response {
+  font-size: 14px;
+  text-align: left;
+  flex: 1;
 }
 
 #main-logo img {
@@ -422,7 +449,7 @@ button.learn-more:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  background-image: url( <%= image_path 'baobab.jpg' %>); /* add image of choice */
   height: 400px;
 }
 
@@ -433,15 +460,38 @@ button.learn-more:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
-  height: 350px;
+  height: 600px;
 }
 
-#behvior_design-chevron {
+#advisors-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  height: 300px;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  .other-titles {
+    padding-top: 110px;
+  }
+}
+
+#behavior_design-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -115px 0px 0px 0px;
   padding: 60px 0px 60px 100px; 
-  background-color: $yellow1;
+  background-color: white;
+
+}
+
+#partners-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
 }
 
 .content {
@@ -454,17 +504,17 @@ button.learn-more:hover {
 .tab-style {
   font: arial;
   font-size: 23px;
-  background-color: $green3;
+  background-color: $green;
   color: white;
   width: 150px !important;
 }
 .tab-style:hover {
-  background-color: $green1 !important;
-  color: $green5;
+  background-color: $teal !important;
+  color: white;
 }
 
 .active a, .active .tab-style:hover {
-  background-color: $green5 !important;
+  background-color: $blue !important;
   color: white !important; 
 }
 
@@ -548,12 +598,16 @@ button.learn-more:hover {
   color: $green5;
 }
 
+.client-text-color {
+  color: $green !important;
+}
+
 .advisor-text-color {
   color: 000000;
 }
 
 .backgroundcolor {
-  background-color: $yellow1;
+  background-color: white;
 }
 
 .h-color h2, .h-color h3 {
@@ -568,6 +622,14 @@ button.learn-more:hover {
   margin-bottom: 25px;
 }
 
+.client-color h2, .client-color h3 {
+  color: $green
+}
+
+.client-color h2{
+  text-align: left;
+  margin-bottom: 25px;
+}
 .behavior-design-title {
   text-align: left;
 }
@@ -596,21 +658,19 @@ button.learn-more:hover {
   cursor:pointer;
 }
 .advisor-wrap {
-  margin: 0 auto;
-  background-color: white;
-  border: 2px solid $blue5;
-  border-radius: 10px;
-  margin: 5px;
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-bottom: 15px;
+  // margin: 0 auto;
+  background-color: $yellow1;
+  border: 1px solid $blue5;
+  // margin: 5px;
+  // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   h2 {
     text-align: center;
+    font-size: 16px;
   }
 }
+
 .row h1 {
   text-align: center;
 }
@@ -626,4 +686,112 @@ button.learn-more:hover {
 }
 .why-behavior-header-three {
   color: $green5;
+}
+
+.affix-bottom {
+  position: absolute;
+}
+
+#partners-title {
+  text-align: center;
+}
+
+.foundations-wrap {
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+  }
+  h4 {
+    text-align: center;
+  }
+}
+
+.academic-institution-wrap {
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 40%;
+  }
+}
+
+.project-by-wrap {
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 40%;
+  }
+}
+
+.advisor-description {
+  font-size: 18px;
+}
+
+.large-advisor {
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+.active-advisor {
+  border: 1px solid $yellow3;
+}
+.advisor-image img {
+  width:100%;
+}
+.work-with-us-quote {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /*border: 1px solid $green5;*/
+  font-style: italic;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-align: justify;
+}
+.work-with-us-white-space {
+  font-size: 15px;
+  background: #ffffff;
+  padding: 100px 100px 100px 100px;  
+  text-align: justify;
+}
+.work-with-us-link{
+  font-size: 15px;
+  color: $green5;
+  font-style: italic;
+}
+
+.wwu-white-space {
+  font-size: 15px;
+  /*height: 600px;*/
+  background: #ffffff;
+  padding: 100px 100px 100px 100px;  
+  text-align: justify;
+}
+.wwu-button {
+  padding: 15px 15px 15px 15px;
+}
+.wwu-form {
+  font-size: 15px;
+  padding-left: 100px;
+  font-family: Comic Sans MS;
+  text-align: justify;
+}
+.wwu-heading {
+  padding-left: 110px;
+  padding-bottom: 15px;
+  font-family: Comic Sans MS;
+  text-align: justify;
 }

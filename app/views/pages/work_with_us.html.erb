@@ -21,58 +21,61 @@
 <div id="parallax-2" class="heading-title">
   <h2 class="other-titles">Consulting Services</h2>
 </div>
-<div class="white-space"> 
+<div class="wwu-white-space"> 
 
   <p>
     We provide a range of services:
   </p>
   <p>
-    <ul>
+    <li>
       Background research (case studies, social forces, values, mental models)
       Audience segmentation
-    </ul>
-    <ul>
+    </li>
+    <li>
       Survey / interview / focus group design, implementation and reporting
-    </ul>
-    <ul>
+    </li>
+    <li>
       Messaging, collateral and interface design
-    </ul>
-    <ul>
+    </li>
+    <li>
       Behavior change program design, piloting, implementation and evaluation
       Social media strategy​
-    </ul>
+    </li>
   </p>
   ​<p>
-
-  We have developed a systematic approach for integrating behavioral insights into both new and ongoing projects. Learn more about the Root Solutions Environmental Behavior Design Framework.
-</p>
+    We have developed a systematic approach for integrating behavioral insights into both new and ongoing projects. Learn more about the Root Solutions Environmental Behavior Design Framework.
+  </p>
 <%= link_to "View our past projects", "http://www.therootsolutions.org/copy-of-work-with-us", class: "work-with-us-link" %>
 </div>
 
 <div id="parallax-3" class="heading-title">
   <h2 class="other-titles">Training</h2>
+  <div class="work-with-us-quote">
+    “I feel like anyone working in environmental program design and implementation should receive this training, especially if they have a goal of changing people's’ behavior. The training was interesting, engaging, and relevant; we came out of it with specific steps we can take to improve our programming to make it more relevant and effective.”
+    <p>–Julia Hatton, Director of Youth Programs, Rising Sun Energy Center</p>
+  </div>
 </div>
 
-<div  class="white-space">
+<div  class="wwu-white-space">
   <p>
     By providing practical instruction on the use of behavioral design, we equip change-makers to create a brighter, healthier, and more sustainable world. Our trainings are based on our unique behavior design framework, using a mix of case studies, informative storytelling, hands-on activities, and concrete design material.
   </p>
-  <div class="work-with-us-quote">
-    “I feel like anyone working in environmental program design and implementation should receive this training, especially if they have a goal of changing people's’ behavior. The training was interesting, engaging, and relevant; we came out of it with specific steps we can take to improve our programming to make it more relevant and effective.” –Julia Hatton, Director of Youth Programs, Rising Sun Energy Center
-  </div>
+  <br>
   <p>
     Training Format
-    <ul>Short topical training</ul>
-    <ul>1 & 2 day workshops</ul>
-    <ul>Specialized trainings tailored to meet the needs of your organization</ul>
+    <li>Short topical training</li>
+    <li>1 & 2 day workshops</li>
+    <li>Specialized trainings tailored to meet the needs of your organization</li>
   </p>
+  <br>
   <p>
     Common to all trainings
-    <ul>Through our training, you will learn how to immediately integrate behavior design into your effort, driving success and creating lasting impact for your organization and, most importantly, for the environmental movement.</ul>
-    <ul>Techniques to identify the barriers to action faced by your target group.</ul>
-    <ul>Examples of recently conducted experiments and real world applications that provide insight on specific best practices.</ul>
-    <ul>Initiative redesign strategies: an in-depth look at how organizations are failing to captivate or motivate their audiences, and how you can jump ahead of the curve.</ul>
+    <li>Through our training, you will learn how to immediately integrate behavior design into your effort, driving success and creating lasting impact for your organization and, most importantly, for the environmental movement.</li>
+    <li>Techniques to identify the barriers to action faced by your target group.</li>
+    <li>Examples of recently conducted experiments and real world applications that provide insight on specific best practices.</li>
+    <li>Initiative redesign strategies: an in-depth look at how organizations are failing to captivate or motivate their audiences, and how you can jump ahead of the curve.</li>
   </p>
+  <br>
   <p>
     Topics may include
     <li>Designing the best choice architecture in a specific setting</li>
@@ -85,49 +88,49 @@
     <li>Value-matching as a tactic to connect with your audience</li>
   </p>
 </div>
-<div class="white-space">
-  <h3>Contact us to discuss client work or trainings</h3>
+<h3 class="wwu-heading">Contact us to discuss client work or trainings</h3>
+<div class="wwu-form">
   <div class="row">
-  <div class="col-md-6">
-    <%= form_tag '/work_with_us', method: :post do %>
-    <form class="form-horizontal">
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :name %>
-            <%=text_field_tag :name,"", class:"form-control" %>
+    <div class="col-md-6">
+      <%= form_tag '/work_with_us', method: :post do %>
+      <form class="form-horizontal">
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 inputs-group">
+              <%=label_tag :name %>
+              <%=text_field_tag :name,"", class:"form-control" %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">    
-            <%=label_tag :email %>
-            <%=text_field_tag :email,"", class:"form-control" %>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 inputs-group">    
+              <%=label_tag :email %>
+              <%=text_field_tag :email,"", class:"form-control" %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :subject %>
-            <%=text_field_tag :subject, "", class:"form-control"  %>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 inputs-group">
+              <%=label_tag :subject %>
+              <%=text_field_tag :subject, "", class:"form-control"  %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10 inputs-group">
-            <%=label_tag :message %>
-            <%=text_area_tag :message,"", class:"form-control" %>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10 inputs-group">
+              <%=label_tag :message %>
+              <%=text_area_tag :message,"", class:"form-control" %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="button" align="center">
-        <%= button_tag "<span> Send </span>".html_safe, class: "btn primary-btn"%>
-      </div>
-      <% end %>
-    </form>
+        <div class="wwu-button" align="center">
+          <%= button_tag "<span> Send </span>".html_safe, class: "btn primary-btn"%>
+        </div>
+        <% end %>
+      </form>
+    </div>
   </div>
-</div>
 </div>
