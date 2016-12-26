@@ -47,7 +47,6 @@
   </p>
 <%= link_to "View our past projects", "http://www.therootsolutions.org/copy-of-work-with-us", class: "work-with-us-link" %>
 </div>
-
 <div id="parallax-3" class="heading-title">
   <h2 class="other-titles">Training</h2>
   <div class="work-with-us-quote">
@@ -88,7 +87,8 @@
     <li>Value-matching as a tactic to connect with your audience</li>
   </p>
 </div>
-<h3 class="wwu-heading">Contact us to discuss client work or trainings</h3>
+<!-- <h3 class="wwu-heading" align="center">Contact us to discuss client work or trainings</h3> -->
+<h3 class="wwu-heading" align="center">Get in touch</h3>
 <div class="wwu-form">
   <div class="row">
     <div class="col-md-6">
@@ -96,33 +96,33 @@
       <form class="form-horizontal">
         <div class="row">
           <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
               <%=label_tag :name %>
-              <%=text_field_tag :name,"", class:"form-control" %>
+              <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control" %>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-10 inputs-group">    
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">    
               <%=label_tag :email %>
-              <%=text_field_tag :email,"", class:"form-control" %>
+              <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control" %>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
               <%=label_tag :subject %>
-              <%=text_field_tag :subject, "", class:"form-control"  %>
+              <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control"  %>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-10 inputs-group">
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
               <%=label_tag :message %>
-              <%=text_area_tag :message,"", class:"form-control" %>
+              <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control", rows: 10, style: 'width:100%;' %>
             </div>
           </div>
         </div>
@@ -131,6 +131,6 @@
         </div>
         <% end %>
       </form>
+      </div>
     </div>
   </div>
-</div>
