@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<div class='content'>
+<div class='content' id="content-top">
   <div class='tab-content'>
     <div id='Initiation' class='tab-pane fade in active '>
       <div class='row'>
@@ -45,13 +45,12 @@
           <h2>Initiation Phase</h2>
         </div>
       </div>
-      <div class='row content-top' style='height: 500px; padding: 50px 0px 50px 0px;'>
+      <div class='row content-top' style='padding: 50px 0px 50px 0px;'>
         <div class='col-md-3'></div>
-        <div class='col-md-7'>
+        <div class='col-md-7' style='height: 500px;'>
           <p>
             Identify the ideal audience, the key influencers, and the early adopters of your campaign mission. Cultivate an understanding of the social forces, values, and beliefs that influence your audience’s behavior and shape their perception of the issue. Refine the campaign strategy and goals to complement the goals, values and social world of your audience.
           </p>
-          </div>
         </div>
       </div>
     </div>
@@ -61,9 +60,9 @@
           <h2>Ideation Phase</h2>
         </div>
       </div>
-      <div class='row content-top' style='height: 500px; padding: 50px 0px 50px 0px;'>
+      <div class='row content-top' style='padding: 50px 0px 50px 0px;'>
         <div class='col-md-3'></div>
-        <div class='col-md-7'>
+        <div class='col-md-7' style='height: 500px;'>
           <p>
             Using prior successes, bright spots and fresh insights, brainstorm unique behavioral approaches. Determine the optimal target environmental behaviors – considering benefits, barriers, feasibility, cost-effectiveness, probability of adoption and potential impacts.
           </p>
@@ -76,9 +75,9 @@
           <h2>Behavioral Diagnostics and Design</h2>
         </div>
       </div>
-      <div class='row content-top' style='height: 500px; padding: 50px 0px 50px 0px;'>
+      <div class='row content-top' style='padding: 50px 0px 50px 0px;'>
         <div class='col-md-3'></div>
-        <div class='col-md-7'>
+        <div class='col-md-7' style='height: 500px;'>
           <p>
             For the selected target behaviors, identify the social, situational, or cognitive barriers that stand in the way of audience action. Pinpoint the key motivators that will lead to selected e behaviors. Design a suite of targeted behavioral interventions using our behavioral building blocks. Develop a specialized behavioral or messaging prototype to test on the target audience.
           </p>
@@ -91,9 +90,9 @@
           <h2>Piloting and Implementation</h2>
         </div>
       </div>
-      <div class='row content-top' style='height: 500px; padding: 50px 0px 50px 0px;'>
+      <div class='row content-top' style='padding: 50px 0px 50px 0px;'>
         <div class='col-md-3'></div>
-        <div class=col-md-7>
+        <div class='col-md-7' style='height: 500px;'>
           <p>
             We espouse an iterative approach to Piloting and Implementation that is responsive to audience feedback. We work directly with clients to pilot or evaluate their campaigns and projects.
           </p>
@@ -108,8 +107,8 @@
     $('#sidebar-nav').affix({
       offset: {
         top: function() {
-          console.log("Top Offset Location:" + ($('.content-top').offset().top + $('.content-top').outerHeight(true)).toString());
-          return ($('.content-top').offset().top);
+          console.log("Top Offset Location:" + ($('#content-top').offset().top + $('#content-top').outerHeight(true) - 735).toString());
+          return ($('#content-top').offset().top + $('#content-top').outerHeight(true) - 735);
         },
         // bottom offset tracks values based on difference from bottom of hte screen
         // position: absolute fixes sidebar acting weird when you scroll back up
@@ -118,10 +117,16 @@
           return (this.bottom = ($("#main-footer").outerHeight(true) + 75));
         }
       }
-    })
+    });
+    $('#sidebar-nav').on('affixed-top.bs.affix', function() {
+      $('#sidebar-nav').addClass('our-process-nav')
+    });
+    $('#sidebar-nav').on('affix.bs.affix', function() {
+      $('#sidebar-nav').removeClass('our-process-nav')
+    });
     $('#sidebar-nav a').click(function(){
       $('#sidebar-nav').affix('checkPosition');
-    })
+    });
   });
 </script>
 
