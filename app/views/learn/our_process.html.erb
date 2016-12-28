@@ -118,14 +118,14 @@
     $('#sidebar-nav').affix({
       offset: {
         top: function() {
-          console.log("Top Offset Location:" + ($('#content-top').offset().top + $('#content-top').outerHeight(true) - 735).toString());
-          return ($('#content-top').offset().top + $('#content-top').outerHeight(true) - 735);
+          console.log("Top Offset Location:" + ($('#content-top').offset().top + $('#content-top').outerHeight(true) - 717).toString());
+          return ($('#content-top').offset().top + $('#content-top').outerHeight(true) - 717);
         },
         // bottom offset tracks values based on difference from bottom of hte screen
         // position: absolute fixes sidebar acting weird when you scroll back up
         bottom: function() {
-          console.log("Bottom Offset Location:" + ($("#main-footer").outerHeight(true) + 75));
-          return (this.bottom = ($("#main-footer").outerHeight(true) + 75));
+          console.log("Bottom Offset Location:" + ($("#main-footer").outerHeight(true) + 74));
+          return (this.bottom = ($("#main-footer").outerHeight(true) + 74));
         }
       }
     });
