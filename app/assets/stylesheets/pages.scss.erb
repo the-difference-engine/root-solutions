@@ -782,16 +782,46 @@ button.learn-more:hover {
   padding: 100px 100px 100px 100px;  
 }
 .wwu-button {
-  padding: 35px 15px 15px 570px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  color: $green5;
 }
 .wwu-form {
   font-size: 15px;
-  padding-left: 100px;
-  font-family: Comic Sans MS;
+  align: center;
+  /*font-family: Comic Sans MS;*/
 }
 .wwu-heading {
-  padding-left: 110px;
+  text-align: center;
   padding-bottom: 15px;
-  font-family: Comic Sans MS;
+  /*font-family: Comic Sans MS;*/
+}
+.wwu-btn {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 470px;
+}
+
+#wwu-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'baobab.jpg' %>); /* add image of choice */
+  height: 400px;
+  text-align: center;
+}
+
+.wwu-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+
 }
 /*--------------------------------------------------------------------------------*/

@@ -9,13 +9,20 @@ class PagesController < ApplicationController
   end
 
   def work_with_us_email
-    @name = params[:name]
-    @email = params[:email]
-    @subject = params[:subject]
-    @message = params[:message]
-    UserMailer.work_with_us_email(@name,@email,@subject,@message).deliver_now
-    flash[:success] = "Your message has been sent"
-    redirect_to "/work_with_us"
+    @email_message = ContactUsEmail.new(email_params)
+    if @email_message.valid?
+      UserMailer.work_with_us_email(@name,@email,@subject,@message).deliver_now
+      respond_to do |format|
+        format.json { render :json => {:message => "We will get back to you soon!!"} }
+      end
+    else
+      errors = ActiveSupport::JSON.encode(@email_message.errors.messages)
+      puts errors
+      respond_to do |format|
+        format.json { render :json => {:message => "We will get back to you soon!!"} }
+      end
+               
+    end
   end
 
   def careers
@@ -27,4 +34,9 @@ class PagesController < ApplicationController
   def learn 
   end
 
+  private 
+
+  def email_params
+    params.permit(:name, :email, :subject, :message)
+  end
 end
