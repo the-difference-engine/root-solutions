@@ -355,6 +355,7 @@ GEM
       hashie
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    simple_oauth (0.3.1)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -379,6 +380,10 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
+    twitter (4.8.1)
+      faraday (~> 0.8, < 0.10)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.2)
@@ -433,6 +438,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   teaspoon-jasmine
   turbolinks (~> 5)
+  twitter
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
