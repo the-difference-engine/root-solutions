@@ -745,3 +745,52 @@ button.learn-more:hover {
 .advisor-image img {
   width:100%;
 }
+
+#why-behavior-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'recycling_salience_copy.jpg' %>); /* add image of choice */
+  height: 330px;
+  text-align: center;
+  .other-titles {
+    padding-top: 110px;
+  }
+}
+
+#why-behavior-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+.abstract-thinking-wrap {
+  padding-bottom: 110px;
+}
+
+.why-behavior-resources {
+  text-decoration-color: $green4;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.why-behavior-wrap {
+  padding-top:30px;
+}
+
+.why-behavior-more-resources {
+  padding-top: 20px;
+}
+
+.why-behavior-body {
+  .row {
+    margin: 0;
+  }
+  .container-fluid {
+    padding: 0;
+  }
+}
