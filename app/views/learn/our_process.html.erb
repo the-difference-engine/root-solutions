@@ -132,7 +132,7 @@
   window.onload = $(function() {
     $('#sidebar-nav').on('affixed-top.bs.affix', function() {
       var val = -1 * ($("#content-top").outerHeight(true)) + 371;
-      console.log(val);
+      // console.log(val);
       $('#sidebar-nav').css('top', val.toString() + "px");
     });
   });
@@ -140,13 +140,13 @@
     $('#sidebar-nav').affix({
       offset: {
         top: function() {
-          console.log("Top Offset Location:" + ($('#content-top').offset().top + 200).toString());
+          // console.log("Top Offset Location:" + ($('#content-top').offset().top + 200).toString());
           return ($('#content-top').offset().top + 200);
         },
         // bottom offset tracks values based on difference from bottom of hte screen
         // position: absolute fixes sidebar acting weird when you scroll back up
         bottom: function() {
-          console.log("Bottom Offset Location:" + ($("#main-footer").outerHeight(true) + 74));
+          // console.log("Bottom Offset Location:" + ($("#main-footer").outerHeight(true) + 74));
           return (this.bottom = ($("#main-footer").outerHeight(true) + 74));
         }
       }
@@ -154,7 +154,7 @@
 
     $('#sidebar-nav').on('affixed-top.bs.affix', function() {
       var val = -1 * ($("#content-top").outerHeight(true)) + 371;
-      console.log(val);
+      // console.log(val);
       $('#sidebar-nav').css('top', val.toString() + "px");
     });
     $('#sidebar-nav').on('affix.bs.affix', function() {
@@ -167,7 +167,7 @@
     // $('#sidebar-nav').on('affix.bs.affix', function() {
     //   $('#sidebar-nav').removeClass('our-process-nav');
     // });
-    $('#sidebar-nav a').on('mousedown', function() {
+    $('#sidebar-nav').on('click', function() {
       var val = -1 * ($("#content-top").outerHeight(true)) + 371;
       console.log(val);
       $('#sidebar-nav').css('top', val.toString() + "px");
