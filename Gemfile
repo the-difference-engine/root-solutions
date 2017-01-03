@@ -19,7 +19,9 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'fog'
+
 gem 'twitter'
+gem 'json'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -1,3 +1,9 @@
+require 'rubygems'
+require 'bundler/setup'
+
+require 'twitter'
+require 'json'
+
 twitter = Twitter::REST::Client.new do |config|
   config.consumer_key = ENV['CONSUMER_KEY']
   config.consumer_secret = ENV['CONSUMER_SECRET']
