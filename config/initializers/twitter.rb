@@ -21,5 +21,5 @@ end
 # Insert the code below to Mission Page
 
 # <% TwitterApi.our_public_tweets.each do |tweet| %>
-#   <%= tweet.text %>
+#   <%= parsed_tweet tweet.text %>
 # <% end %>
