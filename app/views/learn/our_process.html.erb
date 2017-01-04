@@ -129,6 +129,7 @@
 </div>
 
 <script>
+  //static side bar position on navbar upon loading the page
   window.onload = $(function() {
     $('#sidebar-nav').on('affixed-top.bs.affix', function() {
       var val = -1 * ($("#content-top").outerHeight(true)) + 371;
@@ -151,12 +152,14 @@
         }
       }
     });
-
+    //initial add css class to change the static position of sidebar
     $('#sidebar-nav').on('affixed-top.bs.affix', function() {
       var val = -1 * ($("#content-top").outerHeight(true)) + 371;
       // console.log(val);
       $('#sidebar-nav').css('top', val.toString() + "px");
     });
+
+    //function to change to the regular STICK sidebar position
     $('#sidebar-nav').on('affix.bs.affix', function() {
       $('#sidebar-nav').css('top', '170px');
     });
@@ -167,11 +170,15 @@
     // $('#sidebar-nav').on('affix.bs.affix', function() {
     //   $('#sidebar-nav').removeClass('our-process-nav');
     // });
+
+    // click to rearrange the position
     $('#sidebar-nav').on('click', function() {
       var val = -1 * ($("#content-top").outerHeight(true)) + 371;
       console.log(val);
       $('#sidebar-nav').css('top', val.toString() + "px");
     });
+
+    //check POsition func
     $('#sidebar-nav a').click(function(){
       $('#sidebar-nav').affix('checkPosition');
     });
