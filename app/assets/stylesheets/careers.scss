@@ -1,13 +1,15 @@
-.careers-row{
-  padding-bottom: 50px;
-}
 .careers-image {
   width: 151px;
   height: 152px;
+  align: center;
+  display: block;
+  margin: 0 auto;
 }
 .careers-links {
   color:#000000;
   font-size: 20px;
+  text-align: center;
+  display: block;
 }
 .careers-text {
   text-align: justify;
@@ -18,4 +20,7 @@
   margin: -115px 0px 0px 0px;
   padding: 60px 0px 60px 100px; 
   background-color: none;
+}
+#career-row {
+  padding-bottom: 50px;
 }
