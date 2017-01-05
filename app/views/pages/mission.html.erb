@@ -23,7 +23,7 @@
             <div class="mission-wrap">
               <h2 class="mission-header">Our Mission</h2>
               <div class="mission-picture">
-                <img src="http://placehold.it/550x300">
+                <img src="http://placehold.it/350x300">
               </div>
               <p class="mission-description">
                Root Solutions is a nonprofit organization dedicated to providing conservationists and policy makers with tools and resources informed by the proven methods of behavioral science, allowing them to create more effective campaigns, policies, and strategies that reflect how people actually make decisions and the factors that motivate behavior that is good for the environment.
@@ -34,7 +34,7 @@
             <div class="mission-twitter-wrap">
               <div class="mission-twitter-box">
                 <% TwitterApi.our_public_tweets.each do |tweet| %>
-                  <%= parsed_tweet tweet.text %>
+                  <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).html_safe %>
                 <% end %>
               </div>
             </div>
