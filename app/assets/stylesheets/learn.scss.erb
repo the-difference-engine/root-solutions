@@ -3,7 +3,9 @@
     text-decoration: underline;
     font-weight: bold;
 }
-
+.row {
+  margin: 0 !important;
+}
 .learn-btn-primary {
   /*background-color: #4CAF50;*/
   padding-bottom:10px; 
@@ -27,15 +29,21 @@
 .learn-other-titles {
   padding-top: 100px;
 }
+.learn-container-fluid {
+  margin-right: 0px;
+  margin-left: 0px;  
+}
 #learn-parallax-1 {
   background-image: url( <%= image_path 'rain_forest.jpg' %>);
   height: 600px;
+  display: cover;
 }
 #learn-parallax-2 {
-  background-image: url( <%= image_path 'healthy_kelp.jpg' %> );
+  background-image: url( <%= image_path 'rice_terrace_bali.jpg' %> );
   height: 300px;
   text-align: center;
   color: white;
+  display: cover;
 }
 
 #learn-parallax-3 {
@@ -43,6 +51,7 @@
   min-height: 300px;
   text-align: center;
   color: white;
+  display: cover;
 }
 .learn-row {
   padding-top: 100px;
