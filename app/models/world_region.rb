@@ -1,7 +1,8 @@
 require 'csv'
 
 class WorldRegion < ApplicationRecord
-  has_many :resources
+  has_many :resource_world_regions
+  has_many :resources, through: :resources_world_regions
 
   def self.to_csv(options = {})
     desired_columns = ["name"]
