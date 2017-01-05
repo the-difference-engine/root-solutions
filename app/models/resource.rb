@@ -13,7 +13,7 @@ class Resource < ApplicationRecord
   has_many :resources_cognitive_bia
   has_many :cognitive_bia, through: :resources_cognitive_bia
 
-  has_many :resource_world_regions
+  has_many :resources_world_regions
   has_many :world_regions, through: :resources_world_regions
 
   has_many :attachments
