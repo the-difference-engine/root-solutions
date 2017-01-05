@@ -1,7 +1,7 @@
 require 'csv'
 
 class Resource < ApplicationRecord
-  searchkick
+  # searchkick
   has_many :building_block_substeps, through: :resources_building_block_substeps
   has_many :resources_building_block_substeps
 
@@ -12,11 +12,11 @@ class Resource < ApplicationRecord
 
   belongs_to :news_source
 
-  belongs_to :resource_type
+  has_many :resources_cognitive_bia
+  has_many :cognitive_bia, through: :resources_cognitive_bia
 
-  belongs_to :world_region
-
-  belongs_to :cognitive_bium
+  has_many :resource_world_regions
+  has_many :world_regions, through: :resources_world_regions
 
   has_many :attachments
 
