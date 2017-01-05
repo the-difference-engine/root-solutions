@@ -15,15 +15,14 @@
       <div class='col-md-2'></div>
       <div class='col-md-8'>
         <blockquote>
-          <h1 class="text-color">Human behavior is at the root of environmental problems...
-          and their solutions</h1>
+          <h1 class="text-color">Human behavior is at the root of environmental problems and their solutions.</h1>
         </blockquote>
         <div class="row">
           <div class="col-md-7 left">
             <div class="mission-wrap">
               <h2 class="mission-header">Our Mission</h2>
               <div class="mission-picture">
-                <img src="http://placehold.it/350x300">
+                <img src="http://placehold.it/450x300">
               </div>
               <p class="mission-description">
                Root Solutions is a nonprofit organization dedicated to providing conservationists and policy makers with tools and resources informed by the proven methods of behavioral science, allowing them to create more effective campaigns, policies, and strategies that reflect how people actually make decisions and the factors that motivate behavior that is good for the environment.
@@ -32,9 +31,12 @@
           </div>
           <div class="col-md-5 right">
             <div class="mission-twitter-wrap">
+              <p class="mission-twitter-follow-us">
+                Follow Us On Twitter!
+              </p>
               <div class="mission-twitter-box">
                 <% TwitterApi.our_public_tweets.each do |tweet| %>
-                  <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).html_safe %>
+                  <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
                 <% end %>
               </div>
             </div>
