@@ -1,13 +1,29 @@
-<div id="learn-parallax-1"> 
-  
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
+
+<div id="behavior_design-parallax"> 
   <div class="heading-title">
-    <h2>
+    <h2 class="title">
       LEARN
     </h2>
-    <div id="main-logo">
+    <div id="sub-logo">
       <%= image_tag("root-logo.png") %>
     </div>
   </div>
+</div>
+<div id="careers-design-chevron">
 </div>
 <div id="header-row" class="row">
   <div class='col-md-2'></div>
