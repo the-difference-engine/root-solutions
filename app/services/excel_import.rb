@@ -13,9 +13,9 @@ class ExcelImport
     data_import
   end
 
-  # private
+  private
 
-  # attr_reader :spreadsheets
+  attr_reader :spreadsheets
 
   #key data import
 
