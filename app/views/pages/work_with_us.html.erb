@@ -113,8 +113,8 @@
         <div class="row">
           <div class="form-group">
             <div class="col-sm-offset-7 col-sm-10 inputs-group">
-            <p class="js-wwu-name"></p>
               <%=label_tag :name %>
+              <p class="wwu-errors js-name-errors"></p>
               <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
             </div>
           </div>
@@ -122,8 +122,8 @@
         <div class="row">
           <div class="form-group">
             <div class="col-sm-offset-7 col-sm-10 inputs-group">
-            <p class="js-wwu-email"></p>
               <%=label_tag :email %>
+              <p class="wwu-errors js-email-errors"></p>
               <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
             </div>
           </div>
@@ -131,8 +131,8 @@
         <div class="row">
           <div class="form-group">
             <div class="col-sm-offset-7 col-sm-10 inputs-group">
-            <p class="js-wwu-subject"></p>
               <%=label_tag :subject %>
+              <p class="wwu-errors js-subject-errors"></p>
               <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
             </div>
           </div>
@@ -140,8 +140,8 @@
         <div class="row">
           <div class="form-group">
             <div class="col-sm-offset-7 col-sm-10 inputs-group">
-            <p class="js-wwu-message"></p>
               <%=label_tag :message %>
+              <p class="wwu-errors js-message-errors"></p>
               <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
             </div>
           </div>
@@ -172,6 +172,7 @@ $(document).ready(function(){
                  "subject": $(".js-subject").val(),
                  "message": $(".js-message").val()
                },
+      datatype: "json",
       success: function(data) {
         console.log("success");
         console.log(data);
@@ -182,8 +183,41 @@ $(document).ready(function(){
           $(".js-subscribe-response").html(data["message"]);
         }
       },
-      error  : function(data) {
-        console.log("failure");
+      error  : function(request, status, error) {
+        var data = JSON.parse(request.responseText);
+        console.log(data);
+        if( data.message.email) {
+          if($(".js-email-errors").html() == "") {
+            $(".js-email-errors").html("*" + data.message.email);
+          } else {
+            $(".js-email-errors").html("");
+            $(".js-email-errors").html("*" + data.message.email);
+          }
+        };
+        if(data.message.name) {
+          if($(".js-name-errors").html() == "") {
+            $(".js-name-errors").html("*" + data.message.name);
+          } else {
+            $(".js-name-errors").html("");
+            $(".js-name-errors").html("*" + data.message.name);
+          }
+        }
+        if( data.message.message) {
+          if($(".js-message-errors").html() == "") {
+            $(".js-message-errors").html("*" + data.message.message);
+          } else {
+            $(".js-message-errors").html("");
+            $(".js-message-errors").html("*" + data.message.message);
+          }
+        }
+        if( data.message.subject) {
+          if($(".js-subject-errors").html() == "") {
+            $(".js-subject-errors").html("*" + data.message.subject);
+          } else {
+            $(".js-subject-errors").html("");
+            $(".js-subject-errors").html("*" + data.message.subject);
+          }
+        }
       }
     });
   });

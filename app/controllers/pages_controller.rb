@@ -13,11 +13,11 @@ class PagesController < ApplicationController
     if email_message.valid?
       UserMailer.work_with_us_email(@name,@email,@subject,@message).deliver_now
       respond_to do |format|
-        format.json { render :json, { :message => "We will get back to you soon!!" } }
+        format.json { render :json, { :message => "We will get back to you soon!!", status: 200 } }
       end
     else
       respond_to do |format|
-        format.json { render :json => {:message => email_message.errors} }
+        format.json { render :json => { :message => email_message.errors}, status: 422 }
       end
     end
   end
