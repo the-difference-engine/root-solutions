@@ -507,10 +507,18 @@ button.learn-more:hover {
   font-size: 23px;
   background-color: $green;
   color: white;
-  width: 150px !important;
+  width: 160px !important;
 }
 .tab-style:hover {
   background-color: $teal !important;
+  color: white;
+}
+
+.tab-style-2 {
+  height: 0px;
+  width: 0px;
+  padding: 0;
+  margin: 0;
   color: white;
 }
 
@@ -690,6 +698,66 @@ button.learn-more:hover {
   color: $green5;
 }
 
+#our-process-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'beach_sunset.jpg' %>); /* add image of choice */
+  height: 400px;
+}
+
+#our-process-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+.our-process-background-color {
+  background-color: white;
+}
+
+.client-green-text {
+  color: $green3;
+  //change to $green when all_behavior is merged
+}
+
+.our-process-parallax-1, .our-process-parallax-2, .our-process-parallax-3, .our-process-parallax-4 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+.our-process-parallax-1 h2, .our-process-parallax-2 h2, .our-process-parallax-3 h2, .our-process-parallax-4 h2 {
+  padding-top: 100px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.our-process-parallax-1 {
+  background-image: url( <%= image_path 'process1.png' %>);
+}
+
+.our-process-parallax-2 {
+  background-image: url( <%= image_path 'process2.png' %>);
+}
+.our-process-parallax-3 {
+  background-image: url( <%= image_path 'process3.png' %>);
+}
+.our-process-parallax-4 {
+  background-image: url( <%= image_path 'process4.png' %>);
+}
+
 .affix-bottom {
   position: absolute;
 }
@@ -746,6 +814,27 @@ button.learn-more:hover {
 }
 .advisor-image img {
   width:100%;
+}
+
+.our-process-nav {
+  position: static;
+  padding-top: 0px;
+}
+#our-process-navbar {
+  .affix-top {
+    position: absolute;
+  }
+}
+
+.our-process-info {
+  margin-bottom: 25px;
+}
+
+.our-process-text-size li a {
+  font-size: 19px;
+}
+.our-process-body .row {
+  margin: 0px;
 }
 
 #why-behavior-parallax {
