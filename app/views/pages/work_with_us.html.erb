@@ -121,8 +121,8 @@
         </div>
         <div class="row">
           <div class="form-group">
-            <div class="col-sm-offset-7 col-sm-10 inputs-group">  
-            <p class="js-wwu-email"></p>  
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+            <p class="js-wwu-email"></p>
               <%=label_tag :email %>
               <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
             </div>
@@ -162,14 +162,15 @@
 <script>
 $(document).ready(function(){
 
-  $(".wwu-button").click(function(){
+  $(".wwu-button").click(function(e){
+    e.preventDefault();
     $.ajax({
       type   : "POST",
-      url    : "/work_with_us_email",
-      data   : { "name"   : $(".js-name").val(), 
+      url    : "/work_with_us",
+      data   : { "name"   : $(".js-name").val(),
                  "email"  : $(".js-email").val(),
                  "subject": $(".js-subject").val(),
-                 "message": $(".js-message").val() 
+                 "message": $(".js-message").val()
                },
       success: function(data) {
         console.log("success");
