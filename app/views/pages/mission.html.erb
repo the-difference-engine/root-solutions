@@ -33,7 +33,9 @@
           <div class="col-md-5 right">
             <div class="mission-twitter-wrap">
               <div class="mission-twitter-box">
-                
+                <% TwitterApi.our_public_tweets.each do |tweet| %>
+                  <%= parsed_tweet tweet.text %>
+                <% end %>
               </div>
             </div>
           </div>
