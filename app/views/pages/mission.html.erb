@@ -30,18 +30,24 @@
             </div>
           </div>
           <div class="col-md-5 right">
-            <div class="mission-twitter-wrap">
-              <h3 class="mission-twitter-feed">
-                Follow @Root_Solutions On Twitter!
-              </h3>
-              <div class="mission-twitter-box">
-                <% TwitterApi.our_public_tweets.each do |tweet| %>
-                  <ul class="mission-twitter-text">
-                    <img class="mission-twitter-profile-image" src="<%= TwitterApi.client.user("Root_Solutions").profile_image_uri %>">
-                    <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
-                  </ul>
-                <% end %>
+            <div class="mission-twitter-wrap row">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3 class="mission-twitter-feed">
+                    Follow @Root_Solutions On Twitter!
+                  </h3>
+                </div>
               </div>
+              <% TwitterApi.our_public_tweets.each do |tweet| %>
+              <div class="mission-twitter-profile-image-row">
+                <div class="col-md-3">
+                  <img class="mission-twitter-profile-image" src="<%= TwitterApi.client.user("Root_Solutions").profile_image_uri %>">
+                </div>
+                <div class="col-md-9">
+                  <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
+                </div>
+              </div>
+              <% end %>
             </div>
           </div>
         </div>

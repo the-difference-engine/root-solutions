@@ -486,7 +486,7 @@ button.learn-more:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url( <%= image_path 'earth.jpg' %>); /* add image of choice */
-  height: 330px;
+  height: 400px;
   .other-titles {
     padding-top: 110px;
   }
@@ -924,6 +924,7 @@ button.learn-more:hover {
 .mission-twitter-wrap {
   padding-left: 0px;
   padding-top: 0px;
+  background-color: $yellow1;
 }
 
 .mission-twitter-feed {
@@ -931,12 +932,15 @@ button.learn-more:hover {
   text-align: center;
 }
 
-.mission-twitter-box {
-  img {
-    float: left;
-    margin: 5px 5px 5px 5px;
-  }
+.mission-twitter-text {
   border-color: $blue2;
+}
+
+.mission-twitter-profile-image-row {
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  margin-bottom: 20px !important;
 }
 
 .nav-a-tag {
