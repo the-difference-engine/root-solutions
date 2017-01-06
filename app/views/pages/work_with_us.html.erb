@@ -16,9 +16,11 @@
  <div id="header-row" class="row">
   <div class='col-md-2'></div>
   <div class='col-md-8'>
+  <div class= "wwu-para">
     <p>
       We work directly with organizations, companies and governmental agencies to identify behavioral leverage points in their initiatives, then assist in the design and implementation of cost-effective and scalable behavioral strategies.
     </p>
+  </div>
   </div>
   <div class='col-md-2'></div>
 </div>
@@ -151,6 +153,7 @@
           <div class="wwu-btn">
             <%= button_tag "Send".html_safe, class: "wwu-button"%>
           </div>
+              <p class="wwu-success js-subscribe-response"></p>
         </div>
         <div class='col-md-2'></div>
         <% end %>
@@ -193,6 +196,8 @@ $(document).ready(function(){
             $(".js-email-errors").html("");
             $(".js-email-errors").html("*" + data.message.email);
           }
+        } else {
+          $(".js-email-errors").html("");
         };
         if(data.message.name) {
           if($(".js-name-errors").html() == "") {
@@ -201,6 +206,8 @@ $(document).ready(function(){
             $(".js-name-errors").html("");
             $(".js-name-errors").html("*" + data.message.name);
           }
+        } else {
+          $(".js-name-errors").html("");
         }
         if( data.message.message) {
           if($(".js-message-errors").html() == "") {
@@ -209,6 +216,8 @@ $(document).ready(function(){
             $(".js-message-errors").html("");
             $(".js-message-errors").html("*" + data.message.message);
           }
+        } else {
+          $(".js-message-errors").html("");
         }
         if( data.message.subject) {
           if($(".js-subject-errors").html() == "") {
@@ -217,6 +226,8 @@ $(document).ready(function(){
             $(".js-subject-errors").html("");
             $(".js-subject-errors").html("*" + data.message.subject);
           }
+        } else {
+          $(".js-subject-errors").html("");
         }
       }
     });
