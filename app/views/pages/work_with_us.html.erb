@@ -153,7 +153,7 @@
           <div class="wwu-btn">
             <%= button_tag "Send".html_safe, class: "wwu-button"%>
           </div>
-              <p class="wwu-success js-subscribe-response"></p>
+          <p class="wwu-success js-subscribe-response"></p>
         </div>
         <div class='col-md-2'></div>
         <% end %>
@@ -177,18 +177,20 @@ $(document).ready(function(){
                },
       datatype: "json",
       success: function(data) {
-        console.log("success");
-        console.log(data);
+        console.log("success");      
+        $(".wwu-errors").html("");
         if($(".js-subscribe-response").html() == "") {
-          $(".js-subscribe-response").html(data["message"]);
+          $(".js-subscribe-response").html(data.message);
         } else {
           $(".js-subscribe-response").html("");
-          $(".js-subscribe-response").html(data["message"]);
+          $(".js-subscribe-response").html(data.message);
         }
+        $(".form-control").val("");
       },
       error  : function(request, status, error) {
+        console.log("test");
         var data = JSON.parse(request.responseText);
-        console.log(data);
+        
         if( data.message.email) {
           if($(".js-email-errors").html() == "") {
             $(".js-email-errors").html("*" + data.message.email);

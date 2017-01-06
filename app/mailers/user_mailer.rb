@@ -2,12 +2,12 @@ class UserMailer < ApplicationMailer
 
   default from: "therootsolutions@gmail.com"
 
-  def work_with_us_email(name,email,subject,message)
-    @name = name
-    @user = email
-    @subject = subject
-    @message = message
+  def work_with_us_email(email_object)
+    @name = email_object.name
+    @user = email_object.email
+    @subject = email_object.subject
+    @message = email_object.message
     @url = "https:localhost:3000"
-    mail(to: "therootsolutions@gmail.com", subject: "#{@name} wants to work with us." )
+    mail(to: "marishasahay@gmail.com", subject: "#{@name} wants to work with us." )
   end
 end

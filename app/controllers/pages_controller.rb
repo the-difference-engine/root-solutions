@@ -11,9 +11,9 @@ class PagesController < ApplicationController
   def work_with_us_email
     email_message = ContactUsEmail.new(email_params)
     if email_message.valid?
-      UserMailer.work_with_us_email(@name,@email,@subject,@message).deliver_now
+      UserMailer.work_with_us_email(email_message).deliver_now      
       respond_to do |format|
-        format.json { render :json, { :message => "We will get back to you soon!!", status: 200 } }
+        format.json { render :json => { :message => "We will get back to you soon!!"} }
       end
     else
       respond_to do |format|
