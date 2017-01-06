@@ -31,9 +31,9 @@
           </div>
           <div class="col-md-5 right">
             <div class="mission-twitter-wrap">
-              <p class="mission-twitter-feed">
+              <h3 class="mission-twitter-feed">
                 Follow @Root_Solutions On Twitter!
-              </p>
+              </h3>
               <div class="mission-twitter-box">
                 <% TwitterApi.our_public_tweets.each do |tweet| %>
                   <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
