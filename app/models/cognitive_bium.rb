@@ -1,7 +1,8 @@
 require 'csv'
 
 class CognitiveBium < ApplicationRecord
-  has_many :resources
+  has_many :resources_cognitive_bia
+  has_many :resources, through: :resources_cognitive_bia
 
   def self.to_csv(options = {})
     desired_columns = ["name"]

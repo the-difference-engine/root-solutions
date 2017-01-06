@@ -45,7 +45,7 @@ gem 'font-awesome-rails'
 gem 'faker', '~> 1.6'
 gem 'angular-rails-templates'
 gem 'roo'
-gem 'searchkick'
+# gem 'searchkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -95,6 +95,7 @@ GEM
       faraday
       multi_json
     equalizer (0.0.11)
+      qa
     erubis (2.7.0)
     excon (0.54.0)
     execjs (2.7.0)
@@ -107,6 +108,7 @@ GEM
       i18n (~> 0.5)
     faraday (0.10.1)
       multipart-post (>= 1.2, < 3)
+      qa
     ffi (1.9.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -240,6 +242,7 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+<<<<<<< HEAD
     hashie (3.4.6)
     http (2.1.0)
       addressable (~> 2.3)
@@ -250,6 +253,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.1)
     http_parser.rb (0.6.0)
+      qa
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
@@ -281,6 +285,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     naught (1.1.0)
+      qa
     nio4r (1.2.1)
     nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
@@ -369,6 +374,7 @@ GEM
       activemodel (>= 4.1)
       elasticsearch (>= 1)
       hashie
+      qa
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     simple_oauth (0.3.1)
@@ -458,7 +464,6 @@ DEPENDENCIES
   roo
   rspec-rails (= 3.5.0)
   sass-rails (~> 5.0)
-  searchkick
   shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
