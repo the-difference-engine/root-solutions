@@ -37,7 +37,7 @@
               <div class="mission-twitter-box">
                 <% TwitterApi.our_public_tweets.each do |tweet| %>
                   <ul class="mission-twitter-text">
-                    <img src="<%= TwitterApi.client.user("Root_Solutions").profile_image_uri %>">
+                    <img class="mission-twitter-profile-image" src="<%= TwitterApi.client.user("Root_Solutions").profile_image_uri %>">
                     <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
                   </ul>
                 <% end %>
