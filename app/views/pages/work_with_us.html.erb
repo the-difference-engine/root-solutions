@@ -1,122 +1,239 @@
-<div class="container-fluid">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
+<div id="wwu-parallax-one"> 
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left">
+  <div class="heading-title">
+    <h2>
+      WORK WITH US
+    </h2>
+    <div id="main-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div>
+
+<div class= "wwu-chevron">
+</div>
+ <!-- <div class='container-fluid'> -->
+ <div id="header-row" class="row">
+  <div class='col-md-2'></div>
+  <div class='col-md-8'>
+    <blockquote>
+      <p class="wwu-description">
+        We work directly with organizations, companies and governmental agencies to identify behavioral leverage points in their initiatives, then assist in the design and implementation of cost-effective and scalable behavioral strategies.
+      </p>
+    </blockquote>
+  </div>
+  <div class='col-md-2'></div>
+</div>
+</div>
+
+<div id="wwu-parallax" class="heading-title">
+  <h2 class="other-titles">Consulting Services</h2>
+</div>
+<div class="wwu-white-space"> 
+  <div id="header-row" class="row">
+    <div class='col-md-2'></div>
+    <div class='col-md-8'>
+      <p>
+        We provide a range of services:
+      </p>
+      <p>
+        <li>
+          Background research (case studies, social forces, values, mental models) Audience segmentation
+        </li>
+        <li>
+          Survey / interview / focus group design, implementation and reporting
+        </li>
+        <li>
+          Messaging, collateral and interface design
+        </li>
+        <li>
+          Behavior change program design, piloting, implementation and evaluation
+          Social media strategy​
+        </li>
+      </p>
+      ​  <p>
+      We have developed a systematic approach for integrating behavioral insights into both new and ongoing projects. Learn more about the Root Solutions Environmental Behavior Design Framework.
+    </p> 
+    <%= link_to "View our past projects", "http://www.therootsolutions.org/copy-of-work-with-us", class: "work-with-us-link" %>
+  </div>
+  <div class='col-md-2'></div>
+</div>
+</div>
+<div id="parallax-3" class="heading-title">
+  <h2 class="other-titles">Training</h2>
+  <div class="work-with-us-quote">
+    “I feel like anyone working in environmental program design and implementation should receive this training, especially if they have a goal of changing people's’ behavior. The training was interesting, engaging, and relevant; we came out of it with specific steps we can take to improve our programming to make it more relevant and effective.”
+    <p>–Julia Hatton, Director of Youth Programs, Rising Sun Energy Center</p>
+  </div>
+</div>
+<div id="header-row" class="row">
+  <div class='col-md-2'></div>
+  <div class='col-md-8'>
+    <div  class="wwu-white-space">
+      <p>
+        By providing practical instruction on the use of behavioral design, we equip change-makers to create a brighter, healthier, and more sustainable world. Our trainings are based on our unique behavior design framework, using a mix of case studies, informative storytelling, hands-on activities, and concrete design material.
+      </p>
+      <br>
+      <p>
+        Training Format
+        <li>Short topical training</li>
+        <li>1 & 2 day workshops</li>
+        <li>Specialized trainings tailored to meet the needs of your organization</li>
+      </p>
+      <br>
+      <p>
+        Common to all trainings
+        <li>Through our training, you will learn how to immediately integrate behavior design into your effort, driving success and creating lasting impact for your organization and, most importantly, for the environmental movement.</li>
+        <li>Techniques to identify the barriers to action faced by your target group.</li>
+        <li>Examples of recently conducted experiments and real world applications that provide insight on specific best practices.</li>
+        <li>Initiative redesign strategies: an in-depth look at how organizations are failing to captivate or motivate their audiences, and how you can jump ahead of the curve.</li>
+      </p>
+      <br>
+      <p>
+        Topics may include
+        <li>Designing the best choice architecture in a specific setting</li>
+        <li>Designing pledges for lasting impact</li>
+        <li>Exploring how cognitive dissonance can help to strengthen commitments</li>
+        <li>Guidance framing your outreach efforts that are compatible with cognitive biases</li>
+        <li>Connecting through comparison: how to best create normative messages</li>
+        <li>Highlighting progress for enhanced motivation</li>
+        <li>Making it matter: working to localize abstract messages</li>
+        <li>Value-matching as a tactic to connect with your audience</li>
+      </p>
+    </div>
+      <div class="wwu-line-separator"></div>
+  </div>
+  <div class='col-md-2'></div>
+</div>
+<!-- <h3 class="wwu-heading" align="center">Contact us to discuss client work or trainings</h3> -->
+<div class="wwu-form">
+<h3 class="wwu-heading">Get in touch</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_tag '/work_with_us', method: :post do %>
+      <form class="form-horizontal">
+        <div class="row">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  <!-- ABOUT SECTION START -->
-  <!-- About: Intro -->
-  <div class="row" id="work-with-us-intro">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centered">
-      <h2 class="centered">Work With Us</h2>
-    </div>
-    <div class="col-md-12 centered">
-      <button class="centered newsletter">Join Our Newsletter</button>
-    </div>
-    <div class="row" id="about-intro-mission">
-      <div class="col-md-12 centered">
-        <h4 class="sub-section-title">Training</h4>
-        <div class="col-md-12 centered">
-          <p>Maecenas nunc ut nonummy amet ac venenatis, lacus nisl ac leo dolor, eleifend luctus hendrerit tempor, massa dictum gravida et deserunt fermentum, mi neque turpis nec amet fusce integer. Dui maecenas tempus consequat. Explicabo nascetur nascetur mi, molestie ultricies proin, donec scelerisque sodales bibendum.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-   <div class="col-md-12 centered">
-      <h4 class="sub-section-title"> Upcoming Training</h4>
-      <div class="col-md-12 centered">
-        <p>Maecenas nunc ut nonummy amet ac venenatis, lacus nisl ac leo dolor, eleifend luctus hendrerit tempor, massa dictum gravida et deserunt fermentum, mi neque turpis nec amet fusce integer. Dui maecenas tempus consequat. Explicabo nascetur nascetur mi, molestie ultricies proin, donec scelerisque sodales bibendum.</p>
-      </div>
-    </div>
-
-    <div class="row margin-second-work-with-us-img" id="work-with-us-second">
-      <div class="col-md-12 centered">
-        <button class="centered newsletter">Link To something</button>
-      </div>
-      <div class="row" id="about-intro-mission">
-        <div class="col-md-12 centered">
-          <h4 class="sub-section-title">Advising</h4>
-          <div class="col-md-12 centered">
-            <p>Maecenas nunc ut nonummy amet ac venenatis, lacus nisl ac leo dolor, eleifend luctus hendrerit tempor, massa dictum gravida et deserunt fermentum, mi neque turpis nec amet fusce integer. Dui maecenas tempus consequat. Explicabo nascetur nascetur mi, molestie ultricies proin, donec scelerisque sodales bibendum.</p>
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+              <%=label_tag :name %>
+              <p class="wwu-errors js-name-errors"></p>
+              <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-12 centered">
-      <h4 class="sub-section-title"> More Info for advising</h4>
-      <div class="col-md-12 centered">
-        <p>Maecenas nunc ut nonummy amet ac venenatis, lacus nisl ac leo dolor, eleifend luctus hendrerit tempor, massa dictum gravida et deserunt fermentum, mi neque turpis nec amet fusce integer. Dui maecenas tempus consequat. Explicabo nascetur nascetur mi, molestie ultricies proin, donec scelerisque sodales bibendum.</p>
-      </div>
-    </div>
-
-    <div class="row margin-second-work-with-us-img" id="work-with-us-third">
-      <div class="col-md-12 centered">
-        <button class="centered newsletter">Link To something</button>
-      </div>
-      <div class="row" id="about-intro-mission">
-        <div class="col-md-12 centered">
-          <h4 class="sub-section-title">Projects</h4>
-          <div class="col-md-12 centered">
-            <p>Maecenas nunc ut nonummy amet ac venenatis, lacus nisl ac leo dolor, eleifend luctus hendrerit tempor, massa dictum gravida et deserunt fermentum, mi neque turpis nec amet fusce integer. Dui maecenas tempus consequat. Explicabo nascetur nascetur mi, molestie ultricies proin, donec scelerisque sodales bibendum.</p>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+              <%=label_tag :email %>
+              <p class="wwu-errors js-email-errors"></p>
+              <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
+            </div>
           </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+              <%=label_tag :subject %>
+              <p class="wwu-errors js-subject-errors"></p>
+              <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+              <%=label_tag :message %>
+              <p class="wwu-errors js-message-errors"></p>
+              <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-2'></div>
+        <div class='col-md-8'>
+          <div class="wwu-btn">
+            <%= button_tag "Send".html_safe, class: "wwu-button"%>
+          </div>
+        </div>
+        <div class='col-md-2'></div>
+        <% end %>
+      </form>
     </div>
-    <div class="col-md-12 centered">
-      <h4 class="sub-section-title"> More Info for projects</h4>
-      <div class="col-md-12 centered">
-        <p>Maecenas nunc ut nonummy amet ac venenatis, lacus nisl ac leo dolor, eleifend luctus hendrerit tempor, massa dictum gravida et deserunt fermentum, mi neque turpis nec amet fusce integer. Dui maecenas tempus consequat. Explicabo nascetur nascetur mi, molestie ultricies proin, donec scelerisque sodales bibendum.</p>
-      </div>
-    </div>
+  </div>
+  <p class="wwu-success js-subscribe-response"></p>
+</div>
 
-  <!-- About: What We Do -->
+<script>
+$(document).ready(function(){
 
-</div> <!-- /.container -->
+  $(".wwu-button").click(function(e){
+    e.preventDefault();
+    $.ajax({
+      type   : "POST",
+      url    : "/work_with_us",
+      data   : { "name"   : $(".js-name").val(),
+                 "email"  : $(".js-email").val(),
+                 "subject": $(".js-subject").val(),
+                 "message": $(".js-message").val()
+               },
+      datatype: "json",
+      success: function(data) {
+        console.log("success");      
+        $(".wwu-errors").html("");
+        if($(".js-subscribe-response").html() == "") {
+          $(".js-subscribe-response").html(data.message);
+        } else {
+          $(".js-subscribe-response").html("");
+          $(".js-subscribe-response").html(data.message);
+        }
+        $(".form-control").val("");
+      },
+      error  : function(request, status, error) {
+        console.log("test");
+        var data = JSON.parse(request.responseText);
+        
+        if( data.message.email) {
+          if($(".js-email-errors").html() == "") {
+            $(".js-email-errors").html("*" + data.message.email);
+          } else {
+            $(".js-email-errors").html("");
+            $(".js-email-errors").html("*" + data.message.email);
+          }
+        } else {
+          $(".js-email-errors").html("");
+        };
+        if(data.message.name) {
+          if($(".js-name-errors").html() == "") {
+            $(".js-name-errors").html("*" + data.message.name);
+          } else {
+            $(".js-name-errors").html("");
+            $(".js-name-errors").html("*" + data.message.name);
+          }
+        } else {
+          $(".js-name-errors").html("");
+        }
+        if( data.message.message) {
+          if($(".js-message-errors").html() == "") {
+            $(".js-message-errors").html("*" + data.message.message);
+          } else {
+            $(".js-message-errors").html("");
+            $(".js-message-errors").html("*" + data.message.message);
+          }
+        } else {
+          $(".js-message-errors").html("");
+        }
+        if( data.message.subject) {
+          if($(".js-subject-errors").html() == "") {
+            $(".js-subject-errors").html("*" + data.message.subject);
+          } else {
+            $(".js-subject-errors").html("");
+            $(".js-subject-errors").html("*" + data.message.subject);
+          }
+        } else {
+          $(".js-subject-errors").html("");
+        }
+      }
+    });
+  });
+
+});
+</script>

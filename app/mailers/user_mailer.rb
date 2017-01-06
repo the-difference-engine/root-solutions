@@ -1,9 +1,13 @@
 class UserMailer < ApplicationMailer
 
-  default from: "info@therootsolutions.org"
+  default from: "therootsolutions@gmail.com"
 
-  def welcome_email(user)
-    @user = user
-    mail(to: @user.email, subject: "Welcome to Root Solutions")
+  def work_with_us_email(email_object)
+    @name = email_object.name
+    @user = email_object.email
+    @subject = email_object.subject
+    @message = email_object.message
+    @url = "https:localhost:3000"
+    mail(to: "marishasahay@gmail.com", subject: "#{@name} wants to work with us." )
   end
 end

@@ -9,7 +9,7 @@ class EmailSubscriptionsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.json { render :json => {:message => @subscriber.errors.full_messages} }
+        format.json { render :json => {:message => "test"} }
       end
     end
   end
