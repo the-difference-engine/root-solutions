@@ -33,7 +33,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-
   def export_resources
     @resources = Resource.all
     csv_string = CSV.generate do |csv|
