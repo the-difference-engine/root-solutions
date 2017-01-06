@@ -46,6 +46,9 @@
                 <div class="col-md-9">
                   <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
                 </div>
+                <div>
+                <a class="twitter-timeline" href="https://twitter.com/Root_Solutions">Root Solutions</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
               </div>
               <% end %>
             </div>
