@@ -35,26 +35,30 @@
 }
 #learn-parallax-1 {
   background-image: url( <%= image_path 'rain_forest.jpg' %>);
-  height: 600px;
+  height: 500px;
   display: cover;
 }
 #learn-parallax-2 {
-  background-image: url( <%= image_path 'rice_terrace_bali.jpg' %> );
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'beach_sunset.jpg' %>); /* add image of choice */
   height: 300px;
-  text-align: center;
-  color: white;
-  display: cover;
 }
 
 #learn-parallax-3 {
-  background-image: url( <%= image_path 'rice_terrace_bali.jpg' %> );
-  min-height: 300px;
-  text-align: center;
-  color: white;
-  display: cover;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  height: 300px;
 }
 .learn-row {
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 70px;
 }
 
