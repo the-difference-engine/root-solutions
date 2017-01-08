@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-  body {
-    padding-top: 97px;
+.alert {
+  position:fixed; 
+  top: 15px; 
+  width: 20%;
+  right: 0px;
+  z-index:9999; 
+  border-radius:0px;
+  color: white;
   }
