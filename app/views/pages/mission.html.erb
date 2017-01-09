@@ -31,26 +31,13 @@
           </div>
           <div class="col-md-5 right">
             <div class="mission-twitter-wrap row">
-              <div class="row">
-                <div class="col-md-12">
-                  <h3 class="mission-twitter-feed">
-                    @Root_Solutions is on Twitter!
-                  </h3>
-                </div>
-              </div>
-              <% TwitterApi.our_public_tweets.each do |tweet| %>
-              <div class="mission-twitter-profile-image-row">
-                <div class="col-md-3">
-                  <img class="mission-twitter-profile-image" src="<%= TwitterApi.client.user("Root_Solutions").profile_image_uri %>">
-                </div>
-                <div class="col-md-9">
-                  <%= (tweet.text.gsub(/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/) {|s| "<a href=\"#{s}\" target=\"_blank\">#{s}</a>"}).gsub(/(?:\s|^)(?:#(?!\d+(?:\s|$)))(\w+)(?=\s|$)/i) {|s| " <a href=\"https://twitter.com/hashtag/#{s[2..-1]}\" target=\"_blank\">#{s[1..-1]}</a>"}.html_safe %>
-                </div>
-                <div>
-                <a class="twitter-timeline" href="https://twitter.com/Root_Solutions">Root Solutions</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-              </div>
-              <% end %>
+              <a href="https://twitter.com/Root_Solutions"
+                class="twitter-follow-button"
+                data-show-count="true"
+                data-size="large">Follow @Root_Solutions</a>
+              <a class="twitter-timeline"
+                href="https://twitter.com/Root_Solutions"
+                data-tweet-limit="2">Root Solutions</a>
             </div>
           </div>
         </div>
@@ -58,3 +45,19 @@
     </div>
   </div>
 </div>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
