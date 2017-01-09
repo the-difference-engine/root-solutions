@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/learn/why_behavior', to: 'learn#why_behavior'
   get '/careers', to: 'pages#careers', as: :careers
   get '/partners', to: 'pages#partners'
+  get '/team', to: 'pages#team'
 
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}

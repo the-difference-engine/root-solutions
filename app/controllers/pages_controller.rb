@@ -31,6 +31,9 @@ class PagesController < ApplicationController
   def learn
   end
 
+  def team
+  end
+
   private
 
   def email_params
