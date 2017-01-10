@@ -1197,11 +1197,53 @@ button.learn-more:hover {
   border-bottom: 1px solid #8c8b8b;
 }
 
-#projects-images img {
+.projects-images  {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   max-width: 325px;
   max-height: 115px;
   height: 115px;
   display: block;
   margin: auto;
   border: 5px solid #8c8b8b;
+}
+
+.projects-images span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5;
+}
+
+.projects-images:hover span {
+  opacity: 1;
+}
+
+#projects-image1 {
+  background-image: url(<%= image_path 'quest.webp' %>);
+}
+
+#projects-image2 {
+  background-image: url(<%= image_path 'marine-mammal-center.webp' %>);
+}
+
+#projects-image3 {
+  background-image: url(<%= image_path 'seabird-protection-network.webp' %>);
+}
+
+#projects-image4 {
+  background-image: url(<%= image_path 'nature-conservancy.webp' %>);
+}
+
+#projects-image5 {
+  background-image: url(<%= image_path 'rising-sun.webp' %>);
+}
+
+#projects-image6 {
+  background-image: url(<%= image_path 'open-book.png' %>);
 }
