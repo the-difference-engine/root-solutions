@@ -64,13 +64,12 @@ Rails.application.routes.draw do
   get '/admins/:id/edit', to: 'admins#edit'
   patch '/admins/:id', to: 'admins#update'
   delete '/admins/:id', to: 'admins#destroy'
-  get '/admins/users/new', to: 'accounts#new'
-  post '/admins/users', to: 'accounts#create'
 
 as :admin do
   get '/admins/users/new', to: 'accounts#new'
   post '/admins/users', to: 'accounts#create'
-  post 'savenew', to: 'accounts#savenew'
+  get '/admins/users/:id', to: 'accounts#edit'
+  patch '/admins/users/:id', to: 'accounts#update'
 end
 
   namespace :api do

@@ -1,0 +1,32 @@
+<!-- Header Area -->
+<header class="header-area inner-page">
+<!-- Header Top Area --><!-- 
+<section class="header-top"> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <div class="header-elements pull-right">
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_tag "/admins/users/#{current_user.id}", method: :patch do %>
+    <form class="form-horizontal">
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 inputs-group">
+          <%=label_tag :password %>
+          <%=password_field_tag :password,"", class:"form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="button" align="center">
+      <%= button_tag "<span> Update password </span>".html_safe, class: "btn primary-btn"%>
+    </div>
+    <%end%>
+    </form>
+  </div>
+</div>
