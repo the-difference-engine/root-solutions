@@ -34,6 +34,9 @@ class PagesController < ApplicationController
   def team
   end
 
+  def mission
+  end
+
   private
 
   def email_params

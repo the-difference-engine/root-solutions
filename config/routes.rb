@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/careers', to: 'pages#careers', as: :careers
   get '/partners', to: 'pages#partners'
   get '/team', to: 'pages#team'
+  get '/mission', to: 'pages#mission'
 
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}

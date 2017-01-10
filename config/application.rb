@@ -27,6 +27,8 @@ module RootSolutions
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
-    
+
+    # Twitter API
+    # config.autoload_paths << Rails.root.join('lib')
   end
 end
