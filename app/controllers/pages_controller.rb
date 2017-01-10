@@ -34,6 +34,10 @@ class PagesController < ApplicationController
   def team
   end
 
+  def projects
+
+  end
+  
   def mission
   end
 
