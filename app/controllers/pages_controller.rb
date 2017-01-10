@@ -31,6 +31,10 @@ class PagesController < ApplicationController
   def learn
   end
 
+  def mission
+    
+  end
+
   private
 
   def email_params
