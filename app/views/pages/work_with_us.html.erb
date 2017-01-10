@@ -104,60 +104,43 @@
   <div class='col-md-2'></div>
 </div>
 <!-- <h3 class="wwu-heading" align="center">Contact us to discuss client work or trainings</h3> -->
-<div class="wwu-form">
-<h3 class="wwu-heading">Get in touch</h3>
+<div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 wwu-form">
+      <h3 class="wwu-heading">Get in touch</h3>
       <%= form_tag '/work_with_us', method: :post do %>
-      <form class="form-horizontal">
-        <div class="row">
-          <div class="form-group">
-            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+        <form class="form-horizontal">
+          <div id="wwu-form-style">
+            <div class="form-group">
               <%=label_tag :name %>
               <p class="wwu-errors js-name-errors"></p>
               <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group">
-            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+            <div class="form-group">
               <%=label_tag :email %>
               <p class="wwu-errors js-email-errors"></p>
               <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group">
-            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+            <div class="form-group">
               <%=label_tag :subject %>
               <p class="wwu-errors js-subject-errors"></p>
               <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group">
-            <div class="col-sm-offset-7 col-sm-10 inputs-group">
+            <div class="form-group">
               <%=label_tag :message %>
               <p class="wwu-errors js-message-errors"></p>
               <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
             </div>
           </div>
-        </div>
-        <div class='col-md-2'></div>
-        <div class='col-md-8'>
           <div class="wwu-btn">
             <%= button_tag "Send".html_safe, class: "wwu-button"%>
           </div>
-        </div>
-        <div class='col-md-2'></div>
-        <% end %>
-      </form>
+        </form>
+      <% end %>
+      <p class="wwu-success js-subscribe-response"></p>
     </div>
   </div>
-  <p class="wwu-success js-subscribe-response"></p>
 </div>
 
 <script>
