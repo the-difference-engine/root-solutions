@@ -32,6 +32,11 @@ class PagesController < ApplicationController
   end
 
   def projects
+
+  end
+  
+  def mission
+    
   end
 
   private

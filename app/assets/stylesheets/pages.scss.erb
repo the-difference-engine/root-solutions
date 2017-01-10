@@ -21,6 +21,7 @@
 # DONATE
 # PARTNERS
 # WHY BEHAVIOR
+# MISSION
 ----------------------------------------------------------------
 
 */
@@ -486,6 +487,19 @@ button.learn-more:hover {
   }
 }
 
+#mission-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'earth.jpg' %>); /* add image of choice */
+  height: 400px;
+  .other-titles {
+    padding-top: 110px;
+  }
+}
+
 #behavior_design-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
@@ -495,6 +509,14 @@ button.learn-more:hover {
 }
 
 #partners-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+#mission-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
   margin: -115px 0px 0px 0px;
@@ -819,8 +841,13 @@ button.learn-more:hover {
 .active-advisor {
   border: 1px solid $yellow3;
 }
+
 .advisor-image img {
   width:100%;
+}
+
+.mission-wrap {
+  padding-bottom: 100px;
 }
 
 .our-process-nav {
@@ -890,6 +917,44 @@ button.learn-more:hover {
   }
   .container-fluid {
     padding: 0;
+  }
+}
+
+.mission-picture {
+  img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+.mission-twitter-wrap {
+  padding-left: 0px;
+  padding-top: 0px;
+  background-color: #1b95e0;
+}
+
+.mission-twitter-feed {
+  color: $blue5;
+  text-align: center;
+}
+
+.mission-twitter-text {
+  border-color: $blue1;
+}
+
+.mission-twitter-profile-image-row {
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  margin-bottom: 20px !important;
+  background-color: $yellow1;
+  border-style: solid;
+  border: 1px;
+  img {
+    border-radius: 100%;
   }
 }
 
