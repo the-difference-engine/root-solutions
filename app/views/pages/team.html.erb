@@ -29,8 +29,8 @@
       Root Solutions Team
     </h2>
   </div> <!-- team-parallax-1 -->
-  <div class="container-fluid">
-    <div class="team-wrap">
+  <div class="container-fluid backgroundcolor">
+    <div class="team-root-solutions-wrap">
       <div class="row large-team-root" id="nya-van-leuvan">
         <div class="col-md-3 col-md-offset-1" style="height: 400px">
           <img src="http://placehold.it/280x400" style="display:block;">
@@ -137,7 +137,7 @@
           </p>
         </div> <!-- col-md-7 -->
       </div> <!-- row large-team-root -->
-    </div> <!-- team-wrap -->
+    </div> <!-- team-root-solutions-wrap -->
   </div> <!-- container-fluid -->
   <div class="row">
     <div class='col-md-2 col-md-offset-1'>
@@ -197,7 +197,7 @@
     </h2>
   </div> <!-- team-parallax-2 -->
   <div class="container-fluid">
-    <div class="team-wrap">
+  <div class="team-contributors-wrap">
       <div class="row large-team-contributors" id="willow-bautista">
         <div class="col-md-3 col-md-offset-1" style="height: 400px">
           <img src="http://placehold.it/280x400" style="display:block;">
@@ -332,13 +332,23 @@
 
   $(function() {
     $('.select-team-root').on('click', function(){
-      if ($(this).find(".team-wrap").hasClass("active-team-root")) {
+      if ($(this).find(".team-root-wrap").hasClass("active-team-root")) {
         return false;
       } else {
-        $('.team-wrap').removeClass("active-team-root");
+        $('.team-root-wrap').removeClass("active-team-root");
         $('.large-team-root').hide();
         $($(this).attr('href')).show();
-        $(this).find(".team-wrap").addClass('active-team-root');
+        $(this).find(".team-root-wrap").addClass('active-team-root');
+      }
+    });
+    $('.select-team-contributors').on('click', function(){
+      if ($(this).find(".team-wrap").hasClass("active-team-contributors")) {
+        return false;
+      } else {
+        $('.team-wrap').removeClass("active-team-contributors");
+        $('.large-team-contributors').hide();
+        $($(this).attr('href')).show();
+        $(this).find(".team-wrap").addClass('active-team-contributors');
       }
     });
   });
