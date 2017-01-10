@@ -1,0 +1,222 @@
+<div id="projects-parallax"> 
+  <div class="heading-title">
+    <h2 class="title">
+      PROJECTS
+    </h2>
+    <div id="sub-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div>
+<div id="projects-chevron"></div>
+<div class="container">
+  <div class="row">
+    <div class='col-md-1'></div>
+    <div class='col-md-10 projects-separator'>
+      <h2 id="projects-header">2016 Projects</h2>
+      <p id="projects-header-p1">
+        We work directly with organizations, companies and governmental agencies to identify behavioral leverage points in their initiatives, then assist in the design and implementation of cost-effective and scalable behavioral strategies.
+      </p>
+      <p>
+        Here are some of the projects we worked on in 2016.
+      </p>
+    </div>
+  </div>
+  <div class="row projects-section">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <a href="http://www.therootsolutions.org/energyfeedback">
+        <div class="projects-images" id="projects-image1">
+          <span></span>
+        </div>
+      </a> 
+      <br>
+      <h4>Energy Upgrade Feedback</h4>
+      <p>
+        We are helping Quantum Energy Services & Technologies understand what type of feedback will be most beneficial to its business customers.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <a href="http://www.therootsolutions.org/marinemammalcenter">
+        <div class="projects-images" id="projects-image2">
+          <span></span>
+        </div>
+      </a>
+      <br>
+      <h4>Protect Marine Life</h4>
+      <p>
+        We are working with Marine Mammal Center to determine the actions visitors are most likely to take to solve the dangers facing marine mammals.
+      </p>
+    </div>
+  </div>
+  <div class="row projects-section">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <a href="http://www.therootsolutions.org/wildlifedisturbance">
+        <div class="projects-images" id="projects-image3">
+          <span></span>
+        </div>
+      </a>  
+      <br>
+      <h4>Protect Habitat</h4>
+      <p>
+        We are helping the Seabird Protection Network determine how best to promote small aircraft pilots to fly above 1000 feet over critical habitat.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <a href="http://www.therootsolutions.org/californiadrought">
+        <div class="projects-images" id="projects-image4">
+          <span></span>
+        </div>
+      </a>  
+      <br>
+      <h4>California Drought</h4>
+      <p>
+        We are working with The Nature Conservancy to apply behavior design principles to create lasting solutions for the California drought.
+      </p>
+    </div>
+  </div>
+  <div class="row projects-section">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <a href="http://www.therootsolutions.org/homeenergywateraudit">
+        <div class="projects-images" id="projects-image5">
+          <span></span>
+        </div>
+      </a>
+      <br>
+      <h4>Home Energy Audit</h4>
+      <p>
+        We are working with Rising Sun Energy to enhance their home energy and water auditing approach with behavior based strategies.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <a href="/behavior_design">
+        <div class="projects-images" id="projects-image6">
+          <span></span>
+        </div>
+      </a>
+      <br>
+      <h4>Behavioral Insights for Good</h4>
+      <p>
+        We are writing a book on the power of behavior design to scale all "do-good" efforts.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 projects-separator"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 projects-form">
+      <h3 class="projects-heading">Get in touch</h3>
+      <%= form_tag '/work_with_us', method: :post do %>
+        <form class="form-horizontal">
+          <div id="projects-form-style">
+            <div class="form-group">
+              <%=label_tag :name %>
+              <p class="projects-errors js-name-errors"></p>
+              <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
+            </div>
+            <div class="form-group">
+              <%=label_tag :email %>
+              <p class="projects-errors js-email-errors"></p>
+              <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
+            </div>
+            <div class="form-group">
+              <%=label_tag :subject %>
+              <p class="projects-errors js-subject-errors"></p>
+              <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
+            </div>
+            <div class="form-group">
+              <%=label_tag :message %>
+              <p class="projects-errors js-message-errors"></p>
+              <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
+            </div>
+          </div>
+          <div class="projects-btn">
+            <%= button_tag "Send".html_safe, class: "projects-button"%>
+          </div>
+        </form>
+      <% end %>
+      <p class="wwu-success js-subscribe-response"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+  $(".projects-button").click(function(e){
+    e.preventDefault();
+    $.ajax({
+      type   : "POST",
+      url    : "/work_with_us",
+      data   : { "name"   : $(".js-name").val(),
+                 "email"  : $(".js-email").val(),
+                 "subject": $(".js-subject").val(),
+                 "message": $(".js-message").val()
+               },
+      datatype: "json",
+      success: function(data) {
+        console.log("success");      
+        $(".projects-errors").html("");
+        if($(".js-subscribe-response").html() == "") {
+          $(".js-subscribe-response").html(data.message);
+        } else {
+          $(".js-subscribe-response").html("");
+          $(".js-subscribe-response").html(data.message);
+        }
+        $(".form-control").val("");
+      },
+      error  : function(request, status, error) {
+        console.log("test");
+        var data = JSON.parse(request.responseText);
+        
+        if( data.message.email) {
+          if($(".js-email-errors").html() == "") {
+            $(".js-email-errors").html("*" + data.message.email);
+          } else {
+            $(".js-email-errors").html("");
+            $(".js-email-errors").html("*" + data.message.email);
+          }
+        } else {
+          $(".js-email-errors").html("");
+        };
+        if(data.message.name) {
+          if($(".js-name-errors").html() == "") {
+            $(".js-name-errors").html("*" + data.message.name);
+          } else {
+            $(".js-name-errors").html("");
+            $(".js-name-errors").html("*" + data.message.name);
+          }
+        } else {
+          $(".js-name-errors").html("");
+        }
+        if( data.message.message) {
+          if($(".js-message-errors").html() == "") {
+            $(".js-message-errors").html("*" + data.message.message);
+          } else {
+            $(".js-message-errors").html("");
+            $(".js-message-errors").html("*" + data.message.message);
+          }
+        } else {
+          $(".js-message-errors").html("");
+        }
+        if( data.message.subject) {
+          if($(".js-subject-errors").html() == "") {
+            $(".js-subject-errors").html("*" + data.message.subject);
+          } else {
+            $(".js-subject-errors").html("");
+            $(".js-subject-errors").html("*" + data.message.subject);
+          }
+        } else {
+          $(".js-subject-errors").html("");
+        }
+      }
+    });
+  });
+
+});
+</script>
