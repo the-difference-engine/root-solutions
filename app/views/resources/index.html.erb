@@ -41,4 +41,6 @@
 
 <br>
 
-<%= link_to 'Add New', new_resource_path, class:"btn-primary btn" %>
+<% if current_user %>
+  <%= link_to 'Add New', new_resource_path, class:"btn-primary btn" %>
+<% end %>
