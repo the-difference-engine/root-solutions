@@ -509,7 +509,6 @@ button.learn-more:hover {
   margin: -115px 0px 0px 0px;
   padding: 60px 0px 60px 100px; 
   background-color: white;
-
 }
 
 #partners-chevron {
@@ -1124,4 +1123,144 @@ button.learn-more:hover {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-/*--------------------------------------------------------------------------------*/
+
+#projects-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'earth.jpg' %>); /* add image of choice */
+  height: 400px;
+}
+
+#projects-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+#projects-header {
+  text-align: center;
+  font-size: 50px;
+  color: $green;
+  margin-bottom: 30px;
+}
+
+#projects-header-p1 {
+  // margin-bottom: 
+}
+
+.projects-form {
+  font-size: 15px;
+  align: center;
+  /*font-family: Comic Sans MS;*/
+}
+
+.projects-heading {
+  text-align: center;
+  padding-bottom: 15px;
+  /*font-family: Comic Sans MS;*/
+}
+
+.projects-errors {
+  font-size: 13px;
+  color: red;
+  display: inline;
+}
+
+.projects-btn {
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.projects-btn button {
+  width: 100%;
+}
+
+.projects-button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  color: $green5;
+}
+
+.projects-section h4 {
+  text-align: center;
+}
+
+.projects-section p {
+  text-align: center;
+}
+
+.projects-separator {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #8c8b8b;
+}
+
+.projects-images  {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 325px;
+  max-height: 115px;
+  height: 115px;
+  display: block;
+  margin: auto;
+  border: 5px solid #8c8b8b;
+}
+
+.projects-images span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5;
+}
+
+.projects-images:hover span {
+  opacity: 1;
+}
+
+#projects-image1 {
+  background-image: url(<%= image_path 'quest.webp' %>);
+}
+
+#projects-image2 {
+  background-image: url(<%= image_path 'marine-mammal-center.webp' %>);
+}
+
+#projects-image3 {
+  background-image: url(<%= image_path 'seabird-protection-network.webp' %>);
+}
+
+#projects-image4 {
+  background-image: url(<%= image_path 'nature-conservancy.webp' %>);
+}
+
+#projects-image5 {
+  background-image: url(<%= image_path 'rising-sun.webp' %>);
+}
+
+#projects-image6 {
+  background-image: url(<%= image_path 'open-book.png' %>);
+}
+
+#wwu-drop {
+  max-width: 190px !important;
+  min-width: 190px !important;
+  float: left;
+}
+
+#projects-form-style, .form-group {
+  width: 100%;
+}
