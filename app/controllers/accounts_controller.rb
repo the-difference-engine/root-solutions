@@ -1,12 +1,17 @@
 class AccountsController < ApplicationController
-
+  before_action :authenticate_user!
+  
 def new
 end
 
 def create
   resource = User.new(email: params[:email],password: params[:password], admin: false)
-  resource.save
-  redirect_to "/"
+  if current_user.admin
+    resource.save
+    redirect_to "/"
+  else
+    puts "Not possible"
+  end
 end
 
 # def savenew
