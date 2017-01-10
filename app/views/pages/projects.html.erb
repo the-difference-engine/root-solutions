@@ -11,8 +11,8 @@
 <div id="projects-chevron"></div>
 <div class="container">
   <div class="row">
-    <div class='col-md-2'></div>
-    <div class='col-md-8'>
+    <div class='col-md-1'></div>
+    <div class='col-md-10 projects-separator'>
       <h2 id="projects-header">2016 Projects</h2>
       <p id="projects-header-p1">
         We work directly with organizations, companies and governmental agencies to identify behavioral leverage points in their initiatives, then assist in the design and implementation of cost-effective and scalable behavioral strategies.
@@ -22,10 +22,10 @@
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row projects-section">
     <div class="col-md-2"></div>
     <div class="col-md-4">
-      <img src="">
+      <%= image_tag("quest.webp") %>
       <br>
       <h4>Energy Upgrade Feedback</h4>
       <p>
@@ -33,7 +33,7 @@
       </p>
     </div>
     <div class="col-md-4">
-      <img src="">
+      <%= image_tag("marine-mammal-center.webp") %>
       <br>
       <h4>Protect Marine Life</h4>
       <p>
@@ -41,10 +41,10 @@
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row projects-section">
     <div class="col-md-2"></div>
     <div class="col-md-4">
-      <img src="">
+      <%= image_tag("seabird-protection-network.webp") %>
       <br>
       <h4>Protect Habitat</h4>
       <p>
@@ -52,7 +52,7 @@
       </p>
     </div>
     <div class="col-md-4">
-      <img src="">
+      <%= image_tag("nature-conservancy.webp") %>
       <br>
       <h4>California Drought</h4>
       <p>
@@ -60,10 +60,10 @@
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row projects-section">
     <div class="col-md-2"></div>
     <div class="col-md-4">
-      <img src="">
+      <%= image_tag("rising-sun.webp") %>
       <br>
       <h4>Home Energy Audit</h4>
       <p>
@@ -71,7 +71,7 @@
       </p>
     </div>
     <div class="col-md-4">
-      <img src="">
+      <%= image_tag("open-book.png") %>
       <br>
       <h4>Behavioral Insights for Good</h4>
       <p>
@@ -80,55 +80,59 @@
     </div>
   </div>
   <div class="row">
-    <div class="wwu-form">
-      <h3 class="wwu-heading">Get in touch</h3>
+    <div class="col-md-1"></div>
+    <div class="col-md-10 projects-separator"></div>
+  </div>
+  <div class="row">
+    <div class="projects-form">
+      <h3 class="projects-heading">Get in touch</h3>
       <div class="row">
         <div class="col-md-6">
           <%= form_tag '/work_with_us', method: :post do %>
-          <form class="form-horizontal">
-            <div class="row">
-              <div class="form-group">
-                <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                  <%=label_tag :name %>
-                  <p class="wwu-errors js-name-errors"></p>
-                  <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
+            <form class="form-horizontal">
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
+                    <%=label_tag :name %>
+                    <p class="projects-errors js-name-errors"></p>
+                    <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="form-group">
-                <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                  <%=label_tag :email %>
-                  <p class="wwu-errors js-email-errors"></p>
-                  <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
+                    <%=label_tag :email %>
+                    <p class="projects-errors js-email-errors"></p>
+                    <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="form-group">
-                <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                  <%=label_tag :subject %>
-                  <p class="wwu-errors js-subject-errors"></p>
-                  <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
+                    <%=label_tag :subject %>
+                    <p class="projects-errors js-subject-errors"></p>
+                    <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="form-group">
-                <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                  <%=label_tag :message %>
-                  <p class="wwu-errors js-message-errors"></p>
-                  <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
+                    <%=label_tag :message %>
+                    <p class="projects-errors js-message-errors"></p>
+                    <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class='col-md-2'></div>
-            <div class='col-md-8'>
-              <div class="wwu-btn">
-                <%= button_tag "Send".html_safe, class: "wwu-button"%>
+              <div class='col-md-2'></div>
+              <div class='col-md-8'>
+                <div class="projects-btn">
+                  <%= button_tag "Send".html_safe, class: "projects-button"%>
+                </div>
               </div>
-            </div>
-            <div class='col-md-2'></div>
+              <div class='col-md-2'></div>
             <% end %>
           </form>
         </div>
@@ -141,7 +145,7 @@
 <script>
 $(document).ready(function(){
 
-  $(".wwu-button").click(function(e){
+  $(".projects-button").click(function(e){
     e.preventDefault();
     $.ajax({
       type   : "POST",
@@ -154,7 +158,7 @@ $(document).ready(function(){
       datatype: "json",
       success: function(data) {
         console.log("success");      
-        $(".wwu-errors").html("");
+        $(".projects-errors").html("");
         if($(".js-subscribe-response").html() == "") {
           $(".js-subscribe-response").html(data.message);
         } else {
