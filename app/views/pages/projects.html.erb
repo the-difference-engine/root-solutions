@@ -108,59 +108,38 @@
     <div class="col-md-10 projects-separator"></div>
   </div>
   <div class="row">
-    <div class="projects-form">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 projects-form">
       <h3 class="projects-heading">Get in touch</h3>
-      <div class="row">
-        <div class="col-md-6">
-          <%= form_tag '/work_with_us', method: :post do %>
-            <form class="form-horizontal">
-              <div class="row">
-                <div class="form-group">
-                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                    <%=label_tag :name %>
-                    <p class="projects-errors js-name-errors"></p>
-                    <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                    <%=label_tag :email %>
-                    <p class="projects-errors js-email-errors"></p>
-                    <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                    <%=label_tag :subject %>
-                    <p class="projects-errors js-subject-errors"></p>
-                    <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <div class="col-sm-offset-7 col-sm-10 inputs-group">
-                    <%=label_tag :message %>
-                    <p class="projects-errors js-message-errors"></p>
-                    <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
-                  </div>
-                </div>
-              </div>
-              <div class='col-md-2'></div>
-              <div class='col-md-8'>
-                <div class="projects-btn">
-                  <%= button_tag "Send".html_safe, class: "projects-button"%>
-                </div>
-              </div>
-              <div class='col-md-2'></div>
-            <% end %>
-          </form>
-        </div>
-      </div>
+      <%= form_tag '/work_with_us', method: :post do %>
+        <form class="form-horizontal">
+          <div id="projects-form-style">
+            <div class="form-group">
+              <%=label_tag :name %>
+              <p class="projects-errors js-name-errors"></p>
+              <%=text_field_tag :name,"",placeholder: "Sheryl Sandberg", class:"form-control js-name" %>
+            </div>
+            <div class="form-group">
+              <%=label_tag :email %>
+              <p class="projects-errors js-email-errors"></p>
+              <%=text_field_tag :email,"",placeholder: "sheryl.s@facebook.com", class:"form-control js-email" %>
+            </div>
+            <div class="form-group">
+              <%=label_tag :subject %>
+              <p class="projects-errors js-subject-errors"></p>
+              <%=text_field_tag :subject, "", placeholder: "Client work or trainings", class:"form-control js-subject"  %>
+            </div>
+            <div class="form-group">
+              <%=label_tag :message %>
+              <p class="projects-errors js-message-errors"></p>
+              <%=text_area_tag :message,"", placeholder: "Hello! I am a big fan of your work. Getting in touch for the training that we want to conduct for our employees.",class:"form-control js-message", rows: 10, style: 'width:100%;' %>
+            </div>
+          </div>
+          <div class="projects-btn">
+            <%= button_tag "Send".html_safe, class: "projects-button"%>
+          </div>
+        <% end %>
+      </form>
       <p class="wwu-success js-subscribe-response"></p>
     </div>
   </div>
