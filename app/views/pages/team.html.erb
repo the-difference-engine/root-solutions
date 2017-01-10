@@ -197,7 +197,7 @@
     </h2>
   </div> <!-- team-parallax-2 -->
   <div class="container-fluid">
-  <div class="team-contributors-wrap">
+  <div class="team-contributors-wrap-1">
       <div class="row large-team-contributors" id="willow-bautista">
         <div class="col-md-3 col-md-offset-1" style="height: 400px">
           <img src="http://placehold.it/280x400" style="display:block;">
@@ -264,7 +264,7 @@
   <div class="row">
     <div class='col-md-2 col-md-offset-1'>
       <a class="select-team-contributors" href="#willow-bautista">
-        <div class="team-wrap active-team-contributors">
+        <div class="team-contributors-wrap active-team-contributors">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -274,7 +274,7 @@
     </div> <!-- col-md-2 col-md-offset-1 -->
     <div class='col-md-2'>
       <a class="select-team-contributors" href="#kirby-culbertson">
-        <div class="team-wrap active-team-contributors">
+        <div class="team-contributors-wrap active-team-contributors">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -284,7 +284,7 @@
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
       <a class="select-team-contributors" href="#jessica-robbins">
-        <div class="team-wrap active-team-contributors">
+        <div class="team-contributors-wrap active-team-contributors">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -294,7 +294,7 @@
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
       <a class="select-team-contributors" href="#anjana-krishnan">
-        <div class="team-wrap active-team-contributors">
+        <div class="team-contributors-wrap active-team-contributors">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -304,7 +304,7 @@
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
       <a class="select-team-contributors" href="#michael-clark">
-        <div class="team-wrap active-team-contributors">
+        <div class="team-contributors-wrap active-team-contributors">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -332,13 +332,13 @@
 
   $(function() {
     $('.select-team-root').on('click', function(){
-      if ($(this).find(".team-root-wrap").hasClass("active-team-root")) {
+      if ($(this).find(".team-wrap").hasClass("active-team-root")) {
         return false;
       } else {
-        $('.team-root-wrap').removeClass("active-team-root");
+        $('.team-wrap').removeClass("active-team-root");
         $('.large-team-root').hide();
         $($(this).attr('href')).show();
-        $(this).find(".team-root-wrap").addClass('active-team-root');
+        $(this).find(".team-wrap").addClass('active-team-root');
       }
     });
     $('.select-team-contributors').on('click', function(){
