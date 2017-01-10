@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
     @subject = email_object.subject
     @message = email_object.message
     @url = "https:localhost:3000"
-    mail(to: "marishasahay@gmail.com", subject: "#{@name} wants to work with us." )
+    mail(to: "therootsolutions@gmail.com", subject: "#{@name} wants to work with us." )
   end
 end
