@@ -35,6 +35,10 @@ class PagesController < ApplicationController
     
   end
 
+  def donate
+
+  end
+
   private
 
   def email_params
