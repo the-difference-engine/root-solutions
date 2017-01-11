@@ -466,7 +466,7 @@ button.learn-more:hover {
   height: 400px;
 }
 
-#partners-parallax {
+#partners-advisors-parallax {
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -474,6 +474,19 @@ button.learn-more:hover {
   background-size: cover;
   background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
   height: 400px;
+}
+
+#partners-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
+  height: 300px;
+  .other-titles {
+    padding-top: 100px;
+  }
 }
 
 #advisors-parallax {
@@ -484,9 +497,8 @@ button.learn-more:hover {
   background-size: cover;
   background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
   height: 300px;
-  background-image: url( <%= image_path 'pelican.jpg' %>); /* add image of choice */
   .other-titles {
-    padding-top: 110px;
+    padding-top: 100px;
   }
 }
 
