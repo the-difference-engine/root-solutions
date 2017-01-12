@@ -1,19 +1,24 @@
-<h1><%= @resource.title %></h1>
+<div class="resources-show-body">
+  <h1><%= @resource.title %></h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <p>
+          World Region(s):
+            <%= @resource.world_regions.each do | world_region | %>
+              <%= world_region.name %>
+            <% end %>
+        </p>
+      </tr>
+      <tr><p>Title: <%= @resource.title %></p></tr>
+      <tr><p>Author: <%= @resource.author %></p></tr>
+      <tr><p>News Source: <%= @resource.news_source.name %></p></tr>
+      <tr><p>Date: <%= @resource.date %></p></tr>
+      <tr><p>Content: <%= @resource.abstract %></p></tr>
+      <tr><p>Url: <%= @resource.url %></p></tr>
+      <tr><p>Notes: <%= @resource.description %></p></tr>
 
-<p>
-  World Region(s):
-    <%= @resource.world_regions.each do | world_region | %>
-      <%= world_region %>
-    <% end %>
-</p>
-
-
-<%= link_to "All resources", resources_path %>
-
-<p>Title: <%= @resource.title %></p>
-<p>Author: <%= @resource.author %></p>
-<p>News Source: <%= @resource.news_source.name %></p>
-<p>Date: <%= @resource.date %></p>
-<p>Content: <%= @resource.content %></p>
-<p>Url: <%= @resource.url %></p>
-<p>Notes: <%= @resource.admin_notes %></p>
+    </table>
+  </div>
+  <%= link_to "All resources", resources_path %>
+</div>
