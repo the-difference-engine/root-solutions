@@ -7,7 +7,14 @@ class UserMailer < ApplicationMailer
     @user = email_object.email
     @subject = email_object.subject
     @message = email_object.message
-    @url = "https:localhost:3000"
+    @url = Rails.application.secrets.root_url
     mail(to: "therootsolutions@gmail.com", subject: "#{@name} wants to work with us." )
+  end
+
+  def welcome_email_via_admin
+    @user = User.last
+    root_url = Rails.application.secrets.root_url
+    @url = "#{root_url}accounts/#{@user.id}"
+    mail(to: "#{@user.email}", subject: "Root Solutions Account Created! ACTION REQUIRED")
   end
 end
