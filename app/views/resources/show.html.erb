@@ -42,19 +42,17 @@
         <p>Date:</p>
       </div>
       <div class="col-md-9">
-        <p><%= @resource.date %></p>
+        <p><%= @resource.date.strftime("%B %d, %Y") %></p>
       </div>
     </div>
-    <div class="row">
     <div class="row">
       <div class="col-md-3">
         <p>URL:</p>
       </div>
       <div class="col-md-9">
-        <p><%= @resource.url %></p>
+        <p><%= link_to "#{@resource.url}", @resource.url, target: "_blank" %></p>
       </div>
     </div>
-    <div class="row">
     <div class="row">
       <div class="col-md-3">
         <p>Abstract:</p>
@@ -63,6 +61,12 @@
         <p><%= @resource.abstract %></p>
       </div>
     </div>
-    <%= link_to "All resources", resources_path %>
+    <div class="row" style="text-align: center; padding-top: 25px; padding-bottom: 50px;">
+      <div class="col-md-12">
+        <button>
+          <%= link_to "View all resources", resources_path, target: "_blank" %>
+        </button>
+      </div>
+    </div>
   </div> <!-- container-fluid -->
 </div> <!-- resources-showbody -->
