@@ -1,24 +1,33 @@
 <div class="resources-show-body">
-  <h1><%= @resource.title %></h1>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <tr>
-        <p>
-          World Region(s):
-            <%= @resource.world_regions.each do | world_region | %>
+  <div class="container-fluid">
+    <h1 class="resources-heading-title"><%= @resource.title %></h1>
+    <div class="row">
+      <div class="resources-show-info">
+        <div class="col-md-3">
+          <p>Title:</p>
+          <p>Author:</p>
+          <p>News Source:</p>
+          <p>World Region(s):</p>
+          <p>Date:</p>
+          <p>Content:</p>
+          <p>Url:</p>
+          <p>Notes:</p>
+        </div> <!-- col-md-4 -->
+        <div class="col-md-9">
+          <p><%= @resource.title %></p>
+          <p><%= @resource.author %></p>
+          <p><%= @resource.news_source.name %></p>
+          <p>
+            <% @resource.world_regions.each do | world_region | %>
               <%= world_region.name %>
             <% end %>
-        </p>
-      </tr>
-      <tr><p>Title: <%= @resource.title %></p></tr>
-      <tr><p>Author: <%= @resource.author %></p></tr>
-      <tr><p>News Source: <%= @resource.news_source.name %></p></tr>
-      <tr><p>Date: <%= @resource.date %></p></tr>
-      <tr><p>Content: <%= @resource.abstract %></p></tr>
-      <tr><p>Url: <%= @resource.url %></p></tr>
-      <tr><p>Notes: <%= @resource.description %></p></tr>
-
-    </table>
-  </div>
-  <%= link_to "All resources", resources_path %>
-</div>
+          </p>
+          <p><%= @resource.date %></p>
+          <p><%= @resource.abstract %></p>
+          <p><%= @resource.url %></p>
+        </div> <!-- col-md-9 -->
+      </div> <!-- resources-show-info -->
+    </div> <!-- row -->
+    <%= link_to "All resources", resources_path %>
+  </div> <!-- container-fluid -->
+</div> <!-- resources-showbody -->
