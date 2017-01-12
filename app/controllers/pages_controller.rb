@@ -31,12 +31,14 @@ class PagesController < ApplicationController
   def learn
   end
 
+  def team
+  end
+
   def projects
 
   end
   
   def mission
-    
   end
 
   private
