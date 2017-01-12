@@ -3,28 +3,66 @@
     <h1 class="resources-heading-title"><%= @resource.title %></h1>
     <div class="row">
       <div class="col-md-3">
-        <p id="resources-titles">Title:</p>
-        <p id="resources-titles">Author:</p>
-        <p id="resources-titles">News Source:</p>
-        <p id="resources-titles">World Region(s):</p>
-        <p id="resources-titles">Date:</p>
-        <p id="resources-titles">Url:</p>
-        <p id="resources-titles">Content:</p>
-      </div> <!-- col-md-3 -->
+        <p>Title:</p>
+      </div>
       <div class="col-md-9">
         <p><%= @resource.title %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Author:</p>
+      </div>
+      <div class="col-md-9">
         <p><%= @resource.author %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>News Source:</p>
+      </div>
+      <div class="col-md-9">
         <p><%= @resource.news_source.name %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p> World Region(s):</p>
+      </div>
+      <div class="col-md-9">
         <p>
           <% @resource.world_regions.each do | world_region | %>
             <%= world_region.name %>
           <% end %>
         </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Date:</p>
+      </div>
+      <div class="col-md-9">
         <p><%= @resource.date %></p>
+      </div>
+    </div>
+    <div class="row">
+    <div class="row">
+      <div class="col-md-3">
+        <p>URL:</p>
+      </div>
+      <div class="col-md-9">
         <p><%= @resource.url %></p>
+      </div>
+    </div>
+    <div class="row">
+    <div class="row">
+      <div class="col-md-3">
+        <p>Abstract:</p>
+      </div>
+      <div class="col-md-9">
         <p><%= @resource.abstract %></p>
-      </div> <!-- col-md-9 -->
-    </div> <!-- row -->
+      </div>
+    </div>
     <%= link_to "All resources", resources_path %>
   </div> <!-- container-fluid -->
 </div> <!-- resources-showbody -->
