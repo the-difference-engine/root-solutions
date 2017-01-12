@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/learn/why_behavior', to: 'learn#why_behavior'
   get '/careers', to: 'pages#careers', as: :careers
   get '/partners', to: 'pages#partners'
+  get '/team', to: 'pages#team'
   get '/mission', to: 'pages#mission'
 
   resources :news_sources

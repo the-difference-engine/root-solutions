@@ -1128,6 +1128,16 @@ button.learn-more:hover {
   padding-bottom: 50px;
 }
 
+#team-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'rsz_kilaminjaro.jpg' %>); /* add image of choice */
+  height: 400px;
+}
+
 #projects-parallax {
   position: relative;
   background-attachment: fixed;
@@ -1138,6 +1148,34 @@ button.learn-more:hover {
   height: 400px;
 }
 
+#team-parallax-1 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'rsz_kilaminjaro.jpg' %>); /* add image of choice */
+  height: 300px;
+}
+
+#team-parallax-2 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'rsz_kilaminjaro.jpg' %>); /* add image of choice */
+  height: 300px;
+}
+
+#team-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
 #projects-chevron {
   background: #ffffff; 
   -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
@@ -1146,6 +1184,144 @@ button.learn-more:hover {
   background-color: white;
 }
 
+.team-header-wrap {
+  padding-bottom: 50px;
+}
+
+.team-header-one {
+  text-align: center;
+  color: $green5;
+}
+
+.team-header-three {
+  text-align: center;
+  font-style: italic;
+}
+
+.team-root-hover {
+  color: $green4;
+  cursor:pointer;
+}
+
+.team-root-hover.collapsed {
+  color: black;
+  text-decoration: none;
+}
+
+.team-hover.collapsed:hover {
+  text-decoration: underline;
+  color: $green4;
+  cursor:pointer;
+}
+
+.team-root-solutions-wrap {
+  padding-top: 30px;
+}
+
+
+.team-wrap {
+    // margin: 0 auto;
+  background-color: $yellow1;
+  border: 1px solid $blue5;
+  // margin: 5px;
+  // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  h2 {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.team-root-wrap {
+  // margin: 0 auto;
+  background-color: $yellow1;
+  border: 1px solid $blue5;
+  // margin: 5px;
+  // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  h2 {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.team-root-text-color {
+
+}
+
+.team-root-description {
+  font-size: 15px;
+}
+
+.large-team-root {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  // margin-top:50px;
+  // margin-bottom: 50px;
+  height: auto;
+}
+.active-team-root {
+  border: 1px solid $yellow3;
+}
+.team-root-image img {
+  width:100%;
+}
+
+.team-root-contact-info {
+  font-size: 15px;
+}
+
+.team-contributors-hover {
+  color: $green4;
+  cursor:pointer;
+}
+
+.team-contributors-hover.collapsed {
+  color: black;
+  text-decoration: none;
+}
+
+.team-contributors-wrap {
+  // margin: 0 auto;
+  background-color: $yellow1;
+  border: 1px solid $blue5;
+  // margin: 5px;
+  // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  h2 {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.team-contributors-description {
+  font-size: 15px;
+}
+
+.large-team-contributors {
+  padding-top: 50px;
+  margin-top:50px;
+  margin-bottom: 50px;
+  height: 500px;
+}
+.active-team-contributors {
+  border: 1px solid $yellow3;
+}
+.team-contributors-image img {
+  width:100%;
+}
+
+.team-contributors-contact-info {
+  font-size: 15px;
+}
+/*--------------------------------------------------------------------------------*/
 #projects-header {
   text-align: center;
   font-size: 50px;
