@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email_via_admin
     @user = User.last
-    @url = "http://localhost:3000/admins/users/#{@user.id}"
+    @url = "http://localhost:3000/accounts/#{@user.id}"
     mail(to: "#{@user.email}", subject: "Update your root solutions password")
   end
 end
