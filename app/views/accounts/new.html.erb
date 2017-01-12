@@ -13,7 +13,7 @@
 </header>
 <div class="row">
   <div class="col-md-6">
-    <%= form_tag "/admins/users", method: :post do %>
+    <%= form_tag "/accounts", method: :post do %>
     <form class="form-horizontal">
       <div class="row">
         <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="button" align="center">
-        <%= button_tag "<span> Create New User</span>".html_safe, class: "btn primary-btn"%>
+        <%= button_tag "Create New User", class: "btn primary-btn"%>
       </div>
       <%end%>
     </form>

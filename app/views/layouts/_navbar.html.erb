@@ -21,7 +21,7 @@
           <li><%= link_to "login", "/login" %></li>
         <% end %>
         <% if current_user %>
-          <li><%= link_to "Add admin", "/admins/users/new" %></li>
+          <li><%= link_to "Add admin", "/accounts/new" %></li>
           <li><%= link_to "Sign out", "/logout", method: :delete %></li>
         <% end %>
       </ul>

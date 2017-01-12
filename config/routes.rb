@@ -67,10 +67,10 @@ Rails.application.routes.draw do
   delete '/admins/:id', to: 'admins#destroy'
 
 as :admin do
-  get '/admins/users/new', to: 'accounts#new'
-  post '/admins/users', to: 'accounts#create'
-  get '/admins/users/:id', to: 'accounts#edit'
-  patch '/admins/users/:id', to: 'accounts#update'
+  get '/accounts/new', to: 'accounts#new'
+  post '/accounts', to: 'accounts#create'
+  get '/accounts/:id', to: 'accounts#edit'
+  patch '/accounts/:id', to: 'accounts#update'
 end
 
   namespace :api do

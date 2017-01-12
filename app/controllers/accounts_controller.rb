@@ -5,11 +5,12 @@ def new
 end
 
 def create
-  if current_user.admin
+  if current_user
   resource = User.new(email: params[:email],password: "password", admin: true)
   if resource.save
     UserMailer.welcome_email_via_admin().deliver_now  
-    redirect_to "/"
+    redirect_to "/resources"
+    flash[:success] = "User has been created"
   else
     puts "Not possible"
   end
