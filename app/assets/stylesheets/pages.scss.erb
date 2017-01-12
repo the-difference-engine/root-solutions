@@ -1292,10 +1292,126 @@ button.learn-more:hover {
 }
 
 .donate-dollar {
-  background-color: green;
+  background-color: $green;
   border-radius: 25px;
 }
 
 .donate-dollar h3 {
   text-align: center;
+}
+
+// #donate-button {
+//   border-radius: 15px;
+//   border: 3px solid $blue;
+//   background-color: $green;
+//   color: white;
+  // width: 60%;
+  // min-height: 80px;
+  // font-size: 45px;
+// }
+
+#donate-button {
+  -moz-box-shadow: 0px 10px 14px -7px #3e7327;
+  -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+  background:-moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+  background:-webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+  background:-o-linear-gradient(top, #89c403 5%, #77a809 100%);
+  background:-ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+  background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809',GradientType=0);
+  background-color:#89c403;
+  -moz-border-radius:9px;
+  -webkit-border-radius:9px;
+  border-radius:9px;
+  border:2px solid #74b807;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:23px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 0px 10px #528009;
+  width: 60%;
+  min-height: 80px;
+  font-size: 45px;
+}
+#donate-button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+  background:-moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+  background:-webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+  background:-o-linear-gradient(top, #77a809 5%, #89c403 100%);
+  background:-ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+  background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
+  background-color:#77a809;
+}
+#donate-button:active {
+  position:relative;
+  top:1px;
+}
+
+.donate-separator {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #8c8b8b;
+}
+
+.donate-rows .col-md-2 {
+  padding: 10px;
+
+  .donate-gradients {
+    padding: 5px;
+    background: white;
+    background: -webkit-linear-gradent($yellow, $green);
+    background: -o-linear-gradient($yellow, $green);
+    background: -moz-linear-gradient($yellow, $green);
+    background: linear-gradient($yellow, $green);
+    border-radius: 25px;
+    height: 250px;
+    border: 1px solid $green;
+  }
+
+  h3, p {
+    text-align: center;
+  }
+
+  h3 {
+    margin-top: 25px;
+  }
+
+  p {
+    margin-top: 25px;
+    font-size: 1.15em;
+    color: white;
+    text-shadow: 0px 0px 8px $blue5;
+  }
+}
+
+#donate-25 {
+  color: $red; 
+  text-shadow: 0px 0px 8px white;
+}
+
+#donate-50 {
+  color: $orange; 
+  text-shadow: 0px 0px 8px black;
+}
+
+#donate-100 {
+  color: $yellow; 
+  text-shadow: 0px 0px 8px black;
+}
+
+#donate-250 {
+  color: $teal; 
+  text-shadow: 0px 0px 8px white;
+}
+
+#donate-1000 {
+  color: $green3; 
+  text-shadow: 0px 0px 8px $yellow;
 }
