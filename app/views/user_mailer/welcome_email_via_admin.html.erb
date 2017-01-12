@@ -5,11 +5,10 @@
   </head>
   <body>
   <p>Hello,</p>
-  <p>Welcome to Root Solutions! We have created your email via the following details: </p>
+  <p>Welcome to Root Solutions! We have created your email with the following details: </p>
   <p>Email: <%= @user.email %> </p>
   <p>Password: password</p>
-  <p>Click on the following link to update your password: </p>
-  <p><%= @url %></p>
+  <p>Please click <%= link_to "here", @url, target: "_blank" %> to update your password. </p>
   <p>Thank You,</p>
   <p>Root Solutions Team</p>
   </body>
