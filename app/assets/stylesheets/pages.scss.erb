@@ -574,6 +574,11 @@ button.learn-more:hover {
   opacity: 0.7;
 }
 
+.admin-navbar-default .navbar-nav > li > a:hover {
+  color: green;
+  opacity: 0.7;
+}
+
 /* navbar 
 
 /* .brand */
@@ -728,6 +733,7 @@ button.learn-more:hover {
 }
 .why-behavior-header-three {
   color: $green5;
+  text-align: center;
 }
 
 #our-process-parallax {
@@ -874,6 +880,17 @@ button.learn-more:hover {
   margin: 0px;
 }
 
+#why-behavior-parallax-1 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'recycling_salience_copy.jpg' %>); /* add image of choice */
+  height: 400px;
+}
+
+
 #why-behavior-parallax {
   position: relative;
   background-attachment: fixed;
@@ -881,10 +898,10 @@ button.learn-more:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url( <%= image_path 'recycling_salience_copy.jpg' %>); /* add image of choice */
-  height: 330px;
+  height: 300px;
   text-align: center;
   .other-titles {
-    padding-top: 110px;
+    padding-top: 100px;
   }
 }
 
@@ -897,7 +914,7 @@ button.learn-more:hover {
 }
 
 .abstract-thinking-wrap {
-  padding-bottom: 110px;
+  padding-bottom: 50px;
 }
 
 .why-behavior-resources {
@@ -908,10 +925,12 @@ button.learn-more:hover {
 
 .why-behavior-wrap {
   padding-top:30px;
+  padding-bottom: 30px;
 }
 
 .why-behavior-more-resources {
-  padding-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .why-behavior-body {
