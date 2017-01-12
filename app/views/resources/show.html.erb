@@ -2,31 +2,28 @@
   <div class="container-fluid">
     <h1 class="resources-heading-title"><%= @resource.title %></h1>
     <div class="row">
-      <div class="resources-show-info">
-        <div class="col-md-3">
-          <p>Title:</p>
-          <p>Author:</p>
-          <p>News Source:</p>
-          <p>World Region(s):</p>
-          <p>Date:</p>
-          <p>Content:</p>
-          <p>Url:</p>
-          <p>Notes:</p>
-        </div> <!-- col-md-4 -->
-        <div class="col-md-9">
-          <p><%= @resource.title %></p>
-          <p><%= @resource.author %></p>
-          <p><%= @resource.news_source.name %></p>
-          <p>
-            <% @resource.world_regions.each do | world_region | %>
-              <%= world_region.name %>
-            <% end %>
-          </p>
-          <p><%= @resource.date %></p>
-          <p><%= @resource.abstract %></p>
-          <p><%= @resource.url %></p>
-        </div> <!-- col-md-9 -->
-      </div> <!-- resources-show-info -->
+      <div class="col-md-3">
+        <p id="resources-titles">Title:</p>
+        <p id="resources-titles">Author:</p>
+        <p id="resources-titles">News Source:</p>
+        <p id="resources-titles">World Region(s):</p>
+        <p id="resources-titles">Date:</p>
+        <p id="resources-titles">Url:</p>
+        <p id="resources-titles">Content:</p>
+      </div> <!-- col-md-3 -->
+      <div class="col-md-9">
+        <p><%= @resource.title %></p>
+        <p><%= @resource.author %></p>
+        <p><%= @resource.news_source.name %></p>
+        <p>
+          <% @resource.world_regions.each do | world_region | %>
+            <%= world_region.name %>
+          <% end %>
+        </p>
+        <p><%= @resource.date %></p>
+        <p><%= @resource.url %></p>
+        <p><%= @resource.abstract %></p>
+      </div> <!-- col-md-9 -->
     </div> <!-- row -->
     <%= link_to "All resources", resources_path %>
   </div> <!-- container-fluid -->
