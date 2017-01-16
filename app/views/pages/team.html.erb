@@ -160,7 +160,7 @@
     </div> <!-- col-md-2 col-md-offset-1 -->
     <div class='col-md-2'>
       <a class="select-team-root" href="#rod-fujita">
-        <div class="team-root-wrap active-team-root">
+        <div class="team-root-wrap">
           <div class="team-root-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -170,7 +170,7 @@
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
       <a class="select-team-root" href="#aaron-pope">
-        <div class="team-root-wrap active-team-root">
+        <div class="team-root-wrap">
           <div class="team-root-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -180,7 +180,7 @@
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
       <a class="select-team-root" href="#pauline-miller">
-        <div class="team-root-wrap active-team-root">
+        <div class="team-root-wrap">
           <div class="team-root-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -190,7 +190,7 @@
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
       <a class="select-team-root" href="#alexandra-smith">
-        <div class="team-root-wrap active-team-root">
+        <div class="team-root-wrap">
           <div class="team-root-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -276,8 +276,8 @@
   </div> <!-- container-fluid -->
   <div class="row" style="padding-bottom: 50px;">
     <div class='col-md-2 col-md-offset-1'>
-      <a class="select-team-contributors" href="#willow-bautista">
-        <div class="team-contributors-wrap active-team-contributors">
+      <a class="select-team-contributor" href="#willow-bautista">
+        <div class="team-contributors-wrap active-team-contributor">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -286,8 +286,8 @@
       </a> <!-- select-contributors-team -->
     </div> <!-- col-md-2 col-md-offset-1 -->
     <div class='col-md-2'>
-      <a class="select-team-contributors" href="#kirby-culbertson">
-        <div class="team-contributors-wrap active-team-contributors">
+      <a class="select-team-contributor" href="#kirby-culbertson">
+        <div class="team-contributors-wrap">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -296,8 +296,8 @@
       </a> <!-- select-contributors-team -->
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
-      <a class="select-team-contributors" href="#jessica-robbins">
-        <div class="team-contributors-wrap active-team-contributors">
+      <a class="select-team-contributor" href="#jessica-robbins">
+        <div class="team-contributors-wrap">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -306,8 +306,8 @@
       </a> <!-- select-contributors-team -->
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
-      <a class="select-team-contributors" href="#anjana-krishnan">
-        <div class="team-contributors-wrap active-team-contributors">
+      <a class="select-team-contributor" href="#anjana-krishnan">
+        <div class="team-contributors-wrap">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -316,8 +316,8 @@
       </a> <!-- select-contributors-team -->
     </div> <!-- col-md-2 -->
     <div class='col-md-2'>
-      <a class="select-team-contributors" href="#michael-clark">
-        <div class="team-contributors-wrap active-team-contributors">
+      <a class="select-team-contributor" href="#michael-clark">
+        <div class="team-contributors-wrap">
           <div class="team-contributors-image" style="text-align: center;">
             <%= image_tag "http://placehold.it/180x180" %>
           </div>
@@ -345,23 +345,23 @@
 
   $(function() {
     $('.select-team-root').on('click', function(){
-      if ($(this).find(".team-wrap").hasClass("active-team-root")) {
+      if ($(this).find(".team-root-wrap").hasClass("active-team-root")) {
         return false;
       } else {
-        $('.team-wrap').removeClass("active-team-root");
+        $('.team-root-wrap').removeClass("active-team-root");
         $('.large-team-root').hide();
         $($(this).attr('href')).show();
-        $(this).find(".team-wrap").addClass('active-team-root');
+        $(this).find(".team-root-wrap").addClass('active-team-root');
       }
     });
-    $('.select-team-contributors').on('click', function(){
-      if ($(this).find(".team-wrap").hasClass("active-team-contributors")) {
+    $('.select-team-contributor').on('click', function(){
+      if ($(this).find(".team-contributors-wrap").hasClass("active-team-contributor")) {
         return false;
       } else {
-        $('.team-wrap').removeClass("active-team-contributors");
+        $('.team-contributors-wrap').removeClass("active-team-contributor");
         $('.large-team-contributors').hide();
         $($(this).attr('href')).show();
-        $(this).find(".team-wrap").addClass('active-team-contributors');
+        $(this).find(".team-contributors-wrap").addClass('active-team-contributor');
       }
     });
   });
