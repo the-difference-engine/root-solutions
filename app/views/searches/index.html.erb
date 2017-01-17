@@ -27,13 +27,12 @@
         <thead>
           <tr>
             <th>Title</th>
-            <th>World Region ID</th>
+            <th class="search-column">World Region ID</th>
             <th>Author</th>
-            <th>News Source ID</th>
+            <th class="search-column">News Source ID</th>
             <th>Date</th>
             <th class="search-table-content">Content</th>
-            <th>URL</th>
-            <th>Notes</th>
+            <th class="search-column">URL</th>
           </tr>
         </thead>
         <tbody>
@@ -50,8 +49,6 @@
             <td><%= resource.description %></td>
             <% end %>
             <td><%= resource.url %></td>
-            <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-            <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
           <% end %>
         </tbody>
