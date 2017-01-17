@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/partners', to: 'pages#partners'
   get '/team', to: 'pages#team'
   get '/mission', to: 'pages#mission'
+  get '/donate', to: 'pages#donate'
 
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, controllers: {registrations: 'users/registrations'}
