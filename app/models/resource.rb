@@ -26,6 +26,8 @@ class Resource < ApplicationRecord
   has_many :resources_environmental_tags
   has_many :environmental_tags, through: :resources_environmental_tags
 
+  belongs_to :resource_type
+
   def self.import_resource(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(1)
