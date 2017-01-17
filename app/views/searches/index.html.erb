@@ -23,7 +23,7 @@
       </div> <!-- btn-group -->
     </div> <!-- search-page-button-wrap -->
     <div class="search-page-wrap">
-      <table class="table-hover table">
+      <table class="table-hover table search-table">
         <thead>
           <tr>
             <th>Title</th>
@@ -31,7 +31,7 @@
             <th>Author</th>
             <th>News Source ID</th>
             <th>Date</th>
-            <th>Content</th>
+            <th class="search-table-content">Content</th>
             <th>URL</th>
             <th>Notes</th>
           </tr>
@@ -45,7 +45,7 @@
             <td><%= resource.news_source_id %></td>
             <td><%= resource.date %></td>
             <% if resource.abstract %>
-            <td><%= resource.abstract %></td>
+            <td class="search-table-content"><%= resource.abstract %></td>
             <% else %>
             <td><%= resource.description %></td>
             <% end %>
