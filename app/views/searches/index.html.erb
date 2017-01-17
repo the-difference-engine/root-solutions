@@ -3,7 +3,7 @@
     <h1 class="search-heading-title">
       Search Results
     </h1>
-    <div class="search-page-wrap">
+    <div class="search-page-button-wrap">
       <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-primary active">
           <input type="radio" name="options" id="option1" checked> Academic Article
@@ -21,6 +21,41 @@
           <input type="radio" name="options" id="option5"> Definition
         </label>
       </div> <!-- btn-group -->
+    </div> <!-- search-page-button-wrap -->
+    <div class="search-page-wrap">
+      <table class="table-hover table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>World Region ID</th>
+            <th>Author</th>
+            <th>News Source ID</th>
+            <th>Date</th>
+            <th>Content</th>
+            <th>URL</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @resources.each do |resource| %>
+          <tr>
+            <td><%= link_to "#{resource.title}", resource %></td>
+            <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
+            <td><%= resource.author %></td>
+            <td><%= resource.news_source_id %></td>
+            <td><%= resource.date %></td>
+            <% if resource.abstract %>
+            <td><%= resource.abstract %></td>
+            <% else %>
+            <td><%= resource.description %></td>
+            <% end %>
+            <td><%= resource.url %></td>
+            <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+            <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div> <!-- search-page-wrap -->
   </div> <!-- search-page-body -->
 </div> <!-- container-fluid -->
