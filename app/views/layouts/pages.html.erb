@@ -65,6 +65,9 @@
               </ul>
             </li>
             <li><a class="nav-a-tag" href="#">Donate</a></li>
+            <% if current_user %>
+            <li><a class="nav-a-tag" href="/resources">Admin page</a></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
