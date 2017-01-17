@@ -11,3 +11,14 @@
   border-radius:0px;
   color: white;
   }
+  .admin-alert {
+  position:fixed; 
+  top: 15px; 
+  width: 20%;
+  right: 0px;
+  z-index:9999; 
+  border-radius:0px;
+  color: black;
+  padding-top: 30px;
+  padding-right: 20px;
+  }
