@@ -33,19 +33,19 @@
         </thead>
         <tbody>
           <% @resources.each do |resource| %>
-          <tr>
-            <td><%= link_to "#{resource.title}", resource %></td>
-            <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
-            <td><%= resource.author %></td>
-            <td><%= resource.news_source_id %></td>
-            <td><%= resource.date %></td>
-            <% if resource.abstract %>
-            <td class="search-table-content"><%= resource.abstract %></td>
-            <% else %>
-            <td><%= resource.description %></td>
-            <% end %>
-            <td><%= resource.url %></td>
-          </tr>
+            <tr>
+              <td><%= link_to "#{resource.title}", resource %></td>
+              <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
+              <td><%= resource.author %></td>
+              <td><%= resource.news_source_id %></td>
+              <td><%= resource.date %></td>
+              <% if resource.abstract %>
+                <td class="search-table-content"><%= resource.abstract %></td>
+              <% else %>
+                <td><%= resource.description %></td>
+              <% end %>
+              <td><%= resource.url %></td>
+            </tr>
           <% end %>
         </tbody>
       </table>
