@@ -115,14 +115,45 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="home-wrap">
-          <p class="home-who-we-are">
+          <blockquote class="home-who-we-are">
             We are a team of a team of visionaries, creators, and disruptors who want to re-shape the future of the environmental movement in North America and beyond.
-          </p>
-          <p class="home-who-we-are-1">Meet our staff and contributors</p>
-          <p class="home-who-we-are-2">Meet our advisors and parters</p>
-          <p class="home-who-we-are-3">Peruse our current opportunities</p>
+          </blockquote>
         </div> <!-- home-wrap -->
       </div> <!-- col-md-10 -->
     </div> <!-- row -->
-  </div> <!-- container-fluid -->
-</div> <!-- home-page-body -->
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="home-glyphicon-wrap">
+        <div class="col-md-2">
+          <i class="fa fa-id-badge" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-2">
+          <i class="fa fa-university" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-2">
+          <i class="fa fa-key" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div> <!-- row -->
+    <div class="home-who-we-are-wrap">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+          <h1 class="home-what-we-do-heading">
+            <%= link_to "TEAM", "/team", target: "_blank", :class => "home-links" %>
+          </h1>
+        </div>
+        <div class="col-md-2">
+          <h1 class="home-what-we-do-heading">
+            <%= link_to "PARTNERS", "/partners", target: "_blank", :class => "home-links" %>
+          </h1>
+        </div>
+        <div class="col-md-2">
+          <h1 class="home-what-we-do-heading">
+            <%= link_to "JOIN", "/careers", target: "_blank", :class => "home-links" %>
+          </h1>
+        </div>
+      </div> <!-- row -->
+    </div>
+  </div>
+</div>
