@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'pages#about_us', as: :about_us
+  get '/about_us', to: 'pages#about_us'
   get '/work_with_us', to: 'pages#work_with_us', as: :work_with_us
   post '/work_with_us', to: 'pages#work_with_us_email'
   get '/projects', to: 'pages#projects'
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   get '/search_filter', to: 'searches#search'
 
   resources :news_sources
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, controllers: {registrations: 'users/registrations'}
   resources :cognitive_bia do
     collection do
       post :import

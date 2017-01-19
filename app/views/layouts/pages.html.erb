@@ -1,127 +1,131 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RootSolutions</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RootSolutions</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+</head>
 
-  <body>
-    <% flash.each do |name,message| %>
-      <div class="alert alert-<%=name%>" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+<body>
+  <% flash.each do |name,message| %>
+  <div class="alert alert-<%=name%>" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong> <%=message%> </strong>
+  </div>
+  <%end%>
+
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-        <strong> <%=message%> </strong>
+        <a class="navbar-brand nav-a-tag" id="home-button" href="/">Root Solutions</a>
       </div>
-    <%end%>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
 
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand nav-a-tag" id="home-button" href="/">Root Solutions</a>
+          <li class="dropdown">
+            <a href="/" class="dropdown-toggle nav-a-tag" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+            <ul class="dropdown-menu stylized-drop">
+              <div></div>
+              <li><a href="/team">Team</a></li>
+              <li><a href="/partners">Partners</a></li>
+              <li><a href="/mission">Mission</a></li>
+              <li><a href="/careers">Careers</a></li>
+
+            </ul>
+          </li>
+
+          <!-- <li><a class="nav-a-tag" href="/work_with_us">Work With Us</a></li> -->
+          <li class="dropdown">
+            <a href="/work_with_us" class="dropdown-toggle nav-a-tag" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Work With Us <span class="caret"></span></a>
+            <ul class="dropdown-menu stylized-drop" id="wwu-drop">
+              <li><a href="/projects">Projects</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="/learn" class="dropdown-toggle nav-a-tag" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learn<span class="caret"></span></a>
+            <ul class="dropdown-menu stylized-drop" id="learn-drop">
+              <li><a href="/learn/why_behavior">Why Behavior</a></li>
+              <li><a href="/learn/our_process">Our Process</a></li>
+              <li><a href="/learn/behavior_design">Behavior Design</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-a-tag" href="/donate">Donate</a></li>
+        </ul>
+        <div class="logged-in-as">
+          <% if current_user %>
+          <p> Logged in as <%= current_user.email %>. Go to admin <%= link_to "page.", "/resources" %></p>
+          <% end %>
         </div>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <%= yield %>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            
-            <li class="dropdown">
-              <a href="/" class="dropdown-toggle nav-a-tag" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
-              <ul class="dropdown-menu stylized-drop">
-                <div></div>
-                <li><a href="/team">Team</a></li>
-                <li><a href="/partners">Partners</a></li>
-                <li><a href="/mission">Mission</a></li>
-                <li><a href="/careers">Careers</a></li>
+  <footer id="main-footer">
+    <div id="sub-footer">
+      <div>
+        <div class="col-md-2"></div>
 
-              </ul>
-            </li>
-              
-            <!-- <li><a class="nav-a-tag" href="/work_with_us">Work With Us</a></li> -->
-            <li class="dropdown">
-              <a href="/work_with_us" class="dropdown-toggle nav-a-tag" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Work With Us <span class="caret"></span></a>
-              <ul class="dropdown-menu stylized-drop" id="wwu-drop">
-                <li><a href="/projects">Projects</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="/learn" class="dropdown-toggle nav-a-tag" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learn<span class="caret"></span></a>
-              <ul class="dropdown-menu stylized-drop" id="learn-drop">
-                <li><a href="/learn/why_behavior">Why Behavior</a></li>
-                <li><a href="/learn/our_process">Our Process</a></li>
-                <li><a href="/learn/behavior_design">Behavior Design</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-a-tag" href="/donate">Donate</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <%= yield %>
-
-    <footer id="main-footer">
-      <div id="sub-footer">
-        <div>
-          <div class="col-md-2"></div>
-
-          <div class="footer-content-container">
-            <div class="col-md-4 footer-left-col">
-              <div class="title-container">
-                <h1 class="footer-form-title">Sign up for our newsletter</h1>
-              </div>
-
-              <input type="email" class="black-text footer-email-bar" placeholder="Email" name="email">
-
-              <div class="footer-button-container">
-                <p class="js-subscribe-response subscribe-response"></p>
-                <button class="footer-form-submit">Subscribe</button>
-              </div>
+        <div class="footer-content-container">
+          <div class="col-md-4 footer-left-col">
+            <div class="title-container">
+              <h1 class="footer-form-title">Sign up for our newsletter</h1>
             </div>
 
-            <div class="col-md-4 footer-right-col">
-              <p class="company-info">405 14th St, Oakland, CA 94612</p>
-              <p class="company-info">info@therootsolutions.org | 415.360.6309</p>
+            <input type="email" class="black-text footer-email-bar" placeholder="Email" name="email">
 
-              <div class="social-media-images-container">
-                <i class="fa fa-rss" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </div>
+            <div class="footer-button-container">
+              <p class="js-subscribe-response subscribe-response"></p>
+              <button class="footer-form-submit">Subscribe</button>
             </div>
           </div>
-          <div class="col-md-2"></div>
+
+          <div class="col-md-4 footer-right-col">
+            <p class="company-info">405 14th St, Oakland, CA 94612</p>
+            <p class="company-info">info@therootsolutions.org | 415.360.6309</p>
+
+            <div class="social-media-images-container">
+              <i class="fa fa-rss" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
       </div>
     </footer>
 
   </body>
-</html>
+  </html>
 
-<script type="text/javascript">
-  $(function() {
-    $(".dropdown").on("mouseover", function() {
-      $(this).addClass("open");
-    });
-    $(".dropdown").on("mouseout", function() {
-      $(this).removeClass("open");
-    });
-    $(".dropdown-toggle, .navbar-brand").on("click", function() {
-      if (window.location.pathname == $(this).attr("href")) {
-        return false;
-      } else {
-        window.location = $(this).attr("href");
-      }
-    });
-  }); 
-</script>
+  <script type="text/javascript">
+    $(function() {
+      $(".dropdown").on("mouseover", function() {
+        $(this).addClass("open");
+      });
+      $(".dropdown").on("mouseout", function() {
+        $(this).removeClass("open");
+      });
+      $(".dropdown-toggle, .navbar-brand").on("click", function() {
+        if (window.location.pathname == $(this).attr("href")) {
+          return false;
+        } else {
+          window.location = $(this).attr("href");
+        }
+      });
+    }); 
+  </script>
