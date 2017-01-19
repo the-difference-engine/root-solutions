@@ -4,23 +4,19 @@
       Search Results
     </h1>
     <div class="search-page-button-wrap">
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary active">
-          <input type="radio" name="options" id="option1" checked> Academic Article
-        </label>
-        <label class="btn btn-primary">
-          <input type="radio" name="options" id="option2"> Popular Article
-        </label>
-        <label class="btn btn-primary">
-          <input type="radio" name="options" id="option3"> Case Study
-        </label>
-        <label class="btn btn-primary">
-          <input type="radio" name="options" id="option4"> Video
-        </label>
-        <label class="btn btn-primary">
-          <input type="radio" name="options" id="option5"> Definition
-        </label>
-      </div> <!-- btn-group -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Resource Types
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#" value="resource_type">Academic Articles</a></li>
+          <li><a href="#" value="resource_type">Popular Articles</a></li>
+          <li><a href="#" value="resource_type">Case Studies</a></li>
+          <li><a href="#" value="resource_type">Videos</a></li>
+          <li><a href="#" value="resource_type">Definitions</a></li>
+        </ul>
+      </div>
     </div> <!-- search-page-button-wrap -->
     <div class="search-page-wrap">
       <table class="table-hover table search-table">
@@ -56,3 +52,4 @@
     </div> <!-- search-page-wrap -->
   </div> <!-- search-page-body -->
 </div> <!-- container-fluid -->
+
