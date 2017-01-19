@@ -1,96 +1,55 @@
-<div ng-app="adminpanel-app" ng-controller="searchCtrl" ng-init="search_setup()">
-<form ng-submit="search()">
-Search:
-  <input type="text" ng-model="search_term" name="text" />
-  <input type="submit" id="submit" value="Search" />
-</form>
-<h4>Search results:</h4>
-<div id="search-results">
-<ul>
-  <div ng-repeat = "resource in search_results">
-    <strong><a href="/resources/{{resource.id}}">{{resource.title}} </a></strong>
-    <p>{{resource.author}} | {{resource.date}} </p> 
-    <p>{{resource.abstract}}</p>  
-  </div>
-</ul>
-  
-</div>
-<h1 class="h3"><%= @resources.size %> Results for <%= params[:q] %></h1>
+<div class="container-fluid">
+  <div class="search-page-body">
+    <h1 class="search-heading-title">
+      Search Results
+    </h1>
+    <div class="search-page-button-wrap">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Resource Type
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#" value="resource_type">Academic Article</a></li>
+          <li><a href="#" value="resource_type">Popular Article</a></li>
+          <li><a href="#" value="resource_type">Case Study</a></li>
+          <li><a href="#" value="resource_type">Video</a></li>
+          <li><a href="#" value="resource_type">Definition</a></li>
+        </ul>
+      </div>
+    </div> <!-- search-page-button-wrap -->
+    <div class="search-page-wrap">
+      <table class="table-hover table search-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th class="search-column">World Region ID</th>
+            <th>Author</th>
+            <th class="search-column">News Source ID</th>
+            <th>Date</th>
+            <th class="search-table-content">Content</th>
+            <th class="search-column">URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @resources.each do |resource| %>
+          <tr>
+            <td><%= link_to "#{resource.title}", resource %></td>
+            <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
+            <td><%= resource.author %></td>
+            <td><%= resource.news_source_id %></td>
+            <td><%= resource.date %></td>
+            <% if resource.abstract %>
+            <td class="search-table-content"><%= resource.abstract %></td>
+            <% else %>
+            <td><%= resource.description %></td>
+            <% end %>
+            <td><%= resource.url %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div> <!-- search-page-wrap -->
+  </div> <!-- search-page-body -->
+</div> <!-- container-fluid -->
 
-<%= form_tag '/search', class: "navbar-form navbar-left", role: "search",method: :get do %>
-  <div class='form-group'>
-    <%= label_tag :q, "Search by keyword" %><br>
-    <%= text_field_tag :q, "#{params[:q]}", class: "form-control"  %>
-    <%= submit_tag 'Search', class: 'btn btn-primary' %>
-  </div>
-  <h2 class="h4">Explore by field</h2>
-  <div class='form-group'>
-    <%= label_tag :environmental_tags, "Environmental Tags" %><br>
-    <%= select_tag :environmental_tags, options_from_collection_for_select(@environmental_tags, 'id', 'name'), multiple: true, class: "form-control" %>
-  </div>
-  <div class='form-group'>
-    <%= label_tag :environmental_subtags, "Environmental Subtags" %><br>
-    <%= select_tag :environmental_subtags, options_from_collection_for_select(@environmental_subtags, 'id', 'name'), multiple: true, class: "form-control" %>
-  </div>
-  <br>
-  <div class='form-group'>
-    <%= label_tag :building_block, "Behavior Building Block" %><br>
-    <%= select_tag :building_block, options_from_collection_for_select(@building_blocks, 'id', 'name'), multiple: true, class: "form-control" %>
-  </div>
-  <div class='form-group'>
-    <%= label_tag :building_block_substeps, "Building Block Substeps" %><br>
-    <%= select_tag :building_block_substeps, options_from_collection_for_select(@building_block_substeps, 'id', 'name'), multiple: true, class: "form-control" %>
-  </div>
-  <br>
-  <div class='form-group'>
-    <%= label_tag :news_source, "News Source" %><br>
-    <%= select_tag :news_source, options_from_collection_for_select(@news_sources, 'id', 'name'), class: "form-control" %>
-  </div>
-  <div class='form-group'>
-    <%= label_tag :world_region, "Region" %><br>
-    <%= select_tag :world_region, options_from_collection_for_select(@world_regions, 'id', 'name'), class: "form-control" %>
-  </div>
-  <div class='form-group'>
-    <%= label_tag :resource_type, "Resource Type" %><br>
-    <%= select_tag :resource_type, options_from_collection_for_select(@resource_types, 'id', 'name'), class: "form-control" %>
-  </div>
-  <div class='form-group'>
-    <%= label_tag :cognitive_bium, "Cognitive Bium" %><br>
-    <%= select_tag :cognitive_bium, options_from_collection_for_select(@cognitive_bia, 'id', 'name'), class: "form-control" %>
-  </div>
-<% end %>
-
-
-<% if @resources.any? %>
-<table class="table-hover table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>World Region</th>
-      <th>Author</th>
-      <th>News Source</th>
-      <th>Date</th>
-      <th>Content</th>
-      <th>URL</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resources.each do |resource| %>
-      <tr>
-        <td><%= link_to "#{resource.title}", resource %></td>
-        <td><%= resource.world_region.name %></td>
-        <td><%= resource.author %></td>
-        <td><%= resource.news_source.name %></td>
-        <td><%= resource.date %></td>
-        <td><%= resource.content %></td>
-        <td><%= resource.url %></td>
-        <td><%= resource.admin_notes %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% end %>
-
-</div>
