@@ -12,19 +12,50 @@ var searchFunction = function (htmlElement, tableBody) {
     success: function(data) {
       var resources = data["resources"];
       var newHtml = "";
-      debugger;
       for(var i = 0; i < resources.length; i++) {
         newHtml += "<tr>";
+        newHtml += "<td>";
         newHtml += "<a href='/resources/" + resources[i]["id"] +"'>";
-        newHtml += "<td>" + resources[i]["title"] + "</td>";
-        newHtml += "</a>";
-        if (resources["world_region"]) {
-          newHtml += "<td>";
-          newHtml += resource["world_region"];
-          newHtml += "</td>";
+        if (resources[i]["title"]) {
+          newHtml += resources[i]["title"];
         }
+        newHtml += "</a>";
+        newHtml += "</td>";
+        newHtml += "<td>";
+        if (resources[i]["world_region"]) {
+          newHtml += resources[i]["world_region"];
+        }
+        newHtml += "</td>";
+        newHtml += "<td>";
+        if (resources[i]["author"]) {
+          newHtml += resources[i]["author"];
+        }
+        newHtml += "</td>";
+        newHtml += "<td>";
+        if (resources[i]["news_source"]) {
+        newHtml += resources[i]["news_source"];
+        }
+        newHtml += "</td>";
+        newHtml += "<td>";
+        if (resources[i]["date"]) {
+          newHtml += resources[i]["date"];
+        }
+        newHtml += "</td>";
+        newHtml += "<td>";
+        if (resources[i]["description"]) {
+          newHtml += resources[i]["description"];
+        } else if (resources[i]["abstract"]) {
+          newHtml += resource[i]["abstract"];
+        }
+        newHtml += "</td>";
+        newHtml += "<td>";
+        if (resources[i]["url"]) {
+          newHtml += resources[i]["url"];
+        }
+        newHtml += "</td>";
         newHtml += "</tr>";
       }
+      tableBody.html(newHtml);
     },
     error: function(data) {
 
