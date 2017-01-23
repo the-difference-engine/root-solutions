@@ -1688,6 +1688,56 @@ button.learn-more:hover {
   padding-top: 20px;
 }
 
+#home-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'rain_forest.jpg' %>); /* add image of choice */
+  height: 500px;
+}
+
+#home-parallax-1, #home-parallax-2 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'rain_forest.jpg' %>); /* add image of choice */
+  height: 300px;
+}
+
+#home-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+.home-wrap {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.home-description {
+  text-align: center;
+  color: black;
+  padding-bottom: 25px;
+}
+
+.home-description-1 {
+  text-align: center;
+  color: $yellow4;
+  padding-bottom: 50px;
+}
+
+.home-description-2 {
+  text-align: center;
+  color: black;
+}
+
 .search-page-button-wrap {
   text-align: center;
   padding-top: 25px;
@@ -1708,4 +1758,51 @@ button.learn-more:hover {
 }
 .search-column {
   width:100px;
+}
+
+.home-glyphicon-wrap {
+  text-align: center;
+}
+
+.home-what-we-do-heading {
+  text-align: center;
+}
+
+.home-what-we-do-wrap {
+  padding-bottom: 50px;
+}
+
+.home-page-body {
+  .fa{
+    font-size: 75px;
+  }
+}
+
+.home-what-we-do-description {
+  font-size: 15px;
+}
+
+.home-links {
+  color: $yellow5;
+}
+
+.home-links:hover {
+  color: $green5;
+}
+
+.home-links-icons {
+  color: black;
+}
+
+.home-links-icons:hover {
+  color: $green5;
+}
+
+.home-who-we-are {
+  text-align: center;
+  color: black;
+}
+
+.home-who-we-are-wrap {
+  padding-bottom: 50px;
 }
