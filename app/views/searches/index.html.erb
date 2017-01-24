@@ -4,17 +4,17 @@
       Search Results
     </h1>
     <div class="search-page-button-wrap">
-      <div class="dropdown">
+      <div class="dropdown" id="test" value="whatever">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Resource Type
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#" value="resource_type">Academic Article</a></li>
-          <li><a href="#" value="resource_type">Popular Article</a></li>
-          <li><a href="#" value="resource_type">Case Study</a></li>
-          <li><a href="#" value="resource_type">Video</a></li>
-          <li><a href="#" value="resource_type">Definition</a></li>
+          <li><a href="#" class="search-filter" data-filter="resource_type">Academic Article</a></li>
+          <li><a href="#" class="search-filter" data-filter="resource_type">Popular Article</a></li>
+          <li><a href="#" class="search-filter" data-filter="resource_type">Case Study</a></li>
+          <li><a href="#" class="search-filter" data-filter="resource_type">Video</a></li>
+          <li><a href="#" class="search-filter" data-filter="resource_type">Definition</a></li>
         </ul>
       </div>
     </div> <!-- search-page-button-wrap -->
@@ -31,21 +31,21 @@
             <th class="search-column">URL</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="search-table-body">
           <% @resources.each do |resource| %>
-          <tr>
-            <td><%= link_to "#{resource.title}", resource %></td>
-            <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
-            <td><%= resource.author %></td>
-            <td><%= resource.news_source_id %></td>
-            <td><%= resource.date %></td>
-            <% if resource.abstract %>
-            <td class="search-table-content"><%= resource.abstract %></td>
-            <% else %>
-            <td><%= resource.description %></td>
-            <% end %>
-            <td><%= resource.url %></td>
-          </tr>
+            <tr>
+              <td><%= link_to "#{resource.title}", resource %></td>
+              <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
+              <td><%= resource.author %></td>
+              <td><%= resource.news_source_id %></td>
+              <td><%= resource.date %></td>
+              <% if resource.abstract %>
+                <td class="search-table-content"><%= resource.abstract %></td>
+              <% else %>
+                <td><%= resource.description %></td>
+              <% end %>
+              <td><%= resource.url %></td>
+            </tr>
           <% end %>
         </tbody>
       </table>
@@ -53,3 +53,9 @@
   </div> <!-- search-page-body -->
 </div> <!-- container-fluid -->
 
+<script type="text/javascript">
+  $('.search-filter').click(function() {
+    var tableBody = $('#search-table-body');
+    searchFunction(this, tableBody);
+  });
+</script>
