@@ -9,7 +9,7 @@
   </div>
 </div> <!-- partners-parallax -->
 <div id="search-show-chevron" class="backgroundcolor"></div>
-<div class= "white-space chevron" style="padding-top:70px;padding-bottom: 70px;margin:0 auto 0;">
+<div class= "white-space chevron" style="padding-top:70px;padding-bottom: 0px;margin:0 auto 0;">
 </div>
 <div class="resources-show-body">
   <div class="container-fluid">
@@ -32,6 +32,18 @@
     </div>
     <div class="row">
       <div class="col-md-3">
+        <p>Resource Type</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% if @resource.resource_type %>
+            <%= @resource.resource_type.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
         <p>News Source:</p>
       </div>
       <div class="col-md-9">
@@ -40,12 +52,72 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p> World Region(s):</p>
+        <p>World Region(s):</p>
       </div>
       <div class="col-md-9">
         <p>
           <% @resource.world_regions.each do | world_region | %>
             <%= world_region.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Environmental Tag(s):</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% @resource.environmental_tags.all.each do | environmental_tag | %>
+            <%= environmental_tag.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Environmental Subtag(s):</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% @resource.environmental_subtags.all.each do | environmental_subtag | %>
+            <%= environmental_subtag.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Building Block(s):</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% @resource.building_blocks.all.each do | building_block | %>
+            <%= building_block.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Cognitive Bia(s):</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% @resource.cognitive_bia.all.each do | cognitive_bias | %>
+            <%= cognitive_bias.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Building Block Substep(s):</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% @resource.environmental_tags.all.each do | environmental_tag | %>
+            <%= environmental_tag.name %>
           <% end %>
         </p>
       </div>
