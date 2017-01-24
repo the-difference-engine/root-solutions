@@ -72,7 +72,8 @@
         <p>
           <% if @resource.world_regions %>
             <% @resource.world_regions.each do | world_region | %>
-              <%= world_region.name %>
+              <ul class="search-show-list">
+                <li><%= world_region.name %></li>
             <% end %>
           <% end %>
         </p>
@@ -88,7 +89,9 @@
         <p>
           <% if @resource.environmental_tags %>
             <% @resource.environmental_tags.all.each do | environmental_tag | %>
-              <%= environmental_tag.name %>
+              <ul class="search-show-list">
+                <li><%= environmental_tag.name %></li>
+              </ul>
             <% end %>
           <% end %>
         </p>
@@ -104,7 +107,9 @@
         <p>
           <% if @resource.environmental_subtags %>
             <% @resource.environmental_subtags.all.each do | environmental_subtag | %>
-              <%= environmental_subtag.name %>
+              <ul class="search-show-list">
+                <li><%= environmental_subtag.name %></li>
+              </ul>
             <% end %>
           <% end %>
         </p>
@@ -120,7 +125,9 @@
         <p>
           <% if @resource.building_blocks %>
             <% @resource.building_blocks.all.each do | building_block | %>
-              <%= building_block.name %>
+              <ul class="search-show-list">
+                <li><%= building_block.name %></li>
+              </ul>
             <% end %>
           <% end %>
         </p>
@@ -136,7 +143,9 @@
         <p>
           <% if @resource.building_block_substeps %>
             <% @resource.building_block_substeps.all.each do | building_block_substep | %>
-              <%= building_block_substep.name %>
+              <ul class="search-show-list">
+                <li><%= building_block_substep.name %></li>
+              </ul>
             <% end %>
           <% end %>
         </p>
@@ -152,7 +161,8 @@
         <p>
           <% if @resource.cognitive_bia %>
             <% @resource.cognitive_bia.all.each do | cognitive_bias | %>
-              <%= cognitive_bias.name %>
+              <ul class="search-show-list">
+                <li><%= cognitive_bias.name %></li>
             <% end %>
           <% end %>
         </p>
