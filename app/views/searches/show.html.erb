@@ -16,7 +16,9 @@
     <h1 class="resources-heading-title"><%= @resource.title %></h1>
     <div class="row">
       <div class="col-md-3">
-        <p>Title:</p>
+        <% if @resource.title %>
+          <p>Title:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p><%= @resource.title %></p>
@@ -24,7 +26,9 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Author:</p>
+        <% if @resource.author %>
+          <p>Author:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p><%= @resource.author %></p>
@@ -32,7 +36,9 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Resource Type</p>
+        <% if @resource.resource_type %>
+          <p>Resource Type</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
@@ -44,106 +50,154 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>News Source:</p>
+        <% if @resource.news_source %>
+          <p>News Source:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
-        <p><%= @resource.news_source.name %></p>
+        <p>
+        <% if @resource.news_source %>
+          <%= @resource.news_source.name %>
+        <% end %>
+        </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>World Region(s):</p>
+        <% if @resource.world_regions.any? %>
+          <p>World Region:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
-          <% @resource.world_regions.each do | world_region | %>
-            <%= world_region.name %>
+          <% if @resource.world_regions %>
+            <% @resource.world_regions.each do | world_region | %>
+              <%= world_region.name %>
+            <% end %>
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Environmental Tag(s):</p>
+        <% if @resource.environmental_tags.any? %>
+          <p>Environmental Tag(s):</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
-          <% @resource.environmental_tags.all.each do | environmental_tag | %>
-            <%= environmental_tag.name %>
+          <% if @resource.environmental_tags %>
+            <% @resource.environmental_tags.all.each do | environmental_tag | %>
+              <%= environmental_tag.name %>
+            <% end %>
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Environmental Subtag(s):</p>
+        <% if @resource.environmental_subtags.any? %>
+          <p>Environmental Subtag(s):</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
-          <% @resource.environmental_subtags.all.each do | environmental_subtag | %>
-            <%= environmental_subtag.name %>
+          <% if @resource.environmental_subtags %>
+            <% @resource.environmental_subtags.all.each do | environmental_subtag | %>
+              <%= environmental_subtag.name %>
+            <% end %>
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Building Block(s):</p>
+        <% if @resource.building_blocks.any? %>
+          <p>Building Block(s):</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
-          <% @resource.building_blocks.all.each do | building_block | %>
-            <%= building_block.name %>
+          <% if @resource.building_blocks %>
+            <% @resource.building_blocks.all.each do | building_block | %>
+              <%= building_block.name %>
+            <% end %>
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Cognitive Bia(s):</p>
+        <% if @resource.building_block_substeps.any? %>
+          <p>Building Block Substep(s):</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
-          <% @resource.cognitive_bia.all.each do | cognitive_bias | %>
-            <%= cognitive_bias.name %>
+          <% if @resource.building_block_substeps %>
+            <% @resource.building_block_substeps.all.each do | building_block_substep | %>
+              <%= building_block_substep.name %>
+            <% end %>
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Building Block Substep(s):</p>
+        <% if @resource.cognitive_bia.any? %>
+          <p>Cognitive Bia(s):</p>
+        <% end %>
       </div>
       <div class="col-md-9">
         <p>
-          <% @resource.environmental_tags.all.each do | environmental_tag | %>
-            <%= environmental_tag.name %>
+          <% if @resource.cognitive_bia %>
+            <% @resource.cognitive_bia.all.each do | cognitive_bias | %>
+              <%= cognitive_bias.name %>
+            <% end %>
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Date:</p>
+        <% if @resource.date %>
+          <p>Date:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
-        <p><%= @resource.date.strftime("%B %d, %Y") %></p>
+        <p>
+          <% if @resource.date %>
+            <%= @resource.date.strftime("%B %d, %Y") %>
+          <% end %>
+        </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>URL:</p>
+        <% if @resource.url %>
+          <p>URL:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
-        <p><%= link_to "#{@resource.url}", @resource.url, target: "_blank" %></p>
+        <p>
+          <% if @resource.url %>
+            <%= link_to "#{@resource.url}", @resource.url, target: "_blank" %>
+          <% end %>
+        </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <p>Abstract:</p>
+        <% if @resource.abstract %>
+          <p>Abstract:</p>
+        <% end %>
       </div>
       <div class="col-md-9">
-        <p><%= @resource.abstract %></p>
+        <p>
+          <% if @resource.abstract %>
+            <%= @resource.abstract %>
+          <% end %>
+        </p>
       </div>
     </div>
     <div class="row" style="text-align: center; padding-top: 25px; padding-bottom: 50px;">
