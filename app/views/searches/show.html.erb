@@ -1,0 +1,83 @@
+<div id="search-show-parallax"> 
+  <div class="heading-title">
+    <h2 class="title">
+      Resource Page
+    </h2>
+    <div id="sub-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div> <!-- partners-parallax -->
+<div id="search-show-chevron" class="backgroundcolor"></div>
+<div class= "white-space chevron" style="padding-top:70px;padding-bottom: 70px;margin:0 auto 0;">
+</div>
+<div class="resources-show-body">
+  <div class="container-fluid">
+    <h1 class="resources-heading-title"><%= @resource.title %></h1>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Title:</p>
+      </div>
+      <div class="col-md-9">
+        <p><%= @resource.title %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Author:</p>
+      </div>
+      <div class="col-md-9">
+        <p><%= @resource.author %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>News Source:</p>
+      </div>
+      <div class="col-md-9">
+        <p><%= @resource.news_source.name %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p> World Region(s):</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% @resource.world_regions.each do | world_region | %>
+            <%= world_region.name %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Date:</p>
+      </div>
+      <div class="col-md-9">
+        <p><%= @resource.date.strftime("%B %d, %Y") %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>URL:</p>
+      </div>
+      <div class="col-md-9">
+        <p><%= link_to "#{@resource.url}", @resource.url, target: "_blank" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Abstract:</p>
+      </div>
+      <div class="col-md-9">
+        <p><%= @resource.abstract %></p>
+      </div>
+    </div>
+    <div class="row" style="text-align: center; padding-top: 25px; padding-bottom: 50px;">
+      <div class="col-md-12">
+        <%= link_to "View all resources", resources_path, target: "_blank", :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </div> <!-- container-fluid -->
+</div> <!-- resources-showbody -->

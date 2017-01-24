@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/mission', to: 'pages#mission'
   get '/donate', to: 'pages#donate'
   get '/search_filter', to: 'searches#search'
+  get '/search/:id', to: 'searches#show'
 
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, controllers: {registrations: 'users/registrations'}
