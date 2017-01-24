@@ -37,6 +37,7 @@ class SearchesController < ApplicationController
   def hash_create(resources)
     resources_hash = []
     resources.each do |resource|
+      news_source_name = NewsSource.find_by(id: resource.news_source_id).name
       new_hash = {
         abstract: resource.abstract,
         author: resource.author,
@@ -46,19 +47,22 @@ class SearchesController < ApplicationController
         is_problem: resource.is_problem,
         is_published: resource.is_published,
         is_solution: resource.is_solution,
-        news_source: NewsSource.find_by(id: resource.news_source_id).name,
+        news_source: news_source_name,
         publisher: resource.publisher,
         source: resource.source,
         title: resource.title,
         url: resource.url,
         world_region: resource.name
       }
+      resources_hash << new_hash
     end
+    return resources_hash
   end
 
   def hash_create_no_wr(resources)
     resources_hash = []
     resources.each do |resource|
+      news_source_name = NewsSource.find_by(id: resource.news_source_id).name
       new_hash = {
         abstract: resource.abstract,
         author: resource.author,
@@ -68,14 +72,16 @@ class SearchesController < ApplicationController
         is_problem: resource.is_problem,
         is_published: resource.is_published,
         is_solution: resource.is_solution,
-        news_source: NewsSource.find_by(id: resource.news_source_id).name,
+        news_source: news_source_name,
         publisher: resource.publisher,
         source: resource.source,
         title: resource.title,
         url: resource.url,
         world_region: nil
       }
+      resources_hash << new_hash
     end
+    return resources_hash
   end
 
 end

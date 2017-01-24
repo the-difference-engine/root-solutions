@@ -10,6 +10,7 @@ var searchFunction = function (htmlElement, tableBody) {
     url: "/search_filter",
     data: input,
     success: function(data) {
+      console.log("ON SUCCESS PATH");
       var resources = data["resources"];
       var newHtml = "";
       for(var i = 0; i < resources.length; i++) {
@@ -33,7 +34,7 @@ var searchFunction = function (htmlElement, tableBody) {
         newHtml += "</td>";
         newHtml += "<td>";
         if (resources[i]["news_source"]) {
-        newHtml += resources[i]["news_source"];
+          newHtml += resources[i]["news_source"];
         }
         newHtml += "</td>";
         newHtml += "<td>";
@@ -45,7 +46,7 @@ var searchFunction = function (htmlElement, tableBody) {
         if (resources[i]["description"]) {
           newHtml += resources[i]["description"];
         } else if (resources[i]["abstract"]) {
-          newHtml += resource[i]["abstract"];
+          newHtml += resources[i]["abstract"];
         }
         newHtml += "</td>";
         newHtml += "<td>";
