@@ -3,31 +3,64 @@
     <h1 class="search-heading-title">
       Search Results
     </h1>
-    <div class="search-page-button-wrap">
-      <div class="dropdown" id="test" value="whatever">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Resource Type
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#" class="search-filter" data-filter="resource_type">Academic Article</a></li>
-          <li><a href="#" class="search-filter" data-filter="resource_type">Popular Article</a></li>
-          <li><a href="#" class="search-filter" data-filter="resource_type">Case Study</a></li>
-          <li><a href="#" class="search-filter" data-filter="resource_type">Video</a></li>
-          <li><a href="#" class="search-filter" data-filter="resource_type">Definition</a></li>
-        </ul>
+    <div class="row">
+      <div class="search-page-button-wrap">
+        <div class="dropdown" id="test" value="whatever">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Resource Type
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#" class="search-filter" data-filter="resource_type">Academic Article</a></li>
+            <li><a href="#" class="search-filter" data-filter="resource_type">Popular Article</a></li>
+            <li><a href="#" class="search-filter" data-filter="resource_type">Case Study</a></li>
+            <li><a href="#" class="search-filter" data-filter="resource_type">Video</a></li>
+            <li><a href="#" class="search-filter" data-filter="resource_type">Definition</a></li>
+          </ul>
+        </div>
+
+
+
+        <div class="dropdown" id="test" value="whatever">
+          <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            World Regions
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Option 1</label>
+            </div></li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Option 2</label>
+            </div></li>
+            <li><div class="checkbox disabled">
+              <label><input type="checkbox" value="" disabled>Option 3</label>
+            </div></li>
+          </ul>
+        </div>
+      </div> <!-- search-page-button-wrap -->
+    </div> <!-- row -->
+    <div class="row">
+      <div class="search-existing-filters">
+
       </div>
-    </div> <!-- search-page-button-wrap -->
+    </div> <!-- row -->
     <div class="search-page-wrap">
       <table class="table-hover table search-table">
         <thead>
           <tr>
             <th>Title</th>
-            <th class="search-column">World Region ID</th>
+            <th>Resource Type</th>
+            <th class="search-column">World Region</th>
             <th>Author</th>
-            <th class="search-column">News Source ID</th>
+            <th class="search-column">News Source</th>
+            <th>Cognitive Bias</th>
+            <th>Environmental Tag</th>
+            <th>Environmental Subtag</th>
+            <th>Building Blocks</th>
+            <th>Building Blocks Substeps</th>
             <th>Date</th>
-            <th class="search-table-content">Content</th>
+            <th class="search-table-content">Description</th>
             <th class="search-column">URL</th>
           </tr>
         </thead>
@@ -35,9 +68,45 @@
           <% @resources.each do |resource| %>
             <tr>
               <td><%= link_to "#{resource.title}", resource %></td>
+              <td><%= resource.resource_type.name %></td>
               <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
               <td><%= resource.author %></td>
               <td><%= resource.news_source_id %></td>
+              <td>
+                <% if resource.cognitive_bia.any? %>
+                  <% resource.cognitive_bia.each do | cognitive_bias | %>
+                    <%= cognitive_bias.name %>
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <% if resource.environmental_tags.any? %>
+                  <% resource.environmental_tags.each do | environmental_tag | %>
+                    <%= environmental_tag.name %>
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <% if resource.environmental_subtags.any? %>
+                  <% resource.environmental_subtags.each do | environmental_subtag | %>
+                    <%= environmental_subtag.name %>
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <% if resource.building_blocks.any? %>
+                  <% resource.building_blocks.each do | building_block | %>
+                    <%= building_block.name %>
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <% if resource.building_block_substeps.any? %>
+                  <% resource.building_block_substeps.each do | building_block_substep | %>
+                    <%= building_block_substep.name %>
+                  <% end %>
+                <% end %>
+              </td>
               <td><%= resource.date %></td>
               <% if resource.abstract %>
                 <td class="search-table-content"><%= resource.abstract %></td>

@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+  layout "pages"
 
   def index
     @resources = Resource.all
