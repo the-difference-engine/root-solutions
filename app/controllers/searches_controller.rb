@@ -5,11 +5,10 @@ class SearchesController < ApplicationController
   end
 
   def search
-    @resources = []
+    @resources = Resource.all
 
     if (params[:filters]["0"][0] == "resource_type")
-      resource_type = ResourceType.find_by(name: params[:filters]["0"][1])
-      @resources = Resource.select("resources.*, world_regions.name").left_outer_joins(:world_regions).where("resource_type_id = #{resource_type.id}")
+      @resources = resource_type(@resources, params[:filters["0"][1])
     end
 
     if (!@resources.empty?)
@@ -26,10 +25,40 @@ class SearchesController < ApplicationController
   end
 
   private
+  def building_block(resources, )
+
+  def resource_type(resources, name)
+    resource_type = ResourceType.find_by(name: name)
+    return resources = resources.where("resource_type_id = #{resource_type.id}")
+  end
 
   def hash_create(resources)
     resources_hash = []
     resources.each do |resource|
+      building_blocks = []
+      resource.building_blocks.each do |building_block|
+        building_blocks << building_block.name
+      end
+      building_block_substeps = []
+      resource.building_block_substeps.each do |building_block_substeps|
+        building_block_substeps << building_block_substeps.name
+      end
+      cognitive_bia = []
+      resource.cognitive_bia.each do |cognitive_bium|
+        cognitive_bia << cognitive_bium.name
+      end
+      environmental_tags = []
+      resource.environmental_tags.each do |environmental_tag|
+        environmental_tags << environmental_tag.name
+      end
+      environmental_subtags = []
+      resource.environmental_subtags.each do |environmental_subtag|
+        environmental_subtags << environmental_subtag.name
+      end
+      world_regions = []
+      resource.world_regions.each do |world_region|
+        world_regions << world_region.name
+      end
       news_source_name = NewsSource.find_by(id: resource.news_source_id).name
       new_hash = {
         abstract: resource.abstract,
@@ -45,7 +74,12 @@ class SearchesController < ApplicationController
         source: resource.source,
         title: resource.title,
         url: resource.url,
-        world_region: resource.name
+        building_blocks: building_blocks,
+        building_block_substeps: building_block_substeps,
+        cognitive_bia: cognitive_bia,
+        environmental_tags: environmental_tags,
+        environmental_subtags: environmental_subtags,
+        world_region: world_regions
       }
       resources_hash << new_hash
     end
