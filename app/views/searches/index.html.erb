@@ -27,24 +27,71 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <% WorldRegion.all.each do |world_region| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value="">United States & Canada</label>
+                <label><input type="checkbox" value=""><%= world_region.name %></label>
               </div></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="search-page-button-building-blocks">
+          <div class="dropdown" id="test" value="whatever">
+            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+              Building Blocks
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+            <% BuildingBlock.all.each do |building_block| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value="">Europe</label>
+                <label><input type="checkbox" value=""><%= building_block.name %></label>
               </div></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="search-page-button-environmental-tags">
+          <div class="dropdown" id="test" value="whatever">
+            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+              Environmental Tags
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+            <% EnvironmentalTag.all.each do |environmental_tag| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value="">Asia</label>
+                <label><input type="checkbox" value=""><%= environmental_tag.name %></label>
               </div></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="search-page-button-building-block-substeps">
+          <div class="dropdown" id="test" value="whatever">
+            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+              Building Block Substeps
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+            <% BuildingBlockSubstep.all.each do |building_block_substep| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value="">Africa</label>
+                <label><input type="checkbox" value=""><%= building_block_substep.name %></label>
               </div></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="search-page-button-environmental-subtags">
+          <div class="dropdown" id="test" value="whatever">
+            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+              Environmental Subtags
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
+            <% EnvironmentalSubtag.all.each do |environmental_subtag| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value="">Oceania</label>
+                <label><input type="checkbox" value=""><%= environmental_subtag.name %></label>
               </div></li>
-              <li><div class="checkbox">
-                <label><input type="checkbox" value="">Central & South America</label>
-              </div></li>
+            <% end %>
             </ul>
           </div>
         </div>
