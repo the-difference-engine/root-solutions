@@ -1,9 +1,12 @@
-var searchFunction = function (htmlElement, tableBody) {
+var searchFunction = function (htmlElement, tableBody, existingFilters) {
   $('body').css('cursor', 'progress');
   var htmlElement = $(htmlElement);
-  var filterType = htmlElement.data("filter");
-  var input = { filters: [ [filterType, htmlElement.text()]] };
-  // data[:filters].concat([filterType, htmlElement]);
+  var input = {};
+  var existingFilters = $(existingFilters);
+  existingFilters.each(function(index) {
+    input[$(this).data("filter")] = $(this).text();
+  });
+  input[htmlElement.data("filter")] = htmlElement.text();
   var tableBody = tableBody;
   $.ajax({
     type: "GET",

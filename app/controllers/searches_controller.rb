@@ -8,8 +8,8 @@ class SearchesController < ApplicationController
   def search
     @resources = Resource.all
 
-    if (params[:filters]["0"][0] == "resource_type")
-      @resources = resource_type(@resources, params[:filters["0"][1])
+    if (params[:resource_type] != nil)
+      @resources = resource_type(@resources, params[:resource_type])
     end
 
     if (!@resources.empty?)
@@ -26,7 +26,7 @@ class SearchesController < ApplicationController
   end
 
   private
-  def building_block(resources, )
+  # def building_block(resources, )
 
   def resource_type(resources, name)
     resource_type = ResourceType.find_by(name: name)
