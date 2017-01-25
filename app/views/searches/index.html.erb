@@ -7,7 +7,7 @@
       <div class="search-page-button-wrap">
         <div class="search-page-button-resource-wrap">
           <div class="dropdown" id="test" value="whatever">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               Resource Type
               <span class="caret"></span>
             </button>
@@ -18,8 +18,8 @@
               <li><a href="#" class="search-filter" data-filter="resource_type">Video</a></li>
               <li><a href="#" class="search-filter" data-filter="resource_type">Definition</a></li>
             </ul>
-          </div>
-        </div>
+          </div> <!-- dropdown -->
+        </div> <!-- search-page-button-resource-wrap -->
         <div class="search-page-button-world-regions">
           <div class="dropdown" id="test" value="whatever">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
@@ -33,8 +33,8 @@
               </div></li>
             <% end %>
             </ul>
-          </div>
-        </div>
+          </div> <!-- dropdown -->
+        </div> <!-- search-page-button-world-regions -->
         <div class="search-page-button-building-blocks">
           <div class="dropdown" id="test" value="whatever">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
@@ -107,13 +107,10 @@
         <thead>
           <tr>
             <th>Title</th>
-            <th>Resource Type</th>
             <th class="search-column">World Region</th>
             <th>Author</th>
-            <th class="search-column">News Source</th>
-            <th>Cognitive Bias</th>
-            <th>Environmental Tag</th>
-            <th>Environmental Subtag</th>
+            <th>Environmental Tags</th>
+            <th>Environmental Subtags</th>
             <th>Building Blocks</th>
             <th>Building Blocks Substeps</th>
             <th>Date</th>
@@ -125,17 +122,8 @@
           <% @resources.each do |resource| %>
             <tr>
               <td><%= link_to "#{resource.title}", resource %></td>
-              <td><%= resource.resource_type.name %></td>
               <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
               <td><%= resource.author %></td>
-              <td><%= resource.news_source_id %></td>
-              <td>
-                <% if resource.cognitive_bia.any? %>
-                  <% resource.cognitive_bia.each do | cognitive_bias | %>
-                    <%= cognitive_bias.name %>
-                  <% end %>
-                <% end %>
-              </td>
               <td>
                 <% if resource.environmental_tags.any? %>
                   <% resource.environmental_tags.each do | environmental_tag | %>
