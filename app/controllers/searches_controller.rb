@@ -8,10 +8,42 @@ class SearchesController < ApplicationController
   def search
     @resources = Resource.all
 
+    # resource_type query
     if (params[:resource_type] != nil)
-      @resources = resource_type(@resources, params[:resource_type])
+      @resources = query_resource_type(@resources, params[:resource_type])
     end
 
+    # world_region query
+    if (params[:world_region].any?)
+      @resources = query_world_region(@resources, params[:world_region])
+    end
+
+    # building_block query
+    if (params[:building_block].any?)
+      @resources = query_building_block(@resources, params[:building_block])
+    end
+
+    # environmental_tag query
+    if (params[:environmental_tag].any?)
+      @resources = query_environmental_tag(@resources, params[:environmental_tag])
+    end
+
+    # cognitive_bium query
+    if (params[:cognitive_bium].any?)
+      @resources = query_cognitive_bium(@resources, params[:cognitive_bium])
+    end
+
+    # building_block_substep query
+    if (params[:building_block_substep].any?)
+      @resources = query_building_block_substep(@resources, params[:building_block_substep])
+    end
+
+    # environmental_subtag query
+    if (params[:environmental_subtag].any?)
+      @resources = query_environmental_subtag(@resources, params[:environmental_subtag])
+    end
+
+    # final step: create hash out of query results
     if (!@resources.empty?)
       @resources = hash_create(@resources)
     end
@@ -26,40 +58,38 @@ class SearchesController < ApplicationController
   end
 
   private
-  # def building_block(resources, )
+  def query_building_block(resources, building_blocks)
+    return resources.joins(:building_blocks).where(building_blocks: {name: building_blocks})
+  end
 
-  def resource_type(resources, name)
+  def query_building_block_substep(resources, building_block_substeps)
+    return resources.joins(:building_block_substeps).where(building_block_substeps: {name: building_block_substeps})
+  end
+
+  def query_cognitive_bium(resources, cognitive_bia)
+    return resources.joins(:cognitive_bia).where(cognitive_bia: {name: cognitive_bia})
+  end
+
+  def query_environmental_tag(resources, environmental_tags)
+    return resources.joins(:environmental_tags).where(environmental_tags: {name: environmental_tags})
+  end
+
+  def query_environmental_subtag(resources, environmental_subtags)
+    return resources.joins(:environmental_subtags).where(environmental_subtags: {name: environmental_subtags})
+  end
+
+  def query_resource_type(resources, name)
     resource_type = ResourceType.find_by(name: name)
     return resources = resources.where("resource_type_id = #{resource_type.id}")
+  end
+
+  def query_world_region(resources, world_regions)
+    return resources.joins(:world_regions).where(world_regions: {name: world_regions})
   end
 
   def hash_create(resources)
     resources_hash = []
     resources.each do |resource|
-      building_blocks = []
-      resource.building_blocks.each do |building_block|
-        building_blocks << building_block.name
-      end
-      building_block_substeps = []
-      resource.building_block_substeps.each do |building_block_substeps|
-        building_block_substeps << building_block_substeps.name
-      end
-      cognitive_bia = []
-      resource.cognitive_bia.each do |cognitive_bium|
-        cognitive_bia << cognitive_bium.name
-      end
-      environmental_tags = []
-      resource.environmental_tags.each do |environmental_tag|
-        environmental_tags << environmental_tag.name
-      end
-      environmental_subtags = []
-      resource.environmental_subtags.each do |environmental_subtag|
-        environmental_subtags << environmental_subtag.name
-      end
-      world_regions = []
-      resource.world_regions.each do |world_region|
-        world_regions << world_region.name
-      end
       news_source_name = NewsSource.find_by(id: resource.news_source_id).name
       new_hash = {
         abstract: resource.abstract,
@@ -67,20 +97,8 @@ class SearchesController < ApplicationController
         date: resource.date,
         description: resource.description,
         id: resource.id,
-        is_problem: resource.is_problem,
-        is_published: resource.is_published,
-        is_solution: resource.is_solution,
-        news_source: news_source_name,
-        publisher: resource.publisher,
-        source: resource.source,
         title: resource.title,
         url: resource.url,
-        building_blocks: building_blocks,
-        building_block_substeps: building_block_substeps,
-        cognitive_bia: cognitive_bia,
-        environmental_tags: environmental_tags,
-        environmental_subtags: environmental_subtags,
-        world_region: world_regions
       }
       resources_hash << new_hash
     end
