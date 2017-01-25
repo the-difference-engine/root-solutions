@@ -136,64 +136,37 @@
   $('.search-filter').click(function() {
     var tableBody = $('#search-table-body');
     var existingFilters = $(".existing-filters");
-    searchFunction(this, tableBody, existingFilters);
+    var existingFilterDisplay = $("#existing-filter-display");
+    searchFunction(this, tableBody, existingFilters, existingFilterDisplay);
   });
 </script>
 <!-- data filter div setup
 <div>
-  <ul>
+  <ul id="existing-filter-display">
     <li class="existing-filters" data-filter="#whatever rfitler">Whatever specific of the fillter</li>
   </ul>
 </div>
  -->
  <!-- future table setup
+
+
+<tr>
+  <th>Title</th>
+  <th>Author</th>
+  <th>Date</th>
+  <th class="search-table-content">Description</th>
+  <th class="search-column">URL</th>
+</tr>
+
+
 <tr>
   <td><%= link_to "#{resource.title}", resource %></td>
-  <td><%= resource.resource_type.name %></td>
-  <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
   <td><%= resource.author %></td>
-  <td><%= resource.news_source_id %></td>
-  <td>
-    <% if resource.cognitive_bia.any? %>
-      <% resource.cognitive_bia.each do | cognitive_bias | %>
-        <%= cognitive_bias.name %>
-      <% end %>
-    <% end %>
-  </td>
-  <td>
-    <% if resource.environmental_tags.any? %>
-      <% resource.environmental_tags.each do | environmental_tag | %>
-        <%= environmental_tag.name %>
-      <% end %>
-    <% end %>
-  </td>
-  <td>
-    <% if resource.environmental_subtags.any? %>
-      <% resource.environmental_subtags.each do | environmental_subtag | %>
-        <%= environmental_subtag.name %>
-      <% end %>
-    <% end %>
-  </td>
-  <td>
-    <% if resource.building_blocks.any? %>
-      <% resource.building_blocks.each do | building_block | %>
-        <%= building_block.name %>
-      <% end %>
-    <% end %>
-  </td>
-  <td>
-    <% if resource.building_block_substeps.any? %>
-      <% resource.building_block_substeps.each do | building_block_substep | %>
-        <%= building_block_substep.name %>
-      <% end %>
-    <% end %>
-  </td>
   <td><%= resource.date %></td>
   <% if resource.abstract %>
     <td class="search-table-content"><%= resource.abstract %></td>
   <% else %>
     <td><%= resource.description %></td>
   <% end %>
-  <td><%= resource.url %></td>
-</tr>
+  <td><%= resource.url %></td>>
   -->

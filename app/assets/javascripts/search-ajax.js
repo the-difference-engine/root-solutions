@@ -1,7 +1,8 @@
-var searchFunction = function (htmlElement, tableBody, existingFilters) {
+var searchFunction = function (htmlElement, tableBody, existingFilters, existingFilterDisplay) {
   $('body').css('cursor', 'progress');
   var htmlElement = $(htmlElement);
   var input = {};
+  var existingFilterDisplay = $(existingFilterDisplay);
   var existingFilters = $(existingFilters);
   existingFilters.each(function(index) {
     input[$(this).data("filter")] = $(this).text();
@@ -26,18 +27,8 @@ var searchFunction = function (htmlElement, tableBody, existingFilters) {
         newHtml += "</a>";
         newHtml += "</td>";
         newHtml += "<td>";
-        if (resources[i]["world_region"]) {
-          newHtml += resources[i]["world_region"];
-        }
-        newHtml += "</td>";
-        newHtml += "<td>";
         if (resources[i]["author"]) {
           newHtml += resources[i]["author"];
-        }
-        newHtml += "</td>";
-        newHtml += "<td>";
-        if (resources[i]["news_source"]) {
-          newHtml += resources[i]["news_source"];
         }
         newHtml += "</td>";
         newHtml += "<td>";
@@ -60,6 +51,43 @@ var searchFunction = function (htmlElement, tableBody, existingFilters) {
         newHtml += "</tr>";
       }
       tableBody.html(newHtml);
+      var newFilters = "";
+      if (params["resource_type"]) {
+        newFilters += "<li class='existing-filters' data-filter='resource_type'>";
+        newFilters += params["resource_type"];
+        newFilters += "</li>";
+      }
+      for (var i = 0; i < params["building_block"].length; i ++) {
+        newFilters += "<li class='existing-filters' data-filter='building_block'>";
+        newFilters += params["building_block"][i];
+        newFilters += "</li>";
+      }
+      for (var i = 0; i < params["building_block_substep"].length; i ++) {
+        newFilters += "<li class='existing-filters' data-filter='building_block_substep'>";
+        newFilters += params["building_block_substep"][i];
+        newFilters += "</li>";
+      }
+      for (var i = 0; i < params["cognitive_bium"].length; i ++) {
+        newFilters += "<li class='existing-filters' data-filter='cognitive_bium'>";
+        newFilters += params["cognitive_bium"][i];
+        newFilters += "</li>";
+      }
+      for (var i = 0; i < params["environmental_tag"].length; i ++) {
+        newFilters += "<li class='existing-filters' data-filter='environmental_tag'>";
+        newFilters += params["environmental_tag"][i];
+        newFilters += "</li>";
+      }
+      for (var i = 0; i < params["environmental_subtag"].length; i ++) {
+        newFilters += "<li class='existing-filters' data-filter='environmental_subtag'>";
+        newFilters += params["environmental_subtag"][i];
+        newFilters += "</li>";
+      }
+      for (var i = 0; i < params["world_region"].length; i ++) {
+        newFilters += "<li class='existing-filters' data-filter='world_region'>";
+        newFilters += params["world_region"][i];
+        newFilters += "</li>";
+      }
+      existingFilterDisplay.html(newFilters);
     },
     error: function(data) {
 
