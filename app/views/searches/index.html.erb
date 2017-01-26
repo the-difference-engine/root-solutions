@@ -1,8 +1,16 @@
-<div class="container-fluid">
-  <div class="search-page-body">
-    <h1 class="search-heading-title">
-      Search Results
-    </h1>
+<div class="search-page-body">
+  <div id="search-parallax">
+    <div class="heading-title">
+      <h2 class="title">
+        Search Results
+      </h2>
+      <div id="sub-logo">
+        <%= image_tag("root-logo.png") %>
+      </div>
+    </div>
+  </div> <!-- search-parallax close -->
+  <div id="team-chevron" class="team-background-color"></div>
+  <div class="container-fluid">
     <div class="row">
       <div class="search-page-button-wrap">
         <div class="search-page-button-resource-wrap">
@@ -27,11 +35,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <% WorldRegion.all.each do |world_region| %>
+              <% WorldRegion.all.each do |world_region| %>
               <li><div class="checkbox">
                 <label><input type="checkbox" value=""><%= world_region.name %></label>
               </div></li>
-            <% end %>
+              <% end %>
             </ul>
           </div> <!-- dropdown -->
         </div> <!-- search-page-button-world-regions -->
@@ -42,11 +50,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-            <% BuildingBlock.all.each do |building_block| %>
+              <% BuildingBlock.all.each do |building_block| %>
               <li><div class="checkbox">
                 <label><input type="checkbox" value=""><%= building_block.name %></label>
               </div></li>
-            <% end %>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -57,11 +65,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-            <% EnvironmentalTag.all.each do |environmental_tag| %>
+              <% EnvironmentalTag.all.each do |environmental_tag| %>
               <li><div class="checkbox">
                 <label><input type="checkbox" value=""><%= environmental_tag.name %></label>
               </div></li>
-            <% end %>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -72,11 +80,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
-            <% BuildingBlockSubstep.all.each do |building_block_substep| %>
+              <% BuildingBlockSubstep.all.each do |building_block_substep| %>
               <li><div class="checkbox">
                 <label><input type="checkbox" value=""><%= building_block_substep.name %></label>
               </div></li>
-            <% end %>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -87,11 +95,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
-            <% EnvironmentalSubtag.all.each do |environmental_subtag| %>
+              <% EnvironmentalSubtag.all.each do |environmental_subtag| %>
               <li><div class="checkbox">
                 <label><input type="checkbox" value=""><%= environmental_subtag.name %></label>
               </div></li>
-            <% end %>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -120,52 +128,52 @@
         </thead>
         <tbody id="search-table-body">
           <% @resources.each do |resource| %>
-            <tr>
-              <td><%= link_to "#{resource.title}", resource %></td>
-              <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
-              <td><%= resource.author %></td>
-              <td>
-                <% if resource.environmental_tags.any? %>
-                  <% resource.environmental_tags.each do | environmental_tag | %>
-                    <%= environmental_tag.name %>
-                  <% end %>
-                <% end %>
-              </td>
-              <td>
-                <% if resource.environmental_subtags.any? %>
-                  <% resource.environmental_subtags.each do | environmental_subtag | %>
-                    <%= environmental_subtag.name %>
-                  <% end %>
-                <% end %>
-              </td>
-              <td>
-                <% if resource.building_blocks.any? %>
-                  <% resource.building_blocks.each do | building_block | %>
-                    <%= building_block.name %>
-                  <% end %>
-                <% end %>
-              </td>
-              <td>
-                <% if resource.building_block_substeps.any? %>
-                  <% resource.building_block_substeps.each do | building_block_substep | %>
-                    <%= building_block_substep.name %>
-                  <% end %>
-                <% end %>
-              </td>
-              <td><%= resource.date %></td>
-              <% if resource.abstract %>
-                <td class="search-table-content"><%= resource.abstract %></td>
-              <% else %>
-                <td><%= resource.description %></td>
+          <tr>
+            <td><%= link_to "#{resource.title}", resource %></td>
+            <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
+            <td><%= resource.author %></td>
+            <td>
+              <% if resource.environmental_tags.any? %>
+              <% resource.environmental_tags.each do | environmental_tag | %>
+              <%= environmental_tag.name %>
               <% end %>
-              <td><%= resource.url %></td>
-            </tr>
+              <% end %>
+            </td>
+            <td>
+              <% if resource.environmental_subtags.any? %>
+              <% resource.environmental_subtags.each do | environmental_subtag | %>
+              <%= environmental_subtag.name %>
+              <% end %>
+              <% end %>
+            </td>
+            <td>
+              <% if resource.building_blocks.any? %>
+              <% resource.building_blocks.each do | building_block | %>
+              <%= building_block.name %>
+              <% end %>
+              <% end %>
+            </td>
+            <td>
+              <% if resource.building_block_substeps.any? %>
+              <% resource.building_block_substeps.each do | building_block_substep | %>
+              <%= building_block_substep.name %>
+              <% end %>
+              <% end %>
+            </td>
+            <td><%= resource.date %></td>
+            <% if resource.abstract %>
+            <td class="search-table-content"><%= resource.abstract %></td>
+            <% else %>
+            <td><%= resource.description %></td>
+            <% end %>
+            <td><%= resource.url %></td>
+          </tr>
           <% end %>
         </tbody>
       </table>
     </div> <!-- search-page-wrap -->
-  </div> <!-- search-page-body -->
-</div> <!-- container-fluid -->
+  </div> <!-- container-fluid -->
+</div> <!-- search-page-body -->
 
 <script type="text/javascript">
   $('.search-filter').click(function() {
