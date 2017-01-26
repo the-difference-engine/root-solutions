@@ -10,13 +10,44 @@ class SearchesController < ApplicationController
   end
 
   def search
-    @resources = []
+    @resources = Resource.all
 
-    if (params[:filters]["0"][0] == "resource_type")
-      resource_type = ResourceType.find_by(name: params[:filters]["0"][1])
-      @resources = Resource.select("resources.*, world_regions.name").left_outer_joins(:world_regions).where("resource_type_id = #{resource_type.id}")
+    # resource_type query
+    if (params[:resource_type] != nil)
+      @resources = query_resource_type(@resources, params[:resource_type])
     end
 
+    # world_region query
+    if (params[:world_region])
+      @resources = query_world_region(@resources, params[:world_region])
+    end
+
+    # building_block query
+    if (params[:building_block])
+      @resources = query_building_block(@resources, params[:building_block])
+    end
+
+    # environmental_tag query
+    if (params[:environmental_tag])
+      @resources = query_environmental_tag(@resources, params[:environmental_tag])
+    end
+
+    # cognitive_bium query
+    if (params[:cognitive_bium])
+      @resources = query_cognitive_bium(@resources, params[:cognitive_bium])
+    end
+
+    # building_block_substep query
+    if (params[:building_block_substep])
+      @resources = query_building_block_substep(@resources, params[:building_block_substep])
+    end
+
+    # environmental_subtag query
+    if (params[:environmental_subtag])
+      @resources = query_environmental_subtag(@resources, params[:environmental_subtag])
+    end
+
+    # final step: create hash out of query results
     if (!@resources.empty?)
       @resources = hash_create(@resources)
     end
@@ -31,6 +62,34 @@ class SearchesController < ApplicationController
   end
 
   private
+  def query_building_block(resources, building_blocks)
+    return resources.joins(:building_blocks).where(building_blocks: {name: building_blocks})
+  end
+
+  def query_building_block_substep(resources, building_block_substeps)
+    return resources.joins(:building_block_substeps).where(building_block_substeps: {name: building_block_substeps})
+  end
+
+  def query_cognitive_bium(resources, cognitive_bia)
+    return resources.joins(:cognitive_bia).where(cognitive_bia: {name: cognitive_bia})
+  end
+
+  def query_environmental_tag(resources, environmental_tags)
+    return resources.joins(:environmental_tags).where(environmental_tags: {name: environmental_tags})
+  end
+
+  def query_environmental_subtag(resources, environmental_subtags)
+    return resources.joins(:environmental_subtags).where(environmental_subtags: {name: environmental_subtags})
+  end
+
+  def query_resource_type(resources, name)
+    resource_type = ResourceType.find_by(name: name)
+    return resources = resources.where("resource_type_id = #{resource_type.id}")
+  end
+
+  def query_world_region(resources, world_regions)
+    return resources.joins(:world_regions).where(world_regions: {name: world_regions})
+  end
 
   def hash_create(resources)
     resources_hash = []
@@ -42,15 +101,8 @@ class SearchesController < ApplicationController
         date: resource.date,
         description: resource.description,
         id: resource.id,
-        is_problem: resource.is_problem,
-        is_published: resource.is_published,
-        is_solution: resource.is_solution,
-        news_source: news_source_name,
-        publisher: resource.publisher,
-        source: resource.source,
         title: resource.title,
         url: resource.url,
-        world_region: resource.name
       }
       resources_hash << new_hash
     end
