@@ -35,7 +35,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu2">
               <% WorldRegion.all.each do |world_region| %>
               <li><div class="checkbox">
-                <label><input class="search-filter" data-filter="world_region" type="checkbox"><%= world_region.name %></label>
+                <label class="search-filter" data-filter="world_region"><input type="checkbox"><%= world_region.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -157,9 +157,6 @@
 
 <script type="text/javascript">
   $('.search-filter').click(function() {
-    console.log(this);
-    console.log($(this).data("filter"));
-    console.log($(this).text());
     var tableBody = $('#search-table-body');
     var existingFilters = $(".existing-filters");
     var existingFilterDisplay = $("#existing-filter-display");

@@ -10,12 +10,18 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
     } else {
       if (input[$(this).data("filter")] == null) {
         input[$(this).data("filter")] = [];
-      } else {
-        input[$(this).data("filter")].push($(this).text());
       }
+      input[$(this).data("filter")].push($(this).text());
     }
   });
-  input[htmlElement.data("filter")] = htmlElement.text();
+  if (htmlElement.data("filter") == "resource_type") {
+    input[htmlElement.data("filter")] = htmlElement.text();
+  } else {
+    if (input[htmlElement.data("filter")] == null) {
+      input[htmlElement.data("filter")] = [];
+    }
+    input[htmlElement.data("filter")].push(htmlElement.text());
+  }
   var tableBody = tableBody;
   $.ajax({
     type: "GET",
