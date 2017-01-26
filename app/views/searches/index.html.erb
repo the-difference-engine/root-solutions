@@ -19,7 +19,7 @@
               Resource Type
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu1">
               <% ResourceType.all.each do |resource_type| %>
                 <li><a href="#" class="search-filter" data-filter="resource_type"><%= resource_type.name %></a></li>
               <% end %>
@@ -32,7 +32,7 @@
               World Regions
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu2">
               <% WorldRegion.all.each do |world_region| %>
               <li><div class="checkbox">
                 <label><input class="search-filter" data-filter="world_region" type="checkbox"><%= world_region.name %></label>
@@ -47,7 +47,7 @@
               Building Blocks
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu3">
               <% BuildingBlock.all.each do |building_block| %>
               <li><div class="checkbox">
                 <label><input class="search-filter" data-filter="building_block" type="checkbox"><%= building_block.name %></label>
@@ -62,7 +62,7 @@
               Environmental Tags
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu4">
               <% EnvironmentalTag.all.each do |environmental_tag| %>
               <li><div class="checkbox">
                 <label><input class="search-filter" data-filter="environmental_tag" type="checkbox"><%= environmental_tag.name %></label>
@@ -77,7 +77,7 @@
               Building Block Substeps
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu5">
               <% BuildingBlockSubstep.all.each do |building_block_substep| %>
               <li><div class="checkbox">
                 <label><input class="search-filter" data-filter="building_block_substep" type="checkbox"><%= building_block_substep.name %></label>
@@ -92,7 +92,7 @@
               Environmental Subtags
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu6">
               <% EnvironmentalSubtag.all.each do |environmental_subtag| %>
               <li><div class="checkbox">
                 <label><input class="search-filter" data-filter="environmental_subtag" type="checkbox"><%= environmental_subtag.name %></label>
@@ -107,7 +107,7 @@
               Cognitive Bias
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu7">
+            <ul class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenu7">
               <% CognitiveBium.all.each do |cognitive_bium| %>
               <li><div class="checkbox">
                 <label><input class="search-filter" data-filter="cognitive_bium" type="checkbox"><%= cognitive_bium.name %></label>

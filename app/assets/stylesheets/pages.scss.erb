@@ -1009,20 +1009,32 @@ button.learn-more:hover {
   background-color: transparent !important;
 }
 
+.dropdown-heading:hover {
+  background-color: white !important;
+}
+
+.dropdown-heading:focus {
+  background-color: white !important;
+}
+
+
 #home-button:hover {
   // color: #A9B3A8 !important;
 }
 
-.nav .open a:hover {
+.nav .open .dropdown-nav-custom:hover {
+  background: none;
   background-color: transparent !important;
   // opacity: 1 !important;
 }
 
-.navbar-default .navbar-nav .open a:focus {
+.navbar-default .navbar-nav .open .dropdown-nav-custom:focus {
+  background: none;
   background-color: transparent !important;
 }
 
-.navbar-default .navbar-nav .open a {
+.navbar-default .navbar-nav .open .dropdown-nav-custom {
+  background: none;
   background-color: transparent !important;
 }
 
@@ -1784,6 +1796,10 @@ button.learn-more:hover {
   background-size: cover;
   background-image: url( <%= image_path 'beach_sunset.jpg' %>); /* add image of choice */
   height: 400px;
+}
+
+.search-dropdown {
+  margin-top: 0px;
 }
 
 .home-glyphicon-wrap {
