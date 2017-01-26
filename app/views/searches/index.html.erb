@@ -21,7 +21,7 @@
             </button>
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu1">
               <% ResourceType.all.each do |resource_type| %>
-                <li><a href="#" class="search-filter" data-filter="resource_type"><%= resource_type.name %></a></li>
+                <li><a href="#" class="search-filter" data-filter="resource_type" data-value="<%=resource_type.name%>"><%= resource_type.name %></a></li>
               <% end %>
             </ul>
           </div> <!-- dropdown -->
@@ -35,7 +35,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu2">
               <% WorldRegion.all.each do |world_region| %>
               <li><div class="checkbox">
-                <label class="search-filter" data-filter="world_region"><input type="checkbox"><%= world_region.name %></label>
+                <label><input class="search-filter" data-filter="world_region" data-value="<%= world_region.name %>" type="checkbox"><%= world_region.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -50,7 +50,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu3">
               <% BuildingBlock.all.each do |building_block| %>
               <li><div class="checkbox">
-                <label><input class="search-filter" data-filter="building_block" type="checkbox"><%= building_block.name %></label>
+                <label><input class="search-filter" data-filter="building_block" data-value="<%= building_block.name %>" type="checkbox"><%= building_block.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -65,7 +65,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu4">
               <% EnvironmentalTag.all.each do |environmental_tag| %>
               <li><div class="checkbox">
-                <label><input class="search-filter" data-filter="environmental_tag" type="checkbox"><%= environmental_tag.name %></label>
+                <label><input class="search-filter" data-filter="environmental_tag" data-value="<%= environmental_tag.name %>" type="checkbox"><%= environmental_tag.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -80,7 +80,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu5">
               <% BuildingBlockSubstep.all.each do |building_block_substep| %>
               <li><div class="checkbox">
-                <label><input class="search-filter" data-filter="building_block_substep" type="checkbox"><%= building_block_substep.name %></label>
+                <label><input class="search-filter" data-filter="building_block_substep" data-value="<%= building_block_substep.name %>" type="checkbox"><%= building_block_substep.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -95,7 +95,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu6">
               <% EnvironmentalSubtag.all.each do |environmental_subtag| %>
               <li><div class="checkbox">
-                <label><input class="search-filter" data-filter="environmental_subtag" type="checkbox"><%= environmental_subtag.name %></label>
+                <label><input class="search-filter" data-filter="environmental_subtag" data-value="<%= environmental_subtag.name %>" type="checkbox"><%= environmental_subtag.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -110,7 +110,7 @@
             <ul class="dropdown-menu search-dropdown scrollable-menu" aria-labelledby="dropdownMenu7">
               <% CognitiveBium.all.each do |cognitive_bium| %>
               <li><div class="checkbox">
-                <label><input class="search-filter" data-filter="cognitive_bium" type="checkbox"><%= cognitive_bium.name %></label>
+                <label><input class="search-filter" data-filter="cognitive_bium" data-value="<%= cognitive_bium.name %>" type="checkbox"><%= cognitive_bium.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -138,7 +138,7 @@
         <tbody id="search-table-body">
           <% @resources.each do |resource| %>
             <tr>
-              <td class="search-column-1"><%= link_to "#{resource.title}", resource %></td>
+              <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
               <td class="search-column-1"><%= resource.author %></td>
               <td class="search-column"><%= resource.date %></td>
               <% if resource.abstract %>

@@ -6,22 +6,23 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
   var existingFilters = $(existingFilters);
   existingFilters.each(function(index) {
     if ($(this).data("filter") == "resource_type") {
-      input[$(this).data("filter")] = $(this).text();
+      input[$(this).data("filter")] = $(this).data("value");
     } else {
       if (input[$(this).data("filter")] == null) {
         input[$(this).data("filter")] = [];
       }
-      input[$(this).data("filter")].push($(this).text());
+      input[$(this).data("filter")].push($(this).data("value"));
     }
   });
   if (htmlElement.data("filter") == "resource_type") {
-    input[htmlElement.data("filter")] = htmlElement.text();
+    input[htmlElement.data("filter")] = htmlElement.data("value");
   } else {
     if (input[htmlElement.data("filter")] == null) {
       input[htmlElement.data("filter")] = [];
     }
-    input[htmlElement.data("filter")].push(htmlElement.text());
+    input[htmlElement.data("filter")].push(htmlElement.data("value"));
   }
+  debugger;
   var tableBody = tableBody;
   $.ajax({
     type: "GET",
@@ -35,7 +36,7 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
         for(var i = 0; i < resources.length; i++) {
           newHtml += "<tr>";
           newHtml += "<td>";
-          newHtml += "<a href='/resources/" + resources[i]["id"] +"'>";
+          newHtml += "<a href='/search/" + resources[i]["id"] +"'>";
           if (resources[i]["title"]) {
             newHtml += resources[i]["title"];
           }
