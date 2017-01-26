@@ -14,22 +14,20 @@
     <div class="row">
       <div class="search-page-button-wrap">
         <div class="search-page-button-resource-wrap">
-          <div class="dropdown" id="test" value="whatever">
+          <div class="dropdown" id="test">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               Resource Type
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#" class="search-filter" data-filter="resource_type">Academic Article</a></li>
-              <li><a href="#" class="search-filter" data-filter="resource_type">Popular Article</a></li>
-              <li><a href="#" class="search-filter" data-filter="resource_type">Case Study</a></li>
-              <li><a href="#" class="search-filter" data-filter="resource_type">Video</a></li>
-              <li><a href="#" class="search-filter" data-filter="resource_type">Definition</a></li>
+              <% ResourceType.all.each do |resource_type| %>
+                <li><a href="#" class="search-filter" data-filter="resource_type"><%= resource_type.name %></a></li>
+              <% end %>
             </ul>
           </div> <!-- dropdown -->
         </div> <!-- search-page-button-resource-wrap -->
         <div class="search-page-button-world-regions">
-          <div class="dropdown" id="test" value="whatever">
+          <div class="dropdown" id="test">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               World Regions
               <span class="caret"></span>
@@ -37,14 +35,14 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
               <% WorldRegion.all.each do |world_region| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value=""><%= world_region.name %></label>
+                <label><input class="search-filter" data-filter="world_region" type="checkbox"><%= world_region.name %></label>
               </div></li>
               <% end %>
             </ul>
           </div> <!-- dropdown -->
         </div> <!-- search-page-button-world-regions -->
         <div class="search-page-button-building-blocks">
-          <div class="dropdown" id="test" value="whatever">
+          <div class="dropdown" id="test">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               Building Blocks
               <span class="caret"></span>
@@ -52,14 +50,14 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
               <% BuildingBlock.all.each do |building_block| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value=""><%= building_block.name %></label>
+                <label><input class="search-filter" data-filter="building_block" type="checkbox"><%= building_block.name %></label>
               </div></li>
               <% end %>
             </ul>
           </div>
         </div>
         <div class="search-page-button-environmental-tags">
-          <div class="dropdown" id="test" value="whatever">
+          <div class="dropdown" id="test">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               Environmental Tags
               <span class="caret"></span>
@@ -67,14 +65,14 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
               <% EnvironmentalTag.all.each do |environmental_tag| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value=""><%= environmental_tag.name %></label>
+                <label><input class="search-filter" data-filter="environmental_tag" type="checkbox"><%= environmental_tag.name %></label>
               </div></li>
               <% end %>
             </ul>
           </div>
         </div>
         <div class="search-page-button-building-block-substeps">
-          <div class="dropdown" id="test" value="whatever">
+          <div class="dropdown" id="test">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               Building Block Substeps
               <span class="caret"></span>
@@ -82,14 +80,14 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
               <% BuildingBlockSubstep.all.each do |building_block_substep| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value=""><%= building_block_substep.name %></label>
+                <label><input class="search-filter" data-filter="building_block_substep" type="checkbox"><%= building_block_substep.name %></label>
               </div></li>
               <% end %>
             </ul>
           </div>
         </div>
         <div class="search-page-button-environmental-subtags">
-          <div class="dropdown" id="test" value="whatever">
+          <div class="dropdown" id="test">
             <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
               Environmental Subtags
               <span class="caret"></span>
@@ -97,7 +95,22 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
               <% EnvironmentalSubtag.all.each do |environmental_subtag| %>
               <li><div class="checkbox">
-                <label><input type="checkbox" value=""><%= environmental_subtag.name %></label>
+                <label><input class="search-filter" data-filter="environmental_subtag" type="checkbox"><%= environmental_subtag.name %></label>
+              </div></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="search-page-button-environmental-subtags">
+          <div class="dropdown" id="test">
+            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+              Cognitive Bias
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu7">
+              <% CognitiveBium.all.each do |cognitive_bium| %>
+              <li><div class="checkbox">
+                <label><input class="search-filter" data-filter="cognitive_bium" type="checkbox"><%= cognitive_bium.name %></label>
               </div></li>
               <% end %>
             </ul>
@@ -106,8 +119,9 @@
       </div> <!-- search-page-button-wrap -->
     </div> <!-- row -->
     <div class="row">
-      <div class="search-existing-filters">
-
+      <div>
+        <ul id="existing-filter-display">
+        </ul>
       </div>
     </div> <!-- row -->
     <div class="search-page-wrap">
@@ -115,12 +129,7 @@
         <thead>
           <tr>
             <th>Title</th>
-            <th class="search-column">World Region</th>
             <th>Author</th>
-            <th>Environmental Tags</th>
-            <th>Environmental Subtags</th>
-            <th>Building Blocks</th>
-            <th>Building Blocks Substeps</th>
             <th>Date</th>
             <th class="search-table-content">Description</th>
             <th class="search-column">URL</th>
@@ -128,46 +137,17 @@
         </thead>
         <tbody id="search-table-body">
           <% @resources.each do |resource| %>
-          <tr>
-            <td><%= link_to "#{resource.title}", resource %></td>
-            <td><%= resource.world_regions.first.name if resource.world_regions.any? %></td>
-            <td><%= resource.author %></td>
-            <td>
-              <% if resource.environmental_tags.any? %>
-              <% resource.environmental_tags.each do | environmental_tag | %>
-              <%= environmental_tag.name %>
+            <tr>
+              <td><%= link_to "#{resource.title}", resource %></td>
+              <td><%= resource.author %></td>
+              <td><%= resource.date %></td>
+              <% if resource.abstract %>
+                <td class="search-table-content"><%= resource.abstract %></td>
+              <% else %>
+                <td><%= resource.description %></td>
               <% end %>
-              <% end %>
-            </td>
-            <td>
-              <% if resource.environmental_subtags.any? %>
-              <% resource.environmental_subtags.each do | environmental_subtag | %>
-              <%= environmental_subtag.name %>
-              <% end %>
-              <% end %>
-            </td>
-            <td>
-              <% if resource.building_blocks.any? %>
-              <% resource.building_blocks.each do | building_block | %>
-              <%= building_block.name %>
-              <% end %>
-              <% end %>
-            </td>
-            <td>
-              <% if resource.building_block_substeps.any? %>
-              <% resource.building_block_substeps.each do | building_block_substep | %>
-              <%= building_block_substep.name %>
-              <% end %>
-              <% end %>
-            </td>
-            <td><%= resource.date %></td>
-            <% if resource.abstract %>
-            <td class="search-table-content"><%= resource.abstract %></td>
-            <% else %>
-            <td><%= resource.description %></td>
-            <% end %>
-            <td><%= resource.url %></td>
-          </tr>
+              <td><%= resource.url %></td>
+            </tr>
           <% end %>
         </tbody>
       </table>
