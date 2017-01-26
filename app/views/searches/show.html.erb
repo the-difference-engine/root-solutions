@@ -16,9 +16,7 @@
     <h1 class="resources-heading-title"><%= @resource.title %></h1>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.title %>
-          <p>Title:</p>
-        <% end %>
+          <p class="resources-category">Title:</p>
       </div>
       <div class="col-md-9">
         <p><%= @resource.title %></p>
@@ -26,9 +24,7 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.author %>
-          <p>Author:</p>
-        <% end %>
+        <p class="resources-category">Author:</p>
       </div>
       <div class="col-md-9">
         <p><%= @resource.author %></p>
@@ -36,37 +32,77 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.resource_type %>
-          <p>Resource Type</p>
-        <% end %>
+        <p class="resources-category">Resource Type</p>
       </div>
       <div class="col-md-9">
         <p>
           <% if @resource.resource_type %>
             <%= @resource.resource_type.name %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.news_source %>
-          <p>News Source:</p>
-        <% end %>
+        <p class="resources-category">News Source:</p>
       </div>
       <div class="col-md-9">
         <p>
         <% if @resource.news_source %>
           <%= @resource.news_source.name %>
+        <% else %>
+          None
         <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.world_regions.any? %>
-          <p>World Region:</p>
-        <% end %>
+        <p class="resources-category">Already Published?</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% if @resource.is_problem == false %>
+            No
+          <% else %>
+            Yes
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p class="resources-category">Problem?</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% if @resource.is_problem == false %>
+            No
+          <% else %>
+            Yes
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p class="resources-category">Solution?</p>
+      </div>
+      <div class="col-md-9">
+        <p>
+          <% if @resource.is_solution == false %>
+            No
+          <% else %>
+            Yes
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p class="resources-category">World Region:</p>
       </div>
       <div class="col-md-9">
         <p>
@@ -75,137 +111,139 @@
               <ul class="search-show-list">
                 <li><%= world_region.name %></li>
             <% end %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.environmental_tags.any? %>
-          <p>Environmental Tag(s):</p>
-        <% end %>
+        <p class="resources-category">Environmental Tag(s):</p>
       </div>
       <div class="col-md-9">
         <p>
-          <% if @resource.environmental_tags %>
+          <% if @resource.environmental_tags.any? %>
             <% @resource.environmental_tags.all.each do | environmental_tag | %>
               <ul class="search-show-list">
                 <li><%= environmental_tag.name %></li>
               </ul>
             <% end %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.environmental_subtags.any? %>
-          <p>Environmental Subtag(s):</p>
-        <% end %>
+        <p class="resources-category">Environmental Subtag(s):</p>
       </div>
       <div class="col-md-9">
         <p>
-          <% if @resource.environmental_subtags %>
+          <% if @resource.environmental_subtags.any? %>
             <% @resource.environmental_subtags.all.each do | environmental_subtag | %>
               <ul class="search-show-list">
                 <li><%= environmental_subtag.name %></li>
               </ul>
             <% end %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.building_blocks.any? %>
-          <p>Building Block(s):</p>
-        <% end %>
+        <p class="resources-category">Building Block(s):</p>
       </div>
       <div class="col-md-9">
         <p>
-          <% if @resource.building_blocks %>
+          <% if @resource.building_blocks.any? %>
             <% @resource.building_blocks.all.each do | building_block | %>
               <ul class="search-show-list">
                 <li><%= building_block.name %></li>
               </ul>
             <% end %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.building_block_substeps.any? %>
-          <p>Building Block Substep(s):</p>
-        <% end %>
+        <p class="resources-category">Building Block Substep(s):</p>
       </div>
       <div class="col-md-9">
         <p>
-          <% if @resource.building_block_substeps %>
+          <% if @resource.building_block_substeps.any? %>
             <% @resource.building_block_substeps.all.each do | building_block_substep | %>
               <ul class="search-show-list">
                 <li><%= building_block_substep.name %></li>
               </ul>
             <% end %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.cognitive_bia.any? %>
-          <p>Cognitive Bia(s):</p>
-        <% end %>
+        <p class="resources-category">Cognitive Bia(s):</p>
       </div>
       <div class="col-md-9">
         <p>
-          <% if @resource.cognitive_bia %>
+          <% if @resource.cognitive_bia.any? %>
             <% @resource.cognitive_bia.all.each do | cognitive_bias | %>
               <ul class="search-show-list">
                 <li><%= cognitive_bias.name %></li>
             <% end %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.date %>
-          <p>Date:</p>
-        <% end %>
+        <p class="resources-category">Date:</p>
       </div>
       <div class="col-md-9">
         <p>
           <% if @resource.date %>
             <%= @resource.date.strftime("%B %d, %Y") %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.url %>
-          <p>URL:</p>
-        <% end %>
+        <p class="resources-category">URL:</p>
       </div>
       <div class="col-md-9">
         <p>
           <% if @resource.url %>
             <%= link_to "#{@resource.url}", @resource.url, target: "_blank" %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <% if @resource.abstract %>
-          <p>Abstract:</p>
-        <% end %>
+        <p class="resources-category">Abstract:</p>
       </div>
       <div class="col-md-9">
         <p>
           <% if @resource.abstract %>
             <%= @resource.abstract %>
+          <% else %>
+            None
           <% end %>
         </p>
       </div>
