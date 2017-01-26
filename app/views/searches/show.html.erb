@@ -39,7 +39,7 @@
           <% if @resource.resource_type %>
             <%= @resource.resource_type.name %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -53,7 +53,7 @@
         <% if @resource.news_source %>
           <%= @resource.news_source.name %>
         <% else %>
-          None
+          No data
         <% end %>
         </p>
       </div>
@@ -112,7 +112,7 @@
                 <li><%= world_region.name %></li>
             <% end %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -130,7 +130,7 @@
               </ul>
             <% end %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -148,7 +148,7 @@
               </ul>
             <% end %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -166,7 +166,7 @@
               </ul>
             <% end %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -184,7 +184,7 @@
               </ul>
             <% end %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -201,7 +201,7 @@
                 <li><%= cognitive_bias.name %></li>
             <% end %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -215,7 +215,7 @@
           <% if @resource.date %>
             <%= @resource.date.strftime("%B %d, %Y") %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -229,7 +229,7 @@
           <% if @resource.url %>
             <%= link_to "#{@resource.url}", @resource.url, target: "_blank" %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
@@ -243,14 +243,14 @@
           <% if @resource.abstract %>
             <%= @resource.abstract %>
           <% else %>
-            None
+            No data
           <% end %>
         </p>
       </div>
     </div>
     <div class="row" style="text-align: center; padding-top: 25px; padding-bottom: 50px;">
-      <div class="col-md-12">
-        <%= link_to "View all resources", resources_path, target: "_blank", :class => 'btn btn-primary' %>
+      <div class="col-md-12 resource-show-client-button-div">
+        <%= link_to "View all resources", resources_path, target: "_blank", :class => 'btn btn-default' %>
       </div>
     </div>
   </div> <!-- container-fluid -->
