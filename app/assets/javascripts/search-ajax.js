@@ -25,38 +25,44 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
       console.log("ON SUCCESS PATH");
       var resources = data["resources"];
       var newHtml = "";
-      for(var i = 0; i < resources.length; i++) {
-        newHtml += "<tr>";
-        newHtml += "<td>";
-        newHtml += "<a href='/resources/" + resources[i]["id"] +"'>";
-        if (resources[i]["title"]) {
-          newHtml += resources[i]["title"];
+      if (resources.length > 0) {
+        for(var i = 0; i < resources.length; i++) {
+          newHtml += "<tr>";
+          newHtml += "<td>";
+          newHtml += "<a href='/resources/" + resources[i]["id"] +"'>";
+          if (resources[i]["title"]) {
+            newHtml += resources[i]["title"];
+          }
+          newHtml += "</a>";
+          newHtml += "</td>";
+          newHtml += "<td>";
+          if (resources[i]["author"]) {
+            newHtml += resources[i]["author"];
+          }
+          newHtml += "</td>";
+          newHtml += "<td>";
+          if (resources[i]["date"]) {
+            newHtml += resources[i]["date"];
+          }
+          newHtml += "</td>";
+          newHtml += "<td>";
+          if (resources[i]["description"]) {
+            newHtml += resources[i]["description"];
+          } else if (resources[i]["abstract"]) {
+            newHtml += resources[i]["abstract"];
+          }
+          newHtml += "</td>";
+          newHtml += "<td>";
+          if (resources[i]["url"]) {
+            newHtml += resources[i]["url"];
+          }
+          newHtml += "</td>";
+          newHtml += "</tr>";
         }
-        newHtml += "</a>";
-        newHtml += "</td>";
-        newHtml += "<td>";
-        if (resources[i]["author"]) {
-          newHtml += resources[i]["author"];
-        }
-        newHtml += "</td>";
-        newHtml += "<td>";
-        if (resources[i]["date"]) {
-          newHtml += resources[i]["date"];
-        }
-        newHtml += "</td>";
-        newHtml += "<td>";
-        if (resources[i]["description"]) {
-          newHtml += resources[i]["description"];
-        } else if (resources[i]["abstract"]) {
-          newHtml += resources[i]["abstract"];
-        }
-        newHtml += "</td>";
-        newHtml += "<td>";
-        if (resources[i]["url"]) {
-          newHtml += resources[i]["url"];
-        }
-        newHtml += "</td>";
-        newHtml += "</tr>";
+      } else {
+        newHtml += "<h2 style='margin-bottom: 400px;'>";
+        newHtml += "No Results!";
+        newHtml += "</h2>";
       }
       tableBody.html(newHtml);
       var newFilters = "";
