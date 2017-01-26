@@ -1701,6 +1701,8 @@ button.learn-more:hover {
 .resources-heading-title {
   text-align: center;
   padding-bottom: 50px;
+  color: $green5;
+  padding-top: 25px;
 }
 
 .logged-in-as {
@@ -1861,3 +1863,36 @@ button.learn-more:hover {
   padding-bottom: 50px;
 }
 
+#search-show-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url( <%= image_path 'roof_top_garden.jpg' %>); /* add image of choice */
+  height: 400px;
+}
+
+#search-show-chevron {
+  background: #ffffff; 
+  -webkit-clip-path: polygon(50% 80%, 100% 0, 100% 100%, 0 100%, 0 0);
+  margin: -115px 0px 0px 0px;
+  padding: 60px 0px 60px 100px; 
+  background-color: white;
+}
+
+.search-show-list {
+  list-style-type:none;
+  list-style-position:inside;
+  padding-left:0px;
+  font-size: 20px;
+}
+
+.resources-category {
+  text-align: right;
+  font-weight: bold;
+}
+.resource-show-client-button {
+  color: $green5;
+  padding-top: 25px;
+}

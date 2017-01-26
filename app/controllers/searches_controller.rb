@@ -5,6 +5,10 @@ class SearchesController < ApplicationController
     @resources = Resource.all
   end
 
+  def show
+    @resource = Resource.find_by(id: params[:id])
+  end
+
   def search
     @resources = []
 

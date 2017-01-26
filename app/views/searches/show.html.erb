@@ -1,0 +1,260 @@
+<div id="search-show-parallax"> 
+  <div class="heading-title">
+    <h2 class="title">
+      Resource Page
+    </h2>
+    <div id="sub-logo">
+      <%= image_tag("root-logo.png") %>
+    </div>
+  </div>
+</div> <!-- partners-parallax -->
+<div id="search-show-chevron" class="backgroundcolor"></div>
+</div>
+<div class="resources-show-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h1 class="resources-heading-title"><%= @resource.title %></h1>
+        <div class="col-md-3">
+          <p class="resources-category">Title:</p>
+        </div>
+        <div class="col-md-9">
+          <p><%= @resource.title %></p>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Author:</p>
+          </div>
+          <div class="col-md-9">
+            <p><%= @resource.author %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Resource Type:</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.resource_type %>
+                <%= @resource.resource_type.name %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">News Source:</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.news_source %>
+                <%= @resource.news_source.name %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Already Published?</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.is_problem == false %>
+                No
+              <% else %>
+                Yes
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Problem?</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.is_problem == false %>
+                No
+              <% else %>
+                Yes
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Solution?</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.is_solution == false %>
+                No
+              <% else %>
+                Yes
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">World Region:</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.world_regions %>
+                <% @resource.world_regions.each do | world_region | %>
+                <ul class="search-show-list">
+                  <li><%= world_region.name %></li>
+                </ul>
+                <% end %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Environmental Tag(s):</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.environmental_tags.any? %>
+                <% @resource.environmental_tags.all.each do | environmental_tag | %>
+                <ul class="search-show-list">
+                  <li><%= environmental_tag.name %></li>
+                </ul>
+                <% end %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Environmental Subtag(s):</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.environmental_subtags.any? %>
+                <% @resource.environmental_subtags.all.each do | environmental_subtag | %>
+                <ul class="search-show-list">
+                  <li><%= environmental_subtag.name %></li>
+                </ul>
+                <% end %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Building Block(s):</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.building_blocks.any? %>
+                <% @resource.building_blocks.all.each do | building_block | %>
+                <ul class="search-show-list">
+                  <li><%= building_block.name %></li>
+                </ul>
+                <% end %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Building Block Substep(s):</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.building_block_substeps.any? %>
+                <% @resource.building_block_substeps.all.each do | building_block_substep | %>
+                <ul class="search-show-list">
+                  <li><%= building_block_substep.name %></li>
+                </ul>
+                <% end %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Cognitive Bia(s):</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.cognitive_bia.any? %>
+                <% @resource.cognitive_bia.all.each do | cognitive_bias | %>
+                <ul class="search-show-list">
+                  <li><%= cognitive_bias.name %></li>
+                </ul>
+                <% end %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Date:</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.date %>
+                <%= @resource.date.strftime("%B %d, %Y") %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">URL:</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.url %>
+                <%= link_to "#{@resource.url}", @resource.url, target: "_blank" %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p class="resources-category">Abstract:</p>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <% if @resource.abstract %>
+                <%= @resource.abstract %>
+              <% else %>
+                No data
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div> <!-- col-md-10 -->
+      <div class="row" style="text-align: center; padding-top: 25px; padding-bottom: 50px;">
+        <div class="col-md-12 resource-show-client-button">
+          <%= link_to "View all resources", "/search", :class => 'btn btn-success' %>
+        </div>
+      </div>
+    </div> <!-- container-fluid -->
+</div> <!-- resources-showbody -->
