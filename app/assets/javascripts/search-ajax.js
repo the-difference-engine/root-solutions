@@ -66,40 +66,52 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
       }
       tableBody.html(newHtml);
       var newFilters = "";
-      if (params["resource_type"]) {
+      if (input["resource_type"]) {
         newFilters += "<li class='existing-filters' data-filter='resource_type'>";
-        newFilters += params["resource_type"];
+        newFilters += input["resource_type"];
         newFilters += "</li>";
       }
-      for (var i = 0; i < params["building_block"].length; i ++) {
-        newFilters += "<li class='existing-filters' data-filter='building_block'>";
-        newFilters += params["building_block"][i];
-        newFilters += "</li>";
+      if (input["building_block"]) {
+        for (var i = 0; i < input["building_block"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='building_block'>";
+          newFilters += input["building_block"][i];
+          newFilters += "</li>";
+        }
       }
-      for (var i = 0; i < params["building_block_substep"].length; i ++) {
-        newFilters += "<li class='existing-filters' data-filter='building_block_substep'>";
-        newFilters += params["building_block_substep"][i];
-        newFilters += "</li>";
+      if (input["building_block_substep"]) {
+        for (var i = 0; i < input["building_block_substep"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='building_block_substep'>";
+          newFilters += input["building_block_substep"][i];
+          newFilters += "</li>";
+        }
       }
-      for (var i = 0; i < params["cognitive_bium"].length; i ++) {
-        newFilters += "<li class='existing-filters' data-filter='cognitive_bium'>";
-        newFilters += params["cognitive_bium"][i];
-        newFilters += "</li>";
+      if (input["cognitive_bium"]) {
+        for (var i = 0; i < input["cognitive_bium"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='cognitive_bium'>";
+          newFilters += input["cognitive_bium"][i];
+          newFilters += "</li>";
+        }
       }
-      for (var i = 0; i < params["environmental_tag"].length; i ++) {
-        newFilters += "<li class='existing-filters' data-filter='environmental_tag'>";
-        newFilters += params["environmental_tag"][i];
-        newFilters += "</li>";
+      if (input["environmental_tag"]) {
+        for (var i = 0; i < input["environmental_tag"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='environmental_tag'>";
+          newFilters += input["environmental_tag"][i];
+          newFilters += "</li>";
+        }
       }
-      for (var i = 0; i < params["environmental_subtag"].length; i ++) {
-        newFilters += "<li class='existing-filters' data-filter='environmental_subtag'>";
-        newFilters += params["environmental_subtag"][i];
-        newFilters += "</li>";
+      if (input["environmental_subtag"]) {
+        for (var i = 0; i < input["environmental_subtag"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='environmental_subtag'>";
+          newFilters += input["environmental_subtag"][i];
+          newFilters += "</li>";
+        }
       }
-      for (var i = 0; i < params["world_region"].length; i ++) {
-        newFilters += "<li class='existing-filters' data-filter='world_region'>";
-        newFilters += params["world_region"][i];
-        newFilters += "</li>";
+      if (input["world_region"]) {
+        for (var i = 0; i < input["world_region"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='world_region'>";
+          newFilters += input["world_region"][i];
+          newFilters += "</li>";
+        }
       }
       existingFilterDisplay.html(newFilters);
     },

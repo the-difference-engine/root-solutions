@@ -14,32 +14,32 @@ class SearchesController < ApplicationController
     end
 
     # world_region query
-    if (params[:world_region].any?)
+    if (params[:world_region])
       @resources = query_world_region(@resources, params[:world_region])
     end
 
     # building_block query
-    if (params[:building_block].any?)
+    if (params[:building_block])
       @resources = query_building_block(@resources, params[:building_block])
     end
 
     # environmental_tag query
-    if (params[:environmental_tag].any?)
+    if (params[:environmental_tag])
       @resources = query_environmental_tag(@resources, params[:environmental_tag])
     end
 
     # cognitive_bium query
-    if (params[:cognitive_bium].any?)
+    if (params[:cognitive_bium])
       @resources = query_cognitive_bium(@resources, params[:cognitive_bium])
     end
 
     # building_block_substep query
-    if (params[:building_block_substep].any?)
+    if (params[:building_block_substep])
       @resources = query_building_block_substep(@resources, params[:building_block_substep])
     end
 
     # environmental_subtag query
-    if (params[:environmental_subtag].any?)
+    if (params[:environmental_subtag])
       @resources = query_environmental_subtag(@resources, params[:environmental_subtag])
     end
 

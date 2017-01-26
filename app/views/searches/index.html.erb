@@ -157,6 +157,9 @@
 
 <script type="text/javascript">
   $('.search-filter').click(function() {
+    console.log(this);
+    console.log($(this).data("filter"));
+    console.log($(this).text());
     var tableBody = $('#search-table-body');
     var existingFilters = $(".existing-filters");
     var existingFilterDisplay = $("#existing-filter-display");
