@@ -158,8 +158,9 @@
 <script type="text/javascript">
   $('.search-filter').click(function() {
     var tableBody = $('#search-table-body');
-    var existingFilters = $(".existing-filters");
+    var checkedFilters = $("input:checked");
+    var resourceTypeFilter = $("#resource-type-filter");
     var existingFilterDisplay = $("#existing-filter-display");
-    searchFunction(this, tableBody, existingFilters, existingFilterDisplay);
+    searchFunction(this, tableBody, resourceTypeFilter, checkedFilters, existingFilterDisplay);
   });
 </script>

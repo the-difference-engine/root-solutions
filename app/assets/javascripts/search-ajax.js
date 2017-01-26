@@ -1,28 +1,24 @@
-var searchFunction = function (htmlElement, tableBody, existingFilters, existingFilterDisplay) {
+var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, checkedFilters, existingFilterDisplay) {
   $('body').css('cursor', 'progress');
   var htmlElement = $(htmlElement);
-  var input = {};
   var existingFilterDisplay = $(existingFilterDisplay);
-  var existingFilters = $(existingFilters);
-  existingFilters.each(function(index) {
-    if ($(this).data("filter") == "resource_type") {
-      input[$(this).data("filter")] = $(this).data("value");
-    } else {
+  var input = {};
+  var resourceTypeFilter = $(resourceTypeFilter);
+  if (resourceTypeFilter.length > 0) {
+    input["resource_type"] = resourceTypeFilter.data("value");
+  }
+  var checkedFilters = $(checkedFilters);
+  if (checkedFilters.length > 0) {
+    checkedFilters.each(function(index) {
       if (input[$(this).data("filter")] == null) {
         input[$(this).data("filter")] = [];
       }
       input[$(this).data("filter")].push($(this).data("value"));
-    }
-  });
+    });
+  }
   if (htmlElement.data("filter") == "resource_type") {
     input[htmlElement.data("filter")] = htmlElement.data("value");
-  } else {
-    if (input[htmlElement.data("filter")] == null) {
-      input[htmlElement.data("filter")] = [];
-    }
-    input[htmlElement.data("filter")].push(htmlElement.data("value"));
   }
-  debugger;
   var tableBody = tableBody;
   $.ajax({
     type: "GET",
@@ -74,7 +70,7 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
       tableBody.html(newHtml);
       var newFilters = "";
       if (input["resource_type"]) {
-        newFilters += "<li class='existing-filters' data-filter='resource_type'>";
+        newFilters += "<li class='existing-filters' data-filter='resource_type' data-value='" + input["resource_type"] + "' id='resource-type-filter'>";
         newFilters += input["resource_type"];
         newFilters += "</li>";
       }
