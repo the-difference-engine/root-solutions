@@ -5,7 +5,15 @@ var searchFunction = function (htmlElement, tableBody, existingFilters, existing
   var existingFilterDisplay = $(existingFilterDisplay);
   var existingFilters = $(existingFilters);
   existingFilters.each(function(index) {
-    input[$(this).data("filter")] = $(this).text();
+    if ($(this).data("filter") == "resource_type") {
+      input[$(this).data("filter")] = $(this).text();
+    } else {
+      if (input[$(this).data("filter")] == null) {
+        input[$(this).data("filter")] = [];
+      } else {
+        input[$(this).data("filter")].push($(this).text());
+      }
+    }
   });
   input[htmlElement.data("filter")] = htmlElement.text();
   var tableBody = tableBody;
