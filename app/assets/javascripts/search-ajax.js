@@ -64,7 +64,7 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
         }
       } else {
         newHtml += "<h2 style='margin-bottom: 400px;'>";
-        newHtml += "No Results!";
+        newHtml += "No Results";
         newHtml += "</h2>";
       }
       tableBody.html(newHtml);
@@ -73,6 +73,13 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
         newFilters += "<li class='existing-filters' data-filter='resource_type' data-value='" + input["resource_type"] + "' id='resource-type-filter'>";
         newFilters += input["resource_type"];
         newFilters += "</li>";
+      }
+      if (input["world_region"]) {
+        for (var i = 0; i < input["world_region"].length; i ++) {
+          newFilters += "<li class='existing-filters' data-filter='world_region'>";
+          newFilters += input["world_region"][i];
+          newFilters += "</li>";
+        }
       }
       if (input["building_block"]) {
         for (var i = 0; i < input["building_block"].length; i ++) {
@@ -106,13 +113,6 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
         for (var i = 0; i < input["environmental_subtag"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='environmental_subtag'>";
           newFilters += input["environmental_subtag"][i];
-          newFilters += "</li>";
-        }
-      }
-      if (input["world_region"]) {
-        for (var i = 0; i < input["world_region"].length; i ++) {
-          newFilters += "<li class='existing-filters' data-filter='world_region'>";
-          newFilters += input["world_region"][i];
           newFilters += "</li>";
         }
       }
