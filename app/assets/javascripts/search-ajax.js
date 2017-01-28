@@ -72,48 +72,48 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
       if (input["resource_type"]) {
         newFilters += "<li class='existing-filters' data-filter='resource_type' data-value='" + input["resource_type"] + "' id='resource-type-filter'>";
         newFilters += input["resource_type"];
-        newFilters += "</li>";
+        newFilters += "</li>|";
       }
       if (input["world_region"]) {
         for (var i = 0; i < input["world_region"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='world_region'>";
           newFilters += input["world_region"][i];
-          newFilters += "</li>";
+          newFilters += "</li>|";
         }
       }
       if (input["building_block"]) {
         for (var i = 0; i < input["building_block"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='building_block'>";
           newFilters += input["building_block"][i];
-          newFilters += "</li>";
+          newFilters += "</li>|";
         }
       }
       if (input["building_block_substep"]) {
         for (var i = 0; i < input["building_block_substep"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='building_block_substep'>";
           newFilters += input["building_block_substep"][i];
-          newFilters += "</li>";
+          newFilters += "</li>|";
         }
       }
       if (input["cognitive_bium"]) {
         for (var i = 0; i < input["cognitive_bium"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='cognitive_bium'>";
           newFilters += input["cognitive_bium"][i];
-          newFilters += "</li>";
+          newFilters += "</li>|";
         }
       }
       if (input["environmental_tag"]) {
         for (var i = 0; i < input["environmental_tag"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='environmental_tag'>";
           newFilters += input["environmental_tag"][i];
-          newFilters += "</li>";
+          newFilters += "</li>|";
         }
       }
       if (input["environmental_subtag"]) {
         for (var i = 0; i < input["environmental_subtag"].length; i ++) {
           newFilters += "<li class='existing-filters' data-filter='environmental_subtag'>";
           newFilters += input["environmental_subtag"][i];
-          newFilters += "</li>";
+          newFilters += "</li>|";
         }
       }
       existingFilterDisplay.html(newFilters);
