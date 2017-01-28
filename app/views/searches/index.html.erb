@@ -128,34 +128,39 @@
         </div>
       </div> <!-- col-md-10 -->
     </div> <!-- row -->
-    <div class="search-page-wrap">
-      <table class="table-hover table search-table">
-        <thead>
-          <tr>
-            <th class="search-column-1">Title</th>
-            <th class="search-column-1">Author</th>
-            <th class="search-column">Date</th>
-            <th class="search-table-content">Description</th>
-            <th class="search-column">URL</th>
-          </tr>
-        </thead>
-        <tbody id="search-table-body">
-          <% @resources.each do |resource| %>
-            <tr>
-              <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
-              <td class="search-column-1"><%= resource.author %></td>
-              <td class="search-column"><%= resource.date %></td>
-              <% if resource.abstract %>
-                <td class="search-table-content"><%= resource.abstract %></td>
-              <% else %>
-                <td><%= resource.description %></td>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="search-page-wrap">
+          <table class="table-hover table search-table">
+            <thead>
+              <tr>
+                <th class="search-column-1">Title</th>
+                <th class="search-column-1">Author</th>
+                <th class="search-column">Date</th>
+                <th class="search-table-content">Description</th>
+                <th class="search-column">URL</th>
+              </tr>
+            </thead>
+            <tbody id="search-table-body">
+              <% @resources.each do |resource| %>
+                <tr>
+                  <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
+                  <td class="search-column-1"><%= resource.author %></td>
+                  <td class="search-column"><%= resource.date %></td>
+                  <% if resource.abstract %>
+                    <td class="search-table-content"><%= resource.abstract %></td>
+                  <% else %>
+                    <td><%= resource.description %></td>
+                  <% end %>
+                  <td class="search-column"><%= resource.url %></td>
+                </tr>
               <% end %>
-              <td class="search-column"><%= resource.url %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div> <!-- search-page-wrap -->
+            </tbody>
+          </table>
+        </div> <!-- search-page-wrap -->
+      </div> <!-- col-md-10 -->
+    </div> <!-- row -->
   </div> <!-- container-fluid -->
 </div> <!-- search-page-body -->
 
