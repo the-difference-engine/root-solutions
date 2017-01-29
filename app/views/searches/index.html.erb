@@ -147,7 +147,12 @@
                 <tr>
                   <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
                   <td class="search-column-1"><%= resource.author %></td>
-                  <td class="search-column"><%= resource.date %></td>
+                  <td class="search-column">
+                    <%= resource.date %>
+                      <br />
+                      <p id="textArea"><!-- This is where I want to additional text--></p>
+                      <a id="toggleButton" onclick="toggleText();" href="javascript:void(0);">See More</a>
+                  </td>
                   <% if resource.abstract %>
                     <td class="search-table-content"><%= resource.abstract %></td>
                   <% else %>
