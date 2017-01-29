@@ -150,21 +150,16 @@
                   <td class="search-column"><%= resource.date %></td>
                   <% if resource.abstract %>
                     <td class="search-table-content">
-                      <% if resource.abstract.length > 250 %>
-                        <%= truncate(resource.abstract, length: 250) %>
-                        <%= link_to 'Read more', '', class: "read-more-#{resource.id}" %>
-                          <script>
-                            $('.read-more-<%= resource.id %>').on('click', function(e) {
-                            e.preventDefault()
-                            $(this).parent().html('<%= escape_javascript resource.abstract %>')
-                            })
-                          </script>
-                      <% else %>
+                      <div class="more">
                         <%= resource.abstract %>
-                      <% end %>
+                      </div>
                     </td>
                   <% else %>
-                    <td><%= resource.description %></td>
+                    <td class="search-table-content">
+                      <span class="more">
+                        <%= resource.description %>
+                      </span>
+                    </td>
                   <% end %>
                   <td class="search-column"><%= link_to "#{resource.url}", resource.url, target: "_blank" %></td>
                 </tr>
