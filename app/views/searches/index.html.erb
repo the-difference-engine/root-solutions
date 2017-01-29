@@ -147,13 +147,22 @@
                 <tr>
                   <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
                   <td class="search-column-1"><%= resource.author %></td>
-                  <td class="search-column">
-                    <%= resource.date %>
-                      <p id="textArea"><!-- This is where I want to additional text--></p>
-                      <a id="toggleButton" onclick="toggleText();" href="javascript:void(0);">See More</a>
-                  </td>
+                  <td class="search-column"><%= resource.date %></td>
                   <% if resource.abstract %>
-                    <td class="search-table-content"><%= resource.abstract %></td>
+                    <td class="search-table-content">
+                      <% if resource.abstract.length > 250 %>
+                        <%= truncate(resource.abstract, length: 250) %>
+                        <%= link_to 'Read more', '', class: "read-more-#{resource.id}" %>
+                          <script>
+                            $('.read-more-<%= resource.id %>').on('click', function(e) {
+                            e.preventDefault()
+                            $(this).parent().html('<%= escape_javascript resource.abstract %>')
+                            })
+                          </script>
+                      <% else %>
+                        <%= resource.abstract %>
+                      <% end %>
+                    </td>
                   <% else %>
                     <td><%= resource.description %></td>
                   <% end %>
