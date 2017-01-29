@@ -149,16 +149,12 @@
                   <td class="search-column-1"><%= resource.author %></td>
                   <td class="search-column"><%= resource.date %></td>
                   <% if resource.abstract %>
-                    <td class="search-table-content">
-                      <div class="more">
-                        <%= resource.abstract %>
-                      </div>
+                    <td class="search-table-content more">
+                      <%= resource.abstract %>
                     </td>
                   <% else %>
-                    <td class="search-table-content">
-                      <span class="more">
-                        <%= resource.description %>
-                      </span>
+                    <td class="search-table-content more">
+                      <%= resource.description %>
                     </td>
                   <% end %>
                   <td class="search-column"><%= link_to "#{resource.url}", resource.url, target: "_blank" %></td>
