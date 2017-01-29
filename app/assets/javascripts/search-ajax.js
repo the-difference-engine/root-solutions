@@ -57,7 +57,7 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
           newHtml += "</td>";
           newHtml += "<td>";
           if (resources[i]["url"]) {
-            newHtml += resources[i]["url"];
+            newHtml += "<a href='" + resources[i]["url"] +"'>" + resources[i]["url"] + "</a>";
           }
           newHtml += "</td>";
           newHtml += "</tr>";
