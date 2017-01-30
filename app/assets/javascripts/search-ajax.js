@@ -38,24 +38,24 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
           }
           newHtml += "</a>";
           newHtml += "</td>";
-          newHtml += "<td>";
+          newHtml += "<td class='search-column-1'>";
           if (resources[i]["author"]) {
             newHtml += resources[i]["author"];
           }
           newHtml += "</td>";
-          newHtml += "<td>";
+          newHtml += "<td class='search-column'>";
           if (resources[i]["date"]) {
             newHtml += resources[i]["date"];
           }
           newHtml += "</td>";
-          newHtml += "<td>";
-          if (resources[i]["description"]) {
-            newHtml += resources[i]["description"];
-          } else if (resources[i]["abstract"]) {
+          newHtml += "<td class='search-table-content more'>";
+          if (resources[i]["abstract"]) {
             newHtml += resources[i]["abstract"];
+          } else if (resources[i]["description"]) {
+            newHtml += resources[i]["description"];
           }
           newHtml += "</td>";
-          newHtml += "<td>";
+          newHtml += "<td class='search-column'>";
           if (resources[i]["url"]) {
             newHtml += "<a href='" + resources[i]["url"] +"'>" + resources[i]["url"] + "</a>";
           }
