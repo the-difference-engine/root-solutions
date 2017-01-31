@@ -117,6 +117,7 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
         }
       }
       existingFilterDisplay.html(newFilters);
+      showMore();
     },
     error: function(data) {
 

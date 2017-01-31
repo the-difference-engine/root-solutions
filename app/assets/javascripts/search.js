@@ -13,7 +13,7 @@ $(document).ready(function() {
       $(this).html(html);
     }
   });
-  $(".morelink").click(function(){
+  $("body").on("click", ".morelink", function(){
     if($(this).hasClass("less")) {
       $(this).removeClass("less");
       $(this).html(moretext);
@@ -26,3 +26,19 @@ $(document).ready(function() {
     return false;
   });
 });
+
+var showMore = function() {
+  var showChar = 300;  // How many characters are shown by default
+  var ellipsestext = "...";
+  var moretext = "Read More";
+  var lesstext = "Read Less";
+  $('.more').each(function() {
+    var content = $(this).html();
+    if(content.length > showChar) {
+      var c = content.substr(0, showChar);
+      var h = content.substr(showChar, content.length - showChar);
+      var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+      $(this).html(html);
+    }
+  });
+};
