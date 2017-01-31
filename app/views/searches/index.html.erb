@@ -121,11 +121,14 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
+
         <div class="existing-filter-display-wrap">
           <p id="heading-title-filter">Filters:</p>
           <ul id="existing-filter-display">
           </ul>
-        </div>
+          <button class="btn btn-default clearAll">Clear All</button>
+        </div> <!-- existing-filter-display-wrap -->
+
       </div> <!-- col-md-10 -->
     </div> <!-- row -->
     <div class="row">
@@ -170,10 +173,20 @@
 
 <script type="text/javascript">
   $('.search-filter').click(function() {
+    $(".existing-filter-display-wrap").show();
     var tableBody = $('#search-table-body');
     var checkedFilters = $("input:checked");
     var resourceTypeFilter = $("#resource-type-filter");
     var existingFilterDisplay = $("#existing-filter-display");
     searchFunction(this, tableBody, resourceTypeFilter, checkedFilters, existingFilterDisplay);
   });
+
+  $('.clearAll').click(function(){
+    $(".existing-filter-display-wrap").hide();
+    var tableBody = $('#search-table-body');
+    var checkedFilters = [];
+    var resourceTypeFilter = [];
+    var existingFilterDisplay = [];
+    searchFunction(this, tableBody, resourceTypeFilter, checkedFilters, existingFilterDisplay);
+  })
 </script>

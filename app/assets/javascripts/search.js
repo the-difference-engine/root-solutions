@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('.existing-filter-display-wrap').hide();
+  
   // Configure/customize these variables.
   var showChar = 300;  // How many characters are shown by default
   var ellipsestext = "...";

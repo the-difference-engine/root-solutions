@@ -57,7 +57,7 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
           newHtml += "</td>";
           newHtml += "<td class='search-column'>";
           if (resources[i]["url"]) {
-            newHtml += "<a href='" + resources[i]["url"] +"'>" + resources[i]["url"] + "</a>";
+            newHtml += "<a href=\"" + resources[i]["url"] + "\" target='_blank'>" + "Go to site" + "</a>";
           }
           newHtml += "</td>";
           newHtml += "</tr>";
