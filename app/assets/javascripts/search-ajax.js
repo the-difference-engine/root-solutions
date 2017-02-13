@@ -127,3 +127,64 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
     }
   });
 };
+
+var clearFunction = function (tableBody, existingFilterDisplay) {
+  $('body').css('cursor', 'progress');
+  var tableBody = tableBody;
+  var existingFilterDisplay = $(existingFilterDisplay);
+  $.ajax ({
+    type: "GET",
+    url: "/search_filter",
+    data: null,
+    success: function(data) {
+      var resources = data["resources"];
+      var newHtml = "";
+      if (resources.length > 0) {
+        for(var i = 0; i < resources.length; i++) {
+          newHtml += "<tr>";
+          newHtml += "<td>";
+          newHtml += "<a href='/search/" + resources[i]["id"] +"'>";
+          if (resources[i]["title"]) {
+            newHtml += resources[i]["title"];
+          }
+          newHtml += "</a>";
+          newHtml += "</td>";
+          newHtml += "<td class='search-column-1'>";
+          if (resources[i]["author"]) {
+            newHtml += resources[i]["author"];
+          }
+          newHtml += "</td>";
+          newHtml += "<td class='search-column'>";
+          if (resources[i]["date"]) {
+            newHtml += resources[i]["date"];
+          }
+          newHtml += "</td>";
+          newHtml += "<td class='search-table-content more'>";
+          if (resources[i]["abstract"]) {
+            newHtml += resources[i]["abstract"];
+          } else if (resources[i]["description"]) {
+            newHtml += resources[i]["description"];
+          }
+          newHtml += "</td>";
+          newHtml += "<td class='search-column'>";
+          if (resources[i]["url"]) {
+            newHtml += "<a href=\"" + resources[i]["url"] + "\" target='_blank'>" + "Go to site" + "</a>";
+          }
+          newHtml += "</td>";
+          newHtml += "</tr>";
+        }
+      } else {
+        newHtml += "<h2 style='margin-bottom: 400px;'>";
+        newHtml += "No Results";
+        newHtml += "</h2>";
+      }
+      tableBody.html(newHtml);
+      var newFilters = "";
+      existingFilterDisplay.html(newFilters);
+      showMore();
+    },
+    complete: function(data) {
+      $('body').css('cursor', 'default');
+    }
+  })
+}
