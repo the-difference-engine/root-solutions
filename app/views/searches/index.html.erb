@@ -184,9 +184,7 @@
   $('.clearAll').click(function(){
     $(".existing-filter-display-wrap").hide();
     var tableBody = $('#search-table-body');
-    var checkedFilters = [];
-    var resourceTypeFilter = [];
-    var existingFilterDisplay = [];
-    searchFunction(this, tableBody, resourceTypeFilter, checkedFilters, existingFilterDisplay);
+    var existingFilterDisplay = $("#existing-filter-display");
+    clearFunction(tableBody, existingFilterDisplay);
   })
 </script>
