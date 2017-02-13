@@ -19,6 +19,7 @@ var searchFunction = function (htmlElement, tableBody, resourceTypeFilter, check
   if (htmlElement.data("filter") == "resource_type") {
     input[htmlElement.data("filter")] = htmlElement.data("value");
   }
+  debugger;
   var tableBody = tableBody;
   $.ajax({
     type: "GET",
