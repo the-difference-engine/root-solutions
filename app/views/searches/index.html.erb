@@ -15,7 +15,7 @@
       <div class="search-page-button-wrap">
         <div class="search-page-button-resource-wrap">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu1" aria-haspopup="false" aria-expanded="true">
               Resource Type
               <span class="caret"></span>
             </button>
@@ -28,7 +28,7 @@
         </div> <!-- search-page-button-resource-wrap -->
         <div class="search-page-button-world-regions">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu2" aria-haspopup="false" aria-expanded="true">
               World Regions
               <span class="caret"></span>
             </button>
@@ -43,7 +43,7 @@
         </div> <!-- search-page-button-world-regions -->
         <div class="search-page-button-building-blocks">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu3" aria-haspopup="false" aria-expanded="true">
               Building Blocks
               <span class="caret"></span>
             </button>
@@ -58,7 +58,7 @@
         </div>
         <div class="search-page-button-environmental-tags">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu4" aria-haspopup="false" aria-expanded="true">
               Environmental Tags
               <span class="caret"></span>
             </button>
@@ -73,7 +73,7 @@
         </div>
         <div class="search-page-button-building-block-substeps">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu5" aria-haspopup="false" aria-expanded="true">
               Building Block Substeps
               <span class="caret"></span>
             </button>
@@ -88,7 +88,7 @@
         </div>
         <div class="search-page-button-environmental-subtags">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu6" aria-haspopup="false" aria-expanded="true">
               Environmental Subtags
               <span class="caret"></span>
             </button>
@@ -103,7 +103,7 @@
         </div>
         <div class="search-page-button-environmental-subtags">
           <div class="dropdown" id="test">
-            <button class="btn btn-default dropdown-toggle"  type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+            <button class="btn btn-default" type="button" id="dropdownMenu7" aria-haspopup="false" aria-expanded="true">
               Cognitive Bias
               <span class="caret"></span>
             </button>
@@ -119,48 +119,73 @@
       </div> <!-- search-page-button-wrap -->
     </div> <!-- row -->
     <div class="row">
-      <div>
-        <ul id="existing-filter-display">
-        </ul>
-      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <div class="existing-filter-display-wrap">
+          <p id="heading-title-filter">Filters:</p>
+          <ul id="existing-filter-display">
+          </ul>
+          <button class="btn btn-default clearAll">Clear All</button>
+        </div> <!-- existing-filter-display-wrap -->
+
+      </div> <!-- col-md-10 -->
     </div> <!-- row -->
-    <div class="search-page-wrap">
-      <table class="table-hover table search-table">
-        <thead>
-          <tr>
-            <th class="search-column-1">Title</th>
-            <th class="search-column-1">Author</th>
-            <th class="search-column">Date</th>
-            <th class="search-table-content">Description</th>
-            <th class="search-column">URL</th>
-          </tr>
-        </thead>
-        <tbody id="search-table-body">
-          <% @resources.each do |resource| %>
-            <tr>
-              <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
-              <td class="search-column-1"><%= resource.author %></td>
-              <td class="search-column"><%= resource.date %></td>
-              <% if resource.abstract %>
-                <td class="search-table-content"><%= resource.abstract %></td>
-              <% else %>
-                <td><%= resource.description %></td>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="search-page-wrap">
+          <table class="table-hover table search-table">
+            <thead>
+              <tr>
+                <th class="search-column-1">Title</th>
+                <th class="search-column-1">Author</th>
+                <th class="search-column">Date</th>
+                <th class="search-table-content">Abstract</th>
+                <th class="search-column">URL</th>
+              </tr>
+            </thead>
+            <tbody id="search-table-body">
+              <% @resources.each do |resource| %>
+                <tr>
+                  <td class="search-column-1"><%= link_to "#{resource.title}", "/search/#{resource.id}" %></td>
+                  <td class="search-column-1"><%= resource.author %></td>
+                  <td class="search-column"><%= resource.date %></td>
+                  <% if resource.abstract %>
+                    <td class="search-table-content more">
+                      <%= resource.abstract %>
+                    </td>
+                  <% else %>
+                    <td class="search-table-content more">
+                      <%= resource.description %>
+                    </td>
+                  <% end %>
+                  <td class="search-column"><%= link_to "#{resource.url}", resource.url, target: "_blank" %></td>
+                </tr>
               <% end %>
-              <td class="search-column"><%= resource.url %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div> <!-- search-page-wrap -->
+            </tbody>
+          </table>
+        </div> <!-- search-page-wrap -->
+      </div> <!-- col-md-10 -->
+    </div> <!-- row -->
   </div> <!-- container-fluid -->
 </div> <!-- search-page-body -->
 
 <script type="text/javascript">
   $('.search-filter').click(function() {
+    $(".existing-filter-display-wrap").show();
     var tableBody = $('#search-table-body');
     var checkedFilters = $("input:checked");
     var resourceTypeFilter = $("#resource-type-filter");
     var existingFilterDisplay = $("#existing-filter-display");
     searchFunction(this, tableBody, resourceTypeFilter, checkedFilters, existingFilterDisplay);
   });
+
+  $('.clearAll').click(function(){
+    $(".existing-filter-display-wrap").hide();
+    var tableBody = $('#search-table-body');
+    var existingFilterDisplay = $("#existing-filter-display");
+    $('input:checkbox').removeAttr('checked');
+    clearFunction(tableBody, existingFilterDisplay);
+  })
 </script>
