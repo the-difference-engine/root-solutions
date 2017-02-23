@@ -1362,6 +1362,7 @@ button.learn-more:hover {
 }
 .team-root-image img {
   width:100%;
+  text-align: center;
 }
 
 .team-root-contact-info {
@@ -1410,6 +1411,7 @@ button.learn-more:hover {
 }
 .team-contributors-image img {
   width:100%;
+  text-align: center;
 }
 
 .team-contributors-contact-info {
@@ -1971,22 +1973,83 @@ button.learn-more:hover {
   text-align: right;
 }
 
-.team-portrait-large {
-  display: block;
-  height: 380px;
-  width: 280px;
+.focus-portrait {
+  height: 400px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
+
+.small-portrait {
+  height: 200px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#nya-focus {
+  background-image: url(<%= image_path "nya_van_leuvan.jpg" %>);
+}
+
+#rod-focus {
+  background-image: url(<%= image_path "rod_fujita.jpg" %>);
+}
+
+#aaron-focus {
+  background-image: url(<%= image_path "aaron_pope.JPG" %>);
+}
+
+#pauline-focus {
+  background-image: url(<%= image_path "pauline_miller.png" %>);
+}
+
+#alexandra-focus {
+  background-image: url(<%= image_path "alex_smith.jpg" %>);
+}
+
+#willow-focus {
+  background-image: url(<%= image_path "willow_bautista.JPG" %>);
+}
+
+#kirby-focus {
+  background-image: url(<%= image_path "kirby_culbertson.JPG" %>);
+}
+
+#jessica-focus {
+  background-image: url(<%= image_path "jessica_robbins.JPG" %>);
+}
+
+#anjana-focus {
+  background-image: url(<%= image_path "anjana_krishnan.jpg" %>);
+}
+
+#michael-focus {
+  background-image: url(<%= image_path "michael_clark.jpg" %>);
+}
+
+// .team-portrait-large {
+//   display: block;
+//   height: 380px;
+//   width: 280px;
+// }
 
 .team-portrait-small {
   height: 180px;
   width: 180px;
+
 }
 
-.partner-portrait-large {
-  display: block;
-  height: 380px;
-  width: 280px;
-}
+// .partner-portrait-large {
+//   display: block;
+//   height: 380px;
+//   width: 280px;
+// }
 
 .partner-portrait-small {
   height: 180px;
