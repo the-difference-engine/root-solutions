@@ -1,18 +1,3 @@
-<script>
-  $(function(){
-    $('#sidebar-nav').affix({
-      offset: {
-        top: function() {
-          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
-        }
-      }
-    })
-    $('#sidebar-nav a').click(function(){
-      $('#sidebar-nav').affix('checkPosition');
-    })
-  });
-</script>
-
 <div id="behavior_design-parallax"> 
   <div class="heading-title">
     <h2 class="title">
@@ -23,8 +8,7 @@
     </div>
   </div>
 </div>
-<div id="careers-design-chevron">
-</div>
+<div id="careers-design-chevron"></div>
 <div class='container-fluid'>
 <!-- <div class='container-fluid'> -->
   <div id="career-row" class="row">
@@ -34,8 +18,6 @@
       <h3 class="careers-text">Root Solutions is currently looking for volunteers for the spring and summer of 2017. If you are in school or have recently graduated, or are looking to volunteer for other reasons, we need you!</h3>
     </div>
   </div>
-  <p>
-  <br>
   <div id="career-row" class="row">
     <div class="col-md-2"></div>
     <div class="col-md-4">
@@ -74,6 +56,20 @@
         <%= link_to "Projects Assistant Volunteer", "http://media.wix.com/ugd/5440fd_613c95fb84ea464696e60d93443b0763.pdf", class: "careers-links"%>
       </div>
     </div>
-    </div>
-    </p>
-    </div>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
