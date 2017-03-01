@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   get '/team', to: 'pages#team'
   get '/mission', to: 'pages#mission'
   get '/donate', to: 'pages#donate'
-  get '/search_filter', to: 'searches#search'
+  # get '/search_filter', to: 'searches#search'
   get '/search/:id', to: 'searches#show'
+  get '/search', to: 'searches#index'
 
   resources :news_sources
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, controllers: {registrations: 'users/registrations'}
@@ -59,7 +60,6 @@ Rails.application.routes.draw do
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
   post '/resources/import', to: 'resources#import_resources'
   resources :resources
-  get '/search', to: 'searches#index'
 
   resources :attachments
 
