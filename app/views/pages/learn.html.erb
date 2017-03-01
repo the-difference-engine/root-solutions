@@ -13,33 +13,28 @@
   });
 </script>
 <div class="learn-container-fluid">
-<div id="behavior_design-parallax"> 
-  <div class="heading-title">
-    <h2 class="title">
-      LEARN
-    </h2>
-    <div id="sub-logo">
-      <%= image_tag("root-logo.png") %>
-    </div>
+  <div id="behavior_design-parallax"> 
+    <div class="heading-title">
+      <h2 class="title">
+        LEARN
+      </h2>
+      <div id="sub-logo">
+        <%= image_tag("root-logo.png") %>
+      </div>
+    </div> <!-- heading-title -->
+  </div> <!-- behavior_design-parallax -->
+  <div id="careers-design-chevron">
   </div>
-</div>
-<div id="careers-design-chevron">
-</div>
-<div id="header-row" class="row">
-  <div class='col-md-2'></div>
-  <div class='col-md-8'>
-    <div class="learn-row">
-        <blockquote>
-          <p class="learn-description">
-            We have developed a suite of tools to help you learn about and implement behavior design strategy in your own initiatives.
-          </p>
-        </blockquote>
-      <div class="learn-buttons">
-        <h3><%= link_to "Why Behavior Matters", "/learn/why_behavior", :class => "learn-btn-primary"%> </h3>
+  <div id="header-row" class="row">
+    <div class='col-md-2'></div>
+    <div class='col-md-8'>
+      <div class="learn-row">
+        <h1 class="learn-description">
+          We have developed a suite of tools to help you learn about and implement behavior design strategy in your own initiatives.
+        </h1>
       </div>
     </div>
-  </div>
-</div>
+  </div> <!-- header-row -->
 
 <div id="learn-parallax-framework" class="heading-title">
     <h2 class="learn-other-titles">Behavioral Design Framework</h2>
@@ -56,9 +51,12 @@
         <h3>Learn more about the <%= link_to "four phases","/learn/our_process", class: "learn-link"%> of our framework</h3>
 <!--         (Initiation, Ideation, Design, Piloting) -->
       </div>
-  <br>
+      <br>
     <div class="learn-buttons">
       <h3>Explore our <%= link_to "essential behavioral", "/learn/behavior_design", class: "learn-link"%> science interventions</h3>
+    </div>
+    <div class="learn-buttons">
+      <h3><%= link_to "Why Behavior Matters", "/learn/why_behavior", :class => "learn-btn-primary"%></h3>
     </div>
   </div>
   </div>
