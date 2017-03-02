@@ -33,6 +33,10 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def import
+
+  end
+
   def import_resources
     excel_import = ExcelImport.new(params[:file])
     excel_import.main

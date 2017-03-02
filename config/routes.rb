@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/dashboard', to: 'admins#dashboard'
   get '/resources/export', to: 'resources#export_resources', as: :export_resources
+  get '/resources/import', to: 'resources#import'
   post '/resources/import', to: 'resources#import_resources'
   resources :resources
 

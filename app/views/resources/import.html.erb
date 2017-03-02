@@ -1,0 +1,10 @@
+<h1 class="h3">Import Spreadsheet</h1>
+
+<div>
+  <%= form_tag "/resources/import", multipart: true do %>
+    <div style="margin-left: 50px; margin-top: 25px;">
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import", style: "margin-top: 15px;" %>
+    </div>
+  <% end %>
+</div>
