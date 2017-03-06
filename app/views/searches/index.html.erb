@@ -160,7 +160,10 @@
                       <%= resource.description %>
                     </td>
                   <% end %>
-                  <td class="search-column"><%= link_to "#{resource.url}", resource.url, target: "_blank" %></td>
+                  <% if resource.url %>
+                    <td class="search-column"><%= link_to "Go to site", resource.url, target: "_blank" %>
+                    </td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>
