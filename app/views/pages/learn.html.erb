@@ -1,19 +1,5 @@
-<script>
-  $(function(){
-    $('#sidebar-nav').affix({
-      offset: {
-        top: function() {
-          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
-        }
-      }
-    })
-    $('#sidebar-nav a').click(function(){
-      $('#sidebar-nav').affix('checkPosition');
-    })
-  });
-</script>
 <div class="learn-container-fluid">
-  <div id="behavior_design-parallax"> 
+  <div id="learn-parallax"> 
     <div class="heading-title">
       <h2 class="title">
         LEARN
@@ -34,7 +20,7 @@
     </div>
   </div> <!-- header-row -->
   <div id="learn-parallax-framework" class="heading-title">
-      <h2 class="learn-other-titles">Behavioral Design Framework</h2>
+    <h2 class="learn-other-titles">Behavioral Design Framework</h2>
   </div> <!-- learn-parallax-framework -->
   <div id="header-row" class="row">
     <div class='col-md-2'></div>
@@ -78,3 +64,17 @@
     </div> <!-- col-md-8 -->
   </div> <!-- header-row -->
 </div> <!-- learn-container-fluid -->
+<script>
+  $(function(){
+    $('#sidebar-nav').affix({
+      offset: {
+        top: function() {
+          return $('#header-row').offset().top + $('#header-row').outerHeight(true) - 170;
+        }
+      }
+    })
+    $('#sidebar-nav a').click(function(){
+      $('#sidebar-nav').affix('checkPosition');
+    })
+  });
+</script>
