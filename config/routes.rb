@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/team', to: 'pages#team'
   get '/mission', to: 'pages#mission'
   get '/donate', to: 'pages#donate'
-  # get '/search_filter', to: 'searches#search'
+  get '/search_filter', to: 'searches#search'
   get '/search/:id', to: 'searches#show'
   get '/search', to: 'searches#index'
 
