@@ -87,7 +87,6 @@ GEM
       dotenv (= 2.1.1)
       railties (>= 4.0, < 5.1)
     equalizer (0.0.11)
-      qa
     erubis (2.7.0)
     excon (0.54.0)
     execjs (2.7.0)
@@ -100,7 +99,6 @@ GEM
       i18n (~> 0.5)
     faraday (0.10.1)
       multipart-post (>= 1.2, < 3)
-      qa
     ffi (1.9.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -243,7 +241,6 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.1)
     http_parser.rb (0.6.0)
-      qa
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
@@ -273,9 +270,8 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    multipart-post (2.0.0)
+    multipart-post (2.1.1)
     naught (1.1.0)
-      qa
     nio4r (1.2.1)
     nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
@@ -293,7 +289,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     public_suffix (2.0.5)
-    puma (3.6.2)
+    puma (3.12.2)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -443,7 +439,7 @@ DEPENDENCIES
   phantomjs
   poltergeist
   pry-rails
-  puma (~> 3.0)
+  puma (~> 3.12)
   rails (~> 5.0.0)
   rmagick
   roo
